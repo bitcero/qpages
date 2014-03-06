@@ -16,7 +16,7 @@ xoops_cp_header();
 
 // Get data for statistics
 $db = XoopsDatabaseFactory::getDatabaseConnection();
-$sql = "SELECT * FROM ".$db->prefix("mod_qpages_pages")." WHERE acceso=1 ORDER BY lecturas DESC LIMIT 0, 5";
+$sql = "SELECT * FROM ".$db->prefix("mod_qpages_pages")." WHERE public=1 ORDER BY hits DESC LIMIT 0, 5";
 $result = $db->query($sql);
 $labels = "chxt=x,y&chxl=0:";
 $values = 'chd=t:';
@@ -28,12 +28,12 @@ while($row = $db->fetchArray($result)){
 	$page = new QPPage();
 	$page->assignVars($row);	
 	if ($i==0){
-		$max = $page->getReads();
+		$max = $page->hits;
 	}
 	$i++;
-	$labels .= "|Id:".$page->getID();
-	$leg .= urlencode($page->getTitle().' ('.$page->getReads().' times)')."|";
-	$values .= $page->getReads().',';
+	$labels .= "|Id:".$page->id();
+	$leg .= urlencode($page->title.' ('.$page->hits.' times)')."|";
+	$values .= $page->hits.',';
 }
 $values = rtrim($values, ',');
 $leg = rtrim($leg, "|");
@@ -49,18 +49,19 @@ if ($max>0){
 }
 
 // Recent pages
-$sql = "SELECT * FROM ".$db->prefix("mod_qpages_pages")." ORDER BY fecha DESC LIMIT 0, 5";
+$sql = "SELECT * FROM ".$db->prefix("mod_qpages_pages")." ORDER BY created DESC LIMIT 0, 5";
 $result = $db->query($sql);
 $pages = array();
 while($row = $db->fetchArray($result)){
 	$page = new QPPage();
 	$page->assignVars($row);	
 	$pages[] = array(
-		'id'			=> $page->getID(),
-		'title'			=> $page->getTitle(),
-		'link'			=> $page->getPermaLink(),
-		'desc'			=> $page->getDescription(),
-		'public'		=> $page->getAccess()
+		'id'			=> $page->id(),
+		'title'			=> $page->title,
+		'link'			=> $page->permalink(),
+		'desc'			=> $page->extract,
+		'public'		=> $page->public,
+        'type'          => $page->type
 	);
 }
 
