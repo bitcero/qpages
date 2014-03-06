@@ -1,0 +1,711 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: QuickPages\n"
+"POT-Creation-Date: 2012-12-31 20:03-0600\n"
+"PO-Revision-Date: 2012-12-31 20:04-0600\n"
+"Last-Translator: Eduardo Cortés <i.bitcero@gmail.com>\n"
+"Language-Team: Xoops Mexico <xoopsmexico@gmail.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: c:\\wamp\\www\\xm\\modules\\qpages\n"
+
+#: c:\wamp\www\xm\modules\qpages/catego.php:41
+#: c:\wamp\www\xm\modules\qpages/catego.php:49
+msgid "Category not found!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/catego.php:56
+msgid "Main page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/catego.php:72
+#, php-format
+msgid "Pages in %s"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/catego.php:111
+#, php-format
+msgid "%u pages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/catego.php:116
+#: c:\wamp\www\xm\modules\qpages/home.php:46
+msgid "Subcategories"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/catego.php:117
+#: c:\wamp\www\xm\modules\qpages/page.php:126
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:41
+msgid "Page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/catego.php:118
+msgid "Last update"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/catego.php:119
+msgid "Reads"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/home.php:16
+#: c:\wamp\www\xm\modules\qpages/home.php:18
+msgid "Main"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/home.php:47
+msgid "Pages in this category"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/page.php:105
+#, php-format
+msgid "Last update: %s"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/page.php:106
+#, php-format
+msgid "Read %u times"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/page.php:125
+msgid "Related Pages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/page.php:127
+msgid "Last modification"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/page.php:128
+msgid "Hits"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:42
+msgid "Categories management"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:43
+#: c:\wamp\www\xm\modules\qpages/admin/menu.php:18
+#: c:\wamp\www\xm\modules\qpages/include/general.func.php:95
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:40
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:1
+msgid "Categories"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:62
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:114
+msgid "You must provide a category ID to edit!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:69
+msgid "Specified category does not exists!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:74
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:80
+msgid "Edit Category"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:74
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:80
+msgid "New Category"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:81
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:81
+msgid "Category name"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:82
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:28
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:37
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:48
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:60
+msgid "Description"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:83
+msgid "Category parent"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:94
+msgid "Update Category"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:94
+msgid "Create Category"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:95
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:178
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:253
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:370
+msgid "Cancel"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:119
+msgid "Please provide a name for this category!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:132
+msgid "There is another category with same name!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:148
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:409
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:474
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:506
+msgid "Database updated successfully!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:150
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:411
+msgid "Errors ocurred while trying to update database"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:165
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:296
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:424
+msgid "Session token expired!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:170
+msgid "No category has been selected!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:179
+#, php-format
+msgid "ID \"%s\" is not valid!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:186
+#, php-format
+msgid "Category with ID \"%s\" does not exists!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:193
+#, php-format
+msgid "Category \"%s\" could not be deleted!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:199
+msgid "Errors ocurred while trying to delete categories"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/cats.php:201
+msgid "Categories deleted successfully!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/index.php:49
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_index.php:52
+msgid "Most viewed pages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/menu.php:13
+#: c:\wamp\www\xm\modules\qpages/include/general.func.php:94
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_index.php:1
+msgid "Dashboard"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/menu.php:23
+#: c:\wamp\www\xm\modules\qpages/include/general.func.php:96
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:36
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:29
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:38
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:1
+msgid "Pages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/menu.php:31
+msgid "List"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/menu.php:37
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:21
+msgid "Published"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/menu.php:43
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:22
+msgid "Drafts"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/menu.php:49
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:23
+msgid "Add page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/menu.php:55
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:24
+msgid "Add linked page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/metas.php:18
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:174
+msgid "Custom Fields"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/metas.php:29
+msgid "Add New"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/metas.php:40
+msgid "Add Field"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:89
+msgid "Pages Management"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:90
+msgid "All Pages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:90
+msgid "Draft pages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:90
+msgid "Published pages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:113
+msgid "You must provide a page ID to edit!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:120
+msgid "Edit page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:120
+msgid "New page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:123
+msgid "Edit Page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:123
+msgid "New Page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:125
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:216
+msgid "Page title"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:127
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:218
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:357
+msgid "Friendly title"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:128
+msgid ""
+"Specify a title to use in friendly urls. Remember, this title must not "
+"contain any blank space or special char, only numbers or letters."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:133
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:224
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:12
+msgid "Category"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:136
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:87
+msgid "Select category..."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:142
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:233
+msgid "Introduction"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:144
+msgid "Page content"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:159
+msgid "Text options"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:162
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:237
+msgid "Allowed groups"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:163
+msgid "These groups can access and read page content."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:166
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:241
+msgid "Status"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:167
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:242
+msgid "Public"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:168
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:243
+msgid "Draft"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:177
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:252
+msgid "Update Page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:177
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:252
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:369
+msgid "Save Page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:204
+msgid "You must provide a page ID to edit"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:210
+msgid "Edit linked page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:210
+msgid "New linked page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:215
+msgid "Edit Linked Page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:215
+msgid "New Linked Page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:219
+msgid "This title will be used in friendly url."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:235
+msgid "Target URL"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:238
+msgid "Only selected groups can access to this document."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:282
+msgid "Page ID has not been provided"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:288
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:538
+msgid "Specified page does not exists!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:301
+msgid "Title is missing"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:320
+msgid "Content is missing"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:325
+msgid "You must select a category for this page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:344
+msgid "Review Page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:346
+msgid ""
+"A page with same friendly name already exists. Please change the freindly "
+"title to prevent errors."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:356
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:47
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:59
+msgid "Title"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:431
+msgid "Select at least a category to delete"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:439
+#, php-format
+msgid "Page with ID \"%s\" does not exists!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:443
+#, php-format
+msgid "Page \"%s\" could not be deleted:"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:449
+msgid "Errors ocurred while trying to delete pages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:451
+msgid "Pages deleted successfully!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:463
+msgid "You must select at least one category!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:476
+msgid "Database update failed!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:488
+msgid "Select at least a cetegory to edit"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:528
+msgid "Changes saved successfully!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:546
+msgid "Page could not be cloned!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/admin/pages.php:550
+msgid "Page cloned successfully!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/blocks/qpages_blocks.php:84
+msgid "From category:"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/blocks/qpages_blocks.php:91
+msgid "Number of pages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:12
+msgid "Module for publishing and management of single pages."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:15
+msgid "Links Management Method."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:16
+msgid "The method based on names requires the Apache Server."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:17
+msgid "PHP Default"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:18
+msgid "Based on Names"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:21
+msgid "Home page text"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:22
+msgid "This text will show in the module home page to inform the user."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:24
+msgid "Show related pages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:25
+msgid "Enable the \"Related Pages\" square when a page is viewed."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:26
+msgid "Number of related pages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:29
+msgid "Base path for url"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:30
+msgid "The urls formed by module will be generated from this base path."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:35
+msgid "Sections"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/language/english/modinfo.php:39
+msgid "Home Page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:5
+msgid "Select at least a category to apply this action!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:6
+msgid "Do you really wish to delete this category?"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:7
+msgid "WARNING: All pages under this category will be deleted also!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:18
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:55
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:69
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:36
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:84
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:104
+msgid "Delete"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:20
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:71
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:19
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:39
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:107
+msgid "Apply"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:26
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:35
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:45
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:57
+msgid "ID"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:27
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:36
+msgid "Name"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:44
+msgid "There are not categories created yet!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:54
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_index.php:19
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:83
+msgid "Edit"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:79
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:92
+msgid "Add Category"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:83
+msgid "Category description"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_categos.php:85
+msgid "Parent category"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_index.php:8
+msgid "Recent Pages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_index.php:11
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:69
+msgid "There are not pages created yet!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_index.php:17
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:81
+msgid "[Draft]"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_index.php:28
+msgid "Recent News"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_index.php:50
+msgid "Pages Statistics"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_index.php:59
+msgid "About QuickPages"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_index.php:61
+msgid "Create static pages easily and quickly with QuickPages for Xoops."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:4
+msgid "Select at least a page to apply this action!"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:5
+msgid "Do you really wish to delete selected pages?"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:10
+msgid "Search:"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:14
+msgid "Select category"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:20
+msgid "Show all"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:32
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:100
+msgid "Bulk actions..."
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:33
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:101
+msgid "Set as draft"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:34
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:102
+msgid "Publish"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:35
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:103
+msgid "Set as linked"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:37
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:105
+msgid "Set order"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:49
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:61
+msgid "Modified"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:50
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:62
+msgid "Views"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:51
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:63
+msgid "Diplay order"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:85
+msgid "Duplicate page"
+msgstr ""
+
+#: c:\wamp\www\xm\modules\qpages/templates/admin/qp_pages.php:85
+msgid "Clone"
+msgstr ""
