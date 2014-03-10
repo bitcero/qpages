@@ -475,7 +475,7 @@ function saveChanges(){
 
 function clonePage(){
     
-    $id = rmc_server_var($_GET,'id',0);
+    $id = RMHttpRequest::get( 'id', 'integer', 0 );
     
     $page = new QPPage($id);
     if ($page->isNew()){
@@ -484,14 +484,14 @@ function clonePage(){
     }
     
     $page->setNew();
-    $page->setTitle($page->getTitle().' [cloned]');
-    $page->setFriendTitle(TextCleaner::sweetstring($page->getTitle()));
+    $page->setVar( 'title', $page->title .' [cloned]' );
+    $page->setVar( 'nameid', TextCleaner::sweetstring($page->title) );
     if (!$page->save()){
         redirectMsg('pages.php', __('Page could not be cloned!','qpages'), 1);
         die();
     }
     
-    redirectMsg('pages.php?op=edit&id='.$page->getID(), __('Page cloned successfully!','qpages'), 0);
+    redirectMsg('pages.php?op=edit&id='.$page->id(), __('Page cloned successfully!','qpages'), 0);
     
 }
 
