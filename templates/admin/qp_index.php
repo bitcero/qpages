@@ -1,7 +1,7 @@
 <h1 class="cu-section-title"><i class="icon-dashboard"></i> <?php _e('Dashboard','qpages'); ?></h1>
 <div id="qp-dashboard-container" class="row" data-boxes="load" data-news="load" data-module="qpages" data-target="#qp-news-content">
 
-	<div id="qp-dash-left" class="col-md-5" data-box="qpages-left">
+	<div id="qp-dash-left" class="col-md-5" data-box="module-box-left">
 
         <div class="cu-box">
             <div class="box-header">
@@ -85,11 +85,11 @@
 		</div>
 		<?php endforeach; ?>
 
-        <div data-box="qpages-right"></div>
+        <div data-box="module-box-right"></div>
 
         <div class="row">
-            <div class="col-sm-6" data-box="qpages-right-left"></div>
-            <div class="col-sm-6" data-box="qpages-right-right"></div>
+            <div class="col-sm-6" data-box="module-box-right-left"></div>
+            <div class="col-sm-6" data-box="module-box-right-right"></div>
         </div>
 		
 	</div>
