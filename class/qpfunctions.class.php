@@ -157,4 +157,17 @@ class QPFunctions
 
     }
 
+    static function error_404(){
+
+        header("HTTP/1.0 404 Not Found");
+        if (substr(php_sapi_name(), 0, 3) == 'cgi')
+            header('Status: 404 Not Found', TRUE);
+        else
+            header($_SERVER['SERVER_PROTOCOL'].' 404 Not Found');
+
+        echo "<h1>ERROR 404. Document not Found</h1>";
+        die();
+
+    }
+
 }

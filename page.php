@@ -43,7 +43,7 @@ $nombre[0] = TextCleaner::sweetstring($nombre[0]);
 
 $page = new QPPage($nombre[0]);
 if ($page->isNew() || $page->getVar('public')==0){
-	redirect_header(QP_URL, 2, _MS_QP_NOTFOUNDPAGE);
+	QPFunctions::error_404();
 	die();
 }
 
@@ -55,7 +55,7 @@ if (!in_array(0, $page->groups )){
 		$ok = false;
 		foreach ($xoopsUser->getGroups() as $k){
 			if ($ok) continue;
-			if (in_array($k, $page->getGroups())){
+			if (in_array($k, $page->groups)){
 				$ok = true;
 			}
 		}
@@ -135,7 +135,7 @@ $path = explode('/',$catego->getPath());
 $tbl = $db->prefix("mod_qpages_categos");
 foreach ($path as $k){
 	if ($k=='') continue;
-	$sql = "SELECT id_cat FROM $tbl WHERE nombre_amigo='$k' AND parent='$idp'";
+	$sql = "SELECT id_cat FROM $tbl WHERE nameid='$k' AND parent='$idp'";
 	$result = $db->query($sql);
 	if ($db->getRowsNum($result)>0){
 		list($idp) = $db->fetchRow($result);
@@ -147,7 +147,7 @@ $location = '<a href="'.QP_URL.'" title="'.$xoopsModule->name().'">'.$xoopsModul
 $pt = array(); // Titulo de la página
 $pt[] = $xoopsModule->name();
 foreach($rutas as $k){
-	$location .= '&raquo; <a href="'.$k->getLink().'">'.$k->name.'</a> ';
+	$location .= '&raquo; <a href="'.$k->permalink().'">'.$k->name.'</a> ';
 	$pt[] = $k->name;
 }
 $location .= '&raquo; '.$page->title;
@@ -173,9 +173,9 @@ if ($mc['related']){
 	while ($row = $db->fetchArray($result)){
 		$rp = new QPPage();
 		$rp->assignVars($row);
-		$tpl->append('related', array('id'=>$rp->id(),'link'=>$rp->getPermaLink(),'title'=>$rp->getTitle(),
-				'modified'=>formatTimestamp($rp->getModDate(),'c'),
-				'hits'=>$rp->getReads(),'desc'=>$rp->getDescription()));
+		$tpl->append('related', array('id'=>$rp->id(),'link'=>$rp->permalink(),'title'=>$rp->title,
+				'modified'=>formatTimestamp($rp->modified,'c'),
+				'hits'=>$rp->hits,'desc'=>$rp->description));
 	}
 }
 

@@ -17,13 +17,14 @@ $modversion = array(
     'license'       => 'GPL 2',
     'dirname'       => 'qpages',
     'official'      => 0,
+    'onUpdate'      => 'include/update.php',
 
     // Common Utilities
     'rmnative'      => 1,
     'rmversion'     => array(
         'major'     => 2,
         'minor'     => 0,
-        'revision'  => 18,
+        'revision'  => 25,
         'stage'     => -2,
         'name'      => 'Quick Pages'
     ),
