@@ -17,8 +17,17 @@ class QPPage extends RMObject
 	private $metas = array();
 	private $squeeze = '';
 	private $sales = '';
+    /**
+     * @var string Template name
+     */
+    private $template_name = '';
+    /**
+     * @var array Template options
+     */
+    private $options = array();
 
 	function __construct($id=null){
+
 		$this->db =& XoopsDatabaseFactory::getDatabaseConnection();
 		$this->_dbtable = $this->db->prefix("mod_qpages_pages");
 		$this->setNew();
@@ -34,8 +43,72 @@ class QPPage extends RMObject
 			if ($this->loadValues($id))	$this->unsetNew();
 			$this->primary = "id_page";
 		}
+
+        if ( $this->isNew() )
+            return;
+
+        if ( $this->template == '' )
+            return true;
+
+        $tpl_info = pathinfo( $this->template );
+        $this->template_name = str_replace( "tpl-", '', $tpl_info['filename'] );
 		
 	}
+
+    /**
+     * Gets a value from template option. When name is not provided, then all options are returned
+     * @param string $name Name of the option
+     * @return mixed
+     */
+    public function tpl_option( $name = '' ){
+
+        if ( empty( $this->options ) )
+            $this->load_template_options();
+
+        if ( $name == '' )
+            return $this->options;
+
+        if ( isset( $this->options[ $name ] ) )
+            return $this->options[ $name ];
+
+        return false;
+
+    }
+
+    /**
+     * Sets the options for the selected template
+     * @param array $options
+     */
+    public function set_template_options( $options ){
+
+        $this->options = $options;
+
+    }
+
+    /**
+     * Load options for the selected template from database
+     * @return array
+     */
+    protected function load_template_options(){
+
+        /*if ( $this->template_name == '' )
+            return array();
+
+        $this->options = array();
+        $sql = "SELECT * FROM " . $this->db->prefix("mod_qpages_templates") . " WHERE page = " . $this->id() . " AND template = '" . $this->template_name . "';";
+        $result = $this->db->query( $sql );
+        while ( $row = $this->db->fetchArray( $result ) ){
+
+            $this->options[ $row['name'] ] = $row['valuetype'] == 'array' ? json_decode($row['value'], true) : $row['value'];
+
+        }*/
+
+        $file = XOOPS_CACHE_PATH . '/qpages';
+        $file .= '/' . $this->template_name . '-' . $this->id() . '.json';
+
+        $this->options = json_decode( file_get_contents( $file ), true );
+
+    }
 
     public function load_home(){
 
@@ -135,6 +208,7 @@ class QPPage extends RMObject
 	public function update(){
 		
 		if (!empty($this->metas)) $this->saveMetas();
+        if ( $this->getVar('template') != '' ) $this->save_options();
 
 		if(!$this->updateTable())
 			return false;
@@ -155,6 +229,8 @@ class QPPage extends RMObject
 
 		if (!empty($this->metas)) $this->saveMetas();
 
+        if ( $this->getVar('template') != '' ) $this->save_options();
+
 		return $return;
 	}
 
@@ -173,6 +249,50 @@ class QPPage extends RMObject
 
         $sql = "UPDATE " . $this->_dbtable ." SET hits = hits+1 WHERE id_page = " . $this->id();
         return $this->db->queryF($sql);
+
+    }
+
+    private function save_options(){
+
+        /*$this->db->queryF( "DELETE FROM ".$this->db->prefix("mod_qpages_templates")." WHERE page='".$this->id()."'");
+        $sql = '';
+
+        if ( empty( $this->options ) )
+            return true;
+
+        foreach( $this->options as $name => $value ){
+
+            $type = '';
+
+            if ( is_array( $value ) ){
+                $value = json_encode( $value );
+                $type = 'array';
+            }
+
+            $sql .= ( $sql == '' ? '' : ', ') . "(".$this->id().", '$name', '$value', '$type', '".$this->template_name."')";
+
+        }
+
+        $sql = "INSERT INTO " . $this->db->prefix("mod_qpages_templates") . " (`page`,`name`,`value`,`valuetype`,`template`) VALUES " . $sql;
+
+        return $this->db->queryF( $sql );*/
+
+        if ( empty( $this->options ) )
+            return true;
+
+        $tpl_info = pathinfo( $this->getVar('template') );
+        $path = XOOPS_ROOT_PATH . $tpl_info['dirname'];
+        $url = XOOPS_URL . $tpl_info['dirname'];
+
+        $file = XOOPS_CACHE_PATH . '/qpages';
+        if ( !is_dir( $file ) )
+            mkdir( $file, 0777 );
+
+        $this->options['url'] = $url;
+        $this->options['path'] = $path;
+
+        $file .= '/' . $this->template_name . '-' . $this->id() . '.json';
+        file_put_contents( $file, json_encode( $this->options ) );
 
     }
 	

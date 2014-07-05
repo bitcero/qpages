@@ -49,11 +49,19 @@
 
 	<div class="yes-normal yes-redir   form-group" id="qp-description">
 		<label><strong><?php _e('Page description:','qpages'); ?></strong></label>
-		<textarea placeholder="<?php _e('Short description for page','qpages'); ?>" name="extract" class="form-control" cols="45" rows="3"><?php echo $page->isNew() ? '' : $page->getVar('extract','e'); ?></textarea>
+		<textarea placeholder="<?php _e('Short description for page','qpages'); ?>" name="excerpt" class="form-control" cols="45" rows="3"><?php echo $page->isNew() ? '' : $page->getVar('excerpt','e'); ?></textarea>
 	</div>
 
-    <div class="form-group">
+    <div class="form-group no-redir yes-normal">
         <?php echo $editor->render(); ?>
+    </div>
+
+    <div id="qp-page-options"<?php echo $page->template != '' ? '' : ' style="display: none;"'; ?>>
+    <?php if( $page->template != '' ): ?>
+
+        <?php echo QPFunctions::template_form( $page ); ?>
+
+    <?php endif; ?>
     </div>
 
     <div class="<?php echo $page->getVar('type')!=='redir' ? 'hidden-field' : ''; ?> no-normal yes-redir form-group" id="qp-url-field">
@@ -104,12 +112,12 @@
         </div>
     </div>
 
-	<input type="hidden" name="action" value="<?php echo $edit ? 'saveedited' : 'save'; ?>">
-	<input type="hidden" name="category" value="<?php echo $category; ?>">
+	<input type="hidden" name="action" id="qpages-action" value="<?php echo $edit ? 'saveedited' : 'save'; ?>">
+	<input type="hidden" name="category" value="<?php echo $edit ? $page->category : (isset( $category ) ? $category : 0); ?>">
 	<?php if ( isset($pageNum) ): ?>
     <input type="hidden" name="page" value="<?php echo $pageNum; ?>">
     <?php endif; ?>
-	<?php if($edit): ?><input type="hidden" name="id" value="<?php echo $page->id(); ?>"><?php endif; ?>
+	<?php if($edit): ?><input type="hidden" name="id" value="<?php echo $page->id(); ?>" id="page-id"><?php endif; ?>
 	<?php echo $xoopsSecurity->getTokenHTML(); ?>
 
 </form>

@@ -108,8 +108,83 @@ $(document).ready(function(){
 
 
 	});
+
+    $("#custom-tpl").change( function(){
+
+        /**
+         * If no file selected then hide the options panel
+         */
+        if ( $( this).val() == '' ){
+            $("#qp-page-options").slideUp(250);
+            return;
+        }
+
+        qp_load_template_options( $( this).val() );
+
+    } );
 	
 });
+
+/**
+ * Load the options panel for a specific template
+ * @param int tpl Template id
+ */
+function qp_load_template_options( tpl ){
+
+    var page = $("#page-id");
+    var id = page.length == 1 ? $(page).val() : 0;
+
+    var params = {
+        id: id,
+        file: tpl,
+        CUTOKEN_REQUEST: $("#cu-token").val(),
+        action: 'load-panel'
+    };
+
+    $.post( 'pages.php', params, function( response ){
+
+        // Error handler
+        if ( response.error == 1 ){
+
+            if ( response.token == undefined ){
+                window.location.reload();
+                return;
+            }
+
+            show_alert_options( response.message, 'danger' );
+            $("#cu-token").val( response.token );
+            return;
+
+        }
+
+        if ( response.token != undefined )
+            $("#cu-token").val( response.token );
+
+        $("#qp-page-options").html( response.form).slideDown(250);
+
+
+    }, 'json' );
+
+}
+
+/**
+ * Show an alert box in the options panel
+ * @param string text Text to show in alert box
+ * @param string type Type of alert to show (default: info)
+ */
+function show_alert_options( text, type ){
+
+    if ( text == undefined || text == '' )
+        return;
+
+    type = type == undefined || type == '' ? 'info' : type;
+
+    var alert = '<div class="alert alert-'+type+'">' + text + '</div>';
+
+    $("#qp-page-options").html(alert);
+    window.location.href = '#qp-page-options';
+
+}
 
 function qp_verify_fields(){
 
@@ -130,6 +205,8 @@ function qp_verify_fields(){
 	var params = $("#frm-page").serialize();
 	params += '&' + $("#frm-basic-options").serialize();
 	params += '&' + $("#frm-view").serialize();
+	params += '&' + $("#frm-defimage").serialize();
+	params += '&' + $("#frm-page-template").serialize();
 
 	$("#qp-blocker-info span").html(qpLang.saving).removeClass('qp-error');
 

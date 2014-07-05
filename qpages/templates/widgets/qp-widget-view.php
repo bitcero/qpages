@@ -3,8 +3,8 @@
         <div class="form-group">
             <label><strong><?php _e('Page status:','qpages'); ?></strong></label>
             <select name="public" class="form-control">
-                <option value="1"<?php echo $page->getVar('public') ? ' selected="selected"' : ''; ?>><?php _e('Published','qpages'); ?></option>
-                <option value="0"<?php echo $page->getVar('public') ? '' : ' selected="selected"'; ?>><?php _e('Draft','qpages'); ?></option>
+                <option value="1"<?php echo $page->getVar('public')==1 ? ' selected="selected"' : ''; ?>><?php _e('Published','qpages'); ?></option>
+                <option value="0"<?php echo $page->getVar('public')==0 ? ' selected="selected"' : ''; ?>><?php _e('Draft','qpages'); ?></option>
             </select>
         </div>
 

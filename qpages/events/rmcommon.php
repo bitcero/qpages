@@ -25,6 +25,7 @@ class QpagesRmcommonPreload
 
             $widgets[] = qp_widget_basic($page);
             $widgets[] = qp_widget_visualization($page);
+            $widgets[] = qp_widget_template($page);
             $widgets[] = qp_widget_image($page);
 
         }

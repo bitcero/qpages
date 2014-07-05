@@ -1,18 +1,7 @@
 <h1 class="cu-section-title"><i class="icon-dashboard"></i> <?php _e('Dashboard','qpages'); ?></h1>
 <div id="qp-dashboard-container" class="row" data-boxes="load" data-news="load" data-module="qpages" data-target="#qp-news-content">
 
-	<div id="qp-dash-left" class="col-md-5" data-box="module-box-left">
-
-        <div class="cu-box">
-            <div class="box-header">
-                <h3><i class="fa fa-thumbs-up"></i> <?php _e('Support my Work','dtransport'); ?></h3>
-            </div>
-            <div class="box-content support-me">
-                <img class="avatar" src="http://www.gravatar.com/avatar/<?php echo $myEmail; ?>?s=80" alt="Eduardo Cortés (bitcero)" />
-                <p><?php _e('Do you like my work? Then maybe you want support me to continue developing new modules.','dtransport'); ?></p>
-                <?php echo $donateButton; ?>
-            </div>
-        </div>
+	<div id="qp-dash-left" class="col-md-5" data-box="qpages-box-left">
 
 		<div class="cu-box box-collapse">
             <div class="box-header">
@@ -64,7 +53,7 @@
 		
 	</div>
 
-	<div id="qp-dash-right" class="col-md-7">
+	<div id="qp-dash-right" class="col-md-7" data-box="qpages-box-right">
 		
 		<div class="cu-box">
             <div class="box-header">

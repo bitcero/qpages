@@ -76,34 +76,30 @@ $catego = new QPCategory($page->category);
 if ( $page->template != '' ){
 
     $file = XOOPS_ROOT_PATH . $page->template;
+    $file_data = pathinfo( $page->template );
 
-    $content = file_get_contents( $file );
-    if ( !$content ) return;
+    /**
+     * Load template data
+     */
+    $template = QPFunctions::templateInfo( XOOPS_ROOT_PATH . $file_data['dirname'], $file_data['basename'] );
+    // Set path to template dir
+    $template->path = XOOPS_ROOT_PATH . $file_data[ 'dirname' ];
+    // Set url to template dir
+    $template->url = XOOPS_URL . $file_data['dirname'];
+    // Template Settings
+    $tplSettings = (object) $page->tpl_option();
 
-    if ( substr( $file, -4 ) == '.php' ){
-
-        $info = array();
-        preg_match( "/\/\*(.*)\*\//s", $content, $info );
-
-    } elseif ( substr( $file, -5 ) == '.html' ){
-
-        $info = array();
-        preg_match( "/^<{\*(.*)\*\}>/sm", $content, $info );
-
-    }
-
-    if( !isset($info[1])) return;
-
-    $data = (object) parse_ini_string($info[1]);
-    unset($content, $info);
+    unset($file_data);
 
     RMTemplate::get()->header();
 
     $xoopsTpl->assign('xoops_pagetitle', $page->title);
 
     if ( substr($page->template, -4 ) == '.php'){
-        if ( isset( $data->Standalone ) && $data->Standalone )
+        if ( isset( $template->Standalone ) && $template->Standalone )
+
             include $file;
+
         else {
 
             include $file;
@@ -112,7 +108,7 @@ if ( $page->template != '' ){
 
     } else {
         qp_assign_page( $page );
-        if ( isset( $data->Standalone ) && $data->Standalone )
+        if ( isset( $template->Standalone ) && $template->Standalone )
             echo $GLOBALS['xoopsTpl']->fetch($file);
         else {
             echo $GLOBALS['xoopsTpl']->fetch($file);

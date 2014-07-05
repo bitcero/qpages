@@ -75,12 +75,12 @@ class QPFunctions
 		foreach($paths as $path){
 
 			if(!is_dir($path)) continue;
-			$dirs = $lists->getFileListAsArray($path);
+			$dirs = $lists->getDirListAsArray( $path );
 
-			foreach($dirs as $file ){
-                if ( substr( $file, 0, 4 ) != "tpl-" ) continue;
+			foreach($dirs as $dir ){
+                if ( !file_exists( $path . '/' . $dir . '/tpl-' . $dir . '.php' ) ) continue;
 
-				$info = QPFunctions::templateInfo($path, $file);
+				$info = QPFunctions::templateInfo($path . '/' . $dir, 'tpl-' . $dir . '.php');
                 if (false !== $info)
                     $tpls[] = $info;
 			}
@@ -90,6 +90,36 @@ class QPFunctions
 		return $tpls;
 
 	}
+
+    /**
+     * Gets the template form to show in pages creator
+     * @param QPPage $page QPPAge object
+     * @return string
+     */
+    public function template_form( QPPage $page ){
+
+        if ( !is_a( $page, 'QPPage' ) )
+            return false;
+
+        $form = new RMForm('','','');
+
+
+        $file_data = pathinfo( $page->template );
+        $path = XOOPS_ROOT_PATH . $file_data[ 'dirname' ];
+        $form_file = $path . '/form-' . str_replace( "tpl-", '', $file_data['filename'] ) . '.php';
+
+        if ( !file_exists( $form_file ) )
+            return false;
+
+        $tplSettings = (object) $page->tpl_option();
+
+        ob_start();
+        include $form_file;
+        $form = ob_get_clean();
+
+        return $form;
+
+    }
 
 	/**
 	 * Función para obtener las categorías en un array
@@ -167,6 +197,19 @@ class QPFunctions
 
         echo "<h1>ERROR 404. Document not Found</h1>";
         die();
+
+    }
+
+    /**
+     * Makes the URL to include dynamic styles
+     * @param QPPage $page
+     * @param string $tpl Template name
+     * @param string $file Relative path from css to include
+     * @return string
+     */
+    static function dynamic_style( QPPage $page, $tpl, $file ){
+
+        return XOOPS_URL . '/modules/qpages/css/styles.php?page=' . $page->id() . '&amp;tpl=' . $tpl . '&amp;css=' . urlencode( $file );
 
     }
 

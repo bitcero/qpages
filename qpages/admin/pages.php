@@ -311,6 +311,26 @@ function savePage($edit=0){
 	foreach($meta_name as $k => $v){
 		$page->add_meta($v, $meta_value[$k]);
 	}
+
+    /**
+     * Save template options
+     * We need to determine the name of the template in order to get its options.
+     * Example:
+     *      If template is called "clean", then the  options will reside in the
+     *      $_POST['clean'] index. We need to get this index beacause all options for theme
+     *      will be in there.
+     */
+    if ( $custom_tpl != '' ){
+
+        $tpl_info = pathinfo( $custom_tpl );
+        $var_name = str_replace("tpl-", '', $tpl_info['filename']);
+        unset( $tpl_info );
+        $options = isset( ${$var_name}) ? ${$var_name} : array();
+
+        if ( !empty( $options ) )
+            $page->set_template_options( $options );
+
+    }
 	
     $ret = $edit ? $page->update() : $page->save();
 
@@ -348,8 +368,9 @@ function savePage($edit=0){
 	if(!$edit) $data['redirect'] = 'pages.php?action=edit&id='.$page->id();
 	if(true!==$htResult)
 		$data['htdata'] = $htResult!='' ? $htResult : '';
-    
-	if ($ret){
+
+
+    if ($ret){
 		QPFunctions::jsonResponse(__('Page saved successfully!','qpages'), 0, 1, $data);
 	} else {
 		QPFunctions::jsonResponse(__('Errors occurs while trying to save page!','qpages'), 1, 1);
@@ -495,6 +516,68 @@ function clonePage(){
     
 }
 
+/**
+ * Loads the options for a given template
+ */
+function qpages_load_template_options(){
+    global $xoopsSecurity, $xoopsLogger;
+
+    $xoopsLogger->activated = false;
+    $xoopsLogger->renderingEnabled = false;
+
+    $id = RMHttpRequest::post( 'id', 'integer', 0 );
+    $file = RMHttpRequest::post( 'file', 'string', '' );
+
+    if ( !$xoopsSecurity->check( true, false, 'CUTOKEN' ) )
+        send_json_reponse( 0, 1, array(
+            __('Session token not valid!', 'qpages')
+        ) );
+
+    if ( $file == '' )
+        send_json_reponse( 1, 1, array(
+            'message' => __('No template file has been specified!', 'qpages' )
+        ));
+
+    // Page can be a new object
+    $page = new QPPage( $id );
+
+    $file_data = pathinfo( $file );
+    $path = XOOPS_ROOT_PATH . $file_data[ 'dirname' ];
+    $form_file = $path . '/form-' . str_replace( "tpl-", '', $file_data['filename'] ) . '.php';
+
+    if ( !file_exists( $form_file ) )
+        send_json_reponse( 1, 0, array(
+            'form' => ''
+        ));
+
+    $form = new RMForm('','','');
+
+    $tplSettings = (object) $page->tpl_option();
+
+    ob_start();
+    include $form_file;
+    $form = ob_get_clean();
+    send_json_reponse( 1, 0, array(
+        'form' => $form
+    ));
+
+}
+
+
+function send_json_reponse( $token, $error, $data ){
+    global $xoopsSecurity;
+
+    if ( $token )
+        $data['token'] = $xoopsSecurity->createToken(0, 'CUTOKEN');
+
+    if ( $error )
+        $data['error'] = 1;
+
+    echo json_encode( $data );
+    die();
+
+}
+
 $action = rmc_server_var($_REQUEST, 'action', '');
 
 switch ($action){
@@ -533,6 +616,9 @@ switch ($action){
 		break;
     case 'clone':
         clonePage();
+        break;
+    case 'load-panel':
+        qpages_load_template_options();
         break;
 	default:
 		showPages();

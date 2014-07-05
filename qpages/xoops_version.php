@@ -30,13 +30,13 @@ $modversion = array(
     ),
     'rewrite'       => 0,
     'updateurl'     => "http://www.xoopsmexico.net/modules/vcontrol/",
-    'help'          => '',
+    'help'          => 'docs/readme.html',
 
     // Author information
     'author'        => "Eduardo Cortes",
     'authormail'    => "me@eduardocortes.mx",
-    'authorweb'     => "XOOPS Mexico",
-    'authorurl'     => "http://www.xoopsmexico.net",
+    'authorweb'     => "EduardoCortes.mx",
+    'authorurl'     => "http://eduardocortes.mx",
     'credits'       => "Eduardo Cortes",
 
     // Logo and icons
@@ -45,6 +45,40 @@ $modversion = array(
     'icon24'        => 'images/qpages-24.png',
     'icon32'        => 'images/qpages-32.png',
     'icon48'        => "images/qpages-48.png",
+
+    // Social
+    'social'        => array(
+            array(
+                'title' => 'Twitter',
+                'type'  => 'twitter-square',
+                'url'   => 'http://www.twitter.com/bitcero/'
+            ),
+            array(
+                'title' => 'Facebook',
+                'type'  => 'facebook-square',
+                'url'   => 'http://www.facebook.com/eduardo.cortes.hervis/'
+            ),
+            array(
+                'title' => 'Instagram',
+                'type'  => 'instagram',
+                'url'   => 'http://www.instagram.com/eduardocortesh/'
+            ),
+            array(
+                'title' => 'LinkedIn',
+                'type'  => 'linkedin-square',
+                'url'   => 'http://www.linkedin.com/in/bitcero/'
+            ),
+            array(
+                'title' => 'GitHub',
+                'type'  => 'github',
+                'url'   => 'http://www.github.com/bitcero/'
+            ),
+            array(
+                'title' => __('My Blog', 'qpages'),
+                'type'  => 'quote-left',
+                'url'   => 'http://eduardocortes.mx'
+            ),
+    ),
 
     // Backend
     'hasAdmin'      => 1,
