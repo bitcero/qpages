@@ -61,6 +61,30 @@ class QpagesRmcommonPreload
         if ( $page->isNew() )
             return;
 
+        /**
+         * Load required files
+         */
+        include_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpfunctions.class.php';
+        include_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpcategory.class.php';
+        include_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpcolor.class.php';
+
+        $file = XOOPS_ROOT_PATH . $page->template;
+        $file_data = pathinfo( $page->template );
+        $cuSettings = RMSettings::cu_settings();
+
+        /**
+         * Load template data
+         */
+        $template = QPFunctions::templateInfo( XOOPS_ROOT_PATH . $file_data['dirname'], $file_data['basename'] );
+        // Set path to template dir
+        $template->path = XOOPS_ROOT_PATH . $file_data[ 'dirname' ];
+        // Set url to template dir
+        $template->url = XOOPS_URL . $file_data['dirname'];
+        // Template Settings
+        $tplSettings = (object) $page->tpl_option();
+
+        unset($file_data);
+
         if ( $page->template == '' ){
             RMTemplate::get()->header();
             assign_template( $page );

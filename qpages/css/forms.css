@@ -38,6 +38,7 @@ body{
 	text-align: center;
 	border-top: 1px solid #97A095;
 	border-top: 1px solid rgba(0,0,0,0.1);
+    z-index: 1060;
 }
 #qp-blocker{
 	z-index: 1100;

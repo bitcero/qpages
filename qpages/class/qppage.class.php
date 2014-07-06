@@ -50,10 +50,19 @@ class QPPage extends RMObject
         if ( $this->template == '' )
             return true;
 
-        $tpl_info = pathinfo( $this->template );
-        $this->template_name = str_replace( "tpl-", '', $tpl_info['filename'] );
+        $this->make_tpl_name();
 		
 	}
+
+    private function make_tpl_name(){
+
+        if ( $this->template == '' )
+            return;
+
+        $tpl_info = pathinfo( $this->template );
+        $this->template_name = str_replace( "tpl-", '', $tpl_info['filename'] );
+
+    }
 
     /**
      * Gets a value from template option. When name is not provided, then all options are returned
@@ -115,6 +124,11 @@ class QPPage extends RMObject
         $this->primary = 'home';
         if ($this->loadValues(1))
             $this->unsetNew();
+
+        $this->primary = 'id_page';
+
+        $tpl_info = pathinfo( $this->template );
+        $this->template_name = str_replace( "tpl-", '', $tpl_info['filename'] );
 
     }
 

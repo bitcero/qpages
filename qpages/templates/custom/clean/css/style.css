@@ -1,56 +1,16 @@
 @charset "utf-8";
 
-
-/*
- *Wealth.life landing page template
- *Author : Jitu chauhan
- *
-*/
-
-/*--------------------
-	Layout
-
-	*Nav 		/ 	#nav
-	*Intro 		/	#intro
-	*About 		/	#about
-	*Services	/ 	#services
-	*Doctor 	/ 	#doctor
-						-testimonals
-						-client
-	*Video      /	#video
-	==================================
-	
-	*Footer		/   #footer
-	
----------------------------------------------*/
-
-/*--------------------------------------------
-	  COLOR
-	  			   primary : color:#f0f1ec;
-	  				  body :
-	h1, h2, h3, h4, h5, h6 : color:#<?php echo $tplSettings->color1; ?>;;
-						 p : color:#72736e;
-						 a : color:#<?php echo $tplSettings->color2; ?>;
-				   a:hover : color:#<?php echo $tplSettings->color1; ?>;;
-
---------------------------------------------------------*/
-
-/*--------------------------------------------------------
-	  						FONT
-
-	h1, h2, h3, h4, h5, h6 : font-family: 'Asap', sans-serif;
-						 p : font-family: 'Asap', sans-serif;
-					 ul li : font-family: 'Asap', sans-serif;
-
---------------------------------------------------------*/
-
-/*--------------------
-	  general
----------------------*/
 body {
 	width: 100%;
 	height: 100%;
 	font-family: <?php echo $tplSettings->body_ff; ?>;
+    background-color: #<?php echo $tplSettings->bgcolor; ?>;
+    <?php if( $tplSettings->bgimage != '' ): ?>
+    background-image: url(<?php echo $tplSettings->bgimage; ?>);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    <?php endif; ?>
 }
 html {
 	width: 100%;
@@ -76,7 +36,7 @@ h3 {
 p {
 	font-size:16px;
 	line-height:26px;
-	color:#72736e;
+	color:#<?php echo $tplSettings->textcolor; ?>;
 	margin-bottom: 30px;
 }
 ul {
@@ -85,8 +45,13 @@ ul {
 }
 ul li {
 	line-height:26px;
-	color:#72736e;
+	color:#<?php echo $tplSettings->textcolor; ?>;
 }
+<?php if ( $tplSettings->bgimage != '' ): ?>
+section{
+    background-color: #<?php echo $tplSettings->seccolor; ?>;
+}
+<?php endif; ?>
 .green-icon {
 	margin-bottom:40px;
 	color:#<?php echo $tplSettings->color2; ?>;
@@ -96,8 +61,9 @@ ul li {
 	color:#<?php echo $tplSettings->color1; ?>;;
 }
 .fa-size{ font-size:24px;}
+
 /*--------------------
-	  button
+	  buttons
 ---------------------*/
 
 .btn-orange {
@@ -146,20 +112,22 @@ ul li {
     background-color:#<?php echo $qpColor->darken( $tplSettings->color4, 5 ); ?>;
 }
 
-/* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
-The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children
-of those sections to manage the look and feel of the site. */
 
-/***************
-	nav
-***************/
+/*---------------
+	   nav
+----------------*/
 .navbar-nav {
 	float: right;
 	margin: 0;
 }
 .navbar-default {
+    <?php if( $tplSettings->bgimage == '' ): ?>
 	background-color: #<?php echo $tplSettings->header_color; ?>;
-	border-bottom:1px solid rgba(0,0,0,0.1);
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    <?php else: ?>
+    background-color: rgba(0,0,0,0.1);
+    border-bottom: 0;
+    <?php endif; ?>
 }
 .navbar-brand {
 	float: left;
@@ -169,7 +137,7 @@ of those sections to manage the look and feel of the site. */
 	height: 20px;
 }
 .navbar-default .navbar-nav>li>a {
-	color: #72736e;
+	color: #<?php echo $tplSettings->textcolor; ?>;
 	font-size:17px;
 	-webkit-font-smoothing: antialiased;
 	float:left;
@@ -185,7 +153,7 @@ of those sections to manage the look and feel of the site. */
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 }
-/**** Mobile menu *****/
+/*--------------- Mobile menu ---------------*/
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
 background-color: #<?php echo $tplSettings->color2; ?>;
 border-color: #<?php echo $tplSettings->color2; ?>;
@@ -204,36 +172,46 @@ background-color: #fff;
 .social a {
 	padding: 10px 5px!important;
 	margin-top:3px;
-	color: #<?php echo $tplSettings->color2; ?>!important;
+	color: #<?php echo $tplSettings->header_text1; ?>!important;
 }
 .social a:hover {
-	color:#<?php echo $tplSettings->color1; ?>;!important;
+	color:#<?php echo $tplSettings->header_text2; ?>!important;
 }
 .logo {
 	font-family: <?php echo $tplSettings->em_ff; ?>;
 	font-weight:400;
 	text-transform:lowercase;
-	color:#<?php echo $tplSettings->color2; ?>;
+	color: #<?php echo $tplSettings->header_text2; ?>;
 }
 .logo-brand {
 	font-weight:700;
+    color: #<?php echo $tplSettings->header_text1; ?>;
 }
-/***************
-	intro
-***************/
+
+/*-----------------
+    Main Content
+-------------------*/
 .intro-section {
 	padding-top: 100px;
-	background: #f0f1ec;
+    <?php if ( $tplSettings->bgimage == '' ): ?>
+	background: #<?php echo $tplSettings->header_color; ?>;
+    <?php else: ?>
+    background-color: transparent;
+    <?php endif; ?>
 	padding-bottom:100px;
 }
 .intro-caption {
 	margin-top:100px;
 }
+.intro-caption > p{
+    color: #<?php echo $tplSettings->header_text; ?>!important;
+}
 .intro-title {
 	font-size:48px;
+    color: #<?php echo $tplSettings->header_text1; ?>;
 }
 .intro-title span {
-	color:#<?php echo $tplSettings->color2; ?>;
+	color:#<?php echo $tplSettings->header_text2; ?>;
 }
 .call-info {
 	color:#<?php echo $tplSettings->color4; ?>;
@@ -242,39 +220,12 @@ background-color: #fff;
 	margin-top:30px;
 }
 .divider{ border-top:#d5d7cf solid 1px; margin: 60px 0px 60px 0px; display:block;}
-/***************
-	about
-***************/
 
-.about-section {
-	padding-top: 120px;
-	background: #fff;
-	padding-bottom:120px;
-}
 .block-title {
 	margin-bottom:60px;
 	text-align: center;
 }
-.appoinment p {
-	margin-bottom:50px;
-}
-ul.appoinment li {
-	list-style:none;
-	font-size:16px;
-	margin-bottom:35px;
-}
-ul.appoinment li:before {
-	font-family: FontAwesome;
-	content: "\f046";
-	margin-right:10px;
-}
-ul.appoinment li i {
-	margin-right:10px;
-}
-.appoinment strong {
-	color:#<?php echo $tplSettings->color3; ?>;
-}
-.appoinment-form {
+.main-form {
 	padding: 30px;
 	background-color:#fff;
 	border-radius:2px;
@@ -282,15 +233,15 @@ ul.appoinment li i {
 	-moz-box-shadow:    0px 3px 1px 0px rgba(211, 213, 207, 0.75);
 	box-shadow:         0px 3px 1px 0px rgba(211, 213, 207, 0.75);
 }
-.appoinment-form h2{
+.main-form h2{
 	color:#<?php echo $tplSettings->color2; ?>;
 }
-.appoinment-form form .form-group label {
+.main-form form .form-group label {
 	font-size:16px;
 	font-weight:normal;
 	margin-bottom:5px;
 }
-.appoinment-form form .form-group input {
+.main-form form .form-group input {
 	padding:15px 15px;
 	height: 45px;
 }
@@ -299,13 +250,13 @@ ul.appoinment li i {
 	display: inline-block;
 	margin-bottom: 5px;
 }
-/***************
+/*--------------
 	services
-***************/
+----------------*/
 
 .services-section {
 	padding-top: 90px;
-	background: #f9faf6;
+	background: #<?php echo $tplSettings->seccolor; ?>;
 	padding-bottom:60px;
 }
 .feature-block {
@@ -330,45 +281,21 @@ color: #<?php echo $tplSettings->color1; ?>;;
 .green-icon i{
 	margin-bottom:15px;
 }
-/***************
-	video
-***************/
+/*--------------
+	 video
+----------------*/
 .video-section {
 	padding-top: 90px;
 	padding-bottom:60px;
 }
 .player .video-wrapper{
   border: 10px solid #dadada!important ;
-  width: 90%;
 }
 
 .video-wrapper iframe {
 position: relative;
 width: 100%;
 border:10px solid #dbddd3;
-}
-
-/***************
-	doctor
-***************/
-.doctor-section {
-	padding-top:90px;
-	padding-bottom:60px;
-	background: #f9faf6;
-}
-
-.doctor-profile {
-	margin-top:60px;
-
-}
-.doctor-profile img {
-	margin-top:-60px;
-	width:100%;
-}
-.doctor-profile strong {
-	color:#<?php echo $tplSettings->color2; ?>;
-	margin-bottom:10px;
-	display:block;
 }
 
 .bg-profile{ background:#e8eae3; text-align: center; margin-bottom:20px; -webkit-transition: all 0.3s;
@@ -395,10 +322,12 @@ transition: all 0.3s;}
 	padding: 8px;
 	background: #fff;
 	border: 1px solid #ebece8;
+    width: 120px; height: 120px;
 }
-/****************
+
+/*--------------
 	newsletter
-****************/
+----------------*/
 
 .newsletter {
 	padding-top:60px;
@@ -415,15 +344,16 @@ transition: all 0.3s;}
 	display: block;
 	font-weight:600;
 }
-/***************
-	footer
-***************/
+
+/*-------------
+	 footer
+---------------*/
 .footer {
-	background-color:#303335;
+	background-color:#<?php echo $tplSettings->footerbg; ?>;
 }
 .social-icon {
 	font-size:24px;
-	color:#797c7e;
+	color:#<?php echo $tplSettings->footertext; ?>;
 	margin-top:45px;
 	margin-right: 25px;
 }
@@ -432,7 +362,7 @@ transition: all 0.3s;}
 }
 .ft p {
 	font-size:17px;
-	color:#797c7e;
+	color:#<?php echo $tplSettings->footertext; ?>;
 	margin-top:45px;
 }
  @media(min-width:767px) {
@@ -445,12 +375,14 @@ transition: all 0.3s;}
  .top-nav-collapse {
         /* Customize the look and feel of the collapsed top nav here */
         padding: 0;
+     background-color: #<?php echo $tplSettings->header_color; ?>;
 }
 }
 @media(max-width:767px) {
-/****************
-	nav
-****************/
+    
+/*---------------
+	   nav
+---------------*/
 
 .navbar-nav {
 float: left;
@@ -461,12 +393,12 @@ font-weight: 700;
 font-size: 24px;
 margin-top: 12px;
 }
-/*******************
-	intro-section
-*******************/
+/*---------------
+   main-section
+---------------*/
 
 .intro-section {
-	background: #f0f1ec;
+	background: #<?php echo $tplSettings->header_color; ?>;
 	padding:0px;
 }
 .call-info {
@@ -487,9 +419,9 @@ line-height: 35px;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
-/********************
+/*---------------
 	about-section
-********************/
+---------------*/
 
 .about-section {
 padding-top: 60px;
@@ -497,22 +429,19 @@ background: #fff;
 padding-bottom: 20px;
 text-align:center;
 }
-.appoinment{
-	margin-top:50px;
-}
 .block {
 margin-bottom: 0px;
 }
 .box-ct{
 	text-align:center;
 }
-/****************
+/*---------------
 	services
-****************/
+---------------*/
 
 .services-section {
 padding-top: 60px;
-background: #f9faf6;
+background: #<?php echo $tplSettings->seccolor; ?>;
 padding-bottom: 20px;
 }
 .box-icon {
@@ -521,7 +450,7 @@ width: 160px;
 -moz-border-radius: 35px;
 border-radius: 100%;
 padding: 55px;
-background-color: #f0f1ec;
+background-color: #<?php echo $tplSettings->header_color; ?>;
 color: #<?php echo $tplSettings->color1; ?>;;
 text-align: center;
 -webkit-transition: all 0.3s;
@@ -532,20 +461,20 @@ margin: 0 auto;
 .green-icon{
 	text-align:	center;
 }
-/****************
+/*---------------
 	doctor
-****************/
+---------------*/
 
 .doctor-section {
 padding-top: 60px;
 padding-bottom: 20px;
 }
-/*******************
+/*---------------
 	testimonals
-*******************/
+---------------*/
 
 .testimonials {
-background-color: #f9faf6;
+background-color: #<?php echo $tplSettings->seccolor; ?>;
 padding-top: 50px;
 padding-bottom: 20px;
 margin-top: 30px;
@@ -558,18 +487,18 @@ border: 1px solid #ebece8;
 margin-bottom: 10px;
 margin-top: 10px;
 }
-/****************
+/*---------------
 	contact
-****************/
+---------------*/
 
 .contact {
 padding-top: 60px;
 padding-bottom: 20px;
-background-color: #f9faf6;
+background-color: #<?php echo $tplSettings->seccolor; ?>;
 }
-/****************
+/*---------------
 	newsletter
-****************/
+---------------*/
 
 .newsletter {
 padding-top: 60px;
@@ -582,13 +511,13 @@ display: block;
 font-weight: 600;
 margin-top: 20px;
 }
-/****************
+/*---------------
 	footer
-****************/
+---------------*/
 
 .social-icon {
 font-size: 24px;
-color: #797c7e;
+color: #<?php echo $tplSettings->footertext; ?>;
 margin-right: 15px;
 padding-bottom: 30px;
 }

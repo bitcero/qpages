@@ -284,7 +284,7 @@ function savePage($edit=0){
 	$page->setVar('nameid', $nameid);
 	$page->setVar('home', isset($home) ? $home : 0);
 	$page->setVar('category', $category);
-	$page->setVar('extract', TextCleaner::getInstance()->clean_disabled_tags($extract));
+	$page->setVar('excerpt', TextCleaner::getInstance()->clean_disabled_tags($excerpt));
 	$page->setVar('description', $description);
 	$page->setVar('keywords', $keywords);
 	$page->setVar('custom_title', $custom_title);
