@@ -112,6 +112,8 @@ class QPFunctions
             return false;
 
         $tplSettings = (object) $page->tpl_option();
+        $tplSettings->url = XOOPS_URL . $file_data['dirname'];
+        $tplSettings->path = $path;
 
         ob_start();
         include $form_file;
@@ -211,6 +213,46 @@ class QPFunctions
 
         return XOOPS_URL . '/modules/qpages/css/styles.php?page=' . $page->id() . '&amp;tpl=' . $tpl . '&amp;css=' . urlencode( $file );
 
+    }
+
+    /**
+     * Load default settings for a specific template. Based on defaults values, when a key is not found in
+     * current settings, then the value is assigned based in defaults setting provided.
+     * @param stdClass $settings Array with current settings
+     * @param array $defaults Array with default settings
+     * @return bool The value is assigned by reference to current settings
+     */
+    static function load_defaults ( &$settings, $defaults ){
+
+        if ( !$settings || empty( $defaults ) ) return false;
+
+        foreach( $defaults as $name => $value ){
+
+            if ( !isset( $settings->{$name} ) || $settings->{$name} == '' )
+                $settings->{$name} = $value;
+
+        }
+
+        return true;
+
+    }
+
+    /**
+     * Loads a language for specified template
+     * @param string $tpl Template relative path
+     * @param $prefix Prefix for language file
+     */
+    static function load_tpl_locale( $tpl, $prefix ){
+        $exm_locale = get_locale();
+
+        if ($tpl=='') return;
+
+        $tpl_info = pathinfo( $tpl );
+        $path = $tpl_info['dirname'];
+
+        $path .= '/lang/'.$prefix.$exm_locale.'.mo';
+
+        load_locale_file(str_replace("tpl-", '', $tpl_info['filename']), $path);
     }
 
 }

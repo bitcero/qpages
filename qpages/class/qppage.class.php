@@ -305,6 +305,8 @@ class QPPage extends RMObject
         $this->options['url'] = $url;
         $this->options['path'] = $path;
 
+        $this->make_tpl_name();
+
         $file .= '/' . $this->template_name . '-' . $this->id() . '.json';
         file_put_contents( $file, json_encode( $this->options ) );
 

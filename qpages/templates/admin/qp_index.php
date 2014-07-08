@@ -21,7 +21,7 @@
 					<a href="<?php echo $page['link']; ?>"><strong><?php echo $page['title']; ?></strong></a>
 					<?php if(!$page['public']): _e('[Draft]','qpages'); endif;?>
 					&nbsp;
-					(<a href="pages.php?op=edit&amp;id=<?php echo $page['id']; ?>"><?php _e('Edit','qpages'); ?></a>)
+					(<a href="pages.php?action=edit&amp;id=<?php echo $page['id']; ?>"><?php _e('Edit','qpages'); ?></a>)
 					<span class="help-block"><small><?php echo $page['desc']; ?></small></span>
 				</li>
 				<?php endforeach; ?>
@@ -61,7 +61,29 @@
                 <h3><?php _e('Pages Statistics','qpages'); ?></h3>
             </div>
             <div class="box-content collapsable">
-                <img src="<?php echo $chart; ?>" title="<?php _e('Most viewed pages'); ?>" />
+                <script type="text/javascript">
+                    google.load("visualization", "1", {packages:["corechart"]});
+                    google.setOnLoadCallback(drawChart);
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['<?php _e('Pages', 'qpages'); ?>', '<?php _e('Hits', 'qpages'); ?>', {role: 'style'}],
+                            <?php foreach( $stats as $data ): ?>
+                            ['<?php echo $data['legend']; ?>', <?php echo $data['value']; ?>, '<?php echo $data['color']; ?>'],
+                            <?php endforeach; ?>
+                        ]);
+
+                        var options = {
+                            vAxis: {title: '<?php _e('Pages', 'qpages'); ?>',  titleTextStyle: {color: 'black'}},
+                            animation: {duration: 250},
+                            legend: {position: 'none'},
+                            height: 500
+                        };
+
+                        var chart = new google.visualization.BarChart(document.getElementById('stats'));
+                        chart.draw(data, options);
+                    }
+                </script>
+                <div id="stats"></div>
             </div>
 		</div>
 		
@@ -73,8 +95,6 @@
 			</div>
 		</div>
 		<?php endforeach; ?>
-
-        <div data-box="module-box-right"></div>
 
         <div class="row">
             <div class="col-sm-6" data-box="module-box-right-left"></div>

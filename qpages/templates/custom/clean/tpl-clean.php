@@ -193,5 +193,6 @@ Standalone  = yes
         });
     });
 </script>
+<?php echo $tplSettings->tracking; ?>
 </body>
 </html>

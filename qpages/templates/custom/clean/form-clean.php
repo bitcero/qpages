@@ -22,7 +22,8 @@
             <!-- General options -->
             <div class="tab-pane active" id="clean-general">
                 <?php
-                $font = new RMFormWebfonts('', 'clean[body_font]', $page->tpl_option( 'body_font' ) );
+                echo $tplSettings->body_font;
+                $font = new RMFormWebfonts('', 'clean[body_font]', $tplSettings->body_font );
                 ?>
                 <div class="form-group">
                     <label><?php _e('Font for body:', 'clean'); ?></label>
@@ -33,7 +34,7 @@
                     <input type="text" name="clean[body_ff]" data-rel="clean[body_font]" class="form-control" value="<?php echo $tplSettings->body_ff != '' ? $tplSettings->body_ff : "'Asap', sans-serif"; ?>">
                 </div>
                 <?php
-                $font = new RMFormWebfonts('', 'clean[em_font]', $page->tpl_option( 'em_font' ) );
+                $font = new RMFormWebfonts('', 'clean[em_font]', $tplSettings->em_font );
                 ?>
                 <div class="form-group">
                     <label><?php _e('Font for emphasised text:', 'clean'); ?></label>
@@ -108,6 +109,11 @@
                     $image = new RMFormImageUrl('', 'clean[bgimage]', $tplSettings->bgimage != '' ? $tplSettings->bgimage : '');
                     echo $image->render();
                     ?>
+                </div>
+
+                <h4>Tracking Code</h4>
+                <div class="form-group">
+                    <textarea name="clean[tracking]" class="form-control" rows="5"><?php echo $tplSettings->tracking != '' ? $tplSettings->tracking : ''; ?></textarea>
                 </div>
 
             </div>

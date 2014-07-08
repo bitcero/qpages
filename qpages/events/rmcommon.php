@@ -58,6 +58,8 @@ class QpagesRmcommonPreload
         $page = new QPPage();
         $page->load_home();
 
+        $page->addHit();
+
         if ( $page->isNew() )
             return;
 

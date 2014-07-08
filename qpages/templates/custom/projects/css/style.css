@@ -1,0 +1,184 @@
+@charset "utf-8";
+<?php include $tplSettings->path . '/defaults.php'; ?>
+body{
+    background: #FFF url(<?php echo $tplSettings->bg; ?>);
+    background-repeat: <?php echo $tplSettings->bgmode == 'tiled' ? 'repeat' : 'no-repeat'; ?>;
+    <?php if ( $tplSettings->bgmode == 'full' ): ?>background-size: cover; background-attachment: fixed;<?php endif; ?>
+    font-family: <?php echo $tplSettings->bodyff; ?>;
+    font-size: 16px;
+    color: #8f8f8f;
+}
+
+/* -------------
+     1. HEADER
+   ------------- */
+.prj-top-line{
+    height: 6px;
+    background-color: #<?php echo $tplSettings->color; ?>;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+}
+.prj-header{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#prj-logo{
+    max-height: 100px;
+}
+.prj-menu{
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+.prj-menu li{
+    padding: 4px 15px;
+}
+.prj-menu li a{
+    color: #999;
+}
+.prj-menu li a:hover{
+    color: #<?php echo $tplSettings->color; ?>;
+    text-decoration: none;
+}
+
+/* --------------
+     2. HEADING
+   -------------- */
+h1,h2,h3,h4,h5,h6{font-family: <?php echo $tplSettings->headingff; ?>;}
+h1.prj-bigh{
+    font-size: 126px;
+    color: #<?php echo $tplSettings->color; ?>;
+}
+h2.prj-bigsh{
+    font-size: 66px;
+    margin-top: 0;
+    font-weight: 300;
+}
+.prj-intro{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+/* ------------
+     3. PROJECTS
+   ------------ */
+.prj-item .prj-thumbnail{
+    max-width: 100%;
+    padding: 4px;
+    border: 10px solid rgba(0,0,0,0.15);
+}
+.prj-item .btn-primary{
+    background-color: #<?php echo $tplSettings->color; ?>;
+    border-radius: 0;
+    border: 1px solid rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+.prj-item .btn-primary:hover{
+    background-color: #<?php echo $qpColor->darken( $tplSettings->color ); ?>;
+}
+.prj-item h3{
+    font-size: 32px;
+    color: #000;
+}
+.prj-item h3 span{
+    color: #<?php echo $tplSettings->color; ?>;
+}
+
+
+/* ----------------
+     3. UTILITIES
+   ---------------- */
+.prj-hr{
+    display: block;
+    height: 12px;
+    background: url(<?php echo $tplSettings->url; ?>/images/divider.png) repeat-x;
+    margin: 40px 0;
+}
+
+
+/* ------------------------
+       RESPONSIVE TEXT
+   ------------------------ */
+.text-left-not-xs, .text-left-not-sm, .text-left-not-md, .text-left-not-lg {
+    text-align: left;
+}
+.text-center-not-xs, .text-center-not-sm, .text-center-not-md, .text-center-not-lg {
+    text-align: center;
+}
+.text-right-not-xs, .text-right-not-sm, .text-right-not-md, .text-right-not-lg {
+    text-align: right;
+}
+.text-justify-not-xs, .text-justify-not-sm, .text-justify-not-md, .text-justify-not-lg {
+    text-align: justify;
+}
+
+@media (max-width: 767px) {
+    .text-left-not-xs, .text-center-not-xs, .text-right-not-xs, .text-justify-not-xs {
+        text-align: inherit;
+    }
+    .text-left-xs {
+        text-align: left;
+    }
+    .text-center-xs {
+        text-align: center;
+    }
+    .text-right-xs {
+        text-align: right;
+    }
+    .text-justify-xs {
+        text-align: justify;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .text-left-not-sm, .text-center-not-sm, .text-right-not-sm, .text-justify-not-sm {
+        text-align: inherit;
+    }
+    .text-left-sm {
+        text-align: left;
+    }
+    .text-center-sm {
+        text-align: center;
+    }
+    .text-right-sm {
+        text-align: right;
+    }
+    .text-justify-sm {
+        text-align: justify;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .text-left-not-md, .text-center-not-md, .text-right-not-md, .text-justify-not-md {
+        text-align: inherit;
+    }
+    .text-left-md {
+        text-align: left;
+    }
+    .text-center-md {
+        text-align: center;
+    }
+    .text-right-md {
+        text-align: right;
+    }
+    .text-justify-md {
+        text-align: justify;
+    }
+    .pull-left-md{ float: left;}
+}
+@media (min-width: 1200px) {
+    .text-left-not-lg, .text-center-not-lg, .text-right-not-lg, .text-justify-not-lg {
+        text-align: inherit;
+    }
+    .text-left-lg {
+        text-align: left;
+    }
+    .text-center-lg {
+        text-align: center;
+    }
+    .text-right-lg {
+        text-align: right;
+    }
+    .text-justify-lg {
+        text-align: justify;
+    }
+}

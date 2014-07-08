@@ -66,6 +66,8 @@ if (!in_array(0, $page->groups )){
 	}
 }
 
+$page->addHit();
+
 if ($page->type == 'redir'){
 	header('location: '.$page->url);
 	die();

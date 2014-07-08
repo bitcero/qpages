@@ -216,6 +216,9 @@ function savePage($edit=0){
 
 		$$k = $v;
 
+        if ( is_array( $v ) )
+            continue;
+
 		$query .= $query=='' ? $k.'='.urlencode($v) : '&'.$k.'='.urlencode($v);
 
 	}
@@ -324,7 +327,6 @@ function savePage($edit=0){
 
         $tpl_info = pathinfo( $custom_tpl );
         $var_name = str_replace("tpl-", '', $tpl_info['filename']);
-        unset( $tpl_info );
         $options = isset( ${$var_name}) ? ${$var_name} : array();
 
         if ( !empty( $options ) )
@@ -521,6 +523,8 @@ function clonePage(){
  */
 function qpages_load_template_options(){
     global $xoopsSecurity, $xoopsLogger;
+
+    define( "QP_AJAX_LOADED", 1 );
 
     $xoopsLogger->activated = false;
     $xoopsLogger->renderingEnabled = false;
