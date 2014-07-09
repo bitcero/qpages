@@ -202,6 +202,9 @@ function qp_verify_fields(){
 		return;
 	}
 
+    if ( 'undefined' !== tinymce )
+        tinymce.activeEditor.save();
+
 	var params = $("#frm-page").serialize();
 	params += '&' + $("#frm-basic-options").serialize();
 	params += '&' + $("#frm-view").serialize();

@@ -8,6 +8,7 @@ $defaults = array(
     'headingff' => "'Jockey One', sans-serif",
     'body'      => 'http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic',
     'bodyff'    => "'Roboto', sans-serif",
-    'color'     => '49BBCC'
+    'color'     => '49BBCC',
+    'copy'      => '&copy; Your Site 2014.'
 );
 QPFunctions::load_defaults( $tplSettings, $defaults );

@@ -55,6 +55,20 @@ include ('defaults.php');
 
     </div>
 
+    <div class="row" id="prj-footer">
+        <div class="col-xs-6">
+            <?php echo $tplSettings->copy; ?>
+        </div>
+        <div class="col-xs-6">
+            <ul class="list-inline pull-right prj-footer-menu">
+                <?php $links = explode("\n", $tplSettings->links ); ?>
+                <?php foreach( $links as $link ): ?>
+                    <li><?php echo $link; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+
 </div>
 
 </body>

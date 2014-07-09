@@ -21,7 +21,7 @@
 
         <ul class="nav nav-tabs" role="tablist">
             <li class="active"><a href="#prj-general" role="tab" data-toggle="tab"><?php _e('General', 'projects'); ?></a></li>
-            <li><a href="#prj-header" role="tab" data-toggle="tab"><?php _e('General', 'projects'); ?></a></li>
+            <li><a href="#prj-header" role="tab" data-toggle="tab"><?php _e('Header & Footer', 'projects'); ?></a></li>
             <li><a href="#prj-fonts" role="tab" data-toggle="tab"><?php _e('Fonts', 'projects'); ?></a></li>
             <li><a href="#prj-content" role="tab" data-toggle="tab"><?php _e('Content', 'projects'); ?></a></li>
         </ul>
@@ -74,6 +74,11 @@
                     <label><?php _e('Top links:', 'projects'); ?></label>
                     <textarea class="form-control" name="projects[links]" rows="3"><?php echo $tplSettings->links; ?></textarea>
                     <small class="help-block"><?php _e('Add a new line for each link that you wish to show in navigation bar', 'projects'); ?></small>
+                </div>
+
+                <div class="form-group">
+                    <label><?php _e('Copyright notice:','projects'); ?></label>
+                    <input type="text" class="form-control" name="projects[copy]" value="<?php echo $tplSettings->copy; ?>">
                 </div>
 
             </div>

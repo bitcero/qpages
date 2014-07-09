@@ -24,7 +24,7 @@ $modversion = array(
     'rmversion'     => array(
         'major'     => 2,
         'minor'     => 0,
-        'revision'  => 35,
+        'revision'  => 36,
         'stage'     => -1,
         'name'      => 'Quick Pages'
     ),
@@ -95,9 +95,7 @@ $modversion = array(
     'tables'        => array(
         'mod_qpages_pages',
         'mod_qpages_categos',
-        'mod_qpages_meta',
-        'mod_qpages_squeeze',
-        'mod_qpages_sales'
+        'mod_qpages_meta'
     ),
 
     // Smarty templates
