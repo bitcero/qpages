@@ -37,8 +37,8 @@ function showCategos(){
 	$categories = RMEvents::get()->run_event('qpages.categories.list',$categories);
 	
 	RMTemplate::get()->add_style('admin.css', 'qpages');
-	RMTemplate::get()->add_script(RMCURL.'/include/js/jquery.checkboxes.js');
-	RMTemplate::get()->add_script('../include/js/qpages.js');
+	RMTemplate::get()->add_script('jquery.checkboxes.js', 'rmcommon', array('directory' => 'include'));
+	RMTemplate::get()->add_script('qpages.js', 'qpages');
 	RMTemplate::get()->assign('xoops_pagetitle', __('Categories management', 'qpages'));
 
 	RMBreadCrumb::get()->add_crumb(__('Categories Management','qpages'));
@@ -110,17 +110,18 @@ function newForm($edit=0){
  */
 function saveCatego($edit = 0){
 	
-	foreach ($_POST as $k => $v){
-		$$k = $v;
-	}
-	
+	$name = RMHttpRequest::post( 'name', 'string', '' );
+	$description = RMHttpRequest::post( 'description', 'string', '' );
+	$id = RMHttpRequest::post( 'id', 'integer', 0 );
+	$parent = RMHttpRequest::post( 'parent', 'integer', 0 );
+
 	if ($edit && $id<=0){
-		redirectMsg('cats.php', __('You must provide a category ID to edit!','qpages'), 1);
+		RMuris::redirect_with_message( __('You must provide a category ID to edit!','qpages'), 'cats.php', RMMSG_ERROR );
 		die();
 	}
 	
 	if ($name==''){
-		redirectMsg('cats.php?op=new', __('Please provide a name for this category!','qpages'), 1);
+		RMUris::redirect_with_message( __('Please provide a name for this category!','qpages'), 'cats.php', RMMSG_WARN );
 		die();
 	}
 	
@@ -129,11 +130,11 @@ function saveCatego($edit = 0){
 	$db = XoopsDatabaseFactory::getDatabaseConnection();
 	
 	# Verificamos que no exista la categoría
-	$result = $db->query("SELECT COUNT(*) FROM ".$db->prefix("mod_qpages_categos")." WHERE parent='$parent'".($edit ? " AND id_cat<>$id" : '')." AND (name='$name' OR name_amigo='$nameid')");
+	$result = $db->query("SELECT COUNT(*) FROM ".$db->prefix("mod_qpages_categos")." WHERE parent='$parent'".($edit ? " AND id_cat<>$id" : '')." AND (name='$name' OR nameid='$nameid')");
 	list($num) = $db->fetchRow($result);
-	
+
 	if ($num>0){
-		redirectMsg('cats.php?op=new', __('There is another category with same name!','qpages'), 1);
+		RMUris::redirect_with_message( __('There is another category with same name!','qpages'), 'cats.php', RMMSG_ERROR );
 		die();
 	}
 	
@@ -149,9 +150,9 @@ function saveCatego($edit = 0){
 		$result = $catego->save();
 	}
 	if ($result){
-		redirectMsg('cats.php', __('Database updated successfully!','qpages'), 0);
+		RMUris::redirect_with_message( __('Database updated successfully!','qpages'), 'cats.php', RMMSG_SUCCESS );
 	} else {
-		redirectMsg('cats.php?op=new', __('Errors ocurred while trying to update database') . "<br />" . $catego->errors(), 1);
+		RMuris::redirect_with_message( __('Errors ocurred while trying to update database') . "<br />" . $catego->errors(), 'cats.php', RMMSG_ERROR );
 	}
 	
 }
@@ -191,10 +192,10 @@ function deleteCatego(){
 			continue;
 		}
 		
-		if ($catego->delete()){
+		if ($catego->delete() ){
 			continue;
 		} else {
-			$errors .= sprintf(__('Category "%s" could not be deleted!','qpages'), $catego->name).'<br />';
+			$errors .= sprintf( __('Category "%s" could not be deleted!','qpages'), $catego->name).'<br />' . $catego->errors() .'<br>';
 			continue;
 		}	
 	}

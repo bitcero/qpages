@@ -102,7 +102,7 @@ function showPages(){
 	
     RMTemplate::get()->add_style('admin.css', 'qpages');
     RMTemplate::get()->add_script('qpages.js','qpages');
-    RMTemplate::get()->add_script('jquery.checkboxes.js','rmcommon','include');
+    RMTemplate::get()->add_script('jquery.checkboxes.js','rmcommon', array('directory' => 'include'));
     RMTemplate::get()->assign('xoops_pagetitle', __('Pages Management','qpages'));
 
 	RMBreadCrumb::get()->add_crumb(__('Pages management','qpages'), "pages.php?type=$type&amp;public=$public&amp;category=$category&amp;keyw=$keyw");
@@ -233,6 +233,12 @@ function savePage($edit=0){
 
         if ($page->isNew())
 	        QPFunctions::jsonResponse(__('Specified page does not exists!','qpages'), 1);
+
+        /**
+         * if previous template differs from new one, then delete it
+         */
+        if ( $page->template != $custom_tpl && $page->template != '' )
+            unlink( XOOPS_CACHE_PATH . '/qpages/' . $page->template_name() . '-' . $page->id() . '.json' );
 
     } else {
         $page = new QPPage();
@@ -405,8 +411,8 @@ function deletePage(){
 		if ($page->isNew()){
 			$errors .= sprintf(__('Page with ID "%s" does not exists!','qpages'), $id).'<br />';
 		}
-		
-		if (!$page->delete()){
+
+        if (!$page->delete()){
 			$errors .= sprintf(__('Page "%s" could not be deleted:','qpages'), $page->getVar('title')).$page->errors();
 		}
 		

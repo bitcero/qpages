@@ -10,6 +10,9 @@ License URI = http://www.gnu.org/licenses/gpl-2.0.html
 Standalone  = yes
 */
 ?>
+<?php
+include ('defaults.php');
+?>
 <!DOCTYPE html>
 <html lang="<?php echo $cuSettings->lang; ?>">
 <head>
@@ -139,9 +142,11 @@ Standalone  = yes
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-md-8 col-md-offset-2">
                 <div class="video-wrapper">
-                    <?php echo $tplSettings->video; ?>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <?php echo $tplSettings->video; ?>
+                    </div>
                 </div>
             </div>
         </div>

@@ -64,6 +64,15 @@ class QPPage extends RMObject
 
     }
 
+    public function template_name(){
+
+        if ( $this->template_name == '' )
+            $this->make_tpl_name();
+
+        return $this->template_name;
+
+    }
+
     /**
      * Gets a value from template option. When name is not provided, then all options are returned
      * @param string $name Name of the option
@@ -253,10 +262,35 @@ class QPPage extends RMObject
 	 * la base de datos.
 	 */
 	public function delete(){
+
+        /**
+         * Delete the custom URL if exists
+         */
+        if ( $this->custom_url != '' ){
+
+            $ht = new RMHtaccess('page: '.$this->id());
+            $htResult = $ht->removeRule();
+            $result = $ht->write();
+            if ( false === $result )
+                $this->addError( __( 'The .htaccess file could not be updated. Please delete the next lines from file:', 'qpages' ) . '<br><pre>'.$result.'</pre>' );
+
+        }
+
+        /**
+         * Delete template options if exists
+         */
+        if ( $this->template != '' ){
+
+            $file = XOOPS_CACHE_PATH . '/qpages/' . $this->template_name() . '-' . $this->id() . '.json';
+            if ( file_exists( $file ) )
+                unlink( $file );
+
+        }
+
 		if(!$this->deleteFromTable())
 			return false;
 
-		$this->db->queryF("DELETE FROM ".$this->db->prefix("mod_qpages_meta")." WHERE page='".$this->id()."'");
+		return $this->db->queryF("DELETE FROM ".$this->db->prefix("mod_qpages_meta")." WHERE page='".$this->id()."'");
 	}
 
     public function add_read(){

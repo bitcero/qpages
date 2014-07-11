@@ -38,7 +38,12 @@ class QPCategory extends RMObject
 	}
 
 	function loadPages($public=1){
-		$result = $this->db->query("SELECT * FROM ".$this->db->prefix("mod_qpages_pages")." WHERE category='".$this->id()."' AND public='$public'");
+
+        if ( $public < 0 )
+            $result = $this->db->query("SELECT * FROM ".$this->db->prefix("mod_qpages_pages")." WHERE category='".$this->id());
+        else
+		    $result = $this->db->query("SELECT * FROM ".$this->db->prefix("mod_qpages_pages")." WHERE category='".$this->id()."' AND public='$public'");
+
 		$ret = array();
 		while ($row = $this->db->fetchArray($result)){
 			$ret[] = $row;
@@ -102,8 +107,21 @@ class QPCategory extends RMObject
 	 * Elimina de la base de datos la categoría actual
 	 */
 	function delete(){
-		$this->db->queryF("DELETE FROM ".$this->db->prefix("mod_qpages_pages")." WHERE cat='".$this->id()."'");
-		$this->db->queryF("UPDATE ".$this->db->prefix("mod_qpages_categos")." SET parent='".$this->getParent()."' WHERE parent='".$this->id()."'");
+        /**
+         * First, delete all pages in this category
+         */
+        $pages = $this->loadPages( -1 );
+        foreach( $pages as $data ){
+            $page = new QPPage();
+            $page->setVars( $data );
+            $page->delete();
+            if ( $page->errors() != '' )
+                $this->addError( $page->errors( ) );
+        }
+
+		if ( !$this->db->queryF("UPDATE ".$this->db->prefix("mod_qpages_categos")." SET parent='". $this->parent . "' WHERE parent='".$this->id()."'") );
+            $this->addError( $this->db->error() );
+
 		return $this->deleteFromTable();
 	}
 }

@@ -288,14 +288,8 @@ color: #<?php echo $tplSettings->color1; ?>;;
 	padding-top: 90px;
 	padding-bottom:60px;
 }
-.player .video-wrapper{
-  border: 10px solid #dadada!important ;
-}
-
 .video-wrapper iframe {
-position: relative;
-width: 100%;
-border:10px solid #dbddd3;
+border:10px solid #dbddd3 !important;
 }
 
 .bg-profile{ background:#e8eae3; text-align: center; margin-bottom:20px; -webkit-transition: all 0.3s;

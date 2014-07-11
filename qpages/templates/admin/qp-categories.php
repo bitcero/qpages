@@ -3,8 +3,8 @@
 <script type="text/javascript">
 <!--
 	var qp_select_message = '<?php _e('Select at least a category to apply this action!','qpages'); ?>';
-	var qp_message = '<?php _e('Do you really wish to delete this category?','qpages'); ?>';
-	qp_message += '\n\n<?php _e('WARNING: All pages under this category will be deleted also!','qpages'); ?>';
+	var qp_message = '<?php _e('Do you really want to delete selected categories?','qpages'); ?>';
+	qp_message += '\n\n<?php _e('WARNING: All pages under these categories will be deleted too!','qpages'); ?>';
 -->
 </script>
 

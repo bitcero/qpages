@@ -118,7 +118,13 @@
             <div class="tab-pane" id="prj-content">
                 <div class="row">
                     <div class="col-sm-6 col-md-8">
-                        Hola
+
+                        <div class="well"><?php _e('Click on any of three buttons to insert content in page. Is recommended to insert only one headline and one "intro". You
+                        can add much projects as you wish.', 'projects'); ?></div>
+
+                        <span class="help-block"><?php _e('Inserts function works with any of the editos included in Common Uitlities, but I recommend to use HTML or XoopsCode editor
+                        because you will have much more control over content.', 'projects'); ?></span>
+
                     </div>
                     <div class="col-sm-6 col-md-4">
                         <h3>Insert Content</h3>

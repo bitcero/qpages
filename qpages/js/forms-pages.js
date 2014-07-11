@@ -202,7 +202,7 @@ function qp_verify_fields(){
 		return;
 	}
 
-    if ( 'undefined' !== tinymce )
+    if ( 'undefined' !== typeof ( tinymce ) )
         tinymce.activeEditor.save();
 
 	var params = $("#frm-page").serialize();
