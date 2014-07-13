@@ -1,7 +1,5 @@
-![alt MyWords Logo](https://raw.githubusercontent.com/bitcero/qpages/master/qpages/images/logo.png)
-# QuickPages
-
-----
+![alt MyWords Logo](https://raw.githubusercontent.com/bitcero/qpages/master/qpages/images/logo.png) QuickPages
+=========
 
 QuickPages is a XOOPS módule created over Common Utilities that allows you to create semi-static pages easily and quickly.
 
@@ -18,6 +16,8 @@ and functionallity.
 * Standalone pages
 * Categories organization
 * Templates for pages
+
+-----
 
 ### Requirements
 
