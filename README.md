@@ -27,6 +27,6 @@ and functionallity.
 
 ### Installation
 
-Install QuickPages normally, as any other module for Common Utilities.
+Install QuickPages normally, as any other module for XOOPS and Common Utilities.
 
 
