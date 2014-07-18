@@ -1,7 +1,7 @@
 ![alt MyWords Logo](https://raw.githubusercontent.com/bitcero/qpages/master/qpages/images/logo.png) QuickPages
 =========
 
-**Demo video here:** https://www.youtube.com/watch?v=AuuitCK8tdk&list=UUDBFAQcnXpm4FEIerIIfQuw
+**[Demo video here](https://www.youtube.com/watch?v=AuuitCK8tdk&list=UUDBFAQcnXpm4FEIerIIfQuw)**
 
 QuickPages is a XOOPS módule created over Common Utilities that allows you to create semi-static pages easily and quickly.
 
