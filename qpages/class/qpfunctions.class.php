@@ -103,6 +103,8 @@ class QPFunctions
 
         $form = new RMForm('','','');
 
+        self::load_tpl_locale( $page->template );
+
 
         $file_data = pathinfo( $page->template );
         $path = XOOPS_ROOT_PATH . $file_data[ 'dirname' ];
@@ -242,7 +244,7 @@ class QPFunctions
      * @param string $tpl Template relative path
      * @param $prefix Prefix for language file
      */
-    static function load_tpl_locale( $tpl, $prefix ){
+    static function load_tpl_locale( $tpl, $prefix = '' ){
         $exm_locale = get_locale();
 
         if ($tpl=='') return;
@@ -252,7 +254,7 @@ class QPFunctions
 
         $path .= '/lang/'.$prefix.$exm_locale.'.mo';
 
-        load_locale_file(str_replace("tpl-", '', $tpl_info['filename']), $path);
+        load_locale_file(str_replace("tpl-", '', $tpl_info['filename']), XOOPS_ROOT_PATH  . $path);
     }
 
 }

@@ -1,5 +1,4 @@
 <?php
-// $Id$
 // --------------------------------------------------------------
 // Quick Pages
 // Create simple pages easily and quickly
@@ -8,10 +7,13 @@
 // License: GPL 2.0
 // --------------------------------------------------------------
 
+include_once 'include/xv-header.php';
+if(function_exists("load_mod_locale")) load_mod_locale('qpages');
+
 $modversion = array(
 
     // General
-    'name'          => 'Quick Pages',
+    'name'          => 'QuickPages',
     'description'   => __('Publish and manage single pages','qpages'),
     'version'       => 2,
     'license'       => 'GPL 2',
@@ -24,9 +26,9 @@ $modversion = array(
     'rmversion'     => array(
         'major'     => 2,
         'minor'     => 0,
-        'revision'  => 36,
+        'revision'  => 41,
         'stage'     => -1,
-        'name'      => 'Quick Pages'
+        'name'      => 'QuickPages'
     ),
     'rewrite'       => 0,
     'updateurl'     => "http://www.xoopsmexico.net/modules/vcontrol/",

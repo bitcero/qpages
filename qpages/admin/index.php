@@ -78,16 +78,6 @@ while($row = $db->fetchArray($result)){
 	);
 }
 
-$donateButton = '<form id="paypal-form" name="_xclick" action="https://www.paypal.com/fr/cgi-bin/webscr" method="post">
-                    <input type="hidden" name="cmd" value="_xclick">
-                    <input type="hidden" name="business" value="ohervis@redmexico.com.mx">
-                    <input type="hidden" name="item_name" value="MyWords Support">
-                    <input type="hidden" name="amount" value=0>
-                    <input type="hidden" name="currency_code" value="USD">
-                    <button type="submit" class="btn btn-warning btn-sm">'.__('Support Me!','qpages').'</button>
-    </form>';
-$myEmail = 'a888698732624c0a1d4da48f1e5c6bb4';
-
 RMTemplate::get()->set_help('http://redmexico.com.mx/docs/quickpages');
 RMTemplate::get()->add_script( 'https://www.google.com/jsapi' );
 

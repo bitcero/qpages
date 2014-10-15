@@ -1,0 +1,194 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Clean for QuickPages\n"
+"POT-Creation-Date: 2014-10-15 13:18-0600\n"
+"PO-Revision-Date: 2014-10-15 13:25-0600\n"
+"Last-Translator: Eduardo Cortés <me@eduardocortes.mx>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: Y:\\www\\xoops\\modules\\qpages\\templates\\custom"
+"\\clean\n"
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/defaults.php:31
+msgid "Awesome and quick pages, like never <span>has seen</span>"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/defaults.php:33
+msgid "Download Now!"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/defaults.php:35
+msgid "Learn More"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:8
+msgid "Clean Landing Template Options"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:14
+msgid "General"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:15
+msgid "Header"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:16
+msgid "Main Content"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:17
+msgid "Services"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:18
+msgid "Video"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:19
+msgid "Newsletter"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:20
+msgid "Footer"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:31
+msgid "Font for body:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:35
+msgid "Font family string for body:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:42
+msgid "Font for emphasised text:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:46
+msgid "Font family string for emphasised text:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:52
+msgid "Color scheme:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:85
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:189
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:501
+msgid "Background color:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:92
+msgid "Sections background color:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:99
+msgid "Text color:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:130
+msgid "Name first word:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:136
+msgid "Name second word:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:144
+msgid "Social links:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:197
+msgid "Paragraph text color:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:205
+msgid "Text color one:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:213
+msgid "Text color two:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:229
+msgid "Headline:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:234
+msgid "Introduction:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:239
+msgid "Main Buttons"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:243
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:259
+msgid "Caption:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:244
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:260
+msgid "Button caption"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:249
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:265
+msgid "Link:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:250
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:266
+msgid "Button link"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:276
+msgid "Email:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:282
+msgid "Phone:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:289
+msgid "Main form code:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:300
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:454
+msgid "Headline"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:307
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:461
+msgid "Sub headline"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:318
+msgid "Service One:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:334
+msgid "Service Two:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:350
+msgid "Service Three:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:366
+msgid "Service Four:"
+msgstr ""
+
+#: Y:\www\xoops\modules\qpages\templates\custom\clean/form-clean.php:508
+msgid "Texto color:"
+msgstr ""

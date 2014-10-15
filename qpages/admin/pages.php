@@ -560,6 +560,8 @@ function qpages_load_template_options(){
             'form' => ''
         ));
 
+    QPFunctions::load_tpl_locale( $file );
+
     $form = new RMForm('','','');
 
     $tplSettings = (object) $page->tpl_option();

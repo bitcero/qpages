@@ -83,6 +83,9 @@ if ( $page->template != '' ){
     /**
      * Load template data
      */
+
+    QPFunctions::load_tpl_locale( $pager->template );
+
     $template = QPFunctions::templateInfo( XOOPS_ROOT_PATH . $file_data['dirname'], $file_data['basename'] );
     // Set path to template dir
     $template->path = XOOPS_ROOT_PATH . $file_data[ 'dirname' ];
@@ -162,6 +165,13 @@ if ( $xoopsUser && $xoopsUser->uid() != $page->uid )
     $page->add_read();
 
 qp_assign_page( $page );
+
+// Add meta description and title
+$rmf = RMFunctions::get();
+$description = $page->getVar('description','e');
+$keywords = $page->getVar('keywords', 'e');
+$rmf->add_keywords_description($description!='' ? $description : '', $keywords!='' ? $keywords : '');
+RMTemplate::get()->add_meta( 'title', $page->getVar( 'custom_title' ) );
 
 // Páginas relacionadas
 if ($mc['related']){
