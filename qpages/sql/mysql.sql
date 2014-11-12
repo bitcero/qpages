@@ -5,14 +5,14 @@ CREATE TABLE `mod_qpages_categos` (
   `parent` int(11) NOT NULL DEFAULT '0',
   `description` text NOT NULL,
   PRIMARY KEY (`id_cat`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 CREATE TABLE `mod_qpages_meta` (
   `name` varchar(50) NOT NULL,
   `value` text NOT NULL,
   `page` int(11) NOT NULL,
   KEY `name` (`name`,`page`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `mod_qpages_pages` (
   `id_page` int(11) NOT NULL AUTO_INCREMENT,
@@ -40,4 +40,4 @@ CREATE TABLE `mod_qpages_pages` (
   KEY `titulo_amigo` (`nameid`),
   KEY `cat` (`category`),
   KEY `home` (`home`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
