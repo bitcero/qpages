@@ -140,4 +140,23 @@ class QpagesRmcommonPreload
 
     }
 
+    /**
+     * Add the library plugin to editors
+     * @param $plugins
+     * @param $type
+     * @param $id
+     * @return array
+     */
+    public function eventRmcommonEditorTopPlugins( $plugins, $type, $id ){
+
+        //RMTemplate::get()->add_script( 'cu-image-mgr.js', 'rmcommon' );
+
+        $plugins[] = '<a href="#"
+                        data-id="'.$id.'"
+                        data-type="'.$type.'"><span class="fa fa-book"></span> ' . __('Library', 'qpages') . '</a>';
+
+        return $plugins;
+
+    }
+
 }
