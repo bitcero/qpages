@@ -77,3 +77,10 @@ $adminmenu[] = array(
     'location'  => 'pages',
     'options'   => $options
 );
+
+$adminmenu[] = array(
+    'title'     => __('Library', 'rmcommon'),
+    'link'      => 'admin/library.php',
+    'icon'      => RMUris::image( 'qpages', 'library.png' ),
+    'location'  => 'library'
+);
