@@ -17,22 +17,22 @@ if (!defined('XOOPS_ROOT_PATH')) {
  */
 function qpages_search($qa, $andor, $limit, $offset, $userid){
 	global $xoopsUser, $mc;
-	
+
 	include_once XOOPS_ROOT_PATH.'/modules/qpages/class/qppage.class.php';
-	
+
 	$mc = RMSettings::module_settings('qpages');
 	$db = XoopsDatabaseFactory::getDatabaseConnection();
-	
+
 	$sql = "SELECT * FROM ".$db->prefix("mod_qpages_pages");
 	$adds = '';
-	
+
 	if ( is_array($qa) && $count = count($qa) ) {
 		$adds = '';
 		for($i=0;$i<$count;$i++){
 			$adds .= $adds=='' ? "(titulo LIKE '%$qa[$i]%' OR titulo_amigo LIKE '%$qa[$i]%')" : " $andor (titulo LIKE '%$qa[$i]%' OR titulo_amigo LIKE '%$qa[$i]%')";
 		}
 	}
-	
+
 	$sql .= $adds!='' ? " WHERE $adds" : '';
 	if ($userid>0){
 		$sql .= ($adds!='' ? " AND " : " WHERE ")."uid='$userid'";
@@ -54,7 +54,5 @@ function qpages_search($qa, $andor, $limit, $offset, $userid){
 		$i++;
 	}
 	return $ret;
-	
-}
 
-?>
+}
