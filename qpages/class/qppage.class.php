@@ -33,9 +33,9 @@ class QPPage extends RMObject
 		$this->setNew();
 		$this->initVarsFromTable();
 		$this->setVarType('groups', XOBJ_DTYPE_ARRAY);
-		
-		if ($id==null) return;
-	
+
+		if ($id==null) return null;
+
 		if ($this->loadValues($id)){
 			$this->unsetNew();
 		} else {
@@ -45,19 +45,20 @@ class QPPage extends RMObject
 		}
 
         if ( $this->isNew() )
-            return;
+            return null;
 
         if ( $this->template == '' )
             return true;
 
         $this->make_tpl_name();
-		
-	}
+
+        return null;
+    }
 
     private function make_tpl_name(){
 
         if ( $this->template == '' )
-            return;
+            return null;
 
         $tpl_info = pathinfo( $this->template );
         $this->template_name = str_replace( "tpl-", '', $tpl_info['filename'] );
@@ -178,10 +179,10 @@ class QPPage extends RMObject
 
         if(!is_array($groups) || empty($groups))
             return false;
-		
+
 		return $this->setVar('groups', $groups);
 	}
-	
+
 	/**
 	* Meta data
 	*/
@@ -193,7 +194,7 @@ class QPPage extends RMObject
 			$this->metas[$row['name']] = $row['value'];
 		}
 	}
-	
+
 	/**
 	* Get metas from post.
 	* If a meta name has not been provided then return all metas
@@ -202,17 +203,17 @@ class QPPage extends RMObject
 	*/
 	public function get_meta($name=''){
 		$this->load_meta();
-		
+
 		if (trim($name)=='')
 			return $this->metas;
-		
+
 		if(!isset($this->metas[$name]))
 			return false;
-		
+
 		return $this->metas[$name];
-		
+
 	}
-	
+
 	/**
 	* Add or modify a field
 	* @param string Meta name
@@ -221,7 +222,7 @@ class QPPage extends RMObject
 	*/
 	public function add_meta($name, $value){
 		if (trim($name)=='' || trim($value)=='') return;
-		
+
 		$this->metas[$name] = $value;
 	}
 
@@ -229,7 +230,7 @@ class QPPage extends RMObject
 	 * Actualizamos los valores en la base de datos
 	 */
 	public function update(){
-		
+
 		if (!empty($this->metas)) $this->saveMetas();
         if ( $this->getVar('template') != '' ) $this->save_options();
 
@@ -237,14 +238,14 @@ class QPPage extends RMObject
 			return false;
 
 		return true;
-		
+
 	}
 
 	/**
 	 * Guardamos los datos en la base de datos
 	 */
-	public function save(){	
-		
+	public function save(){
+
 		$return = $this->saveToTable();
 		if ($return){
 			$this->setVar('id_page', $this->db->getInsertId());
@@ -344,13 +345,14 @@ class QPPage extends RMObject
         $file .= '/' . $this->template_name . '-' . $this->id() . '.json';
         file_put_contents( $file, json_encode( $this->options ) );
 
+        return null;
     }
-	
+
 	/**
 	* Save existing meta
 	*/
 	private function saveMetas(){
-		
+
 		$this->db->queryF("DELETE FROM ".$this->db->prefix("mod_qpages_meta")." WHERE page='".$this->id()."'");
 		if (empty($this->metas)) return true;
 		$sql = "INSERT INTO ".$this->db->prefix("mod_qpages_meta")." (`name`,`value`,`page`) VALUES ";
@@ -358,7 +360,7 @@ class QPPage extends RMObject
 		foreach ($this->metas as $name => $value){
 			$values .= ($values=='' ? '' : ',')."('".MyTextSanitizer::addSlashes($name)."','".MyTextSanitizer::addSlashes($value)."','".$this->id()."')";
 		}
-		
+
 		if ($this->db->queryF($sql.$values)){
 			return true;
 		} else {

@@ -38,7 +38,7 @@
 	</div>
 
 	<div class="col-sm-7 col-md-9">
-	
+
 		<form name="frm_categos" id="frm-categos" method="post" action="cats.php">
 		<div class="cu-bulk-actions">
 			<select name="op" id="bulk-top" class="form-control">
@@ -81,7 +81,7 @@
                             <strong><?php echo $cat['name']; ?></strong>
     				<span class="cu-item-options">
     					<a href="?op=edit&amp;id=<?php echo $cat['id_cat']; ?>"><?php _e('Edit','qpages'); ?></a> |
-    					<a href="javascript:;" onclick="select_option(<?php echo $cat['id_cat']; ?>,'delete','frm-categos');"><?php _e('Delete','qpages'); ?></a>
+    					<a href="javascript:" onclick="select_option(<?php echo $cat['id_cat']; ?>,'delete','frm-categos');"><?php _e('Delete','qpages'); ?></a>
     				</span>
                         </td>
                         <td>
@@ -103,7 +103,7 @@
 		</div>
 		<?php echo $xoopsSecurity->getTokenHTML(); ?>
 		</form>
-	
+
 	</div>
-	
+
 </div>

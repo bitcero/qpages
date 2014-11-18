@@ -35,7 +35,7 @@ class QPFunctions
 	 */
 	static function templateInfo($path, $file){
 
-		if(!is_file($path . '/' . $file)) return;
+		if(!is_file($path . '/' . $file)) return null;
 
         $content = file_get_contents( $path . '/' . $file );
 
@@ -96,7 +96,7 @@ class QPFunctions
      * @param QPPage $page QPPAge object
      * @return string
      */
-    public function template_form( QPPage $page ){
+    public static function template_form( QPPage $page ){
 
         if ( !is_a( $page, 'QPPage' ) )
             return false;

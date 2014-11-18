@@ -28,7 +28,7 @@
                 </ul>
 			</div>
 		</div>
-	
+
 		<div class="cu-box">
 			<div class="box-header">
                 <span class="fa fa-caret-up box-handler"></span>
@@ -38,7 +38,7 @@
 
 			</div>
 		</div>
-		
+
 		<?php foreach($left_widgets as $w): ?>
 		<div class="cu-box">
             <div class="box-header">
@@ -50,11 +50,11 @@
 			</div>
 		</div>
 		<?php endforeach; ?>
-		
+
 	</div>
 
 	<div id="qp-dash-right" class="col-md-7" data-box="qpages-box-right">
-		
+
 		<div class="cu-box">
             <div class="box-header">
                 <span class="fa fa-caret-up box-handler"></span>
@@ -86,7 +86,7 @@
                 <div id="stats"></div>
             </div>
 		</div>
-		
+
 		<?php foreach($left_widgets as $w): ?>
 		<div class="qp_widget_container">
 			<div class="outer">
@@ -100,7 +100,7 @@
             <div class="col-sm-6" data-box="module-box-right-left"></div>
             <div class="col-sm-6" data-box="module-box-right-right"></div>
         </div>
-		
+
 	</div>
-	
+
 </div>
