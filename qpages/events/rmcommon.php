@@ -17,7 +17,7 @@ class QpagesRmcommonPreload
         if (!isset($xoopsModule) || $xoopsModule->getVar('dirname')!='qpages')
             return $widgets;
 
-        if (defined("RMCSUBLOCATION") && RMCSUBLOCATION=='new-page'){
+        if (defined("RMCSUBLOCATION") && RMCSUBLOCATION=='new-page') {
             include_once '../widgets/qp-widgets.php';
 
             $id = rmc_server_var($_REQUEST, 'id', 0);
@@ -44,13 +44,13 @@ class QpagesRmcommonPreload
          */
         function assign_template( $page ){
             $GLOBALS['xoopsTpl']->assign('page', array(
-                'title'		=> $page->title,
-                'text'		=> $page->content,
-                'id'		=> $page->id(),
-                'name'		=> $page->nameid,
-                'mod_date'	=> sprintf(__('Last update: %s', 'qpages'), formatTimestamp($page->modified,'c')),
-                'reads'		=> sprintf(__('Read %u times','qpages'), $page->hits),
-                'metas'		=> $page->get_meta()
+                'title'        => $page->title,
+                'text'        => $page->content,
+                'id'        => $page->id(),
+                'name'        => $page->nameid,
+                'mod_date'    => sprintf(__('Last update: %s', 'qpages'), formatTimestamp($page->modified,'c')),
+                'reads'        => sprintf(__('Read %u times','qpages'), $page->hits),
+                'metas'        => $page->get_meta()
             ));
         }
 
@@ -87,7 +87,7 @@ class QpagesRmcommonPreload
 
         unset($file_data);
 
-        if ( $page->template == '' ){
+        if ($page->template == '') {
             RMTemplate::get()->header();
             assign_template( $page );
             echo $GLOBALS['xoopsTpl']->fetch('db:qpages_page.html');
@@ -100,12 +100,12 @@ class QpagesRmcommonPreload
         $content = file_get_contents( $file );
         if ( !$content ) return;
 
-        if ( substr( $file, -4 ) == '.php' ){
+        if ( substr( $file, -4 ) == '.php' ) {
 
             $info = array();
             preg_match( "/\/\*(.*)\*\//s", $content, $info );
 
-        } elseif ( substr( $file, -5 ) == '.html' ){
+        } elseif ( substr( $file, -5 ) == '.html' ) {
 
             $info = array();
             preg_match( "/^<{\*(.*)\*\}>/sm", $content, $info );
@@ -119,7 +119,7 @@ class QpagesRmcommonPreload
 
         RMTemplate::get()->header();
 
-        if ( substr($page->template, -4 ) == '.php'){
+        if ( substr($page->template, -4 ) == '.php') {
             if ( isset( $data->Standalone ) && $data->Standalone )
                 include $file;
             else {

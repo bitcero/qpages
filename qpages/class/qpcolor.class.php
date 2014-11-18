@@ -42,22 +42,22 @@ class QPColor {
         $color = str_replace("#", "", $hex);
 
         // Make sure it's 6 digits
-        if( strlen($color) === 3 ) {
+        if ( strlen($color) === 3 ) {
             $color = $color[0].$color[0].$color[1].$color[1].$color[2].$color[2];
-        } else if( strlen($color) != 6 ) {
+        } else if ( strlen($color) != 6 ) {
 
             throw new Exception("HEX color needs to be 6 or 3 digits long");
         }
 
         $this->_hsl = self::hexToHsl( $color );
         $this->_hex = $color;
-            
+
     }
 
     /**
      * Given a HEX string returns a HSL array equivalent.
-     * @param string $color
-     * @return array HSL associative array
+     * @param  string $color
+     * @return array  HSL associative array
      */
     public static function hexToHsl( $color ){
 
@@ -112,25 +112,25 @@ class QPColor {
 
     /**
      *  Given a HSL associative array returns the equivalent HEX string
-     * @param array $hsl
-     * @return string HEX string
+     * @param  array     $hsl
+     * @return string    HEX string
      * @throws Exception "Bad HSL Array"
      */
     public static function hslToHex( $hsl = array() ){
          // Make sure it's HSL
-        if(empty($hsl) || !isset($hsl["H"]) || !isset($hsl["S"]) || !isset($hsl["L"]) ) {
+        if (empty($hsl) || !isset($hsl["H"]) || !isset($hsl["S"]) || !isset($hsl["L"]) ) {
             throw new Exception("Param was not an HSL array");
         }
 
         list($H,$S,$L) = array( $hsl['H']/360,$hsl['S'],$hsl['L'] );
 
-        if( $S == 0 ) {
+        if ($S == 0) {
             $r = $L * 255;
             $g = $L * 255;
             $b = $L * 255;
         } else {
 
-            if($L<0.5) {
+            if ($L<0.5) {
                 $var_2 = $L*(1+$S);
             } else {
                 $var_2 = ($L+$S) - ($S*$L);
@@ -160,7 +160,7 @@ class QPColor {
     /**
      * Given a HEX value, returns a darker color. If no desired amount provided, then the color halfway between
      * given HEX and black will be returned.
-     * @param int $amount
+     * @param  int    $amount
      * @return string Darker HEX value
      */
     public function darken( $hex='', $amount = self::DEFAULT_ADJUST ){
@@ -177,7 +177,7 @@ class QPColor {
     /**
      * Given a HEX value, returns a lighter color. If no desired amount provided, then the color halfway between
      * given HEX and white will be returned.
-     * @param int $amount
+     * @param  int    $amount
      * @return string Lighter HEX value
      */
     public function lighten( $hex='', $amount = self::DEFAULT_ADJUST ){
@@ -193,7 +193,7 @@ class QPColor {
 
     /**
      * Creates an array with two shades that can be used to make a gradient
-     * @param int $amount Optional percentage amount you want your contrast color
+     * @param  int   $amount Optional percentage amount you want your contrast color
      * @return array An array with a 'light' and 'dark' index
      */
     public function makeGradient( $hex, $amount = self::DEFAULT_ADJUST ) {
@@ -201,7 +201,7 @@ class QPColor {
         $this->prepareColor($hex);
 
         // Decide which color needs to be made
-        if( $this->isLight() ) {
+        if ( $this->isLight() ) {
             $lightColor = $this->_hex;
             $darkColor = $this->darken('',$amount);
         } else {
@@ -213,10 +213,9 @@ class QPColor {
         return array( "light" => $lightColor, "dark" => $darkColor );
     }
 
-
     /**
      * Returns whether or not given color is considered "light"
-     * @param string|Boolean $color
+     * @param  string|Boolean $color
      * @return boolean
      */
     public function isLight( $color = FALSE ){
@@ -233,7 +232,7 @@ class QPColor {
 
     /**
      * Returns whether or not a given color is considered "dark"
-     * @param string|Boolean $color
+     * @param  string|Boolean $color
      * @return boolean
      */
     public function isDark( $color = FALSE ){
@@ -274,6 +273,7 @@ class QPColor {
     public function getHsl($hex='') {
         if($hex!='')
             $this->prepareColor($hex);
+
         return $this->_hsl;
     }
     /**
@@ -282,13 +282,14 @@ class QPColor {
     public function getHex($hex='') {
         if($hex!='')
             $this->prepareColor($hex);
+
         return $this->_hex;
     }
     /**
      * Returns the cross browser CSS3 gradient
      * @param int Optional: percentage amount to light/darken the gradient
-     * @param string $prefix Optional: prefix for every lines
-     * @param string $suffix Optional: suffix for every lines
+     * @param  string $prefix Optional: prefix for every lines
+     * @param  string $suffix Optional: suffix for every lines
      * @return string CSS3 gradient for chrome, safari, firefox, opera and IE10
      */
     public function getCssGradient($hex, $amount = self::DEFAULT_ADJUST, $suffix = "" , $prefix = "" ) {
@@ -329,13 +330,13 @@ class QPColor {
 
     /**
      * Darkens a given HSL array
-     * @param array $hsl
-     * @param int $amount
+     * @param  array $hsl
+     * @param  int   $amount
      * @return array $hsl
      */
     private function _darken( $hsl, $amount = self::DEFAULT_ADJUST){
         // Check if we were provided a number
-        if( $amount ) {
+        if ($amount) {
             $hsl['L'] = ($hsl['L'] * 100) - $amount;
             $hsl['L'] = ($hsl['L'] < 0) ? 0:$hsl['L']/100;
         } else {
@@ -348,13 +349,13 @@ class QPColor {
 
     /**
      * Lightens a given HSL array
-     * @param array $hsl
-     * @param int $amount
+     * @param  array $hsl
+     * @param  int   $amount
      * @return array $hsl
      */
     private function _lighten( $hsl, $amount = self::DEFAULT_ADJUST){
         // Check if we were provided a number
-        if( $amount ) {
+        if ($amount) {
             $hsl['L'] = ($hsl['L'] * 100) + $amount;
             $hsl['L'] = ($hsl['L'] > 100) ? 1:$hsl['L']/100;
         } else {
@@ -367,29 +368,29 @@ class QPColor {
 
     /**
      * Given a Hue, returns corresponding RGB value
-     * @param type $v1
-     * @param type $v2
-     * @param type $vH
+     * @param  type $v1
+     * @param  type $v2
+     * @param  type $vH
      * @return int
      */
     private static function _huetorgb( $v1,$v2,$vH ) {
-        if( $vH < 0 ) {
+        if ($vH < 0) {
             $vH += 1;
         }
 
-        if( $vH > 1 ) {
+        if ($vH > 1) {
             $vH -= 1;
         }
 
-        if( (6*$vH) < 1 ) {
+        if ( (6*$vH) < 1 ) {
                return ($v1 + ($v2 - $v1) * 6 * $vH);
         }
 
-        if( (2*$vH) < 1 ) {
+        if ( (2*$vH) < 1 ) {
             return $v2;
         }
 
-        if( (3*$vH) < 2 ) {
+        if ( (3*$vH) < 2 ) {
             return ($v1 + ($v2-$v1) * ( (2/3)-$vH ) * 6);
         }
 
@@ -399,8 +400,8 @@ class QPColor {
 
     /**
      * You need to check if you were given a good hex string
-     * @param string $hex
-     * @return string Color
+     * @param  string    $hex
+     * @return string    Color
      * @throws Exception "Bad color format"
      */
     private static function _checkHex( $hex ) {
@@ -408,9 +409,9 @@ class QPColor {
         $color = str_replace("#", "", $hex);
 
         // Make sure it's 6 digits
-        if( strlen($color) == 3 ) {
+        if ( strlen($color) == 3 ) {
             $color = $color[0].$color[0].$color[1].$color[1].$color[2].$color[2];
-        } else if( strlen($color) != 6 ) {
+        } else if ( strlen($color) != 6 ) {
             throw new Exception("HEX color needs to be 6 or 3 digits long");
         }
 
@@ -422,12 +423,12 @@ class QPColor {
 		$hex = str_replace("#", "", $hex);
 		$color = array();
 
-		if(strlen($hex) == 3) {
+		if (strlen($hex) == 3) {
 			$color['r'] = hexdec(substr($hex, 0, 1) . $r);
 			$color['g'] = hexdec(substr($hex, 1, 1) . $g);
 			$color['b'] = hexdec(substr($hex, 2, 1) . $b);
 		}
-		else if(strlen($hex) == 6) {
+		else if (strlen($hex) == 6) {
 			$color['r'] = hexdec(substr($hex, 0, 2));
 			$color['g'] = hexdec(substr($hex, 2, 2));
 			$color['b'] = hexdec(substr($hex, 4, 2));

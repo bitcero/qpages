@@ -84,7 +84,7 @@ function qp_widget_image( $page ){
     $widget['title'] = __('Featured Image','qpages');
     $util = new RMUtilities();
 
-    if ( isset($page) && is_a( $page, 'QPPage' ) ){
+    if ( isset($page) && is_a( $page, 'QPPage' ) ) {
 
         if ($page->isNew())
             $params = '';
@@ -98,6 +98,7 @@ function qp_widget_image( $page ){
     $widget['content'] = '<form name="frmDefimage" id="frm-defimage" method="post">';
     $widget['content'] .= $util->image_manager('image', 'image', $params);
     $widget['content'] .= '</form>';
+
     return $widget;
 
 }
