@@ -219,7 +219,7 @@ background-color: #fff;
 	font-size:32px;
 	margin-top:30px;
 }
-.divider{ border-top:#d5d7cf solid 1px; margin: 60px 0 60px 0px; display:block;}
+.divider{ border-top:#d5d7cf solid 1px; margin: 60px 0 60px 0; display:block;}
 
 .block-title {
 	margin-bottom:60px;
@@ -329,7 +329,7 @@ transition: all 0.3s;}
 }
 .newsletter .form-control {
 	height:48px;
-	border-radius: 0px;
+	border-radius: 0;
 	border: 1px solid #c1c3bd;
 }
 .newsletter .btn-orange {
@@ -424,7 +424,7 @@ padding-bottom: 20px;
 text-align:center;
 }
 .block {
-margin-bottom: 0px;
+margin-bottom: 0;
 }
 .box-ct{
 	text-align:center;
