@@ -25,7 +25,9 @@ function qp_assign_page( $page ){
         'name'		=> $page->nameid,
         'mod_date'	=> sprintf(__('Last update: %s', 'qpages'), formatTimestamp($page->modified,'c')),
         'reads'		=> sprintf(__('Read %u times','qpages'), $page->hits),
-        'metas'		=> $page->get_meta()
+        'metas'		=> $page->get_meta(),
+        'modified'  => $page->modified,
+        'hits'      => $page->hits
     ));
 }
 
