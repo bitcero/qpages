@@ -19,13 +19,15 @@ if (!defined("XOOPS_MAINFILE_INCLUDED")) {
 function qp_assign_page( $page ){
     global $xoopsTpl;
     $xoopsTpl->assign('page', array(
-        'title'        => $page->title,
-        'text'        => $page->content,
+        'title'     => $page->title,
+        'text'      => $page->content,
         'id'        => $page->id(),
-        'name'        => $page->nameid,
-        'mod_date'    => sprintf(__('Last update: %s', 'qpages'), formatTimestamp($page->modified,'c')),
-        'reads'        => sprintf(__('Read %u times','qpages'), $page->hits),
-        'metas'        => $page->get_meta()
+        'name'      => $page->nameid,
+        'mod_date'  => sprintf(__('Last update: %s', 'qpages'), formatTimestamp($page->modified,'c')),
+        'modified'  => $page->modified,
+        'hits'      => $page->hits,
+        'reads'     => sprintf(__('Read %u times','qpages'), $page->hits),
+        'metas'     => $page->get_meta()
     ));
 }
 
@@ -181,9 +183,12 @@ if ($mc['related']) {
 	while ($row = $db->fetchArray($result)) {
 		$rp = new QPPage();
 		$rp->assignVars($row);
-		$tpl->append('related', array('id'=>$rp->id(),'link'=>$rp->permalink(),'title'=>$rp->title,
-				'modified'=>formatTimestamp($rp->modified,'c'),
-				'hits'=>$rp->hits,'desc'=>$rp->description));
+		$tpl->append('related', array(
+            'id'=>$rp->id(),
+            'link'=>$rp->permalink(),
+            'title'=>$rp->title,
+            'modified' => formatTimestamp($rp->modified,'c'),
+            'hits'=>$rp->hits,'desc'=>$rp->description));
 	}
 }
 

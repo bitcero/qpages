@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: QuickPages\n"
-"POT-Creation-Date: 2014-10-15 12:22-0600\n"
-"PO-Revision-Date: 2014-10-15 12:22-0600\n"
+"POT-Creation-Date: 2014-12-14 21:19-0600\n"
+"PO-Revision-Date: 2014-12-14 21:19-0600\n"
 "Last-Translator: Eduardo Cortés <me@eduardocortes.mx>\n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.7.1\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -86,8 +86,8 @@ msgid "There is another category with same name!"
 msgstr ""
 
 #: Y:\www\xoops\modules\qpages/admin/cats.php:153
-#: Y:\www\xoops\modules\qpages/admin/pages.php:447
-#: Y:\www\xoops\modules\qpages/admin/pages.php:479
+#: Y:\www\xoops\modules\qpages/admin/pages.php:441
+#: Y:\www\xoops\modules\qpages/admin/pages.php:473
 msgid "Database updated successfully!"
 msgstr ""
 
@@ -96,8 +96,8 @@ msgid "Errors ocurred while trying to update database"
 msgstr ""
 
 #: Y:\www\xoops\modules\qpages/admin/cats.php:170
-#: Y:\www\xoops\modules\qpages/admin/pages.php:248
-#: Y:\www\xoops\modules\qpages/admin/pages.php:397
+#: Y:\www\xoops\modules\qpages/admin/pages.php:246
+#: Y:\www\xoops\modules\qpages/admin/pages.php:392
 msgid "Session token expired!"
 msgstr ""
 
@@ -140,11 +140,7 @@ msgstr ""
 msgid "%s (%u times)"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/index.php:87
-msgid "Support Me!"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/admin/index.php:100
+#: Y:\www\xoops\modules\qpages/admin/index.php:90
 #: Y:\www\xoops\modules\qpages/admin/menu.php:16
 #: Y:\www\xoops\modules\qpages/include/general.func.php:70
 #: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:1
@@ -155,7 +151,7 @@ msgstr ""
 #: Y:\www\xoops\modules\qpages/include/general.func.php:71
 #: Y:\www\xoops\modules\qpages/language/english/modinfo.php:40
 #: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:1
-#: Y:\www\xoops\modules\qpages/xoops_version.php:136
+#: Y:\www\xoops\modules\qpages/xoops_version.php:135
 msgid "Categories"
 msgstr ""
 
@@ -164,27 +160,27 @@ msgid "All pages"
 msgstr ""
 
 #: Y:\www\xoops\modules\qpages/admin/menu.php:39
-#: Y:\www\xoops\modules\qpages/admin/pages.php:122
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:186
+#: Y:\www\xoops\modules\qpages/admin/pages.php:121
+#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:188
 #: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:22
 #: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-view.php:6
 msgid "Published"
 msgstr ""
 
 #: Y:\www\xoops\modules\qpages/admin/menu.php:46
-#: Y:\www\xoops\modules\qpages/admin/pages.php:122
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:187
+#: Y:\www\xoops\modules\qpages/admin/pages.php:121
+#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:189
 #: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:23
 msgid "Drafts"
 msgstr ""
 
 #: Y:\www\xoops\modules\qpages/admin/menu.php:53
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:175
+#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:177
 msgid "Normal Pages"
 msgstr ""
 
 #: Y:\www\xoops\modules\qpages/admin/menu.php:60
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:180
+#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:182
 msgid "Redirection Pages"
 msgstr ""
 
@@ -194,7 +190,7 @@ msgid "Add page"
 msgstr ""
 
 #: Y:\www\xoops\modules\qpages/admin/menu.php:74
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:188
+#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:190
 #: Y:\www\xoops\modules\qpages/include/general.func.php:72
 #: Y:\www\xoops\modules\qpages/language/english/modinfo.php:36
 #: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:58
@@ -202,7 +198,7 @@ msgstr ""
 #: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:1
 #: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:69
 #: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:76
-#: Y:\www\xoops\modules\qpages/xoops_version.php:145
+#: Y:\www\xoops\modules\qpages/xoops_version.php:144
 msgid "Pages"
 msgstr ""
 
@@ -240,119 +236,119 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:106
+#: Y:\www\xoops\modules\qpages/admin/pages.php:105
 msgid "Pages Management"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:108
-#: Y:\www\xoops\modules\qpages/admin/pages.php:180
+#: Y:\www\xoops\modules\qpages/admin/pages.php:107
+#: Y:\www\xoops\modules\qpages/admin/pages.php:178
 msgid "Pages management"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:115
+#: Y:\www\xoops\modules\qpages/admin/pages.php:114
 msgid "Normal pages"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:116
+#: Y:\www\xoops\modules\qpages/admin/pages.php:115
 msgid "Redirection pages"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:117
+#: Y:\www\xoops\modules\qpages/admin/pages.php:116
 msgid "Squeeze pages"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:118
+#: Y:\www\xoops\modules\qpages/admin/pages.php:117
 msgid "Sales pages"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:152
+#: Y:\www\xoops\modules\qpages/admin/pages.php:151
 msgid "You must provide a page ID to edit!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:181
+#: Y:\www\xoops\modules\qpages/admin/pages.php:179
 msgid "Edit page"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:181
+#: Y:\www\xoops\modules\qpages/admin/pages.php:179
 msgid "Create page"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:230
+#: Y:\www\xoops\modules\qpages/admin/pages.php:228
 msgid "Page ID has not been provided"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:235
-#: Y:\www\xoops\modules\qpages/admin/pages.php:511
+#: Y:\www\xoops\modules\qpages/admin/pages.php:233
+#: Y:\www\xoops\modules\qpages/admin/pages.php:505
 msgid "Specified page does not exists!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:251
+#: Y:\www\xoops\modules\qpages/admin/pages.php:249
 msgid "You have not specified a title for this page!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:261
+#: Y:\www\xoops\modules\qpages/admin/pages.php:258
 msgid "You must provide a redirection URL for this page!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:382
+#: Y:\www\xoops\modules\qpages/admin/pages.php:378
 msgid "Page saved successfully!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:384
+#: Y:\www\xoops\modules\qpages/admin/pages.php:380
 msgid "Errors occurs while trying to save page!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:404
+#: Y:\www\xoops\modules\qpages/admin/pages.php:399
 msgid "Select at least a category to delete"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:412
+#: Y:\www\xoops\modules\qpages/admin/pages.php:407
 #, php-format
 msgid "Page with ID \"%s\" does not exists!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:416
+#: Y:\www\xoops\modules\qpages/admin/pages.php:411
 #, php-format
 msgid "Page \"%s\" could not be deleted:"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:422
+#: Y:\www\xoops\modules\qpages/admin/pages.php:417
 msgid "Errors ocurred while trying to delete pages"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:424
+#: Y:\www\xoops\modules\qpages/admin/pages.php:419
 msgid "Pages deleted successfully!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:436
+#: Y:\www\xoops\modules\qpages/admin/pages.php:431
 msgid "You must select at least one category!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:449
+#: Y:\www\xoops\modules\qpages/admin/pages.php:443
 msgid "Database update failed!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:461
+#: Y:\www\xoops\modules\qpages/admin/pages.php:455
 msgid "Select at least a cetegory to edit"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:501
+#: Y:\www\xoops\modules\qpages/admin/pages.php:495
 msgid "Changes saved successfully!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:519
+#: Y:\www\xoops\modules\qpages/admin/pages.php:513
 msgid "Page could not be cloned!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:523
+#: Y:\www\xoops\modules\qpages/admin/pages.php:517
 msgid "Page cloned successfully!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:543
+#: Y:\www\xoops\modules\qpages/admin/pages.php:537
 msgid "Session token not valid!"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:548
+#: Y:\www\xoops\modules\qpages/admin/pages.php:542
 msgid "No template file has been specified!"
 msgstr ""
 
@@ -390,7 +386,7 @@ msgstr ""
 
 #: Y:\www\xoops\modules\qpages/catego.php:128
 #: Y:\www\xoops\modules\qpages/language/english/modinfo.php:41
-#: Y:\www\xoops\modules\qpages/page.php:182
+#: Y:\www\xoops\modules\qpages/page.php:197
 msgid "Page"
 msgstr ""
 
@@ -406,29 +402,29 @@ msgstr ""
 msgid "No template"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:155
+#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:157
 #: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:7
 msgid "Redirection Page"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:158
+#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:160
 msgid "Sales Page"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:161
+#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:163
 msgid "Squeeze Page"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:164
+#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:166
 #: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:6
 msgid "Normal Page"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:185
+#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:187
 msgid "Add Page"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/class/qppage.class.php:275
+#: Y:\www\xoops\modules\qpages/class/qppage.class.php:276
 msgid ""
 "The .htaccess file could not be updated. Please delete the next lines from "
 "file:"
@@ -441,7 +437,7 @@ msgid "Last update: %s"
 msgstr ""
 
 #: Y:\www\xoops\modules\qpages/events/rmcommon.php:52
-#: Y:\www\xoops\modules\qpages/page.php:27
+#: Y:\www\xoops\modules\qpages/page.php:29
 #, php-format
 msgid "Read %u times"
 msgstr ""
@@ -507,7 +503,7 @@ msgid "This text will show in the module home page to inform the user."
 msgstr ""
 
 #: Y:\www\xoops\modules\qpages/language/english/modinfo.php:24
-#: Y:\www\xoops\modules\qpages/xoops_version.php:179
+#: Y:\www\xoops\modules\qpages/xoops_version.php:178
 msgid "Show related pages"
 msgstr ""
 
@@ -516,7 +512,7 @@ msgid "Enable the \"Related Pages\" square when a page is viewed."
 msgstr ""
 
 #: Y:\www\xoops\modules\qpages/language/english/modinfo.php:26
-#: Y:\www\xoops\modules\qpages/xoops_version.php:189
+#: Y:\www\xoops\modules\qpages/xoops_version.php:188
 msgid "Number of related pages"
 msgstr ""
 
@@ -536,15 +532,15 @@ msgstr ""
 msgid "Home Page"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/page.php:181
+#: Y:\www\xoops\modules\qpages/page.php:196
 msgid "Related Pages"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/page.php:183
+#: Y:\www\xoops\modules\qpages/page.php:198
 msgid "Last modification"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/page.php:184
+#: Y:\www\xoops\modules\qpages/page.php:199
 #: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:69
 msgid "Hits"
 msgstr ""
@@ -878,291 +874,12 @@ msgstr ""
 msgid "Custom Fields"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/defaults.php:31
-msgid "Awesome and quick pages, like never <span>has seen</span>"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/defaults.php:33
-msgid "Download Now!"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/defaults.php:35
-msgid "Learn More"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:8
-msgid "Clean Landing Template Options"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:14
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:23
-msgid "General"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:15
-msgid "Header"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:16
-msgid "Main Content"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:17
-msgid "Services"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:18
-msgid "Video"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:19
-msgid "Newsletter"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:20
-msgid "Footer"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:31
-msgid "Font for body:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:35
-msgid "Font family string for body:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:42
-msgid "Font for emphasised text:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:46
-msgid "Font family string for emphasised text:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:52
-msgid "Color scheme:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:85
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:189
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:501
-msgid "Background color:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:92
-msgid "Sections background color:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:99
-msgid "Text color:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:130
-msgid "Name first word:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:136
-msgid "Name second word:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:144
-msgid "Social links:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:197
-msgid "Paragraph text color:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:205
-msgid "Text color one:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:213
-msgid "Text color two:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:229
-msgid "Headline:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:234
-msgid "Introduction:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:239
-msgid "Main Buttons"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:243
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:259
-msgid "Caption:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:244
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:260
-msgid "Button caption"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:249
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:265
-msgid "Link:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:250
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:266
-msgid "Button link"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:276
-msgid "Email:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:282
-msgid "Phone:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:289
-msgid "Main form code:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:300
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:454
-msgid "Headline"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:307
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:461
-msgid "Sub headline"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:318
-msgid "Service One:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:334
-msgid "Service Two:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:350
-msgid "Service Three:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:366
-msgid "Service Four:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/clean/form-clean.php:508
-msgid "Texto color:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:9
-msgid "Projects Template Options"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:17
-msgid ""
-"Please save page now and then refresh in order to view the options for this "
-"page."
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:24
-msgid "Header & Footer"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:25
-msgid "Fonts"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:26
-msgid "Content"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:35
-msgid "Page logo:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:43
-msgid "Page background"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:51
-msgid "Background mode:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:53
-msgid "Tiled"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:56
-msgid "Full"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:61
-msgid "Theme color:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:74
-msgid "Top links:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:76
-msgid "Add a new line for each link that you wish to show in navigation bar"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:80
-msgid "Copyright notice:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:90
-msgid "Font for heading"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:98
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:111
-msgid "Font family string for heding:"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:103
-msgid "Font for body"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:122
-msgid ""
-"Click on any of three buttons to insert content in page. Is recommended to "
-"insert only one headline and one \"intro\". You\n"
-"                        can add much projects as you wish."
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:125
-msgid ""
-"Inserts function works with any of the editos included in Common Uitlities, "
-"but I recommend to use HTML or XoopsCode editor\n"
-"                        because you will have much more control over content."
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:131
-msgid "Add headline"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:132
-msgid "Add Introduction"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:133
-msgid "Add Project"
-msgstr ""
-
-#: Y:\www\xoops\modules\qpages/templates/custom/projects/form-projects.php:148
-msgid ""
-"Please save page now and refresh in order to use this template. The options "
-"will be loaded correctly after refresh.\\nDo you want to save page now?"
-msgstr ""
-
 #: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:4
 msgid "Page Type:"
 msgstr ""
 
 #: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:14
+#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:26
 msgid "Set as homepage"
 msgstr ""
 
@@ -1221,66 +938,66 @@ msgstr ""
 msgid "Featured Image"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:18
+#: Y:\www\xoops\modules\qpages/xoops_version.php:17
 msgid "Publish and manage single pages"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:80
+#: Y:\www\xoops\modules\qpages/xoops_version.php:79
 msgid "My Blog"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:108
+#: Y:\www\xoops\modules\qpages/xoops_version.php:107
 msgid "Quick Pages home template"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:112
+#: Y:\www\xoops\modules\qpages/xoops_version.php:111
 msgid "Template to show pages categories"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:116
+#: Y:\www\xoops\modules\qpages/xoops_version.php:115
 msgid "Display all the page content"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:120
+#: Y:\www\xoops\modules\qpages/xoops_version.php:119
 msgid "Show the homepage content"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:137
+#: Y:\www\xoops\modules\qpages/xoops_version.php:136
 msgid "Display a block with categories list"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:146
+#: Y:\www\xoops\modules\qpages/xoops_version.php:145
 msgid "Display a block with pages list"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:159
+#: Y:\www\xoops\modules\qpages/xoops_version.php:158
 msgid "Enable permalinks"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:160
+#: Y:\www\xoops\modules\qpages/xoops_version.php:159
 msgid "This option activate/deactivate friendly URLs for pages and categories"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:169
+#: Y:\www\xoops\modules\qpages/xoops_version.php:168
 msgid "Base path for URL"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:170
+#: Y:\www\xoops\modules\qpages/xoops_version.php:169
 msgid "Stablish the base path to use in friendly URLs."
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:180
+#: Y:\www\xoops\modules\qpages/xoops_version.php:179
 msgid "Enable the \"Related Pages\" block when a page is visited."
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:200
+#: Y:\www\xoops\modules\qpages/xoops_version.php:199
 msgid "Homepage"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:201
+#: Y:\www\xoops\modules\qpages/xoops_version.php:200
 msgid "Category"
 msgstr ""
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:202
+#: Y:\www\xoops\modules\qpages/xoops_version.php:201
 msgid "Page content"
 msgstr ""

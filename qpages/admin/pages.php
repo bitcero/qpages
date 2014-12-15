@@ -132,7 +132,7 @@ function showPages(){
  * Muestra el formulario para la creación de un nuevo artículo
  */
 function newForm($edit = 0, $redir = false){
-	global $rmTpl, $xoopsModule, $xoopsSecurity, $xoopsConfig, $rmEvents, $xoopsModuleConfig;
+	global $rmTpl, $xoopsModule, $xoopsSecurity, $xoopsConfig, $rmEvents, $xoopsModuleConfig, $cuSettings;
 
     define('RMCSUBLOCATION','new-page');
 
@@ -161,7 +161,7 @@ function newForm($edit = 0, $redir = false){
 
 	$form = new RMForm('','','');
 
-	$editor = new RMFormEditor('', 'content', '100%','350px',$edit ? $page->getVar('content','e') : '');
+	$editor = new RMFormEditor('', 'content', '100%','350px',$edit ? $page->getVar('content',$cuSettings->editor_type == 'tiny' ? '' : 'e') : '');
 
 	$page_metas = $edit ? $page->get_meta() : array();
 	$available_metas = qp_get_metas();
@@ -423,25 +423,24 @@ function deletePage(){
 
 function approveBulk($public){
 
-	$cat = rmc_server_var($_POST, 'cat', '');
-    $page = rmc_server_var($_POST, 'page', 1);
-    $ids = rmc_server_var($_POST, 'ids', array());
+	$cat = RMHttpRequest::post( 'cat', 'integer', 0 );
+    $page = RMHttpRequest::post( 'page', 'integer', 1 );
+    $ids = RMHttpRequest::post( 'ids', 'array', array() );
 
 	if (count($ids)<=0) {
-		redirectMsg($aprovado ? "pages.php?op=private&cat=$cat&page=$page" : "pages.php?op=public&cat=$cat&page=$page", __('You must select at least one category!','qpages'), 1);
+		redirectMsg( $public ? "pages.php?action=privatize&cat=$cat&page=$page" : "pages.php?action=publicate&cat=$cat&page=$page", __('You must select at least one category!','qpages'), 1);
 		die();
 	}
 
     $db = XoopsDatabaseFactory::getDatabaseConnection();
-	$sql = "UPDATE ".$db->prefix("mod_qpages_pages")." SET acceso='$public' WHERE ";
+	$sql = "UPDATE ".$db->prefix("mod_qpages_pages")." SET public='$public' WHERE ";
 	$cond = implode(",", $ids);
-
 	$sql .= ' id_page IN ('.$cond.')';
 
 	if ($db->queryF($sql)) {
-		redirectMsg($public ? "pages.php?op=private&cat=$cat&page=$page" : "pages.php?op=public&cat=$cat&page=$page", __('Database updated successfully!','qpages'), 0);
+		redirectMsg($public ? "pages.php?action=private&cat=$cat&page=$page" : "pages.php?action=public&cat=$cat&page=$page", __('Database updated successfully!','qpages'), 0);
 	} else {
-		redirectMsg($public ? "pages.php?op=private&cat=$cat&page=$page" : "pages.php?op=public&cat=$cat&page=$page", __('Database update failed!','qpages') . '<br />' . $db->error(), 1);
+		redirectMsg($public ? "pages.php?action=private&cat=$cat&page=$page" : "pages.php?action=public&cat=$cat&page=$page", __('Database update failed!','qpages') . '<br />' . $db->error(), 1);
 	}
 
 }
