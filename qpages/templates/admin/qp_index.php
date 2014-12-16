@@ -61,28 +61,35 @@
                 <h3><?php _e('Pages Statistics','qpages'); ?></h3>
             </div>
             <div class="box-content collapsable">
-                <script type="text/javascript">
-                    google.load("visualization", "1", {packages:["corechart"]});
-                    google.setOnLoadCallback(drawChart);
-                    function drawChart() {
-                        var data = google.visualization.arrayToDataTable([
-                            ['<?php _e('Pages', 'qpages'); ?>', '<?php _e('Hits', 'qpages'); ?>', {role: 'style'}],
-                            <?php foreach( $stats as $data ): ?>
-                            ['<?php echo $data['legend']; ?>', <?php echo $data['value']; ?>, '<?php echo $data['color']; ?>'],
-                            <?php endforeach; ?>
-                        ]);
+				<?php if(empty($stats)): ?>
+                <ul class="list-unstyled">
+				<li class="text-center">
+					<span class="label label-info"><?php _e('There are not pages created yet!','qpages'); ?></span>
+				</li>
+            	<?php else: ?>
+				<script type="text/javascript">
+					google.load("visualization", "1", {packages:["corechart"]});
+					google.setOnLoadCallback(drawChart);
+					function drawChart() {
+						var data = google.visualization.arrayToDataTable([
+							['<?php _e('Pages', 'qpages'); ?>', '<?php _e('Hits', 'qpages'); ?>', {role: 'style'}],
+							<?php foreach( $stats as $data ): ?>
+							['<?php echo $data['legend']; ?>', <?php echo $data['value']; ?>, '<?php echo $data['color']; ?>'],
+							<?php endforeach; ?>
+						]);
 
-                        var options = {
-                            vAxis: {title: '<?php _e('Pages', 'qpages'); ?>',  titleTextStyle: {color: 'black'}},
-                            animation: {duration: 250},
-                            legend: {position: 'none'},
-                            height: 500
-                        };
+						var options = {
+							vAxis: {title: '<?php _e('Pages', 'qpages'); ?>',  titleTextStyle: {color: 'black'}},
+							animation: {duration: 250},
+							legend: {position: 'none'},
+							height: 500
+						};
 
-                        var chart = new google.visualization.BarChart(document.getElementById('stats'));
-                        chart.draw(data, options);
-                    }
-                </script>
+						var chart = new google.visualization.BarChart(document.getElementById('stats'));
+						chart.draw(data, options);
+					}
+				</script>
+                <?php endif; ?>
                 <div id="stats"></div>
             </div>
 		</div>
