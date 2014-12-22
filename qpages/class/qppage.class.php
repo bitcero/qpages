@@ -33,6 +33,7 @@ class QPPage extends RMObject
 		$this->setNew();
 		$this->initVarsFromTable();
 		$this->setVarType('groups', XOBJ_DTYPE_ARRAY);
+		$this->setVarType('image', XOBJ_DTYPE_SOURCE);
 
 		if ($id==null) return null;
 

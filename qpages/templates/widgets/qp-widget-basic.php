@@ -9,20 +9,14 @@
     </div>
 
     <div class="yes-normal no-redir<?php echo $page->isNew() || $page->getVar('type')!='redir' ? '' : 'hidden-field'; ?> form-group">
-        <label class="checkbox">
+        <label>
             <input type="checkbox" name="home" value="1" id="home"<?php echo $page->getVar('home') ? ' checked="checked"' : ''; ?>>
             <?php _e('Set as homepage','qpages'); ?>
         </label>
     </div>
+
 </form>
 <div id="qp-form-controls">
 	<button type="submit" class="btn btn-primary btn-lg qp-submit"><?php $page->isNew() ? _e('Create Page','qpages') : _e('Save Changes','qpages'); ?></button>
 	<button type="button" class="btn btn-lg btn-default qp-cancel"><?php _e('Cancel','qpages'); ?></button>
-</div>
-
-<div class="yes-normal no-redir<?php echo $page->isNew() || $page->getVar('type')!='redir' ? '' : 'hidden-field'; ?> form-group">
-    <label>
-        <input type="checkbox" name="home" value="1" id="home"<?php echo $page->getVar('home') ? ' checked="checked"' : ''; ?>>
-        <?php _e('Set as homepage','qpages'); ?>
-    </label>
 </div>
