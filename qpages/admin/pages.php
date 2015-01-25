@@ -330,6 +330,7 @@ function savePage($edit=0){
 
         $tpl_info = pathinfo( $custom_tpl );
         $var_name = str_replace("tpl-", '', $tpl_info['filename']);
+        $var_name = preg_replace( "/^[^a-zA-Z_]+|[^a-zA-Z_0-9]+/", '', $var_name );
         $options = isset( ${$var_name}) ? ${$var_name} : array();
 
         if ( !empty( $options ) )

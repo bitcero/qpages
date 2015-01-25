@@ -16,7 +16,7 @@ if (!defined("XOOPS_MAINFILE_INCLUDED")) {
 	}
 }
 
-function qp_assign_page( $page ){
+function qp_assign_page( QPPage $page ){
     global $xoopsTpl;
     $xoopsTpl->assign('page', array(
         'title'     => $page->title,
@@ -86,7 +86,7 @@ if ($page->template != '') {
      * Load template data
      */
 
-    QPFunctions::load_tpl_locale( $pager->template );
+    QPFunctions::load_tpl_locale( $page->template );
 
     $template = QPFunctions::templateInfo( XOOPS_ROOT_PATH . $file_data['dirname'], $file_data['basename'] );
     // Set path to template dir
@@ -115,6 +115,7 @@ if ($page->template != '') {
 
     } else {
         qp_assign_page( $page );
+        $xoopsTpl->assign( 'tplSettings', $tplSettings );
         if ( isset( $template->Standalone ) && $template->Standalone )
             echo $GLOBALS['xoopsTpl']->fetch($file);
         else {

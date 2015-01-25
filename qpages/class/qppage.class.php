@@ -126,7 +126,8 @@ class QPPage extends RMObject
         $file = XOOPS_CACHE_PATH . '/qpages';
         $file .= '/' . $this->template_name . '-' . $this->id() . '.json';
 
-        $this->options = json_decode( file_get_contents( $file ), true );
+        if ( file_exists( $file ) )
+            $this->options = json_decode( file_get_contents( $file ), true );
 
     }
 

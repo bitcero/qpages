@@ -44,7 +44,7 @@ class QPFunctions
             $info = array();
             preg_match( "/\/\*(.*)\*\//s", $content, $info );
 
-        } elseif ( substr( $file, -5 ) == '.html' ){
+        } elseif ( substr( $file, -4 ) == '.tpl' ){
 
             $info = array();
             preg_match( "/^<{\*(.*)\*\}>/sm", $content, $info );
@@ -83,7 +83,19 @@ class QPFunctions
 				$info = QPFunctions::templateInfo($path . '/' . $dir, 'tpl-' . $dir . '.php');
                 if (false !== $info)
                     $tpls[] = $info;
+
 			}
+
+            $files = $lists->getFileListAsArray( $path );
+            foreach( $files as $file ){
+                if ( substr( $file, 0, 4 ) == 'tpl-' &&  substr( $file, -4 ) == '.tpl' ){
+
+                    $info = QPFunctions::templateInfo( $path, $file );
+                    if (false !== $info)
+                        $tpls[] = $info;
+
+                }
+            }
 
 		}
 

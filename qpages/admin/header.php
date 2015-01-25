@@ -28,7 +28,7 @@ if($mc->permalinks){
 	$htResult = $ht->write($rule);
 	if($htResult!==true){
 		$errmsg = __('You have set the URL redirection in the server, but .htaccess file could not be written! Please verify that you have writing permissions. If not, please add next lines to your htaccess file:','qpages');
-		$errmsg .= '<pre>'.$htResult.'</pre>';
+		$errmsg .= '<pre>'.$rule.'</pre>';
 		showMessage($errmsg, RMMSG_WARN);
 	}
 
