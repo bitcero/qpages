@@ -204,6 +204,8 @@ function qp_verify_fields(){
 
     if ( 'undefined' !== typeof ( tinymce ) )
         tinymce.activeEditor.save();
+    else if ( 'undefined' != typeof mdEditor )
+        mdEditor.save( 'content' );
 
 	var params = $("#frm-page").serialize();
 	params += '&' + $("#frm-basic-options").serialize();

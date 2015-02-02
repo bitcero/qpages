@@ -101,7 +101,7 @@ function showPages(){
 
     RMTemplate::get()->add_style('admin.css', 'qpages');
     RMTemplate::get()->add_script('qpages.js','qpages');
-    RMTemplate::get()->add_script('jquery.checkboxes.js','rmcommon', array('directory' => 'include'));
+    RMTemplate::get()->add_script('jquery.checkboxes.js','rmcommon');
     RMTemplate::get()->assign('xoops_pagetitle', __('Pages Management','qpages'));
 
 	RMBreadCrumb::get()->add_crumb(__('Pages management','qpages'), "pages.php?type=$type&amp;public=$public&amp;category=$category&amp;keyw=$keyw");

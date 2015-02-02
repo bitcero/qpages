@@ -37,7 +37,7 @@ function showCategos(){
 	$categories = RMEvents::get()->run_event('qpages.categories.list',$categories);
 	
 	RMTemplate::get()->add_style('admin.css', 'qpages');
-	RMTemplate::get()->add_script('jquery.checkboxes.js', 'rmcommon', array('directory' => 'include'));
+	RMTemplate::get()->add_script('jquery.checkboxes.js', 'rmcommon');
 	RMTemplate::get()->add_script('qpages.js', 'qpages');
 	RMTemplate::get()->assign('xoops_pagetitle', __('Categories management', 'qpages'));
 
