@@ -14,7 +14,7 @@
 function qp_widget_basic($page){
     global $rmTpl;
 
-    $widget['title'] = '<span class="fa fa-check"></span> '.__('Page Basic Options','qpages');
+    $widget['title'] = '<span class="fa fa-check"></span> '.__('Basic Options','qpages');
 
     ob_start();
     include $rmTpl->get_template("widgets/qp-widget-basic.php", 'module', 'qpages');
