@@ -19,7 +19,7 @@
 			<?php if($page->isNew()): ?>
 			<?php _e('The permalink will appear after you save this page.','qpages'); ?>
 			<?php else: ?>
-			<?php echo $page->permalink(); ?>
+			<a href="<?php echo $page->permalink(); ?>" target="permalink"><?php echo $page->permalink(); ?></a>
 			<?php endif; ?>
 		</span>
 	</div>

@@ -10,8 +10,12 @@
 
 include '../../mainfile.php';
 
-$request = str_replace(XOOPS_URL, '', RMUris::current_url());
-$request = str_replace("/modules/pages/", '', $request);
+if ( FALSE === strpos( XOOPS_URL, 'www.' ) )
+    $request = str_replace(XOOPS_URL, '', str_replace( 'www.', '', RMUris::current_url() ));
+else
+    $request = str_replace(XOOPS_URL, '', RMUris::current_url());
+
+$request = str_replace('/modules/qpages/', '', $request);
 
 // Replace the base paths
 $request = trim(str_replace($xoopsModuleConfig['basepath'], '', $request),'/');

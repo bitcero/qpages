@@ -162,7 +162,7 @@ class QPPage extends RMObject
 	public function permalink(){
         global $cuSettings;
 		$mc = RMSettings::module_settings('qpages');
-		if($cuSettings->permalinks){
+		if($mc->permalinks){
 			if($this->getVar('custom_url')!='')
 				$rtn = XOOPS_URL.'/'.$this->getVar('custom_url').'/';
 			else

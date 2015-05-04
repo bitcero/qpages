@@ -23,6 +23,7 @@ $modversion = array(
 
     // Common Utilities
     'rmnative'      => 1,
+    'url'           => 'https://github.com/bitcero/qpages',
     'rmversion'     => array(
         'major'     => 2,
         'minor'     => 0,
@@ -36,7 +37,7 @@ $modversion = array(
 
     // Author information
     'author'        => "Eduardo Cortes",
-    'authormail'    => "me@eduardocortes.mx",
+    'authormail'    => "i.bitcero@gmail.com",
     'authorweb'     => "EduardoCortes.mx",
     'authorurl'     => "http://eduardocortes.mx",
     'credits'       => "Eduardo Cortes",
