@@ -1,27 +1,26 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Projects Template for QuickPages\n"
-"POT-Creation-Date: 2014-12-14 21:20-0600\n"
-"PO-Revision-Date: 2014-12-14 21:20-0600\n"
+"POT-Creation-Date: 2016-01-03 13:09-0600\n"
+"PO-Revision-Date: 2016-01-03 13:09-0600\n"
 "Last-Translator: Eduardo Cortés <me@eduardocortes.mx>\n"
-"Language-Team: \n"
+"Language-Team: Red México <i.bitcero@gmail.com>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.1\n"
-"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: Y:\\www\\xoops\\modules\\qpages\\templates\\custom"
-"\\projects\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:9
+#: form-projects.php:8
 msgid "Projects Template Options"
 msgstr "Opciones de la Projects Template"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:17
+#: form-projects.php:14
 msgid ""
 "Please save page now and then refresh in order to view the options for this "
 "page."
@@ -29,74 +28,73 @@ msgstr ""
 "Por favor guarde la página ahora y actulize para poder ver las opciones de "
 "esta página."
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:23
+#: form-projects.php:21
 msgid "General"
 msgstr "General"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:24
+#: form-projects.php:22
 msgid "Header & Footer"
 msgstr "Encabezado y Pie de Página"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:25
+#: form-projects.php:23
 msgid "Fonts"
 msgstr "Fuentes"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:26
+#: form-projects.php:24
 msgid "Content"
 msgstr "Contenido"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:35
+#: form-projects.php:33
 msgid "Page logo:"
 msgstr "Logotipo:"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:43
+#: form-projects.php:41
 msgid "Page background"
 msgstr "Fondo de la página"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:51
+#: form-projects.php:49
 msgid "Background mode:"
 msgstr "Tipo de fondo:"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:53
+#: form-projects.php:51
 msgid "Tiled"
 msgstr "Mosaico"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:56
+#: form-projects.php:54
 msgid "Full"
 msgstr "Completo"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:61
+#: form-projects.php:59
 msgid "Theme color:"
 msgstr "Color del tema:"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:74
+#: form-projects.php:72
 msgid "Top links:"
 msgstr "Enlaces superiores:"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:76
+#: form-projects.php:74
 msgid "Add a new line for each link that you wish to show in navigation bar"
 msgstr ""
 "Agrega una nueva línea por cada enlace que desees mostrar en la barra de "
 "navegación"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:80
+#: form-projects.php:78
 msgid "Copyright notice:"
 msgstr "Aviso de Copyright:"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:90
+#: form-projects.php:88
 msgid "Font for heading"
 msgstr "Fuente para encabezados"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:98
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:111
+#: form-projects.php:96 form-projects.php:109
 msgid "Font family string for heding:"
 msgstr "Propiedad font-family para encabezados:"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:103
+#: form-projects.php:101
 msgid "Font for body"
 msgstr "Fuente para el cuerpo"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:122
+#: form-projects.php:120
 msgid ""
 "Click on any of three buttons to insert content in page. Is recommended to "
 "insert only one headline and one \"intro\". You\n"
@@ -106,7 +104,7 @@ msgstr ""
 "Se recimienda insertar solo una encabezado y una \"introducción\". Puedes "
 "agregar tanto proyectos como desees."
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:125
+#: form-projects.php:123
 msgid ""
 "Inserts function works with any of the editos included in Common Uitlities, "
 "but I recommend to use HTML or XoopsCode editor\n"
@@ -115,19 +113,19 @@ msgstr ""
 "La función de inserción trabaja con cualquiera de los editores incluidos en "
 "Common Utilities, pero se recomienda el uso del editor HTML o XoopsCode."
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:131
+#: form-projects.php:129
 msgid "Add headline"
 msgstr "Agregar encabezado"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:132
+#: form-projects.php:130
 msgid "Add Introduction"
 msgstr "Agregar Introducción"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:133
+#: form-projects.php:131
 msgid "Add Project"
 msgstr "Agregar Proyecto"
 
-#: Y:\www\xoops\modules\qpages\templates\custom\projects/form-projects.php:148
+#: form-projects.php:144
 msgid ""
 "Please save page now and refresh in order to use this template. The options "
 "will be loaded correctly after refresh.\\nDo you want to save page now?"

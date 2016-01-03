@@ -1,135 +1,125 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: QuickPages 1.3.35\n"
+"Project-Id-Version: QuickPages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-14 21:18-0600\n"
-"PO-Revision-Date: 2014-12-14 21:19-0600\n"
+"POT-Creation-Date: 2016-01-03 13:06-0600\n"
+"PO-Revision-Date: 2016-01-03 13:07-0600\n"
 "Last-Translator: Eduardo Cortés <me@eduardocortes.mx>\n"
-"Language-Team: \n"
+"Language-Team: Red México <i.bitcero@gmail.com>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: .\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.7.1\n"
-"X-Poedit-SearchPath-0: Y:\\www\\xoops\\modules\\qpages\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: templates/custom\n"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:42
+#: admin/cats.php:61
 msgid "Categories management"
 msgstr "Administración de categorías"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:44
-#: Y:\www\xoops\modules\qpages/admin/cats.php:76
+#: admin/cats.php:63 admin/cats.php:95
 msgid "Categories Management"
 msgstr "Administración de categorías"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:64
-#: Y:\www\xoops\modules\qpages/admin/cats.php:119
+#: admin/cats.php:83 admin/cats.php:138
 msgid "You must provide a category ID to edit!"
 msgstr "¡Debe proporcionar el ID de una categoría para editar!"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:71
+#: admin/cats.php:90
 msgid "Specified category does not exists!"
 msgstr "¡La categoría especificada no existe!"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:77
+#: admin/cats.php:96
 msgid "Edit category"
 msgstr "Editar categoría"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:84
+#: admin/cats.php:103
 msgid "Edit Category"
 msgstr "Editar categoría"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:84
+#: admin/cats.php:103
 msgid "New Category"
 msgstr "Nueva Categoría"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:85
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:17
+#: admin/cats.php:104 templates/admin/qp-categories.php:21
 msgid "Category name"
 msgstr "Nombre de la categoría"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:86
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:57
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:66
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:51
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:63
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:89
+#: admin/cats.php:105 templates/admin/qp-categories.php:68
+#: templates/admin/qp-categories.php:77 templates/admin/qp-pages.php:52
+#: templates/admin/qp-pages.php:64 templates/admin/qp_pages_form.php:89
 msgid "Description"
 msgstr "Descripción"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:87
+#: admin/cats.php:106
 msgid "Category parent"
 msgstr "Categoría superior"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:98
+#: admin/cats.php:117
 msgid "Update Category"
 msgstr "Actualizar Categoría"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:98
+#: admin/cats.php:117
 msgid "Create Category"
 msgstr "Crear Categoría"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:99
-#: Y:\www\xoops\modules\qpages/include/qp-lang.php:6
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:20
+#: admin/cats.php:118 include/qp-lang.php:6
+#: templates/widgets/qp-widget-basic.php:21
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:124
+#: admin/cats.php:143
 msgid "Please provide a name for this category!"
 msgstr "¡Por favor proporcione un nombre para esta categoría!"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:137
+#: admin/cats.php:156
 msgid "There is another category with same name!"
 msgstr "¡Ya existe otra categoría con el mismo nombre!"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:153
-#: Y:\www\xoops\modules\qpages/admin/pages.php:441
-#: Y:\www\xoops\modules\qpages/admin/pages.php:473
+#: admin/cats.php:172 admin/pages.php:461 admin/pages.php:493
 msgid "Database updated successfully!"
 msgstr "¡Base de datos actualizada satisfactoriamente!"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:155
+#: admin/cats.php:174
 msgid "Errors ocurred while trying to update database"
 msgstr "Ocurrieron errores al intentar actualizar la base de datos"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:170
-#: Y:\www\xoops\modules\qpages/admin/pages.php:246
-#: Y:\www\xoops\modules\qpages/admin/pages.php:392
+#: admin/cats.php:189 admin/pages.php:265 admin/pages.php:412
 msgid "Session token expired!"
 msgstr "¡Caducó el identificador de sesión!"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:175
+#: admin/cats.php:194
 msgid "No category has been selected!"
 msgstr "¡Ninguna categoría ha sido seleccionada!"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:184
+#: admin/cats.php:203
 #, php-format
 msgid "ID \"%s\" is not valid!"
 msgstr "¡ID \"%s\" no es válido!"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:191
+#: admin/cats.php:210
 #, php-format
 msgid "Category with ID \"%s\" does not exists!"
 msgstr "¡La categoría con el ID \"%s\" no existe!"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:198
+#: admin/cats.php:217
 #, php-format
 msgid "Category \"%s\" could not be deleted!"
 msgstr "¡La categoría \"%s\" no pudo ser eliminada!"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:204
+#: admin/cats.php:223
 msgid "Errors ocurred while trying to delete categories"
 msgstr "Ocurrieron errores al intetar eliminar las categorías"
 
-#: Y:\www\xoops\modules\qpages/admin/cats.php:206
+#: admin/cats.php:225
 msgid "Categories deleted successfully!"
 msgstr "¡Categorías eliminadas satisfactoriamente!"
 
-#: Y:\www\xoops\modules\qpages/admin/header.php:30
+#: admin/header.php:49
 msgid ""
 "You have set the URL redirection in the server, but .htaccess file could not "
 "be written! Please verify that you have writing permissions. If not, please "
@@ -140,296 +130,273 @@ msgstr ""
 "para este archivo, de lo contrario, agrega las siguientes líneas a tu "
 "archivo htaccess."
 
-#: Y:\www\xoops\modules\qpages/admin/index.php:24
+#: admin/index.php:45
 #, php-format
 msgid "%s (%u times)"
 msgstr "%s (%u veces)"
 
-#: Y:\www\xoops\modules\qpages/admin/index.php:90
-#: Y:\www\xoops\modules\qpages/admin/menu.php:16
-#: Y:\www\xoops\modules\qpages/include/general.func.php:70
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:1
+#: admin/index.php:109 admin/menu.php:35 templates/admin/qp-index.php:1
 msgid "Dashboard"
 msgstr "Tablero"
 
-#: Y:\www\xoops\modules\qpages/admin/menu.php:23
-#: Y:\www\xoops\modules\qpages/include/general.func.php:71
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:40
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:1
-#: Y:\www\xoops\modules\qpages/xoops_version.php:135
+#: admin/menu.php:42 language/english/modinfo.php:40
+#: templates/admin/qp-categories.php:1 xoops_version.php:133
 msgid "Categories"
 msgstr "Categorías"
 
-#: Y:\www\xoops\modules\qpages/admin/menu.php:32
+#: admin/menu.php:51
 msgid "All pages"
 msgstr "Todas las páginas"
 
-#: Y:\www\xoops\modules\qpages/admin/menu.php:39
-#: Y:\www\xoops\modules\qpages/admin/pages.php:121
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:188
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:22
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-view.php:6
+#: admin/menu.php:58 admin/pages.php:140 class/qpfunctions.class.php:188
+#: templates/admin/qp-pages.php:22 templates/widgets/qp-widget-view.php:6
 msgid "Published"
 msgstr "Publicadas"
 
-#: Y:\www\xoops\modules\qpages/admin/menu.php:46
-#: Y:\www\xoops\modules\qpages/admin/pages.php:121
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:189
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:23
+#: admin/menu.php:65 admin/pages.php:140 class/qpfunctions.class.php:189
+#: templates/admin/qp-pages.php:23
 msgid "Drafts"
 msgstr "Borradores"
 
-#: Y:\www\xoops\modules\qpages/admin/menu.php:53
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:177
+#: admin/menu.php:72
 msgid "Normal Pages"
 msgstr "Páginas Normales"
 
-#: Y:\www\xoops\modules\qpages/admin/menu.php:60
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:182
+#: admin/menu.php:79
 msgid "Redirection Pages"
 msgstr "Páginas Enlazadas"
 
-#: Y:\www\xoops\modules\qpages/admin/menu.php:67
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:24
+#: admin/menu.php:86 templates/admin/qp-pages.php:24
 msgid "Add page"
 msgstr "Agregar página"
 
-#: Y:\www\xoops\modules\qpages/admin/menu.php:74
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:190
-#: Y:\www\xoops\modules\qpages/include/general.func.php:72
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:36
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:58
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:67
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:1
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:69
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:76
-#: Y:\www\xoops\modules\qpages/xoops_version.php:144
+#: admin/menu.php:93 language/english/modinfo.php:36
+#: templates/admin/qp-categories.php:69 templates/admin/qp-categories.php:78
+#: templates/admin/qp-index.php:63 templates/admin/qp-index.php:70
+#: templates/admin/qp-pages.php:1 xoops_version.php:142
 msgid "Pages"
 msgstr "Páginas"
 
-#: Y:\www\xoops\modules\qpages/admin/metas.php:4
+#: admin/metas.php:4
 msgid "Field name:"
 msgstr "Nombre del campo:"
 
-#: Y:\www\xoops\modules\qpages/admin/metas.php:12
+#: admin/metas.php:12
 msgid "Add New"
 msgstr "Agregar Página"
 
-#: Y:\www\xoops\modules\qpages/admin/metas.php:20
+#: admin/metas.php:20
 msgid "Field value:"
 msgstr "Valor del campo:"
 
-#: Y:\www\xoops\modules\qpages/admin/metas.php:28
+#: admin/metas.php:28
 msgid "Add Field"
 msgstr "Agregar Campo"
 
-#: Y:\www\xoops\modules\qpages/admin/metas.php:34
+#: admin/metas.php:34
 msgid "Field name"
 msgstr "Nombre del campo"
 
-#: Y:\www\xoops\modules\qpages/admin/metas.php:37
+#: admin/metas.php:37
 msgid "Field value"
 msgstr "Valor del campo"
 
-#: Y:\www\xoops\modules\qpages/admin/metas.php:45
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:46
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:84
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:100
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:37
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:96
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:118
+#: admin/metas.php:45 templates/admin/qp-categories.php:52
+#: templates/admin/qp-categories.php:95 templates/admin/qp-categories.php:112
+#: templates/admin/qp-pages.php:37 templates/admin/qp-pages.php:97
+#: templates/admin/qp-pages.php:120
 msgid "Delete"
 msgstr "Eliminar"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:105
+#: admin/pages.php:124
 msgid "Pages Management"
 msgstr "Administración de páginas"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:107
-#: Y:\www\xoops\modules\qpages/admin/pages.php:178
+#: admin/pages.php:126 admin/pages.php:197
 msgid "Pages management"
 msgstr "Administración de páginas"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:114
+#: admin/pages.php:133
 msgid "Normal pages"
 msgstr "Páginas normales"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:115
+#: admin/pages.php:134
 msgid "Redirection pages"
 msgstr "Páginas enlazadas"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:116
+#: admin/pages.php:135
 msgid "Squeeze pages"
 msgstr "Páginas squeeze"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:117
+#: admin/pages.php:136
 msgid "Sales pages"
 msgstr "Páginas de venta"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:151
+#: admin/pages.php:170
 msgid "You must provide a page ID to edit!"
 msgstr "¡Debe proporcionar el ID de una página para editar!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:179
+#: admin/pages.php:198
 msgid "Edit page"
 msgstr "Editar página"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:179
+#: admin/pages.php:198
 msgid "Create page"
 msgstr "Crear página"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:228
+#: admin/pages.php:247
 msgid "Page ID has not been provided"
 msgstr "¡El id de página no ha sido proporcionado!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:233
-#: Y:\www\xoops\modules\qpages/admin/pages.php:505
+#: admin/pages.php:252 admin/pages.php:525
 msgid "Specified page does not exists!"
 msgstr "¡La página especificada no existe!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:249
+#: admin/pages.php:268
 msgid "You have not specified a title for this page!"
 msgstr "¡No has especificado un título para esta página!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:258
+#: admin/pages.php:277
 msgid "You must provide a redirection URL for this page!"
 msgstr "¡Debes proporcionar un URL para enlazar con esta página!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:378
+#: admin/pages.php:398
 msgid "Page saved successfully!"
 msgstr "¡Página guardada correctamente!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:380
+#: admin/pages.php:400
 msgid "Errors occurs while trying to save page!"
 msgstr "Ocurrieron errores al intenar almacenas la página"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:399
+#: admin/pages.php:419
 msgid "Select at least a category to delete"
 msgstr "Seleccione al menos una categoría para eliminar"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:407
+#: admin/pages.php:427
 #, php-format
 msgid "Page with ID \"%s\" does not exists!"
 msgstr "¡La página con el id \"%s\" no existe!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:411
+#: admin/pages.php:431
 #, php-format
 msgid "Page \"%s\" could not be deleted:"
 msgstr "La página \"%s\" no pudo ser eliminada:"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:417
+#: admin/pages.php:437
 msgid "Errors ocurred while trying to delete pages"
 msgstr "Ocurrieron errores al intenat eliminar las páginas"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:419
+#: admin/pages.php:439
 msgid "Pages deleted successfully!"
 msgstr "¡Páginas eliminadas satisfactoriamente!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:431
+#: admin/pages.php:451
 msgid "You must select at least one category!"
 msgstr "¡Debe seleccionar al menos una categoría!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:443
+#: admin/pages.php:463
 msgid "Database update failed!"
 msgstr "¡Falló la actualización de la página!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:455
+#: admin/pages.php:475
 msgid "Select at least a cetegory to edit"
 msgstr "Seleccione al menos una categoría para editar"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:495
+#: admin/pages.php:515
 msgid "Changes saved successfully!"
 msgstr "¡Cambios almacenados satisfactoriamente!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:513
+#: admin/pages.php:533
 msgid "Page could not be cloned!"
 msgstr "¡La página no pudo ser clonada!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:517
+#: admin/pages.php:537
 msgid "Page cloned successfully!"
 msgstr "¡Página clonada satisfactoriamente!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:537
+#: admin/pages.php:557
 msgid "Session token not valid!"
 msgstr "¡Caducó el identificador de sesión!"
 
-#: Y:\www\xoops\modules\qpages/admin/pages.php:542
+#: admin/pages.php:562
 msgid "No template file has been specified!"
 msgstr "¡No se ha especificado una plantilla!"
 
-#: Y:\www\xoops\modules\qpages/blocks/qpages_blocks.php:84
+#: blocks/qpages_blocks.php:84
 msgid "From category:"
 msgstr "Categoría:"
 
-#: Y:\www\xoops\modules\qpages/blocks/qpages_blocks.php:91
+#: blocks/qpages_blocks.php:91
 msgid "Number of pages"
 msgstr "Número de páginas"
 
-#: Y:\www\xoops\modules\qpages/catego.php:41
-#: Y:\www\xoops\modules\qpages/catego.php:49
+#: catego.php:41 catego.php:49
 msgid "Category not found!"
 msgstr "Categoría no encontrada!"
 
-#: Y:\www\xoops\modules\qpages/catego.php:56
+#: catego.php:56
 msgid "Main page"
 msgstr "Página principal"
 
-#: Y:\www\xoops\modules\qpages/catego.php:72
+#: catego.php:72
 #, php-format
 msgid "Pages in %s"
 msgstr "Páginas en %s"
 
-#: Y:\www\xoops\modules\qpages/catego.php:119
+#: catego.php:119
 #, php-format
 msgid "%u pages"
 msgstr "%u páginas"
 
-#: Y:\www\xoops\modules\qpages/catego.php:127
-#: Y:\www\xoops\modules\qpages/home.php:53
+#: catego.php:127 home.php:53
 msgid "Subcategories"
 msgstr "Subcategorías"
 
-#: Y:\www\xoops\modules\qpages/catego.php:128
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:41
-#: Y:\www\xoops\modules\qpages/page.php:197
+#: catego.php:128 language/english/modinfo.php:41 page.php:198
 msgid "Page"
 msgstr "Página"
 
-#: Y:\www\xoops\modules\qpages/catego.php:129
+#: catego.php:129
 msgid "Last update"
 msgstr "Última actualización"
 
-#: Y:\www\xoops\modules\qpages/catego.php:130
+#: catego.php:130
 msgid "Reads"
 msgstr "Lecturas"
 
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:69
+#: class/qpfunctions.class.php:69
 msgid "No template"
 msgstr "Sin plantilla"
 
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:157
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:7
+#: class/qpfunctions.class.php:169 templates/widgets/qp-widget-basic.php:7
 msgid "Redirection Page"
 msgstr "Páginas Enlazada"
 
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:160
+#: class/qpfunctions.class.php:172
 msgid "Sales Page"
 msgstr "Página de Ventas"
 
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:163
+#: class/qpfunctions.class.php:175
 msgid "Squeeze Page"
 msgstr "Página Squeeze"
 
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:166
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:6
+#: class/qpfunctions.class.php:178 templates/widgets/qp-widget-basic.php:6
 msgid "Normal Page"
 msgstr "Página Normal"
 
-#: Y:\www\xoops\modules\qpages/class/qpfunctions.class.php:187
+#: class/qpfunctions.class.php:187
 msgid "Add Page"
 msgstr "Agregar Página"
 
-#: Y:\www\xoops\modules\qpages/class/qppage.class.php:276
+#: class/qpfunctions.class.php:190
+msgid "General"
+msgstr "General"
+
+#: class/qpfunctions.class.php:191
+msgid "Redirection"
+msgstr "Páginas Enlazadas"
+
+#: class/qppage.class.php:278
 msgid ""
 "The .htaccess file could not be updated. Please delete the next lines from "
 "file:"
@@ -437,224 +404,236 @@ msgstr ""
 "El archivo htaccess no pudo ser actualizado. Por favor elimina las "
 "siguientes líneas del archivo:"
 
-#: Y:\www\xoops\modules\qpages/events/rmcommon.php:51
-#: Y:\www\xoops\modules\qpages/page.php:26
+#: events/rmcommon.php:51 page.php:26
 #, php-format
 msgid "Last update: %s"
 msgstr "Última actualización: %s"
 
-#: Y:\www\xoops\modules\qpages/events/rmcommon.php:52
-#: Y:\www\xoops\modules\qpages/page.php:29
+#: events/rmcommon.php:52 page.php:29
 #, php-format
 msgid "Read %u times"
 msgstr "Leído %u veces"
 
-#: Y:\www\xoops\modules\qpages/home.php:16
+#: home.php:16
 msgid "Main"
 msgstr "Inicio"
 
-#: Y:\www\xoops\modules\qpages/home.php:54
+#: home.php:54
 msgid "Pages in this category"
 msgstr "Páginas en esta categoría"
 
-#: Y:\www\xoops\modules\qpages/include/qp-lang.php:7
+#: include/qp-lang.php:7
 msgid "Verifying fields..."
 msgstr "Verificando..."
 
-#: Y:\www\xoops\modules\qpages/include/qp-lang.php:8
+#: include/qp-lang.php:8
 msgid "You must provide a title for this page!"
 msgstr "¡Debes proporcionar un título para esta página!"
 
-#: Y:\www\xoops\modules\qpages/include/qp-lang.php:9
+#: include/qp-lang.php:9
 msgid "Ok"
 msgstr "Ok"
 
-#: Y:\www\xoops\modules\qpages/include/qp-lang.php:10
+#: include/qp-lang.php:10
 msgid "You must provide an url for this page!"
 msgstr "¡Debes proporcionar una URL para esta página!"
 
-#: Y:\www\xoops\modules\qpages/include/qp-lang.php:11
+#: include/qp-lang.php:11
 msgid "Saving page data"
 msgstr "Almacenando los datos de la página"
 
-#: Y:\www\xoops\modules\qpages/include/qp-lang.php:12
+#: include/qp-lang.php:12
 msgid "Close"
 msgstr "Cerrar"
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:12
+#: language/english/modinfo.php:12
 msgid "Module for publishing and management of single pages."
 msgstr "Módulo para la publicación y administración de páginas individuales."
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:15
+#: language/english/modinfo.php:15
 msgid "Links Management Method."
 msgstr "Método para el manejo de enlaces"
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:16
+#: language/english/modinfo.php:16
 msgid "The method based on names requires the Apache Server."
 msgstr "El método basado en nombres require del Servidor Apache."
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:17
+#: language/english/modinfo.php:17
 msgid "PHP Default"
 msgstr "Estándar de PHP"
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:18
+#: language/english/modinfo.php:18
 msgid "Based on Names"
 msgstr "Basado en Nombres"
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:21
+#: language/english/modinfo.php:21
 msgid "Home page text"
 msgstr "Texto para la página inicial"
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:22
+#: language/english/modinfo.php:22
 msgid "This text will show in the module home page to inform the user."
 msgstr ""
 "Este texto se mostrará en la página inicial del módulo para información del "
 "usuario."
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:24
-#: Y:\www\xoops\modules\qpages/xoops_version.php:178
+#: language/english/modinfo.php:24 xoops_version.php:176
 msgid "Show related pages"
 msgstr "Mostrar páginas relacionadas"
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:25
+#: language/english/modinfo.php:25
 msgid "Enable the \"Related Pages\" square when a page is viewed."
 msgstr ""
 "Activa o desactiva el recuadro \"Páginas Relaciondas\" cuando se ve el "
 "contenido de una página específica."
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:26
-#: Y:\www\xoops\modules\qpages/xoops_version.php:188
+#: language/english/modinfo.php:26 xoops_version.php:186
 msgid "Number of related pages"
 msgstr "Número de páginas relacionadas"
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:29
+#: language/english/modinfo.php:29
 msgid "Base path for url"
 msgstr "Ruta base para las url"
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:30
+#: language/english/modinfo.php:30
 msgid "The urls formed by module will be generated from this base path."
 msgstr ""
 "Las url formadas por el módulo serán generadas a partir de esta ruta base."
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:35
+#: language/english/modinfo.php:35
 msgid "Sections"
 msgstr "Secciones"
 
-#: Y:\www\xoops\modules\qpages/language/english/modinfo.php:39
+#: language/english/modinfo.php:39
 msgid "Home Page"
 msgstr "Página Inicial"
 
-#: Y:\www\xoops\modules\qpages/page.php:196
+#: page.php:197
 msgid "Related Pages"
 msgstr "Páginas Relacionadas"
 
-#: Y:\www\xoops\modules\qpages/page.php:198
+#: page.php:199
 msgid "Last modification"
 msgstr "Última modificación"
 
-#: Y:\www\xoops\modules\qpages/page.php:199
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:69
+#: page.php:200 templates/admin/qp-index.php:63
 msgid "Hits"
 msgstr "Lecturas"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:5
+#: templates/admin/qp-categories.php:5
 msgid "Select at least a category to apply this action!"
 msgstr "¡Seleccione al menos una categoría para aplicar esta opción!"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:6
+#: templates/admin/qp-categories.php:6
 msgid "Do you really want to delete selected categories?"
 msgstr "¿Realmente desea eliminar las categorías  seleccionadas?"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:7
+#: templates/admin/qp-categories.php:7
 msgid "WARNING: All pages under these categories will be deleted too!"
 msgstr ""
 "¡ADVERTENCIA: Todas las páginas dentro de esta categoría serán eliminadas "
 "también!"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:15
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:34
+#: templates/admin/qp-categories.php:17 templates/admin/qp-categories.php:38
 msgid "Add Category"
 msgstr "Agregar Categoría"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:21
+#: templates/admin/qp-categories.php:25
 msgid "Category description"
 msgstr "Descripción de la categoría"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:25
+#: templates/admin/qp-categories.php:29
 msgid "Parent category"
 msgstr "Categoría superior"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:27
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-view.php:19
+#: templates/admin/qp-categories.php:31 templates/widgets/qp-widget-view.php:19
 msgid "Select category..."
 msgstr "Seleccionar categoría..."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:48
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:102
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:40
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:121
+#: templates/admin/qp-categories.php:54 templates/admin/qp-categories.php:114
+#: templates/admin/qp-pages.php:40 templates/admin/qp-pages.php:123
 msgid "Apply"
 msgstr "Aplicar"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:55
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:64
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:48
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:60
+#: templates/admin/qp-categories.php:59
+msgid "Existing Categories"
+msgstr "Categorías Existentes"
+
+#: templates/admin/qp-categories.php:66 templates/admin/qp-categories.php:75
+#: templates/admin/qp-pages.php:49 templates/admin/qp-pages.php:61
 msgid "ID"
 msgstr "ID"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:56
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:65
+#: templates/admin/qp-categories.php:67 templates/admin/qp-categories.php:76
 msgid "Name"
 msgstr "Nombre"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:73
+#: templates/admin/qp-categories.php:84
 msgid "There are not categories created yet!"
 msgstr "¡Aún no hay categorías creadas!"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-categories.php:83
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:95
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:24
+#: templates/admin/qp-categories.php:94 templates/admin/qp-index.php:24
+#: templates/admin/qp-pages.php:96
 msgid "Edit"
 msgstr "Editar"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:6
+#: templates/admin/qp-index.php:9
+msgid "Recent Pages"
+msgstr "Páginas Recientes"
+
+#: templates/admin/qp-index.php:15 templates/admin/qp-index.php:55
+#: templates/admin/qp-pages.php:73
+msgid "There are not pages created yet!"
+msgstr "¡Aún no hay páginas creadas!"
+
+#: templates/admin/qp-index.php:22 templates/admin/qp-pages.php:94
+msgid "[Draft]"
+msgstr "[Borrador]"
+
+#: templates/admin/qp-index.php:37
+msgid "Quick Pages News"
+msgstr "Noticias sobre QuickPages"
+
+#: templates/admin/qp-index.php:49
+msgid "Pages Statistics"
+msgstr "Estadisticas de Páginas"
+
+#: templates/admin/qp-library.php:6
 msgid "Add element to library"
 msgstr "Añadir elemento a la biblioteca"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:8
+#: templates/admin/qp-library.php:8
 msgid "Item name"
 msgstr "Nombre del elemento"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:11
+#: templates/admin/qp-library.php:11
 msgid "Item type"
 msgstr "Tipo"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:13
+#: templates/admin/qp-library.php:13
 msgid "Select item type..."
 msgstr "Seleccionar el tipo del elemento..."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:14
+#: templates/admin/qp-library.php:14
 msgid "Button"
 msgstr "Botón"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:15
+#: templates/admin/qp-library.php:15
 msgid "Icon"
 msgstr "Icono"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:16
+#: templates/admin/qp-library.php:16
 msgid "Graphic"
 msgstr "Gráfica"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:17
+#: templates/admin/qp-library.php:17
 msgid "Text block"
 msgstr "Bloque de texto"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:22
+#: templates/admin/qp-library.php:22
 msgid "Button code"
 msgstr "Código del botón"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:24
+#: templates/admin/qp-library.php:24
 msgid ""
 "This code must be different from any other because will activate thsi button "
 "when called (e.g. buy-now)."
@@ -662,15 +641,15 @@ msgstr ""
 "Este código debe ser diferente de cualquier otro, porque el botón será "
 "activado cuando se llame a este código (ej. buy-now)."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:26
+#: templates/admin/qp-library.php:26
 msgid "Button HTML"
 msgstr "HTML del botón"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:27
+#: templates/admin/qp-library.php:27
 msgid "Insert HTML code here..."
 msgstr "Ínsertar el código HTML aquí"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:28
+#: templates/admin/qp-library.php:28
 msgid ""
 "Insert the HTML code for the button. You can use the tag {CONTENT} to "
 "indicate that the button supports custom content and where supprot it."
@@ -679,15 +658,15 @@ msgstr ""
 "indicar que el botón soporta contenido personalizado y en dónde puede ser "
 "insertado."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:30
+#: templates/admin/qp-library.php:30
 msgid "Button CSS"
 msgstr "CSS del botón"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:31
+#: templates/admin/qp-library.php:31
 msgid "Insert CSS code here..."
 msgstr "Insertar el código CSS aquí..."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:32
+#: templates/admin/qp-library.php:32
 msgid ""
 "Insert the CSS code for the button. This code will insert automatically when "
 "button is called."
@@ -695,135 +674,103 @@ msgstr ""
 "Inserta el código CSS para el botón. Este código se insertará "
 "automáticamente cuando el botón sea creado."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:37
+#: templates/admin/qp-library.php:37
 msgid "Create Item"
 msgstr "Crear Elemento"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:48
+#: templates/admin/qp-library.php:48
 msgid "Buttons"
 msgstr "Botones"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:49
+#: templates/admin/qp-library.php:49
 msgid "Icons"
 msgstr "Íconos"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:50
+#: templates/admin/qp-library.php:50
 msgid "Graphics"
 msgstr "Gráficos"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-library.php:51
+#: templates/admin/qp-library.php:51
 msgid "Text Blocks"
 msgstr "Bloques de Texto"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:4
+#: templates/admin/qp-pages.php:4
 msgid "Select at least a page to apply this action!"
 msgstr "¡Seleccione al menos una página para aplicar esta opción!"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:5
+#: templates/admin/qp-pages.php:5
 msgid "Do you really wish to delete selected pages?"
 msgstr "¿Realmente desea eliminar las páginas seleccionadas?"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:10
+#: templates/admin/qp-pages.php:10
 msgid "Search term..."
 msgstr "Buscar término..."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:11
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-view.php:17
+#: templates/admin/qp-pages.php:11 templates/widgets/qp-widget-view.php:17
 msgid "Category:"
 msgstr "Categoría"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:13
+#: templates/admin/qp-pages.php:13
 msgid "Select category"
 msgstr "Seleccionar categoría"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:18
+#: templates/admin/qp-pages.php:18
 msgid "Filter"
 msgstr "Filtro"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:21
+#: templates/admin/qp-pages.php:21
 msgid "Show all"
 msgstr "Mostrar todo"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:33
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:114
+#: templates/admin/qp-pages.php:33 templates/admin/qp-pages.php:116
 msgid "Bulk actions..."
 msgstr "Acciones en bloque..."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:34
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:115
+#: templates/admin/qp-pages.php:34 templates/admin/qp-pages.php:117
 msgid "Set as draft"
 msgstr "Establecer como borrador"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:35
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:116
+#: templates/admin/qp-pages.php:35 templates/admin/qp-pages.php:118
 msgid "Publish"
 msgstr "Publicar"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:36
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:117
+#: templates/admin/qp-pages.php:36 templates/admin/qp-pages.php:119
 msgid "Set as linked"
 msgstr "Establecer como enlazada"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:38
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:119
+#: templates/admin/qp-pages.php:38 templates/admin/qp-pages.php:121
 msgid "Set order"
 msgstr "Establecer orden"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:50
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:62
+#: templates/admin/qp-pages.php:51 templates/admin/qp-pages.php:63
 msgid "Title"
 msgstr "Título"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:52
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:64
+#: templates/admin/qp-pages.php:53 templates/admin/qp-pages.php:65
 msgid "Created"
 msgstr "Creado"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:53
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:65
+#: templates/admin/qp-pages.php:54 templates/admin/qp-pages.php:66
 msgid "Modified"
 msgstr "Modificada"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:54
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:66
+#: templates/admin/qp-pages.php:55 templates/admin/qp-pages.php:67
 msgid "Views"
 msgstr "Lecturas"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:72
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:15
-msgid "There are not pages created yet!"
-msgstr "¡Aún no hay páginas creadas!"
-
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:93
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:22
-msgid "[Draft]"
-msgstr "[Borrador]"
-
-#: Y:\www\xoops\modules\qpages/templates/admin/qp-pages.php:97
+#: templates/admin/qp-pages.php:98
 msgid "Clone"
 msgstr "Clonar"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:9
-msgid "Recent Pages"
-msgstr "Páginas Recientes"
-
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:35
-msgid "Quick Pages News"
-msgstr "Noticias sobre QuickPages"
-
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_index.php:61
-msgid "Pages Statistics"
-msgstr "Estadisticas de Páginas"
-
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:2
+#: templates/admin/qp_pages_form.php:2
 msgid "Create New Page"
 msgstr "Nueva Página"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:2
+#: templates/admin/qp_pages_form.php:2
 msgid "Editing Page"
 msgstr "Editando Página"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:8
+#: templates/admin/qp_pages_form.php:8
 msgid ""
 "Redirection Pages are simply symbolic links to another pages or URLs, don't "
 "matter if linked pages are located in same website or in another location."
@@ -832,23 +779,23 @@ msgstr ""
 "URLs. No importa si la página enlazada se encuentra en el mismo sitio o en "
 "otra ubicación."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:13
+#: templates/admin/qp_pages_form.php:13
 msgid "Page title"
 msgstr "Titulo de página"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:17
+#: templates/admin/qp_pages_form.php:17
 msgid "Permalink:"
 msgstr "Permalink:"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:20
+#: templates/admin/qp_pages_form.php:20
 msgid "The permalink will appear after you save this page."
 msgstr "El permalink aparecerá después de haber guardado esta página."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:30
+#: templates/admin/qp_pages_form.php:30
 msgid "Custom URL:"
 msgstr "URL personalizada:"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:38
+#: templates/admin/qp_pages_form.php:38
 msgid ""
 "You can specify a custom URL for this page, but remember that this URL must "
 "not exists in your site previously."
@@ -856,7 +803,7 @@ msgstr ""
 "Puedes especificar una URL personalizada para esta página, pero recuerda que "
 "esta URL aún no debe existir en tu sitio."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:39
+#: templates/admin/qp_pages_form.php:39
 msgid ""
 "If you specify a custom URL, then the permalink for this page will be "
 "ignored."
@@ -864,7 +811,7 @@ msgstr ""
 "Si especificas una URL personalizada, entonces el enlace permanente para "
 "esta página será ignorado."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:43
+#: templates/admin/qp_pages_form.php:43
 msgid ""
 "QuickPages can not write the htaccess file. Please do it manually by "
 "inserting next line in your file:"
@@ -872,64 +819,63 @@ msgstr ""
 "QuickPages no puede escribir el archivo htaccess. Por favor haz esto "
 "manualmente insertando la siguiente línea en el archivo:"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:51
+#: templates/admin/qp_pages_form.php:51
 msgid "Page description:"
 msgstr "Descripción de la página:"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:52
+#: templates/admin/qp_pages_form.php:52
 msgid "Short description for page"
 msgstr "Descripción corta de la página:"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:68
+#: templates/admin/qp_pages_form.php:68
 msgid "Redirection URL:"
 msgstr "URL enlazada:"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:77
+#: templates/admin/qp_pages_form.php:77
 msgid "SEO options"
 msgstr "Opciones SEO"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:83
+#: templates/admin/qp_pages_form.php:83
 msgid "Custom title:"
 msgstr "Título SEO:"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:85
+#: templates/admin/qp_pages_form.php:85
 msgid "This title will replace the page title in \"title\" tag."
 msgstr "Este título reemplazara a la etiqueta \"title\"."
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:94
+#: templates/admin/qp_pages_form.php:94
 msgid "Keywords:"
 msgstr "Palabras clave:"
 
-#: Y:\www\xoops\modules\qpages/templates/admin/qp_pages_form.php:105
+#: templates/admin/qp_pages_form.php:105
 msgid "Custom Fields"
 msgstr "Campos Personalizados"
 
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:4
+#: templates/widgets/qp-widget-basic.php:4
 msgid "Page Type:"
 msgstr "Tipo de Página"
 
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:14
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:26
+#: templates/widgets/qp-widget-basic.php:14
 msgid "Set as homepage"
 msgstr "Establecer como portada"
 
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:19
+#: templates/widgets/qp-widget-basic.php:20
 msgid "Create Page"
 msgstr "Crear Página"
 
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-basic.php:19
+#: templates/widgets/qp-widget-basic.php:20
 msgid "Save Changes"
 msgstr "Guardar Cambios"
 
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-template.php:3
+#: templates/widgets/qp-widget-template.php:3
 msgid "Custom page template:"
 msgstr "Plantilla para la página personalizada:"
 
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-template.php:6
+#: templates/widgets/qp-widget-template.php:6
 msgid "Standalone"
 msgstr "Independiente"
 
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-template.php:10
+#: templates/widgets/qp-widget-template.php:10
 #, php-format
 msgid ""
 "You can add templates for pages to your own themes by creating files in "
@@ -938,131 +884,129 @@ msgstr ""
 "Puedes agregar plantillas para páginas en tus propios temas. Sólo debes "
 "crear los archivos en el directorio del tema <code>%s</code>."
 
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-view.php:4
+#: templates/widgets/qp-widget-view.php:4
 msgid "Page status:"
 msgstr "Estado de la página:"
 
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-view.php:7
+#: templates/widgets/qp-widget-view.php:7
 msgid "Draft"
 msgstr "Borrador"
 
-#: Y:\www\xoops\modules\qpages/templates/widgets/qp-widget-view.php:12
+#: templates/widgets/qp-widget-view.php:12
 msgid "Allowed groups:"
 msgstr "Grupos permitidos:"
 
-#: Y:\www\xoops\modules\qpages/widgets/qp-widgets.php:17
-msgid "Page Basic Options"
-msgstr "Opciones Básicas de la Página"
+#: widgets/qp-widgets.php:17
+msgid "Basic Options"
+msgstr "Opciones Básicas"
 
-#: Y:\www\xoops\modules\qpages/widgets/qp-widgets.php:33
+#: widgets/qp-widgets.php:33
 msgid "Page Template"
 msgstr "Plantilla de la Página"
 
-#: Y:\www\xoops\modules\qpages/widgets/qp-widgets.php:62
+#: widgets/qp-widgets.php:62
 msgid "Visualization"
 msgstr "Visualización"
 
-#: Y:\www\xoops\modules\qpages/widgets/qp-widgets.php:64
+#: widgets/qp-widgets.php:64
 msgid "Allowed groups"
 msgstr "Grupos permitidos"
 
-#: Y:\www\xoops\modules\qpages/widgets/qp-widgets.php:84
+#: widgets/qp-widgets.php:84
 msgid "Featured Image"
 msgstr "Imágen por Defecto"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:17
+#: xoops_version.php:17
 msgid "Publish and manage single pages"
 msgstr "Publica y administra páginas individuales"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:79
+#: xoops_version.php:77
 msgid "My Blog"
 msgstr "Mi Blog"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:107
+#: xoops_version.php:105
 msgid "Quick Pages home template"
 msgstr "Plantillas para la página inicial de QuickPages"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:111
+#: xoops_version.php:109
 msgid "Template to show pages categories"
 msgstr "Plantillas para mostrar las páginas de las categorías"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:115
+#: xoops_version.php:113
 msgid "Display all the page content"
 msgstr "Muestra todo el contenido de la página"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:119
+#: xoops_version.php:117
 msgid "Show the homepage content"
 msgstr "Muestra el contenido de la página inicial"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:136
+#: xoops_version.php:134
 msgid "Display a block with categories list"
 msgstr "Muestra un bloque con la lista de categorías"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:145
+#: xoops_version.php:143
 msgid "Display a block with pages list"
 msgstr "Muestra un bloque con la lista de páginas"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:158
+#: xoops_version.php:156
 msgid "Enable permalinks"
 msgstr "Activar permalinks"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:159
+#: xoops_version.php:157
 msgid "This option activate/deactivate friendly URLs for pages and categories"
 msgstr ""
 "Esta opción activa/desactiva las URL amigables para páginas y categorías"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:168
+#: xoops_version.php:166
 msgid "Base path for URL"
 msgstr "Ruta base para las URL"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:169
+#: xoops_version.php:167
 msgid "Stablish the base path to use in friendly URLs."
 msgstr "Establecer la ruta base para usara con las URLs amigables."
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:179
+#: xoops_version.php:177
 msgid "Enable the \"Related Pages\" block when a page is visited."
 msgstr ""
 "Activa o desactiva el recuadro \"Páginas Relaciondas\" cuando se ve el "
 "contenido de una página específica."
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:199
+#: xoops_version.php:197
 msgid "Homepage"
 msgstr "Página Inicial"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:200
+#: xoops_version.php:198
 msgid "Category"
 msgstr "Categoría"
 
-#: Y:\www\xoops\modules\qpages/xoops_version.php:201
+#: xoops_version.php:199
 msgid "Page content"
 msgstr "Contenido de la página"
 
 #~ msgid "Main Content"
 #~ msgstr "Contenido Principal"
 
-#, fuzzy
 #~ msgid "Text color:"
-#~ msgstr "Opciones del contenido"
+#~ msgstr "Color del texto"
 
-#, fuzzy
 #~ msgid "Introduction:"
-#~ msgstr "Introducción"
+#~ msgstr "Introducción:"
 
-#, fuzzy
 #~ msgid "Content"
-#~ msgstr "Contenido de la página"
+#~ msgstr "Contenido"
 
-#, fuzzy
 #~ msgid "Page logo:"
-#~ msgstr "Titulo de página"
+#~ msgstr "Logo de la página:"
 
 #, fuzzy
 #~ msgid "Add headline"
 #~ msgstr "Agregar página"
 
-#, fuzzy
 #~ msgid "Add Introduction"
-#~ msgstr "Introducción"
+#~ msgstr "Añadir introducción"
+
+#~ msgid "Page Basic Options"
+#~ msgstr "Opciones Básicas de la Página"
 
 #~ msgid "Support Me!"
 #~ msgstr "Apoyame"
