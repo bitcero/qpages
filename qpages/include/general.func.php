@@ -65,9 +65,3 @@ function qp_get_metas(){
 	}
 	return $ret;
 }
-
-function qpages_toolbar(){
-	RMTemplate::get()->add_tool(__('Dashboard','qpages'), './index.php', '../images/status.png', 'dashboard');
-	RMTemplate::get()->add_tool(__('Categories','qpages'), './cats.php', '../images/cats.png', 'categories');
-	RMTemplate::get()->add_tool(__('Pages','qpages'), './pages.php', '../images/pages.png', 'pages');
-}
