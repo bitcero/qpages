@@ -2,22 +2,20 @@
     include ('defaults.php');
 ?>
 
-<div class="cu-box">
+<div class="panel panel-cyan">
 
-    <div class="box-header">
-        <span class="fa fa-caret-up box-handler"></span>
-        <h3><span class="fa fa-globe"></span> <?php _e('Projects Template Options', 'projects'); ?></h3>
+    <div class="panel-heading">
+        <h3 class="panel-title"><span class="fa fa-globe"></span> <?php _e('Projects Template Options', 'projects'); ?></h3>
     </div>
 
-    <div class="box-content">
+    <?php if ( defined("QP_AJAX_LOADED") ): ?>
+        <div class="panel-body">
+        <div class="well text-center well-lg">
+            <?php _e('Please save page now and then refresh in order to view the options for this page.', 'projects'); ?>
+        </div>
+        </div>
 
-        <?php if ( defined("QP_AJAX_LOADED") ): ?>
-
-            <div class="well text-center well-lg">
-                <?php _e('Please save page now and then refresh in order to view the options for this page.', 'projects'); ?>
-            </div>
-
-        <?php else: ?>
+    <?php else: ?>
 
         <ul class="nav nav-tabs" role="tablist">
             <li class="active"><a href="#prj-general" role="tab" data-toggle="tab"><?php _e('General', 'projects'); ?></a></li>
@@ -137,9 +135,7 @@
 
         </div>
 
-        <?php endif; ?>
-
-    </div>
+    <?php endif; ?>
 
 </div>
 

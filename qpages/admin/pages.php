@@ -1,12 +1,31 @@
 <?php
-// $Id: pages.php 981 2012-06-03 07:49:59Z mambax7@gmail.com $
-// --------------------------------------------------------------
-// Quick Pages
-// Create simple pages easily and quickly
-// Author: Eduardo Cortés <i.bitcero@gmail.com>
-// Email: i.bitcero@gmail.com
-// License: GPL 2.0
-// --------------------------------------------------------------
+/**
+ * QuickPages for Xoops
+ *
+ * Copyright © 2015 Eduardo Cortés http://www.redmexico.com.mx
+ * -------------------------------------------------------------
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, 
+ * MA 02110-1301, USA.
+ * -------------------------------------------------------------
+ * @copyright    Eduardo Cortés (http://www.redmexico.com.mx)
+ * @license      GNU GPL 2
+ * @package      qpages
+ * @author       Eduardo Cortés (AKA bitcero)    <i.bitcero@gmail.com>
+ * @url          http://www.redmexico.com.mx
+ * @url          http://www.eduardocortes.mx
+ */
 
 define('RMCLOCATION','pages');
 require 'header.php';
@@ -117,7 +136,7 @@ function showPages(){
 			'sales' => __('Sales pages','qpages'),
 		);
 		RMBreadCrumb::get()->add_crumb($page_types[$type]);
-	} elseif ($public!='') {
+	} elseif ($public >= 0) {
 		RMBreadCrumb::get()->add_crumb($public==1 ? __('Published','qpages') : __('Drafts','qpages'));
 	}
 
@@ -132,7 +151,7 @@ function showPages(){
  * Muestra el formulario para la creación de un nuevo artículo
  */
 function newForm($edit = 0, $redir = false){
-	global $rmTpl, $xoopsModule, $xoopsSecurity, $xoopsConfig, $rmEvents, $xoopsModuleConfig, $cuSettings;
+	global $rmTpl, $xoopsModule, $xoopsSecurity, $xoopsConfig, $rmEvents, $xoopsModuleConfig, $cuSettings, $cuIcons;
 
     define('RMCSUBLOCATION','new-page');
 

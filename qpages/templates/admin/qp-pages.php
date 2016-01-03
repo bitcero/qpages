@@ -40,72 +40,74 @@
 	<button type="button" onclick="before_submit('frm-pages');" class="btn btn-default"><?php _e('Apply','qpages'); ?></button>
 </div>
 
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-        <tr>
-            <th width="20" class="text-center"><input<?php if(empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall" onclick='$("#frm-pages").toggleCheckboxes(":not(#checkall)");' /></th>
-            <th width="20" class="text-center"><?php _e('ID','qpages'); ?></th>
-            <th width="20">&nbsp;</th>
-            <th class="text-left"><?php _e('Title','qpages'); ?></th>
-            <th><?php _e('Description','qpages'); ?></th>
-            <th class="text-center"><?php _e('Created','qpages'); ?></th>
-            <th class="text-center"><?php _e('Modified','qpages'); ?></th>
-            <th class="text-center"><?php _e('Views','qpages'); ?></th>
-        </tr>
-        </thead>
-        <tfoot>
-        <tr>
-            <th width="20" class="text-center"><input<?php if(empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall" onclick='$("#frm-pages").toggleCheckboxes(":not(#checkall)");' /></th>
-            <th width="20" class="text-center"><?php _e('ID','qpages'); ?></th>
-            <th width="20">&nbsp;</th>
-            <th class="text-left"><?php _e('Title','qpages'); ?></th>
-            <th><?php _e('Description','qpages'); ?></th>
-            <th class="text-center"><?php _e('Created','qpages'); ?></th>
-            <th class="text-center"><?php _e('Modified','qpages'); ?></th>
-            <th class="text-center"><?php _e('Views','qpages'); ?></th>
-        </tr>
-        </tfoot>
-        <tbody>
-        <?php if(empty($pages)): ?>
-            <tr class="text-center">
-                <td align="center" colspan="8" class="text-center"><?php _e('There are not pages created yet!','qpages'); ?></td>
+<div class="panel panel-default">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th width="20" class="text-center"><input<?php if(empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall" onclick='$("#frm-pages").toggleCheckboxes(":not(#checkall)");' /></th>
+                <th width="20" class="text-center"><?php _e('ID','qpages'); ?></th>
+                <th width="20">&nbsp;</th>
+                <th class="text-left"><?php _e('Title','qpages'); ?></th>
+                <th><?php _e('Description','qpages'); ?></th>
+                <th class="text-center"><?php _e('Created','qpages'); ?></th>
+                <th class="text-center"><?php _e('Modified','qpages'); ?></th>
+                <th class="text-center"><?php _e('Views','qpages'); ?></th>
             </tr>
-        <?php endif; ?>
-        <?php foreach($pages as $item): ?>
-            <tr valign="top">
-                <td class="text-center"><input type="checkbox" name="ids[]" id="item-<?php echo $item['id']; ?>" value="<?php echo $item['id']; ?>" /></td>
-                <td class="text-center"><strong><?php echo $item['id']; ?></strong></td>
-                <td class="text-center">
-                    <a href="pages.php?type=<?php echo $item['type']; ?>" title="<?php echo $item['verbosetype']; ?>">
-                        <?php if($item['type']=='redir'): ?>
-                        <span class="fa fa-link"></span>
-                        <?php else: ?>
-                        <span class="fa fa-file-text"></span>
-                        <?php endif; ?>
-                    </a>
-                </td>
-                <td>
-                    <a href="<?php echo $item['link']; ?>">
-                        <?php if($item['home']): ?><span class="fa fa-home"></span><?php endif; ?>
-                        <strong><?php echo $item['title']; ?></strong>
-                    </a>
-                    <span class="qp_status"><?php if(!$item['public']): _e('[Draft]','qpages'); endif; ?></span>
+            </thead>
+            <tfoot>
+            <tr>
+                <th width="20" class="text-center"><input<?php if(empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall" onclick='$("#frm-pages").toggleCheckboxes(":not(#checkall)");' /></th>
+                <th width="20" class="text-center"><?php _e('ID','qpages'); ?></th>
+                <th width="20">&nbsp;</th>
+                <th class="text-left"><?php _e('Title','qpages'); ?></th>
+                <th><?php _e('Description','qpages'); ?></th>
+                <th class="text-center"><?php _e('Created','qpages'); ?></th>
+                <th class="text-center"><?php _e('Modified','qpages'); ?></th>
+                <th class="text-center"><?php _e('Views','qpages'); ?></th>
+            </tr>
+            </tfoot>
+            <tbody>
+            <?php if(empty($pages)): ?>
+                <tr class="text-center">
+                    <td align="center" colspan="8" class="text-center"><?php _e('There are not pages created yet!','qpages'); ?></td>
+                </tr>
+            <?php endif; ?>
+            <?php foreach($pages as $item): ?>
+                <tr valign="top">
+                    <td class="text-center"><input type="checkbox" name="ids[]" id="item-<?php echo $item['id']; ?>" value="<?php echo $item['id']; ?>" /></td>
+                    <td class="text-center"><strong><?php echo $item['id']; ?></strong></td>
+                    <td class="text-center">
+                        <a href="pages.php?type=<?php echo $item['type']; ?>" title="<?php echo $item['verbosetype']; ?>">
+                            <?php if($item['type']=='redir'): ?>
+                                <span class="fa fa-link"></span>
+                            <?php else: ?>
+                                <span class="fa fa-file-text"></span>
+                            <?php endif; ?>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="<?php echo $item['link']; ?>">
+                            <?php if($item['home']): ?><span class="fa fa-home"></span><?php endif; ?>
+                            <strong><?php echo $item['title']; ?></strong>
+                        </a>
+                        <span class="qp_status"><?php if(!$item['public']): _e('[Draft]','qpages'); endif; ?></span>
                     <span class="cu-item-options">
                         <a href="pages.php?action=edit&amp;id=<?php echo $item['id']; ?>&amp;category=<?php echo $category; ?>"><?php _e('Edit','qpages'); ?></a> |
                         <a href="#" onclick="select_option(<?php echo $item['id']; ?>,'delete','frm-pages');"><?php _e('Delete','qpages'); ?></a> |
                         <a href="pages.php?action=clone&amp;id=<?php echo $item['id']; ?>&amp;category=<?php echo $category; ?>"><?php _e('Clone','qpages'); ?></a>
                     </span>
-                </td>
-                <td><?php echo $item['description']; ?></td>
-                <td class="text-center"><?php echo $item['created']; ?></td>
-                <td class="text-center"><?php echo $item['modified']; ?></td>
-                <td class="text-center"><?php echo $item['reads']; ?></td>
-            </tr>
-        <?php endforeach; ?>
-        </tbody>
+                    </td>
+                    <td><?php echo $item['description']; ?></td>
+                    <td class="text-center"><?php echo $item['created']; ?></td>
+                    <td class="text-center"><?php echo $item['modified']; ?></td>
+                    <td class="text-center"><?php echo $item['reads']; ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
 
-    </table>
+        </table>
+    </div>
 </div>
 
 <div class="cu-bulk-actions">

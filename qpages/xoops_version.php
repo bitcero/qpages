@@ -27,7 +27,7 @@ $modversion = array(
     'rmversion'     => array(
         'major'     => 2,
         'minor'     => 0,
-        'revision'  => 47,
+        'revision'  => 53,
         'stage'     => 0,
         'name'      => 'QuickPages'
     ),
@@ -48,6 +48,7 @@ $modversion = array(
     'icon24'        => 'images/qpages-24.png',
     'icon32'        => 'images/qpages-32.png',
     'icon48'        => "images/qpages-48.png",
+    'icon'          => "fa fa-clock-o",
 
     // Social
     'social'        => array(

@@ -196,10 +196,11 @@ class QPFunctions
                 'icon' => '../images/page-redir.png'
             )
         );
-        $rmTpl->add_tool(__('Add Page','qpages'), 'pages.php?action=new&category='.$category.'&page='.$page, '../images/add.png', 'pages-new');
-        $rmTpl->add_tool(__('Published','qpages'), 'pages.php?public=1&category='.$category, '../images/public.png', 'pages-public');
-        $rmTpl->add_tool(__('Drafts','qpages'), 'pages.php?public=0&category='.$category, '../images/drafts.png', 'pages-draft');
-        $rmTpl->add_tool(__('Pages','qpages'), '#', '../images/pages.png', 'pages-list', array(), $pages );
+        $rmTpl->add_tool(__('Add Page','qpages'), 'pages.php?action=new&category='.$category.'&page='.$page, 'svg-rmcommon-plus-circle text-success', 'pages-new');
+        $rmTpl->add_tool(__('Published','qpages'), 'pages.php?public=1&category='.$category, 'svg-rmcommon-send text-blue-grey', 'pages-public');
+        $rmTpl->add_tool(__('Drafts','qpages'), 'pages.php?public=0&category='.$category, 'svg-rmcommon-document text-danger', 'pages-draft');
+        $rmTpl->add_tool(__('General','qpages'), 'pages.php?type=normal&category=' . $category, 'svg-rmcommon-docs text-teal', 'pages-list' );
+        $rmTpl->add_tool(__('Redirection','qpages'), 'pages.php?type=redir&category=' . $category, 'svg-rmcommon-link text-midnight', 'pages-redir' );
 
     }
 
