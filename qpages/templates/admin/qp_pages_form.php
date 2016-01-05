@@ -69,11 +69,11 @@
         <input type="text" name="url" value="<?php echo $page->isNew() ? '' : $page->getVar('url'); ?>" class="form-control" />
     </div>
 
-    <div class="cu-box yes-normal no-redir">
+    <div class="cu-box box-blue-grey yes-normal no-redir">
         <div class="box-header">
             <span class="fa fa-caret-up box-handler"></span>
-            <h3>
-                <i class="icon-search"></i>
+            <h3 class="box-title">
+                <?php echo $cuIcons->getIcon('svg-rmcommon-search'); ?>
                 <?php _e('SEO options','qpages'); ?>
             </h3>
         </div>
@@ -98,10 +98,10 @@
         </div>
     </div>
 
-    <div class="cu-box">
+    <div class="cu-box box-warning">
         <div class="box-header">
             <span class="fa fa-caret-up box-handler"></span>
-            <h3>
+            <h3 class="box-title">
                 <?php _e('Custom Fields','qpages'); ?>
             </h3>
         </div>
