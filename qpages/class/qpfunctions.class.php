@@ -185,9 +185,10 @@ class QPFunctions
         global $rmTpl;
 
         $rmTpl->add_tool(__('Add Page','qpages'), 'pages.php?action=new&category='.$category.'&page='.$page, 'svg-rmcommon-plus-circle text-success', 'pages-new');
+        $rmTpl->add_tool(__('Show All','qpages'), 'pages.php', 'svg-rmcommon-docs text-orange', 'pages-list' );
         $rmTpl->add_tool(__('Published','qpages'), 'pages.php?public=1&category='.$category, 'svg-rmcommon-send text-blue-grey', 'pages-public');
         $rmTpl->add_tool(__('Drafts','qpages'), 'pages.php?public=0&category='.$category, 'svg-rmcommon-document text-danger', 'pages-draft');
-        $rmTpl->add_tool(__('General','qpages'), 'pages.php?type=normal&category=' . $category, 'svg-rmcommon-docs text-teal', 'pages-list' );
+        $rmTpl->add_tool(__('General','qpages'), 'pages.php?type=normal&category=' . $category, 'svg-rmcommon-docs text-teal', 'pages-normal' );
         $rmTpl->add_tool(__('Redirection','qpages'), 'pages.php?type=redir&category=' . $category, 'svg-rmcommon-link text-midnight', 'pages-redir' );
 
     }

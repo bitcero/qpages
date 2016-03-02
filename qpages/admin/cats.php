@@ -100,23 +100,53 @@ function newForm($edit=0){
 	$cats = array();
 	QPFunctions::categoriesTree($cats, 0, 0, $edit ? array($id) : 0);
 	
-	$form = new RMForm($edit ? __('Edit Category','qpages') : __('New Category','qpages'), 'frmNew', 'cats.php');
-	$form->addElement(new RMFormText(__('Category name','qpages'), 'name', 50, 150, $edit ? $catego->name : ''), true);
-	$form->addElement(new RMFormTextArea(__('Description','qpages'), 'description', 5, 45, $edit ? $catego->getVar('description','e') : ''));
+	$form = new RMForm([
+        'title' => $edit ? __('Edit Category','qpages') : __('New Category','qpages'),
+        'name' => 'frmNew',
+        'id' => 'frm-new',
+        'method' => 'post',
+        'action' => 'cats.php',
+        'data-translate' => 'true'
+    ]);
+
+	$form->addElement(new RMFormText([
+        'caption' => __('Category name','qpages'),
+        'name' => 'name',
+        'value' => $edit ? $catego->name : '',
+        'class' => 'form-control',
+        'required' => null
+    ]), true);
+
+	$form->addElement(new RMFormTextArea([
+        'caption' => __('Description','qpages'),
+        'name' => 'description',
+        'rows' => 5,
+        'class' => 'form-control',
+        'value' => $edit ? $catego->getVar('description','e') : ''
+    ]));
 	$ele = new RMFormSelect(__('Category parent','qpages'), 'parent');
 	$ele->addOption(0, _SELECT, $edit ? ($catego->parent==0 ? 1 : 0) : 1);
 	foreach ($cats as $k){
 		$ele->addOption($k['id_cat'], str_repeat("-", $k['jumps']) . ' ' . $k['name'], $edit ? ($catego->parent==$k['id_cat'] ? 1 : 0) : 0);
 	}
+    $ele->add('class', 'form-control');
 	$form->addElement($ele);
 	$form->addElement(new RMFormHidden('op', $edit ? 'saveedit' : 'save'));
 	if ($edit){
 		$form->addElement(new RMFormHidden('id', $id));
 	}
 	$ele = new RMFormButtonGroup('',' ');
-	$ele->addButton('sbt', $edit ? __('Update Category','qpages') : __('Create Category','qpages'), 'submit');
-	$ele->addButton('cancel', __('Cancel','qpages'), 'button');
-	$ele->setExtra('cancel', "onclick='history.go(-1);'");
+    $ele->addButton(new RMFormButton([
+        'caption' => $edit ? __('Update Category','qpages') : __('Create Category','qpages'),
+        'type' => 'submit',
+        'class' => 'btn btn-primary'
+    ]));
+    $ele->addButton(new RMFormButton([
+        'caption' => __('Cancel','qpages'),
+        'type' => 'button',
+        'class' => 'btn btn-default',
+        'onclick' => 'history.go(-1);'
+    ]));
 	$form->addElement($ele);
 	$form->display();
 	

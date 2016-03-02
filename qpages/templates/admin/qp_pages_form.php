@@ -2,7 +2,7 @@
     <i class="<?php echo $page->isNew() ? 'icon-magic' : 'icon-edit'; ?>"></i> <?php echo $page->isNew() ? __('Create New Page','qpages') : __('Editing Page','qpages'); ?>
 </h1>
 
-<form name="frmPages" id="frm-page" method="post">
+<form name="frmPages" id="frm-page" method="post" data-translate="true">
 	<div class="no-normal yes-redir<?php echo $page->getVar('type')!='redir' ? ' hidden-field' : ''; ?>">
 		<div class="alert alert-block">
 			<?php _e('Redirection Pages are simply symbolic links to another pages or URLs, don\'t matter if linked pages are located in same website or in another location.','qpages'); ?>

@@ -28,6 +28,12 @@ class QPPage extends RMObject
 
 	function __construct($id=null){
 
+        $this->noTranslate = [
+            'nameid', 'groups', 'type', 'url', 'custom_url', '', 'template'
+        ];
+        $this->ownerType = 'module';
+        $this->ownerName = 'qpages';
+
 		$this->db =& XoopsDatabaseFactory::getDatabaseConnection();
 		$this->_dbtable = $this->db->prefix("mod_qpages_pages");
 		$this->setNew();

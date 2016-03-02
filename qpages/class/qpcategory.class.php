@@ -15,6 +15,11 @@ class QPCategory extends RMObject
 {
 	
 	function __construct($id=''){
+
+        $this->noTranslate = ['nameid'];
+        $this->ownerType = 'module';
+        $this->ownerName = 'qpages';
+
 		$this->db =& XoopsDatabaseFactory::getDatabaseConnection();
 		$this->_dbtable = $this->db->prefix("mod_qpages_categos");
 		$this->setNew();
