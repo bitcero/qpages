@@ -1,19 +1,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: QuickPages\n"
-"POT-Creation-Date: 2016-01-03 13:04-0600\n"
-"PO-Revision-Date: 2016-01-03 13:04-0600\n"
+"POT-Creation-Date: 2016-03-02 13:15-0600\n"
+"PO-Revision-Date: 2016-03-02 13:15-0600\n"
 "Last-Translator: Eduardo Cortés <me@eduardocortes.mx>\n"
 "Language-Team: Red México <i.bitcero@gmail.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: templates/custom\n"
 
 #: admin/cats.php:61
 msgid "Categories management"
@@ -23,7 +24,7 @@ msgstr ""
 msgid "Categories Management"
 msgstr ""
 
-#: admin/cats.php:83 admin/cats.php:138
+#: admin/cats.php:83 admin/cats.php:168
 msgid "You must provide a category ID to edit!"
 msgstr ""
 
@@ -35,85 +36,85 @@ msgstr ""
 msgid "Edit category"
 msgstr ""
 
-#: admin/cats.php:103
+#: admin/cats.php:104
 msgid "Edit Category"
 msgstr ""
 
-#: admin/cats.php:103
+#: admin/cats.php:104
 msgid "New Category"
 msgstr ""
 
-#: admin/cats.php:104 templates/admin/qp-categories.php:21
+#: admin/cats.php:113 templates/admin/qp-categories.php:21
 msgid "Category name"
 msgstr ""
 
-#: admin/cats.php:105 templates/admin/qp-categories.php:68
-#: templates/admin/qp-categories.php:77 templates/admin/qp-pages.php:52
-#: templates/admin/qp-pages.php:64 templates/admin/qp_pages_form.php:89
+#: admin/cats.php:121 templates/admin/qp-categories.php:68
+#: templates/admin/qp-categories.php:77 templates/admin/qp-pages.php:45
+#: templates/admin/qp-pages.php:57 templates/admin/qp_pages_form.php:89
 msgid "Description"
 msgstr ""
 
-#: admin/cats.php:106
+#: admin/cats.php:127
 msgid "Category parent"
 msgstr ""
 
-#: admin/cats.php:117
+#: admin/cats.php:140
 msgid "Update Category"
 msgstr ""
 
-#: admin/cats.php:117
+#: admin/cats.php:140
 msgid "Create Category"
 msgstr ""
 
-#: admin/cats.php:118 include/qp-lang.php:6
+#: admin/cats.php:145 include/qp-lang.php:6
 #: templates/widgets/qp-widget-basic.php:21
 msgid "Cancel"
 msgstr ""
 
-#: admin/cats.php:143
+#: admin/cats.php:173
 msgid "Please provide a name for this category!"
 msgstr ""
 
-#: admin/cats.php:156
+#: admin/cats.php:186
 msgid "There is another category with same name!"
 msgstr ""
 
-#: admin/cats.php:172 admin/pages.php:461 admin/pages.php:493
+#: admin/cats.php:202 admin/pages.php:467 admin/pages.php:499
 msgid "Database updated successfully!"
 msgstr ""
 
-#: admin/cats.php:174
+#: admin/cats.php:204
 msgid "Errors ocurred while trying to update database"
 msgstr ""
 
-#: admin/cats.php:189 admin/pages.php:265 admin/pages.php:412
+#: admin/cats.php:219 admin/pages.php:271 admin/pages.php:418
 msgid "Session token expired!"
 msgstr ""
 
-#: admin/cats.php:194
+#: admin/cats.php:224
 msgid "No category has been selected!"
 msgstr ""
 
-#: admin/cats.php:203
+#: admin/cats.php:233
 #, php-format
 msgid "ID \"%s\" is not valid!"
 msgstr ""
 
-#: admin/cats.php:210
+#: admin/cats.php:240
 #, php-format
 msgid "Category with ID \"%s\" does not exists!"
 msgstr ""
 
-#: admin/cats.php:217
+#: admin/cats.php:247
 #, php-format
 msgid "Category \"%s\" could not be deleted!"
 msgstr ""
 
-#: admin/cats.php:223
+#: admin/cats.php:253
 msgid "Errors ocurred while trying to delete categories"
 msgstr ""
 
-#: admin/cats.php:225
+#: admin/cats.php:255
 msgid "Categories deleted successfully!"
 msgstr ""
 
@@ -138,17 +139,16 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: admin/menu.php:51
+#: admin/menu.php:51 admin/pages.php:146
 msgid "All pages"
 msgstr ""
 
-#: admin/menu.php:58 admin/pages.php:140 class/qpfunctions.class.php:188
-#: templates/admin/qp-pages.php:22 templates/widgets/qp-widget-view.php:6
+#: admin/menu.php:58 admin/pages.php:144 class/qpfunctions.class.php:189
+#: templates/widgets/qp-widget-view.php:6
 msgid "Published"
 msgstr ""
 
-#: admin/menu.php:65 admin/pages.php:140 class/qpfunctions.class.php:189
-#: templates/admin/qp-pages.php:23
+#: admin/menu.php:65 admin/pages.php:144 class/qpfunctions.class.php:190
 msgid "Drafts"
 msgstr ""
 
@@ -160,7 +160,7 @@ msgstr ""
 msgid "Redirection Pages"
 msgstr ""
 
-#: admin/menu.php:86 templates/admin/qp-pages.php:24
+#: admin/menu.php:86
 msgid "Add page"
 msgstr ""
 
@@ -197,122 +197,122 @@ msgstr ""
 
 #: admin/metas.php:45 templates/admin/qp-categories.php:52
 #: templates/admin/qp-categories.php:95 templates/admin/qp-categories.php:112
-#: templates/admin/qp-pages.php:37 templates/admin/qp-pages.php:97
-#: templates/admin/qp-pages.php:120
+#: templates/admin/qp-pages.php:30 templates/admin/qp-pages.php:90
+#: templates/admin/qp-pages.php:113
 msgid "Delete"
 msgstr ""
 
-#: admin/pages.php:124
+#: admin/pages.php:128
 msgid "Pages Management"
 msgstr ""
 
-#: admin/pages.php:126 admin/pages.php:197
+#: admin/pages.php:130 admin/pages.php:203
 msgid "Pages management"
 msgstr ""
 
-#: admin/pages.php:133
+#: admin/pages.php:137
 msgid "Normal pages"
 msgstr ""
 
-#: admin/pages.php:134
+#: admin/pages.php:138
 msgid "Redirection pages"
 msgstr ""
 
-#: admin/pages.php:135
+#: admin/pages.php:139
 msgid "Squeeze pages"
 msgstr ""
 
-#: admin/pages.php:136
+#: admin/pages.php:140
 msgid "Sales pages"
 msgstr ""
 
-#: admin/pages.php:170
+#: admin/pages.php:176
 msgid "You must provide a page ID to edit!"
 msgstr ""
 
-#: admin/pages.php:198
+#: admin/pages.php:204
 msgid "Edit page"
 msgstr ""
 
-#: admin/pages.php:198
+#: admin/pages.php:204
 msgid "Create page"
 msgstr ""
 
-#: admin/pages.php:247
+#: admin/pages.php:253
 msgid "Page ID has not been provided"
 msgstr ""
 
-#: admin/pages.php:252 admin/pages.php:525
+#: admin/pages.php:258 admin/pages.php:531
 msgid "Specified page does not exists!"
 msgstr ""
 
-#: admin/pages.php:268
+#: admin/pages.php:274
 msgid "You have not specified a title for this page!"
 msgstr ""
 
-#: admin/pages.php:277
+#: admin/pages.php:283
 msgid "You must provide a redirection URL for this page!"
 msgstr ""
 
-#: admin/pages.php:398
+#: admin/pages.php:404
 msgid "Page saved successfully!"
 msgstr ""
 
-#: admin/pages.php:400
+#: admin/pages.php:406
 msgid "Errors occurs while trying to save page!"
 msgstr ""
 
-#: admin/pages.php:419
+#: admin/pages.php:425
 msgid "Select at least a category to delete"
 msgstr ""
 
-#: admin/pages.php:427
+#: admin/pages.php:433
 #, php-format
 msgid "Page with ID \"%s\" does not exists!"
 msgstr ""
 
-#: admin/pages.php:431
+#: admin/pages.php:437
 #, php-format
 msgid "Page \"%s\" could not be deleted:"
 msgstr ""
 
-#: admin/pages.php:437
+#: admin/pages.php:443
 msgid "Errors ocurred while trying to delete pages"
 msgstr ""
 
-#: admin/pages.php:439
+#: admin/pages.php:445
 msgid "Pages deleted successfully!"
 msgstr ""
 
-#: admin/pages.php:451
+#: admin/pages.php:457
 msgid "You must select at least one category!"
 msgstr ""
 
-#: admin/pages.php:463
+#: admin/pages.php:469
 msgid "Database update failed!"
 msgstr ""
 
-#: admin/pages.php:475
+#: admin/pages.php:481
 msgid "Select at least a cetegory to edit"
 msgstr ""
 
-#: admin/pages.php:515
+#: admin/pages.php:521
 msgid "Changes saved successfully!"
 msgstr ""
 
-#: admin/pages.php:533
+#: admin/pages.php:539
 msgid "Page could not be cloned!"
 msgstr ""
 
-#: admin/pages.php:537
+#: admin/pages.php:543
 msgid "Page cloned successfully!"
 msgstr ""
 
-#: admin/pages.php:557
+#: admin/pages.php:563
 msgid "Session token not valid!"
 msgstr ""
 
-#: admin/pages.php:562
+#: admin/pages.php:568
 msgid "No template file has been specified!"
 msgstr ""
 
@@ -382,16 +382,19 @@ msgstr ""
 msgid "Add Page"
 msgstr ""
 
-#: class/qpfunctions.class.php:190 templates/custom/clean/form-clean.php:11
-#: templates/custom/projects/form-projects.php:21
-msgid "General"
+#: class/qpfunctions.class.php:188
+msgid "Show All"
 msgstr ""
 
 #: class/qpfunctions.class.php:191
+msgid "General"
+msgstr ""
+
+#: class/qpfunctions.class.php:192
 msgid "Redirection"
 msgstr ""
 
-#: class/qppage.class.php:278
+#: class/qppage.class.php:284
 msgid ""
 "The .htaccess file could not be updated. Please delete the next lines from "
 "file:"
@@ -536,7 +539,7 @@ msgid "Select category..."
 msgstr ""
 
 #: templates/admin/qp-categories.php:54 templates/admin/qp-categories.php:114
-#: templates/admin/qp-pages.php:40 templates/admin/qp-pages.php:123
+#: templates/admin/qp-pages.php:33 templates/admin/qp-pages.php:116
 msgid "Apply"
 msgstr ""
 
@@ -545,7 +548,7 @@ msgid "Existing Categories"
 msgstr ""
 
 #: templates/admin/qp-categories.php:66 templates/admin/qp-categories.php:75
-#: templates/admin/qp-pages.php:49 templates/admin/qp-pages.php:61
+#: templates/admin/qp-pages.php:42 templates/admin/qp-pages.php:54
 msgid "ID"
 msgstr ""
 
@@ -558,7 +561,7 @@ msgid "There are not categories created yet!"
 msgstr ""
 
 #: templates/admin/qp-categories.php:94 templates/admin/qp-index.php:24
-#: templates/admin/qp-pages.php:96
+#: templates/admin/qp-pages.php:89
 msgid "Edit"
 msgstr ""
 
@@ -567,11 +570,11 @@ msgid "Recent Pages"
 msgstr ""
 
 #: templates/admin/qp-index.php:15 templates/admin/qp-index.php:55
-#: templates/admin/qp-pages.php:73
+#: templates/admin/qp-pages.php:66
 msgid "There are not pages created yet!"
 msgstr ""
 
-#: templates/admin/qp-index.php:22 templates/admin/qp-pages.php:94
+#: templates/admin/qp-index.php:22 templates/admin/qp-pages.php:87
 msgid "[Draft]"
 msgstr ""
 
@@ -685,10 +688,6 @@ msgstr ""
 msgid "Search term..."
 msgstr ""
 
-#: templates/admin/qp-pages.php:11 templates/widgets/qp-widget-view.php:17
-msgid "Category:"
-msgstr ""
-
 #: templates/admin/qp-pages.php:13
 msgid "Select category"
 msgstr ""
@@ -697,47 +696,43 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
-#: templates/admin/qp-pages.php:21
-msgid "Show all"
-msgstr ""
-
-#: templates/admin/qp-pages.php:33 templates/admin/qp-pages.php:116
+#: templates/admin/qp-pages.php:26 templates/admin/qp-pages.php:109
 msgid "Bulk actions..."
 msgstr ""
 
-#: templates/admin/qp-pages.php:34 templates/admin/qp-pages.php:117
+#: templates/admin/qp-pages.php:27 templates/admin/qp-pages.php:110
 msgid "Set as draft"
 msgstr ""
 
-#: templates/admin/qp-pages.php:35 templates/admin/qp-pages.php:118
+#: templates/admin/qp-pages.php:28 templates/admin/qp-pages.php:111
 msgid "Publish"
 msgstr ""
 
-#: templates/admin/qp-pages.php:36 templates/admin/qp-pages.php:119
+#: templates/admin/qp-pages.php:29 templates/admin/qp-pages.php:112
 msgid "Set as linked"
 msgstr ""
 
-#: templates/admin/qp-pages.php:38 templates/admin/qp-pages.php:121
+#: templates/admin/qp-pages.php:31 templates/admin/qp-pages.php:114
 msgid "Set order"
 msgstr ""
 
-#: templates/admin/qp-pages.php:51 templates/admin/qp-pages.php:63
+#: templates/admin/qp-pages.php:44 templates/admin/qp-pages.php:56
 msgid "Title"
 msgstr ""
 
-#: templates/admin/qp-pages.php:53 templates/admin/qp-pages.php:65
+#: templates/admin/qp-pages.php:46 templates/admin/qp-pages.php:58
 msgid "Created"
 msgstr ""
 
-#: templates/admin/qp-pages.php:54 templates/admin/qp-pages.php:66
+#: templates/admin/qp-pages.php:47 templates/admin/qp-pages.php:59
 msgid "Modified"
 msgstr ""
 
-#: templates/admin/qp-pages.php:55 templates/admin/qp-pages.php:67
+#: templates/admin/qp-pages.php:48 templates/admin/qp-pages.php:60
 msgid "Views"
 msgstr ""
 
-#: templates/admin/qp-pages.php:98
+#: templates/admin/qp-pages.php:91
 msgid "Clone"
 msgstr ""
 
@@ -821,281 +816,6 @@ msgstr ""
 msgid "Custom Fields"
 msgstr ""
 
-#: templates/custom/clean/defaults.php:31
-msgid "Awesome and quick pages, like never <span>has seen</span>"
-msgstr ""
-
-#: templates/custom/clean/defaults.php:33
-msgid "Download Now!"
-msgstr ""
-
-#: templates/custom/clean/defaults.php:35
-msgid "Learn More"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:7
-msgid "Clean Landing Template Options"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:12
-msgid "Header"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:13
-msgid "Main Content"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:14
-msgid "Services"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:15
-msgid "Video"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:16
-msgid "Newsletter"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:17
-msgid "Footer"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:28
-msgid "Font for body:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:32
-msgid "Font family string for body:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:39
-msgid "Font for emphasised text:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:43
-msgid "Font family string for emphasised text:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:49
-msgid "Color scheme:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:82
-#: templates/custom/clean/form-clean.php:186
-#: templates/custom/clean/form-clean.php:498
-msgid "Background color:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:89
-msgid "Sections background color:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:96
-msgid "Text color:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:127
-msgid "Name first word:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:133
-msgid "Name second word:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:141
-msgid "Social links:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:194
-msgid "Paragraph text color:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:202
-msgid "Text color one:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:210
-msgid "Text color two:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:226
-msgid "Headline:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:231
-msgid "Introduction:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:236
-msgid "Main Buttons"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:240
-#: templates/custom/clean/form-clean.php:256
-msgid "Caption:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:241
-#: templates/custom/clean/form-clean.php:257
-msgid "Button caption"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:246
-#: templates/custom/clean/form-clean.php:262
-msgid "Link:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:247
-#: templates/custom/clean/form-clean.php:263
-msgid "Button link"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:273
-msgid "Email:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:279
-msgid "Phone:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:286
-msgid "Main form code:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:297
-#: templates/custom/clean/form-clean.php:451
-msgid "Headline"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:304
-#: templates/custom/clean/form-clean.php:458
-msgid "Sub headline"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:315
-msgid "Service One:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:331
-msgid "Service Two:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:347
-msgid "Service Three:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:363
-msgid "Service Four:"
-msgstr ""
-
-#: templates/custom/clean/form-clean.php:505
-msgid "Texto color:"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:8
-msgid "Projects Template Options"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:14
-msgid ""
-"Please save page now and then refresh in order to view the options for this "
-"page."
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:22
-msgid "Header & Footer"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:23
-msgid "Fonts"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:24
-msgid "Content"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:33
-msgid "Page logo:"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:41
-msgid "Page background"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:49
-msgid "Background mode:"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:51
-msgid "Tiled"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:54
-msgid "Full"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:59
-msgid "Theme color:"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:72
-msgid "Top links:"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:74
-msgid "Add a new line for each link that you wish to show in navigation bar"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:78
-msgid "Copyright notice:"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:88
-msgid "Font for heading"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:96
-#: templates/custom/projects/form-projects.php:109
-msgid "Font family string for heding:"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:101
-msgid "Font for body"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:120
-msgid ""
-"Click on any of three buttons to insert content in page. Is recommended to "
-"insert only one headline and one \"intro\". You\n"
-"                        can add much projects as you wish."
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:123
-msgid ""
-"Inserts function works with any of the editos included in Common Uitlities, "
-"but I recommend to use HTML or XoopsCode editor\n"
-"                        because you will have much more control over content."
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:129
-msgid "Add headline"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:130
-msgid "Add Introduction"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:131
-msgid "Add Project"
-msgstr ""
-
-#: templates/custom/projects/form-projects.php:144
-msgid ""
-"Please save page now and refresh in order to use this template. The options "
-"will be loaded correctly after refresh.\\nDo you want to save page now?"
-msgstr ""
-
 #: templates/widgets/qp-widget-basic.php:4
 msgid "Page Type:"
 msgstr ""
@@ -1137,6 +857,10 @@ msgstr ""
 
 #: templates/widgets/qp-widget-view.php:12
 msgid "Allowed groups:"
+msgstr ""
+
+#: templates/widgets/qp-widget-view.php:17
+msgid "Category:"
 msgstr ""
 
 #: widgets/qp-widgets.php:17

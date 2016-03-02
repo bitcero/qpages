@@ -8,7 +8,7 @@
 <form name="frmSearch" method="get" action="pages.php">
 <div class="cu-bulk-actions">
     <input type="text" name="keyw" value="<?php echo $keyw ?>" placeholder="<?php _e('Search term...','qpages'); ?>" class="form-control" /> &#160;
-    <?php _e('Category:','qpages'); ?>
+
     <select name="cat" onchange="submit();" class="form-control">
         <option value="0"<?php if($category==0): ?> selected="selected"<?php endif; ?>><?php _e('Select category','qpages'); ?></option>
         <?php foreach($categories as $cat): ?>
@@ -16,13 +16,6 @@
         <?php endforeach; ?>
     </select>
     <button type="submit" class="btn btn-warning"><?php _e('Filter','qpages'); ?></button>
-
-	<ul class="nav nav-pills pull-right">
-        <li<?php if($public=='' && $type==''): ?> class="active"<?php endif; ?>><a href="pages.php"><?php _e('Show all','qpages'); ?></a></li>
-        <li<?php if($public==1): ?> class="active"<?php endif; ?>><a href="pages.php?public=1"><?php _e('Published','qpages'); ?></a></li>
-        <li<?php if(is_numeric($public) && $public==0): ?> class="active"<?php endif; ?>><a href="pages.php?public=0"><?php _e('Drafts','qpages'); ?></a></li>
-        <li><a href="pages.php?action=new&amp;page=<?php echo $page; ?>&amp;category=<?php echo $category; ?>"><?php _e('Add page','qpages'); ?></a></li>
-	</ul>
 </div>
 </form>
 

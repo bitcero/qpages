@@ -37,20 +37,24 @@ function showPages(){
 	global $rmTpl, $xoopsSecurity;
 
 	$keyw = RMHttpRequest::request( 'keyw', 'string', '' );
-    $public = RMHttpRequest::request( 'public', 'integer', 1);
+    $public = RMHttpRequest::request( 'public', 'string', '');
 	$type = RMHttpRequest::request( 'type', 'string', '' );
     $category = RMHttpRequest::request( 'cat', 'integer', 0 );
 
-	if($public==1)
-		define('RMCSUBLOCATION','pages-public');
-	elseif(is_numeric($public) && $public==0)
+    $public = $public != '1' && $public != '0' && $public != '' ? '1' : $public;
+
+	if($public == '0')
 		define('RMCSUBLOCATION','pages-draft');
+
+    if($public=='1' && $type=='')
+        define('RMCSUBLOCATION','pages-public');
 
 	if($type!='')
 		define('RMCSUBLOCATION','pages-'.$type);
 
-	if($public=='' && $type=='')
-		define('RMCSUBLOCATION','pages-list');
+    if($public == '' && $type == ''){
+        define('RMCSUBLOCATION', 'pages-list');
+    }
 
 	$db = XoopsDatabaseFactory::getDatabaseConnection();
 
@@ -136,9 +140,11 @@ function showPages(){
 			'sales' => __('Sales pages','qpages'),
 		);
 		RMBreadCrumb::get()->add_crumb($page_types[$type]);
-	} elseif ($public >= 0) {
-		RMBreadCrumb::get()->add_crumb($public==1 ? __('Published','qpages') : __('Drafts','qpages'));
-	}
+	} elseif ($public != '') {
+		RMBreadCrumb::get()->add_crumb($public=='1' ? __('Published','qpages') : __('Drafts','qpages'));
+	} else {
+        RMBreadCrumb::get()->add_crumb(__('All pages','qpages'));
+    }
 
 	xoops_cp_header();
 
