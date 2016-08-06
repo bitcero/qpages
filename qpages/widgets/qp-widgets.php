@@ -12,7 +12,7 @@
  * Widget that shows the basic page options
  */
 function qp_widget_basic($page){
-    global $rmTpl;
+    global $rmTpl, $cuIcons;
 
     $widget['title'] = '<span class="fa fa-check"></span> '.__('Basic Options','qpages');
 

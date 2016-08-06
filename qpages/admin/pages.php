@@ -122,7 +122,6 @@ function showPages(){
 		$categories[] = array('id'=>$k['id_cat'],'name'=>$k['name'], 'jumps'=>$k['jumps']);
 	}
 
-    RMTemplate::get()->add_style('admin.css', 'qpages');
     RMTemplate::get()->add_script('qpages.js','qpages');
     RMTemplate::get()->add_script('jquery.checkboxes.js','rmcommon');
     RMTemplate::get()->assign('xoops_pagetitle', __('Pages Management','qpages'));
@@ -181,7 +180,8 @@ function newForm($edit = 0, $redir = false){
         $page = new QPPage();
     }
 
-    RMTemplate::get()->add_script('forms-pages.js','qpages');
+    RMTemplate::getInstance()->add_script('forms-pages.min.js','qpages');
+    RMTemplate::getInstance()->add_script('quick-editor.min.js','qpages', ['id' => 'quickeditor-js', 'footer' => 1]);
 	xoops_cp_header();
 
 	$form = new RMForm('','','');
@@ -203,14 +203,13 @@ function newForm($edit = 0, $redir = false){
 	RMBreadCrumb::get()->add_crumb(__('Pages management','qpages'), 'pages.php');
 	RMBreadCrumb::get()->add_crumb($edit ? __('Edit page','qpages') : __('Create page','qpages'));
 
-    $rmTpl->add_style('forms.css', 'qpages');
     $rmTpl->add_style('forms.css', 'rmcommon');
 
 	$rmTpl->add_head_script(include(XOOPS_ROOT_PATH.'/modules/qpages/include/qp-lang.php'));
 
     xoops_cp_header();
 
-    include $rmTpl->get_template("admin/qp_pages_form.php", 'module', 'qpages');
+    include $rmTpl->get_template("admin/qp-pages-form.php", 'module', 'qpages');
 
 	xoops_cp_footer();
 }

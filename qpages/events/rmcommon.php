@@ -10,8 +10,18 @@
 
 class QpagesRmcommonPreload
 {
+    public function eventRmcommonRegisterIconProvider($providers){
 
-    public function eventRmcommonLoadRightWidgets($widgets){
+        $providers[] = [
+            'id' => 'qpages',
+            'directory' => XOOPS_ROOT_PATH . '/modules/qpages/icons'
+        ];
+
+        return $providers;
+
+    }
+
+    static function eventRmcommonLoadRightWidgets($widgets){
         global $xoopsModule;
 
         if (!isset($xoopsModule) || $xoopsModule->getVar('dirname')!='qpages')
@@ -36,7 +46,7 @@ class QpagesRmcommonPreload
     /**
      * Home page
      */
-    public function eventRmcommonIndexStart(){
+    static function eventRmcommonIndexStart(){
 
         /**
          * Local function to assign smarty values
