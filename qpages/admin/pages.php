@@ -78,7 +78,7 @@ function showPages(){
 	 */
 	$page = RMHttpRequest::request( 'page', 'integer', 1 );
 	$page = $page<=0 ? 1 :  $page;
-    $limit = 1;
+    $limit = 25;
 	list($num) = $db->fetchRow($db->query($sql));
 	$tpages = ceil($num/$limit);
     $page = $page > $tpages ? $tpages : $page;
