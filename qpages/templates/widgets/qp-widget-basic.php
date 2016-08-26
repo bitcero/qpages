@@ -17,6 +17,7 @@
 
 </form>
 <div id="qp-form-controls">
-	<button type="submit" class="btn btn-primary btn-lg qp-submit"><?php $page->isNew() ? _e('Create Page','qpages') : _e('Save Changes','qpages'); ?></button>
-	<button type="button" class="btn btn-lg btn-default qp-cancel"><?php _e('Cancel','qpages'); ?></button>
+	<button type="submit" class="btn btn-primary btn-lg qp-submit" title="<?php $page->isNew() ? _e('Create Page','qpages') : _e('Save Changes','qpages'); ?>">
+        <?php echo $cuIcons->getIcon('svg-qpages-checkmark'); ?>
+    </button>
 </div>

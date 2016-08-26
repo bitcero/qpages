@@ -27,7 +27,7 @@ $modversion = array(
     'rmversion'     => array(
         'major'     => 2,
         'minor'     => 0,
-        'revision'  => 55,
+        'revision'  => 56,
         'stage'     => 0,
         'name'      => 'QuickPages'
     ),
@@ -143,7 +143,8 @@ $modversion = array(
             'description'   => __('Display a block with pages list', 'qpages'),
             'show_func'     => 'qpages_block_pages',
             'edit_func'     => 'qpages_block_pages_edit',
-            'template'      => 'qpages_bk_pages.html'
+            'template'      => 'qpages_bk_pages.html',
+            'options'       => ['limit' => 5, 'category' => 0]
         )
     ),
 

@@ -3,7 +3,7 @@
 </h1>
 
 <form name="frmPages" id="frm-page" method="post" data-translate="true">
-	<div class="no-normal yes-redir<?php echo $page->getVar('type')!='redir' ? ' hidden-field' : ''; ?>">
+	<div class="no-normal yes-redir"<?php echo $page->getVar('type')!='redir' ? ' style="display: none;"' : ''; ?>>
 		<div class="alert alert-block">
 			<?php _e('Redirection Pages are simply symbolic links to another pages or URLs, don\'t matter if linked pages are located in same website or in another location.','qpages'); ?>
 		</div>
@@ -52,9 +52,25 @@
 		<textarea placeholder="<?php _e('Short description for page','qpages'); ?>" name="excerpt" class="form-control" cols="45" rows="3"><?php echo $page->isNew() ? '' : $page->getVar('excerpt','e'); ?></textarea>
 	</div>
 
-    <div class="form-group no-redir yes-normal">
+    <div id="qpages-editor-options" style="display: none;">
+        <ul>
+            <li>
+                <span><?php echo $cuIcons->getIcon('svg-qpages-layers'); ?></span>
+            </li>
+            <li>
+                <a href="#" data-editor="normal"><?php _e('Standard Editor', 'qpages'); ?></a>
+            </li>
+            <li>
+                <a href="#" data-editor="visual"><?php _e('Quick Editor', 'qpages'); ?></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="form-group no-redir yes-normal" id="qpages-editor-standard">
         <?php echo $editor->render(); ?>
     </div>
+
+    <div id="qpages-editor-visual" style="display: none;">Editor Visual</div>
 
     <div id="qp-page-options"<?php echo $page->template != '' ? '' : ' style="display: none;"'; ?>>
     <?php if( $page->template != '' ): ?>

@@ -20,7 +20,7 @@ class QPCategory extends RMObject
         $this->ownerType = 'module';
         $this->ownerName = 'qpages';
 
-		$this->db =& XoopsDatabaseFactory::getDatabaseConnection();
+		$this->db = XoopsDatabaseFactory::getDatabaseConnection();
 		$this->_dbtable = $this->db->prefix("mod_qpages_categos");
 		$this->setNew();
 		$this->initVarsFromTable();

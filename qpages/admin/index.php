@@ -30,7 +30,6 @@
 define('RMCLOCATION','dashboard');
 require 'header.php';
 
-RMTemplate::get()->add_style('admin.css', 'qpages');
 RMTemplate::getInstance()->add_body_class('dashboard');
 
 xoops_cp_header();

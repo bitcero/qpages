@@ -18,7 +18,9 @@
             <select name="category" class="form-control">
                 <option value=""<?php echo $page->isNew() ? ' selected="selected"' : ''; ?>><?php _e('Select category...','qpages'); ?></option>
                 <?php foreach($cats as $cat): ?>
-                    <option value="<?php echo $cat['id_cat']; ?>"<?php echo $page->getVar('category')==$cat['id_cat'] ? ' selected="selected"' : ''; ?>><?php echo $cat['name']; ?></option>
+                    <option value="<?php echo $cat['id_cat']; ?>"<?php echo $page->getVar('category')==$cat['id_cat'] ? ' selected="selected"' : ''; ?>>
+                        <?php echo str_repeat("&#8212;", $cat['jumps']) . ' ' . $cat['name']; ?>
+                    </option>
                 <?php endforeach; ?>
             </select>
         </div>
