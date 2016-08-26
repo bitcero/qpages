@@ -27,7 +27,7 @@ $modversion = array(
     'rmversion'     => array(
         'major'     => 2,
         'minor'     => 0,
-        'revision'  => 55,
+        'revision'  => 56,
         'stage'     => 0,
         'name'      => 'QuickPages'
     ),
