@@ -40,6 +40,8 @@ function showPages(){
     $public = RMHttpRequest::request( 'public', 'string', '');
 	$type = RMHttpRequest::request( 'type', 'string', '' );
     $category = RMHttpRequest::request( 'cat', 'integer', 0 );
+    $sort = RMHttpRequest::request( 'sort', 'string', 'desc' );
+    $order = RMHttpRequest::request( 'order', 'string', 'id_page' );
 
     $public = $public != '1' && $public != '0' && $public != '' ? '1' : $public;
 
@@ -76,16 +78,18 @@ function showPages(){
 	 */
 	$page = RMHttpRequest::request( 'page', 'integer', 1 );
 	$page = $page<=0 ? 1 :  $page;
-    $limit = 25;
+    $limit = 1;
 	list($num) = $db->fetchRow($db->query($sql));
 	$tpages = ceil($num/$limit);
     $page = $page > $tpages ? $tpages : $page;
     $start = $num<=0 ? 0 : ($page - 1) * $limit;
 
     $nav = new RMPageNav($num, $limit, $page, 5);
-    $nav->target_url('pages.php?cat='.$category.'&page={PAGE_NUM}');
+    //$nav->target_url('pages.php?cat='.$category.'&page={PAGE_NUM}');
+    $link = "pages.php?order=$order&amp;sort=$sort&amp;keyw=$keyw&amp;public=$public&amp;type=$type&amp;cat=$category&amp;page={PAGE_NUM}";
+    $nav->target_url($link);
 
-	$sql .= " ORDER BY id_page DESC LIMIT $start,$limit";
+	$sql .= " ORDER BY `$order` $sort LIMIT $start,$limit";
 	$sql = str_replace("SELECT COUNT(*)", "SELECT *", $sql);
 
 	$result = $db->query($sql);
@@ -266,8 +270,12 @@ function savePage($edit=0){
         $page = new QPPage();
     }
 
-	if (!$xoopsSecurity->check())
-		QPFunctions::jsonResponse(__('Session token expired!','qpages'), 1);
+    global $common;
+    $mc = $common->settings()->module_settings('qpages');
+
+	if ($mc->checktoken && !$xoopsSecurity->check()){
+        QPFunctions::jsonResponse(__('Session token expired!','qpages'), 1);
+    }
 
 	if ($title=='')
 		QPFunctions::jsonResponse(__('You have not specified a title for this page!','qpages'), 1, 1);

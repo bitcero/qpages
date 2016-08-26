@@ -259,4 +259,32 @@ class QPFunctions
         load_locale_file(str_replace("tpl-", '', $tpl_info['filename']), XOOPS_ROOT_PATH  . $path);
     }
 
+    static function linkSort($field, $section = 'pages'){
+
+        $keyw = RMHttpRequest::request( 'keyw', 'string', '' );
+        $public = RMHttpRequest::request( 'public', 'string', '');
+        $type = RMHttpRequest::request( 'type', 'string', '' );
+        $category = RMHttpRequest::request( 'cat', 'integer', 0 );
+        $page = RMHttpRequest::request( 'page', 'integer', 1 );
+        $order = RMHttpRequest::request( 'order', 'string', 'id_page' );
+        $sort = RMHttpRequest::request( 'sort', 'string', 'asc' );
+
+        $sort = 'desc' == strtolower($sort) ? 'asc' : 'desc';
+
+        if('' == $field){
+            return "#";
+        }
+
+        if($section != 'pages' && $section != 'categories'){
+            return '#';
+        }
+
+        $section = 'categories' == $section ? 'cats.php' : 'pages.php';
+
+        $link = $section . '?order=' . $field . '&amp;sort=' . $sort . '&amp;keyw=' . $keyw . '&amp;public=' . $public . '&amp;type=' . $type . '&amp;cat=' . $category . '&amp;page=' . $page;
+
+        return $link;
+
+    }
+
 }

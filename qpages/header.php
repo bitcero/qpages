@@ -11,14 +11,14 @@
 require_once XOOPS_ROOT_PATH.'/header.php';
 
 $mc =& $xoopsModuleConfig;
-$db =& XoopsDatabaseFactory::getDatabaseConnection();
+$db = XoopsDatabaseFactory::getDatabaseConnection();
 $tpl =& $xoopsTpl;
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 define('QP_PATH',XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->dirname());
 if (!defined("QP_URL"))
-    define('QP_URL',XOOPS_URL.($cuSettings->permalinks ? $mc['basepath'] : '/modules/'.$xoopsModule->dirname()));
+    define('QP_URL',XOOPS_URL.($mc['permalinks'] ? $mc['basepath'] : '/modules/'.$xoopsModule->dirname()));
 
-RMTemplate::get()->add_style('main.css', 'qpages');
+RMTemplate::getInstance()->add_style('main.css', 'qpages');
 
 include_once 'include/general.func.php';

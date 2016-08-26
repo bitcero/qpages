@@ -189,6 +189,16 @@ $modversion = array(
             'formtype'      => 'textbox',
             'valuetype'     => 'int',
             'default'       => 5
+        ),
+
+        #·· Security
+        array(
+            'name'          => 'checktoken',
+            'title'         => __('Increase security in pages edition','qpages'),
+            'description'   => __('By enabling this option QuickPages will limit the edition time (in pages form) according to PHP session gc_maxlifetime directive', 'qpages'),
+            'formtype'      => 'yesno',
+            'valuetype'     => 'int',
+            'default'       => 1
         )
 
     ),
