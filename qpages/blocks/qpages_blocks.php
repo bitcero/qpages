@@ -12,26 +12,27 @@ function qpages_block_categories(){
 	global $xoopsConfig, $mc;
 
 	include_once XOOPS_ROOT_PATH.'/modules/qpages/class/qpcategory.class.php';
+	include_once XOOPS_ROOT_PATH.'/modules/qpages/class/qpfunctions.class.php';
 	include_once XOOPS_ROOT_PATH.'/modules/qpages/include/general.func.php';
 
 	$mc =& RMSettings::module_settings('qpages');
 	$db =& XoopsDatabaseFactory::getDatabaseConnection();
 
     if (!defined('QP_URL'))
-        define('QP_URL',XOOPS_URL.($mc['links'] ? $mc['basepath'] : '/modules/qpages'));
+        define('QP_URL',XOOPS_URL.($mc->permalinks ? $mc->basepath : '/modules/qpages'));
 
 	$block = array();
 	$categos = array();
-	qpArrayCategos($categos);
+	QPFunctions::categoriesTree($categos);
 
 	foreach ($categos as $k){
 		$catego = new QPCategory();
 		$catego->assignVars($k);
 		$rtn = array();
-		$rtn['id'] = $catego->getID();
-		$rtn['nombre'] = $catego->getName();
-		$rtn['link'] = $catego->getLink();
-		$rtn['ident'] = $k['saltos']>0 ? $k['saltos'] + 8 : 0;
+		$rtn['id'] = $catego->id();
+		$rtn['nombre'] = $catego->name;
+		$rtn['link'] = $catego->permalink();
+		$rtn['ident'] = $k['jumps']>0 ? $k['jumps'] + 8 : 0;
 		$block['categos'][] = $rtn;
 	}
 

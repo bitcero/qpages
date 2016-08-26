@@ -39,13 +39,23 @@
             <thead>
             <tr>
                 <th width="20" class="text-center"><input<?php if(empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall" onclick='$("#frm-pages").toggleCheckboxes(":not(#checkall)");' /></th>
-                <th width="20" class="text-center"><?php _e('ID','qpages'); ?></th>
+                <th width="20" class="text-center">
+                    <a href="<?php echo QPFunctions::linkSort('id_page'); ?>"><?php _e('ID','qpages'); ?></a>
+                </th>
                 <th width="20">&nbsp;</th>
-                <th class="text-left"><?php _e('Title','qpages'); ?></th>
+                <th class="text-left">
+                    <a href="<?php echo QPFunctions::linkSort('title'); ?>"><?php _e('Title','qpages'); ?></a>
+                </th>
                 <th><?php _e('Description','qpages'); ?></th>
-                <th class="text-center"><?php _e('Created','qpages'); ?></th>
-                <th class="text-center"><?php _e('Modified','qpages'); ?></th>
-                <th class="text-center"><?php _e('Views','qpages'); ?></th>
+                <th class="text-center">
+                    <a href="<?php echo QPFunctions::linkSort('created'); ?>"><?php _e('Created','qpages'); ?></a>
+                </th>
+                <th class="text-center">
+                    <a href="<?php echo QPFunctions::linkSort('modified'); ?>"><?php _e('Modified','qpages'); ?></a>
+                </th>
+                <th class="text-center">
+                    <a href="<?php echo QPFunctions::linkSort('hits'); ?>"><?php _e('Views','qpages'); ?></a>
+                </th>
             </tr>
             </thead>
             <tfoot>

@@ -67,9 +67,12 @@ class QPCategory extends RMObject
 	 * Obtiene el enlace a la categoría
 	 */
 	public function permalink(){
-		global $mc, $xoopsModule, $cuSettings;
+		global $common, $xoopsModule, $cuSettings;
+
+        $mc = $common->settings()->module_settings('qpages');
+
 		$link = QP_URL.'/';
-		$link .= $cuSettings->permalinks ? 'category/'.$this->getPath() : 'catego.php?cat='.urlencode($this->getPath());
+		$link .= $mc->permalinks ? 'category/'.$this->getPath() : 'catego.php?cat='.urlencode($this->getPath());
 		return $link;
 	}
 	/**
