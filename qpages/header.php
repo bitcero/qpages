@@ -13,7 +13,7 @@ require_once XOOPS_ROOT_PATH.'/header.php';
 $mc =& $xoopsModuleConfig;
 $db =& XoopsDatabaseFactory::getDatabaseConnection();
 $tpl =& $xoopsTpl;
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 define('QP_PATH',XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->dirname());
 if (!defined("QP_URL"))

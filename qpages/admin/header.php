@@ -11,7 +11,7 @@
 require '../../../include/cp_header.php';
 
 $mc = RMSettings::module_settings('qpages');
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 define('QP_PATH',XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->dirname());
 define('QP_URL',XOOPS_URL.'/modules/qpages/');
