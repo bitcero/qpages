@@ -28,37 +28,81 @@
 
 (function($){
 
+    var instance;
+
     this.QuickEditor = function(){
 
-        this.init = function(){
+    };
 
-            var $this = this;
+    QuickEditor.prototype.init = function(){
 
-            $("#qpages-editor-options a[data-editor='normal']").click(function(){
-                $this.switchEditor('normal');
-                return false;
-            });
+        instance = this;
 
-            $("#qpages-editor-options a[data-editor='visual']").click(function(){
-                $this.switchEditor('visual');
-                return false;
-            });
+        // Capture controls clicks
+        $("#qpages-editor-visual [data-control]").click(function(){
 
+            instance.loadControl($(this));
+
+            return false;
+        });
+    };
+
+    /**
+     * Execute clicked control
+     * @param id
+     * @param owner
+     * @returns {boolean}
+     */
+    QuickEditor.prototype.loadControl = function(element){
+
+        var owner = $(element).data('owner');
+        var id = $(element).data('control');
+
+        if(false === qpvProviders.hasOwnProperty('qpv' + owner)){
+            return false;
         }
 
-        this.switchEditor = function(which){
-            if('visual' == which){
-                $("#qpages-editor-standard").fadeOut(300, function(){
-                    $("#qpages-editor-visual").fadeIn(300);
-                });
-            } else {
-                $("#qpages-editor-visual").fadeOut(300, function(){
-                    $("#qpages-editor-standard").fadeIn(300);
-                });
+        var control = qpvProviders['qpv'+owner];
+
+        if(false === control.hasOwnProperty('route')){
+            return false;
+        }
+
+        // Send AJAX request for control
+        $.get('qpv-providers.php', {action: 'load-control', control: id, route: control.route}, function(response){
+
+            if(false == cuHandler.retrieveAjax(response)){
+                return false;
             }
+
+            var action = undefined != response.action ? response.action : 'insert';
+
+            if($(element).data('target') == 'main'){
+                var target = $("#qpages-editor-visual");
+            } else {
+                var target = $("#qpages-editor-visual [data-id='" + $(element).data('target') + "']");
+            }
+
+            switch(action){
+                case 'insert':
+                    instance.insertElement(response.control, target);
+                    break;
+            };
+
+        }, 'json');
+
+    };
+
+    QuickEditor.prototype.insertElement = function(element, target){
+
+        if($(target).data('capability') != 'container'){
+            return false;
         }
 
-    }
+        $(target).append(element);
+
+    };
+
 
 }(jQuery));
 

@@ -1,0 +1,67 @@
+//* 4. Visual Editor
+//* ----------------
+#qpages-editor-visual{
+  background-color: #FFF;
+  padding: 32px 20px 20px;
+  border-radius: @border-radius-base;
+  border: 1px solid rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  position: relative;
+  min-height: 100px;
+
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  #visual-data{
+    display: none;
+  }
+}
+
+.editor-toolbar{
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background-color: @gray-lighter;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+
+  > ul{
+    list-style: none;
+    padding:0;
+    margin: 0;
+
+    &:after{
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    > li{
+      float: left;
+      border-right: 1px solid rgba(0,0,0,0.1);
+
+      > a{
+        display: block;
+        line-height: 24px;
+        padding: 0 4px;
+        font-size: 12px;
+        text-transform: uppercase;
+        border-right: 1px solid rgba(255,255,255,0.3);
+        vertical-align: middle;
+
+        .cu-icon{
+          .cu-icon-size(14px);
+          display: inline;
+        }
+      }
+
+    }
+  }
+}
+
+.row[data-capability="container"]:not(#qpages-editor-visual){
+  padding: 20px;
+  border: 1px dashed @theme-secondary-color;
+  margin: 20px 0;
+}

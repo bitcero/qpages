@@ -52,7 +52,7 @@
 		<textarea placeholder="<?php _e('Short description for page','qpages'); ?>" name="excerpt" class="form-control" cols="45" rows="3"><?php echo $page->isNew() ? '' : $page->getVar('excerpt','e'); ?></textarea>
 	</div>
 
-    <div id="qpages-editor-options" style="display: none;">
+    <!--div id="qpages-editor-options" class="yes-normal no-redir">
         <ul>
             <li>
                 <span><?php echo $cuIcons->getIcon('svg-qpages-layers'); ?></span>
@@ -64,13 +64,16 @@
                 <a href="#" data-editor="visual"><?php _e('Quick Editor', 'qpages'); ?></a>
             </li>
         </ul>
-    </div>
+    </div-->
 
     <div class="form-group no-redir yes-normal" id="qpages-editor-standard">
         <?php echo $editor->render(); ?>
     </div>
 
-    <div id="qpages-editor-visual" style="display: none;">Editor Visual</div>
+    <div id="qpages-editor-visual" class="yes-normal no-redir" style="display: none;">
+        <div id="visual-data"></div>
+        Editor Visual
+    </div>
 
     <div id="qp-page-options"<?php echo $page->template != '' ? '' : ' style="display: none;"'; ?>>
     <?php if( $page->template != '' ): ?>

@@ -27,7 +27,7 @@ $modversion = array(
     'rmversion'     => array(
         'major'     => 2,
         'minor'     => 0,
-        'revision'  => 56,
+        'revision'  => 65,
         'stage'     => 0,
         'name'      => 'QuickPages'
     ),
@@ -101,19 +101,19 @@ $modversion = array(
     // Smarty templates
     'templates'     => array(
         array(
-            'file'          => 'qpages_index.html',
+            'file'          => 'qpages_index.tpl',
             'description'   => __('Quick Pages home template', 'qpages')
         ),
         array(
-            'file'          => 'qpages_categos.html',
+            'file'          => 'qpages_categos.tpl',
             'description'   => __('Template to show pages categories', 'qpages')
         ),
         array(
-            'file'          => 'qpages_page.html',
+            'file'          => 'qpages_page.tpl',
             'description'   => __('Display all the page content', 'qpages')
         ),
         array(
-            'file'          => 'qpages_homepage.html',
+            'file'          => 'qpages_homepage.tpl',
             'descritpion'   => __('Show the homepage content', 'qpages')
         )
     ),

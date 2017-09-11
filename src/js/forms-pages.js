@@ -117,8 +117,40 @@ $(document).ready(function(){
         qp_load_template_options( $( this).val() );
 
     } );
+
+    // Siwtch Editors
+    $("#qpages-editor-options a[data-editor='normal']").click(function(){
+        qpSwitchEditor('normal');
+        return false;
+    });
+
+    $("#qpages-editor-options a[data-editor='visual']").click(function(){
+        qpSwitchEditor('visual');
+        return false;
+    });
 	
 });
+
+function qpSwitchEditor(which){
+
+    if(false == confirm(qpLang.confirmEditor)){
+        return null;
+    }
+
+    var currentLocation = window.location.href;
+    if(currentLocation.indexOf('&editor=') < 0){
+        currentLocation += '&editor=std';
+    }
+
+    if('visual' == which){
+        currentLocation = currentLocation.replace('&editor=std', '&editor=qpv');
+        window.location.href = currentLocation;
+    } else {
+        currentLocation = currentLocation.replace('&editor=qpv', '&editor=std');
+        window.location.href = currentLocation;
+    }
+
+}
 
 /**
  * Load the options panel for a specific template

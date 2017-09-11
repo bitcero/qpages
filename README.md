@@ -1,4 +1,4 @@
-![alt MyWords Logo](https://raw.githubusercontent.com/bitcero/qpages/master/qpages/images/logo.png) QuickPages
+![alt MyWords Logo](https://github.com/bitcero/qpages/raw/294c9f243a9891c82e5182c388c83d149b274c81/images/logo.png) QuickPages
 =========
 
 **[Demo video here](https://www.youtube.com/watch?v=AuuitCK8tdk&list=UUDBFAQcnXpm4FEIerIIfQuw)**

@@ -27,7 +27,8 @@ function qp_assign_page( QPPage $page ){
         'modified'  => $page->modified,
         'hits'      => $page->hits,
         'reads'     => sprintf(__('Read %u times','qpages'), $page->hits),
-        'metas'     => $page->get_meta()
+        'metas'     => $page->get_meta(),
+        'image'     => RMImage::get()->load_from_params($page->image)
     ));
 }
 
@@ -116,9 +117,21 @@ if ($page->template != '') {
     } else {
         qp_assign_page( $page );
         $xoopsTpl->assign( 'tplSettings', $tplSettings );
-        if ( isset( $template->Standalone ) && $template->Standalone )
+        if ( isset( $template->Standalone ) && $template->Standalone ){
+
+            $htmlScripts = $common->template()->get_scripts(true);
+            $htmlScripts['inlineHeader'] = $common->template()->inline_scripts();
+            $htmlScripts['inlineFooter'] = $common->template()->inline_scripts(1);
+            $htmlStyles = $common->template()->get_styles(true);
+
+            $xoopsTpl->assign('themeScripts', $htmlScripts);
+            $xoopsTpl->assign('themeStyles', $htmlStyles);
+            $xoopsTpl->assign('htmlAttributes', $common->template()->render_attributes());
+            $xoopsTpl->assign('tplSettings', $tplSettings);
+
             echo $GLOBALS['xoopsTpl']->fetch($file);
-        else {
+
+        }else {
             echo $GLOBALS['xoopsTpl']->fetch($file);
             RMTemplate::get()->footer();
         }
@@ -127,7 +140,7 @@ if ($page->template != '') {
 
 }
 
-$xoopsOption['template_main'] = 'qpages_page.html';
+$xoopsOption['template_main'] = 'qpages_page.tpl';
 require 'header.php';
 
 // Asignamos datos de la categoría
@@ -188,8 +201,11 @@ if ($mc['related']) {
             'id'=>$rp->id(),
             'link'=>$rp->permalink(),
             'title'=>$rp->title,
-            'modified' => formatTimestamp($rp->modified,'c'),
-            'hits'=>$rp->hits,'desc'=>$rp->description));
+            'modified' => $common->timeFormat()->ago((int) $rp->modified),
+            'hits'=>$rp->hits,
+            'desc'=>$rp->description,
+            'image' => RMImage::get()->load_from_params($rp->image)
+        ));
 	}
 }
 
