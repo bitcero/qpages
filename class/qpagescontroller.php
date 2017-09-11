@@ -22,5 +22,16 @@ class QpagesController
 		}
 		
     }
+
+    public static function getInstance()
+    {
+        static $instance;
+
+        if (!isset($instance)) {
+            $instance = new QpagesController();
+        }
+
+        return $instance;
+    }
 	
 }

@@ -1,7 +1,7 @@
 // Imports from Helium GUI
 @import "https://raw.githubusercontent.com/bitcero/rmcommon/master/src/helium/less/bootstrap/variables.less";
 @import "https://raw.githubusercontent.com/bitcero/rmcommon/master/src/helium/less/helium/variables.less";
-@import "../../../Common Utilities/src/helium/less/helium/mixins/utilities.less";
+@import "../../../rmcommon/src/helium/less/helium/mixins/utilities.less";
 
 // Form for pages
 body{
@@ -13,7 +13,7 @@ body{
 #qp-form-controls{
   background: transparent;
   position: fixed;
-  top: 100px; right: 20px;
+  bottom: 100px; right: 20px;
   padding: 0;
   z-index: 1060;
 
@@ -32,6 +32,14 @@ body{
       transform: scale(1.2);
       transition: ease all 250ms;
     }
+  }
+
+  @media(min-width: @screen-md-min){
+    right: 25%
+  }
+
+  @media(min-width: @screen-lg-min){
+    right: 18%;
   }
 
 }
@@ -153,20 +161,13 @@ body{
 
       }
 
+      &.selected{
+        .vertical-gradient(darken(@color-pink, 10%), darken(@color-deep-orange, 10%));
+      }
+
     }
   }
 }
-
-//* 4. Visual Editor
-//* ----------------
-#qpages-editor-visual{
-  background-color: #FFF;
-  padding: @padding-base-horizontal;
-  border-radius: @border-radius-large;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-  margin-bottom: 20px;
-}
-
 
 #qp-permalink{
   margin-bottom: 10px;

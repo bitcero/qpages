@@ -15,14 +15,14 @@
 		<tr><th colspan="3"><{$lang_related}></th></tr>
 		<tr class="head" align="center">
 			<td align="left"><{$lang_page}></td>
-			<td align="left"><{$lang_modified}></td>
-			<td><{$lang_hits}></td>
+			<td class="text-center"><{$lang_modified}></td>
+			<td class="text-center"><{$lang_hits}></td>
 		</tr>
 		<{foreach item=page from=$related}>
 			<tr>
 				<td><a href="<{$page.link}>"><{$page.title}></a><br /><{$page.desc}></td>
-				<td align="left" nowrap="nowrap"><{$page.modified}></td>
-				<td align="center"><strong><{$page.hits}></strong></td>
+				<td class="text-center" nowrap="nowrap"><{$page.modified}></td>
+				<td class="text-center"><strong><{$page.hits}></strong></td>
 			</tr>
 		<{/foreach}>
 	</table>

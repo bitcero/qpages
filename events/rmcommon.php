@@ -80,6 +80,14 @@ class QpagesRmcommonPreload
         include_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpcategory.class.php';
         include_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpcolor.class.php';
 
+        if ($page->template == '') {
+            RMTemplate::getInstance()->header();
+            assign_template( $page );
+            echo $GLOBALS['xoopsTpl']->fetch('db:qpages_page.tpl');
+            RMTemplate::getInstance()->footer();
+            die();
+        }
+
         $file = XOOPS_ROOT_PATH . $page->template;
         $file_data = pathinfo( $page->template );
         $cuSettings = RMSettings::cu_settings();
@@ -96,14 +104,6 @@ class QpagesRmcommonPreload
         $tplSettings = (object) $page->tpl_option();
 
         unset($file_data);
-
-        if ($page->template == '') {
-            RMTemplate::get()->header();
-            assign_template( $page );
-            echo $GLOBALS['xoopsTpl']->fetch('db:qpages_page.html');
-            RMTemplate::get()->footer();
-            die();
-        }
 
         $file = XOOPS_ROOT_PATH . $page->template;
 

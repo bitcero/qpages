@@ -186,6 +186,7 @@ function newForm($edit = 0, $redir = false){
 
     RMTemplate::getInstance()->add_script('forms-pages.min.js','qpages');
     RMTemplate::getInstance()->add_script('quick-editor.min.js','qpages', ['id' => 'quickeditor-js', 'footer' => 1]);
+    RMTemplate::getInstance()->add_style('qpv.min.css', 'qpages', ['id' => 'qpv-css']);
 	xoops_cp_header();
 
 	$form = new RMForm('','','');
@@ -381,7 +382,7 @@ function savePage($edit=0){
 
 	if (isset($custom_url) && $custom_url!='') {
 
-		if ($precustom != $custom_url) {
+		//if ($precustom != $custom_url) {
 			$rule = "RewriteRule ^".$custom_url."/?$ modules/qpages/index.php?page=".$page->getVar('nameid')." [L]";
 			$ht = new RMHtaccess('page: '.$page->id());
 
@@ -390,7 +391,7 @@ function savePage($edit=0){
 
 			$htResult = $ht->write($rule);
 
-		}
+		//}
 
 	} elseif ($precustom!='') {
 
