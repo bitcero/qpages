@@ -1,5 +1,5 @@
 <?php
-    include ('defaults.php');
+    include('defaults.php');
 ?>
 
 <div class="panel panel-cyan">
@@ -8,7 +8,7 @@
         <h3 class="panel-title"><span class="fa fa-globe"></span> <?php _e('Projects Template Options', 'projects'); ?></h3>
     </div>
 
-    <?php if ( defined("QP_AJAX_LOADED") ): ?>
+    <?php if (defined("QP_AJAX_LOADED")): ?>
         <div class="panel-body">
         <div class="well text-center well-lg">
             <?php _e('Please save page now and then refresh in order to view the options for this page.', 'projects'); ?>
@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <label><?php _e('Page logo:', 'projects'); ?></label>
                     <?php
-                    $field = new RMFormImageUrl( '', 'projects[logo]', $tplSettings->logo );
+                    $field = new RMFormImageUrl('', 'projects[logo]', $tplSettings->logo);
                     echo $field->render();
                     ?>
                 </div>
@@ -40,7 +40,7 @@
                 <div class="form-group">
                     <label><?php _e('Page background', 'projects'); ?></label>
                     <?php
-                    $field = new RMFormImageUrl( '', 'projects[bg]', $tplSettings->bg );
+                    $field = new RMFormImageUrl('', 'projects[bg]', $tplSettings->bg);
                     echo $field->render();
                     ?>
                 </div>
@@ -58,7 +58,7 @@
                 <div class="form-group">
                     <label><?php _e('Theme color:', 'projects'); ?></label>
                     <?php
-                    $field = new RMFormColorSelector( '', 'projects[color]', $tplSettings->color, false );
+                    $field = new RMFormColorSelector('', 'projects[color]', $tplSettings->color, false);
                     echo $field->render();
                     ?>
                 </div>
@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label><?php _e('Copyright notice:','projects'); ?></label>
+                    <label><?php _e('Copyright notice:', 'projects'); ?></label>
                     <input type="text" class="form-control" name="projects[copy]" value="<?php echo $tplSettings->copy; ?>">
                 </div>
 
@@ -87,7 +87,7 @@
                 <div class="form-group">
                     <label><?php _e('Font for heading', 'projects'); ?></label>
                     <?php
-                    $field = new RMFormWebfonts( '', 'projects[heading]', $tplSettings->heading );
+                    $field = new RMFormWebfonts('', 'projects[heading]', $tplSettings->heading);
                     echo $field->render();
                     ?>
                 </div>
@@ -100,7 +100,7 @@
                 <div class="form-group">
                     <label><?php _e('Font for body', 'projects'); ?></label>
                     <?php
-                    $field = new RMFormWebfonts( '', 'projects[body]', $tplSettings->body );
+                    $field = new RMFormWebfonts('', 'projects[body]', $tplSettings->body);
                     echo $field->render();
                     ?>
                 </div>
@@ -139,9 +139,9 @@
 
 </div>
 
-<?php if( defined( 'QP_AJAX_LOADED' ) ): ?>
+<?php if (defined('QP_AJAX_LOADED')): ?>
     <script type="text/javascript">
-        if ( confirm('<?php _e( 'Please save page now and refresh in order to use this template. The options will be loaded correctly after refresh.\nDo you want to save page now?', 'projects'); ?>') )
+        if ( confirm('<?php _e('Please save page now and refresh in order to use this template. The options will be loaded correctly after refresh.\nDo you want to save page now?', 'projects'); ?>') )
             $(".qp-submit").click();
     </script>
 <?php else: ?>

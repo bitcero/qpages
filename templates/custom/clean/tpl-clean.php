@@ -11,7 +11,7 @@ Standalone  = yes
 */
 ?>
 <?php
-include ('defaults.php');
+include('defaults.php');
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $cuSettings->lang; ?>">
@@ -22,7 +22,7 @@ include ('defaults.php');
     <meta name="author" content="">
     <title><?php echo $page->custom_title != '' ? $page->custom_title : $page->title; ?></title>
     <link href="<?php echo RMCURL; ?>/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo QPFunctions::dynamic_style( $page, 'clean', 'css/style.css' ); ?>" rel="stylesheet" type="text/css">
+    <link href="<?php echo QPFunctions::dynamic_style($page, 'clean', 'css/style.css'); ?>" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?php echo RMCURL; ?>/css/font-awesome.min.css" type="text/css">
     <link href='<?php echo $tplSettings->body_font; ?>' rel='stylesheet' type='text/css'>
     <link href='<?php echo $tplSettings->em_font; ?>' rel='stylesheet' type='text/css'>
@@ -40,9 +40,11 @@ include ('defaults.php');
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li class="page-scroll social">
-                        <?php foreach( $tplSettings->social as $name => $link ): if ( $link == '' ) continue; ?>
+                        <?php foreach ($tplSettings->social as $name => $link): if ($link == '') {
+    continue;
+} ?>
                         <a href="<?php echo $link; ?>">
-                            <?php if( $name == 'instagram' || $name == 'flickr' ): ?>
+                            <?php if ($name == 'instagram' || $name == 'flickr'): ?>
                                 <span class="fa fa-<?php echo $name; ?>"></span>
                             <?php else: ?>
                                 <span class="fa fa-<?php echo $name; ?>-square"></span>
@@ -68,7 +70,7 @@ include ('defaults.php');
 
                 <hr class="divider">
 
-                <p class="call-info"><?php echo $tplSettings->email; ?><?php if( $tplSettings->phone != '' ): ?>     |     <?php echo $tplSettings->phone; ?><?php endif; ?></p>
+                <p class="call-info"><?php echo $tplSettings->email; ?><?php if ($tplSettings->phone != ''): ?>     |     <?php echo $tplSettings->phone; ?><?php endif; ?></p>
             </div>
 
             <div class="col-md-offset-1 col-md-4 intro-caption main-form">
@@ -91,7 +93,7 @@ include ('defaults.php');
         <div class="row">
             <div class="col-md-6">
 
-                <?php foreach( $tplSettings->services as $service ): ?>
+                <?php foreach ($tplSettings->services as $service): ?>
                     <div class="row green-icon">
                         <div class="col-md-2 feature-block"> <i class="<?php echo $service['icon']; ?> fa-4x"> </i> </div>
                         <div class="col-md-10">
@@ -105,7 +107,7 @@ include ('defaults.php');
             <div class="col-md-offset-1 col-md-4 testimonials">
                 <div class="row">
 
-                    <?php foreach( $tplSettings->testimonials as $customer ): ?>
+                    <?php foreach ($tplSettings->testimonials as $customer): ?>
                         <div class="col-md-12 testimonials-block"> <img src="<?php echo $customer['picture']; ?>" class="img-circle client-circle" alt="<?php echo $customer['name']; ?>">
                             <p> “<?php echo $customer['text']; ?>” </p>
                             <span> - <?php echo $customer['name']; ?> <a href="<?php echo $customer['link']; ?>"> ( <?php echo $customer['title']; ?> ) </a> </span> </div>
@@ -161,9 +163,11 @@ include ('defaults.php');
                 <p> <?php echo $tplSettings->footercopy; ?> </p>
             </div>
             <div class="col-md-3">
-                <?php foreach( $tplSettings->social as $name => $link ): if ( $link == '' ) continue; ?>
+                <?php foreach ($tplSettings->social as $name => $link): if ($link == '') {
+    continue;
+} ?>
                     <a href="<?php echo $link; ?>">
-                        <?php if( $name == 'instagram' || $name == 'flickr' ): ?>
+                        <?php if ($name == 'instagram' || $name == 'flickr'): ?>
                             <span class="fa fa-<?php echo $name; ?> social-icon"></span>
                         <?php else: ?>
                             <span class="fa fa-<?php echo $name; ?>-square social-icon"></span>

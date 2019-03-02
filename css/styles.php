@@ -11,28 +11,31 @@
 $xoopsOption['nocommon'] = 1;
 include dirname(dirname(dirname(dirname(__FILE__)))) . '/mainfile.php';
 
-$page = isset( $_GET[ 'page' ] ) ? intval($_GET[ 'page' ]) : 0;
-$tpl = isset( $_GET[ 'tpl' ] ) ? $_GET[ 'tpl' ] : '';
-$css = isset( $_GET[ 'css' ] ) ? urldecode($_GET[ 'css' ]) : '';
+$page = isset($_GET[ 'page' ]) ? intval($_GET[ 'page' ]) : 0;
+$tpl = isset($_GET[ 'tpl' ]) ? $_GET[ 'tpl' ] : '';
+$css = isset($_GET[ 'css' ]) ? urldecode($_GET[ 'css' ]) : '';
 
-if ( $page <= 0 )
+if ($page <= 0) {
     die('Page?');
+}
 
-if ( $tpl == '' )
+if ($tpl == '') {
     die('Template?');
+}
 
-if ( $css == '' )
+if ($css == '') {
     die('Styles?');
+}
 
 $file_settings = XOOPS_VAR_PATH . '/caches/xoops_cache/qpages/' . $tpl . '-' . $page . '.json';
-if ( file_exists( $file_settings ) )
-    $tplSettings = (object) json_decode( file_get_contents( $file_settings ), true );
-else{
+if (file_exists($file_settings)) {
+    $tplSettings = (object) json_decode(file_get_contents($file_settings), true);
+} else {
     $tplSettings = new stdClass();
     $tplSettings->path = XOOPS_ROOT_PATH . '/modules/qpages/templates/custom/' . $tpl;
 }
 
-$file_css = $tplSettings->path . '/' . trim( $css, "/" );
+$file_css = $tplSettings->path . '/' . trim($css, "/");
 
 // Color management
 include XOOPS_ROOT_PATH . '/modules/qpages/class/qpcolor.class.php';

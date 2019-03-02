@@ -10,22 +10,23 @@
 
 class QpagesRmcommonPreload
 {
-    public function eventRmcommonRegisterIconProvider($providers){
-
+    public function eventRmcommonRegisterIconProvider($providers)
+    {
         $providers[] = [
             'id' => 'qpages',
             'directory' => XOOPS_ROOT_PATH . '/modules/qpages/icons'
         ];
 
         return $providers;
-
     }
 
-    static function eventRmcommonLoadRightWidgets($widgets){
+    public static function eventRmcommonLoadRightWidgets($widgets)
+    {
         global $xoopsModule;
 
-        if (!isset($xoopsModule) || $xoopsModule->getVar('dirname')!='qpages')
+        if (!isset($xoopsModule) || $xoopsModule->getVar('dirname')!='qpages') {
             return $widgets;
+        }
 
         if (defined("RMCSUBLOCATION") && RMCSUBLOCATION=='new-page') {
             include_once '../widgets/qp-widgets.php';
@@ -37,7 +38,6 @@ class QpagesRmcommonPreload
             $widgets[] = qp_widget_visualization($page);
             $widgets[] = qp_widget_template($page);
             $widgets[] = qp_widget_image($page);
-
         }
 
         return $widgets;
@@ -46,20 +46,22 @@ class QpagesRmcommonPreload
     /**
      * Home page
      */
-    static function eventRmcommonIndexStart(){
+    public static function eventRmcommonIndexStart()
+    {
 
         /**
          * Local function to assign smarty values
          * @param $page
          */
-        function assign_template( $page ){
+        function assign_template($page)
+        {
             $GLOBALS['xoopsTpl']->assign('page', array(
                 'title'        => $page->title,
                 'text'        => $page->content,
                 'id'        => $page->id(),
                 'name'        => $page->nameid,
-                'mod_date'    => sprintf(__('Last update: %s', 'qpages'), formatTimestamp($page->modified,'c')),
-                'reads'        => sprintf(__('Read %u times','qpages'), $page->hits),
+                'mod_date'    => sprintf(__('Last update: %s', 'qpages'), formatTimestamp($page->modified, 'c')),
+                'reads'        => sprintf(__('Read %u times', 'qpages'), $page->hits),
                 'metas'        => $page->get_meta()
             ));
         }
@@ -70,8 +72,9 @@ class QpagesRmcommonPreload
 
         $page->addHit();
 
-        if ( $page->isNew() )
+        if ($page->isNew()) {
             return;
+        }
 
         /**
          * Load required files
@@ -82,20 +85,20 @@ class QpagesRmcommonPreload
 
         if ($page->template == '') {
             RMTemplate::getInstance()->header();
-            assign_template( $page );
+            assign_template($page);
             echo $GLOBALS['xoopsTpl']->fetch('db:qpages_page.tpl');
             RMTemplate::getInstance()->footer();
             die();
         }
 
         $file = XOOPS_ROOT_PATH . $page->template;
-        $file_data = pathinfo( $page->template );
+        $file_data = pathinfo($page->template);
         $cuSettings = RMSettings::cu_settings();
 
         /**
          * Load template data
          */
-        $template = QPFunctions::templateInfo( XOOPS_ROOT_PATH . $file_data['dirname'], $file_data['basename'] );
+        $template = QPFunctions::templateInfo(XOOPS_ROOT_PATH . $file_data['dirname'], $file_data['basename']);
         // Set path to template dir
         $template->path = XOOPS_ROOT_PATH . $file_data[ 'dirname' ];
         // Set url to template dir
@@ -107,47 +110,44 @@ class QpagesRmcommonPreload
 
         $file = XOOPS_ROOT_PATH . $page->template;
 
-        $content = file_get_contents( $file );
-        if ( !$content ) return;
-
-        if ( substr( $file, -4 ) == '.php' ) {
-
-            $info = array();
-            preg_match( "/\/\*(.*)\*\//s", $content, $info );
-
-        } elseif ( substr( $file, -5 ) == '.html' ) {
-
-            $info = array();
-            preg_match( "/^<{\*(.*)\*\}>/sm", $content, $info );
-
+        $content = file_get_contents($file);
+        if (!$content) {
+            return;
         }
 
-        if( !isset($info[1])) return;
+        if (substr($file, -4) == '.php') {
+            $info = array();
+            preg_match("/\/\*(.*)\*\//s", $content, $info);
+        } elseif (substr($file, -5) == '.html') {
+            $info = array();
+            preg_match("/^<{\*(.*)\*\}>/sm", $content, $info);
+        }
+
+        if (!isset($info[1])) {
+            return;
+        }
 
         $data = (object) parse_ini_string($info[1]);
         unset($content, $info);
 
         RMTemplate::get()->header();
 
-        if ( substr($page->template, -4 ) == '.php') {
-            if ( isset( $data->Standalone ) && $data->Standalone )
+        if (substr($page->template, -4) == '.php') {
+            if (isset($data->Standalone) && $data->Standalone) {
                 include $file;
-            else {
+            } else {
                 include $file;
                 RMTemplate::get()->footer();
             }
-
         } else {
-            assign_template( $page );
-            if ( isset( $data->Standalone ) && $data->Standalone )
+            assign_template($page);
+            if (isset($data->Standalone) && $data->Standalone) {
                 echo $GLOBALS['xoopsTpl']->fetch($file);
-            else {
+            } else {
                 echo $GLOBALS['xoopsTpl']->fetch($file);
                 RMTemplate::get()->footer();
             }
         }
         die();
-
     }
-
 }

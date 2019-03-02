@@ -10,17 +10,15 @@
 
 class QpagesController
 {
-	
-	public function get_main_link(){
-		
-		$mc = RMSettings::module_settings('qpages');
-		
-		if ($mc->permalinks){
-			return XOOPS_URL.$mc->basepath;
-		} else {
-			return XOOPS_URL.'/modules/qpages';
-		}
-		
+    public function get_main_link()
+    {
+        $mc = RMSettings::module_settings('qpages');
+        
+        if ($mc->permalinks) {
+            return XOOPS_URL.$mc->basepath;
+        } else {
+            return XOOPS_URL.'/modules/qpages';
+        }
     }
 
     public static function getInstance()
@@ -33,5 +31,4 @@ class QpagesController
 
         return $instance;
     }
-	
 }

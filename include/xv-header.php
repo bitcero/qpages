@@ -13,7 +13,7 @@
  * para evitar problemas en el sistema
  */
 $amod = xoops_getActiveModules();
-if(!in_array("rmcommon",$amod)){
+if (!in_array("rmcommon", $amod)) {
     $error = "<strong>WARNING:</strong> QuickPages requires %s to be installed!<br />Please install %s before trying to use QuickPages";
     $error = str_replace("%s", '<a href="http://github.com/bitcero/rmcommon/" target="_blank">Common Utilities</a>', $error);
     xoops_error($error);
@@ -23,8 +23,9 @@ if(!in_array("rmcommon",$amod)){
     echo "<br />";
 }
 
-if (!function_exists("__")){
-    function __($text, $d){
+if (!function_exists("__")) {
+    function __($text, $d)
+    {
         return $text;
     }
 }

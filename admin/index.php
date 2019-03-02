@@ -27,7 +27,7 @@
  * @url          http://www.eduardocortes.mx
  */
 
-define('RMCLOCATION','dashboard');
+define('RMCLOCATION', 'dashboard');
 require 'header.php';
 
 RMTemplate::getInstance()->add_body_class('dashboard');
@@ -55,10 +55,12 @@ $colors = array(
     '#FF409F'
 );
 
-while($row = $db->fetchArray($result)){
-	$page = new QPPage();
-	$page->assignVars($row);
-	if ( $i > 9 ) $i = 0;
+while ($row = $db->fetchArray($result)) {
+    $page = new QPPage();
+    $page->assignVars($row);
+    if ($i > 9) {
+        $i = 0;
+    }
     $stats[] = array(
         'label' => "ID: ". $page->id(),
         'legend' => $page->title,
@@ -72,42 +74,41 @@ $values = rtrim($values, ',');
 $leg = rtrim($leg, "|");
 
 if ($max>0){
-	$chart = "http://chart.apis.google.com/chart?";
-	$chart .= "cht=bvs&chco=99CC00|FFCC00|0099FF|FF6600|6666FF";
-	$chart .= "&".$labels.'&'.$values."&".$leg;
-	$chart .= "&chbh=a,20&chs=960x600&chxr=1,0,".($max)."&chds=0,".($max+1);
-	$chart .= "&chtt=".urlencode(__('Most viewed pages','qpages'));
+    $chart = "http://chart.apis.google.com/chart?";
+    $chart .= "cht=bvs&chco=99CC00|FFCC00|0099FF|FF6600|6666FF";
+    $chart .= "&".$labels.'&'.$values."&".$leg;
+    $chart .= "&chbh=a,20&chs=960x600&chxr=1,0,".($max)."&chds=0,".($max+1);
+    $chart .= "&chtt=".urlencode(__('Most viewed pages','qpages'));
 } else {
-	$chart  = '';
+    $chart  = '';
 }*/
 
 // Recent pages
 $sql = "SELECT * FROM ".$db->prefix("mod_qpages_pages")." ORDER BY created DESC LIMIT 0, 10";
 $result = $db->query($sql);
 $pages = array();
-while($row = $db->fetchArray($result)){
-	$page = new QPPage();
-	$page->assignVars($row);	
-	$pages[] = array(
-		'id'			=> $page->id(),
-		'title'			=> $page->title,
-		'link'			=> $page->permalink(),
-		'desc'			=> $page->extract,
-		'public'		=> $page->public,
+while ($row = $db->fetchArray($result)) {
+    $page = new QPPage();
+    $page->assignVars($row);
+    $pages[] = array(
+        'id'			=> $page->id(),
+        'title'			=> $page->title,
+        'link'			=> $page->permalink(),
+        'desc'			=> $page->extract,
+        'public'		=> $page->public,
         'type'          => $page->type
-	);
+    );
 }
 
 RMTemplate::get()->set_help('http://redmexico.com.mx/docs/quickpages');
-RMTemplate::get()->add_script( 'https://www.google.com/jsapi' );
+RMTemplate::get()->add_script('https://www.google.com/jsapi');
 
 // Left widgets and right widgets
 $dashboardPanels = array();
 $dashboardPanels = RMEvents::get()->trigger('qpages.dashboard.panels', $dashboardPanels);
 
-RMBreadCrumb::get()->add_crumb(__('Dashboard','qpages'));
+RMBreadCrumb::get()->add_crumb(__('Dashboard', 'qpages'));
 
 include RMTemplate::get()->path('admin/qp-index.php', 'module', 'qpages');
 
 xoops_cp_footer();
-

@@ -8,13 +8,15 @@
 // --------------------------------------------------------------
 
 include_once 'include/xv-header.php';
-if(function_exists("load_mod_locale")) load_mod_locale('qpages');
+if (function_exists("load_mod_locale")) {
+    load_mod_locale('qpages');
+}
 
 $modversion = array(
 
     // General
     'name'          => 'QuickPages',
-    'description'   => __('Publish and manage single pages','qpages'),
+    'description'   => __('Publish and manage single pages', 'qpages'),
     'version'       => 2,
     'license'       => 'GPL 2',
     'dirname'       => 'qpages',
@@ -174,8 +176,8 @@ $modversion = array(
         #·· Related pages
         array(
             'name'          => 'related',
-            'title'         => __('Show related pages','qpages'),
-            'description'   => __('Enable the "Related Pages" block when a page is visited.','qpages'),
+            'title'         => __('Show related pages', 'qpages'),
+            'description'   => __('Enable the "Related Pages" block when a page is visited.', 'qpages'),
             'formtype'      => 'yesno',
             'valuetype'     => 'int',
             'default'       => 1
@@ -184,7 +186,7 @@ $modversion = array(
         #·· Related pages
         array(
             'name'          => 'related_num',
-            'title'         => __('Number of related pages','qpages'),
+            'title'         => __('Number of related pages', 'qpages'),
             'description'   => '',
             'formtype'      => 'textbox',
             'valuetype'     => 'int',
@@ -194,7 +196,7 @@ $modversion = array(
         #·· Security
         array(
             'name'          => 'checktoken',
-            'title'         => __('Increase security in pages edition','qpages'),
+            'title'         => __('Increase security in pages edition', 'qpages'),
             'description'   => __('By enabling this option QuickPages will limit the edition time (in pages form) according to PHP session gc_maxlifetime directive', 'qpages'),
             'formtype'      => 'yesno',
             'valuetype'     => 'int',

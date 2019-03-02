@@ -111,4 +111,4 @@ $defaults = array(
     'footertext'    => '797c7e',
     'footercopy'    => '&copy; Copyright 2014. All rights reserved by you.'
 );
-QPFunctions::load_defaults( $tplSettings, $defaults );
+QPFunctions::load_defaults($tplSettings, $defaults);

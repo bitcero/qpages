@@ -26,8 +26,8 @@
 // @copyright: 2007 - 2008 Red México
 // @author: BitC3R0
 
-function xoops_module_update_qpages($mod, $pre){
-
+function xoops_module_update_qpages($mod, $pre)
+{
     global $xoopsDB;
 
     // Update table names and engine
@@ -72,5 +72,4 @@ function xoops_module_update_qpages($mod, $pre){
 
 
     return true;
-
 }

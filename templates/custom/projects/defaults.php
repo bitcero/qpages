@@ -11,4 +11,4 @@ $defaults = array(
     'color'     => '49BBCC',
     'copy'      => '&copy; Your Site 2014.'
 );
-QPFunctions::load_defaults( $tplSettings, $defaults );
+QPFunctions::load_defaults($tplSettings, $defaults);

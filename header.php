@@ -15,9 +15,10 @@ $db = XoopsDatabaseFactory::getDatabaseConnection();
 $tpl =& $xoopsTpl;
 $myts = MyTextSanitizer::getInstance();
 
-define('QP_PATH',XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->dirname());
-if (!defined("QP_URL"))
-    define('QP_URL',XOOPS_URL.($mc['permalinks'] ? $mc['basepath'] : '/modules/'.$xoopsModule->dirname()));
+define('QP_PATH', XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->dirname());
+if (!defined("QP_URL")) {
+    define('QP_URL', XOOPS_URL.($mc['permalinks'] ? $mc['basepath'] : '/modules/'.$xoopsModule->dirname()));
+}
 
 RMTemplate::getInstance()->add_style('main.css', 'qpages');
 
