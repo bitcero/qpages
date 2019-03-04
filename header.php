@@ -8,18 +8,18 @@
 // License: GPL 2.0
 // --------------------------------------------------------------
 
-require_once XOOPS_ROOT_PATH.'/header.php';
+require_once XOOPS_ROOT_PATH . '/header.php';
 
-$mc =& $xoopsModuleConfig;
+$mc = &$xoopsModuleConfig;
 $db = XoopsDatabaseFactory::getDatabaseConnection();
-$tpl =& $xoopsTpl;
+$tpl = &$xoopsTpl;
 $myts = MyTextSanitizer::getInstance();
 
-define('QP_PATH', XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->dirname());
-if (!defined("QP_URL")) {
-    define('QP_URL', XOOPS_URL.($mc['permalinks'] ? $mc['basepath'] : '/modules/'.$xoopsModule->dirname()));
+define('QP_PATH', XOOPS_ROOT_PATH . '/modules/' . $xoopsModule->dirname());
+if (!defined('QP_URL')) {
+    define('QP_URL', XOOPS_URL . ($mc['permalinks'] ? $mc['basepath'] : '/modules/' . $xoopsModule->dirname()));
 }
 
 RMTemplate::getInstance()->add_style('main.css', 'qpages');
 
-include_once 'include/general.func.php';
+require_once __DIR__ . '/include/general.func.php';

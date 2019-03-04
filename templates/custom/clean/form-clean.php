@@ -315,10 +315,10 @@ include('defaults.php');
                         <label><?php _e('Service One:', 'clean'); ?></label>
                         <input style="margin-bottom: 5px;" type="text" name="clean[services][0][title]" class="form-control" value="<?php echo $tplSettings->services[0]['title']; ?>">
                         <?php
-                        $icon = new RMFormIconsPicker('', 'clean[services][0][icon]', array(
+                        $icon = new RMFormIconsPicker('', 'clean[services][0][icon]', [
                             'selected' => $tplSettings->services[0]['icon'],
-                            'glyphicons' => 0
-                        ));
+                            'glyphicons' => 0,
+                        ]);
                         echo $icon->render();
                         ?>
                         <textarea rows="4" style="margin-top: 5px;" class="form-control" name="clean[services][0][description]"><?php echo $tplSettings->services[0]['description']; ?></textarea>
@@ -331,10 +331,10 @@ include('defaults.php');
                         <label><?php _e('Service Two:', 'clean'); ?></label>
                         <input style="margin-bottom: 5px;" type="text" name="clean[services][1][title]" class="form-control" value="<?php echo $tplSettings->services[1]['title']; ?>">
                         <?php
-                        $icon = new RMFormIconsPicker('', 'clean[services][1][icon]', array(
+                        $icon = new RMFormIconsPicker('', 'clean[services][1][icon]', [
                             'selected' => $tplSettings->services[1]['icon'],
-                            'glyphicons' => 0
-                        ));
+                            'glyphicons' => 0,
+                        ]);
                         echo $icon->render();
                         ?>
                         <textarea rows="4" style="margin-top: 5px;" class="form-control" name="clean[services][1][description]"><?php echo $tplSettings->services[1]['description']; ?></textarea>
@@ -347,10 +347,10 @@ include('defaults.php');
                         <label><?php _e('Service Three:', 'clean'); ?></label>
                         <input style="margin-bottom: 5px;" type="text" name="clean[services][2][title]" class="form-control" value="<?php echo $tplSettings->services[2]['title']; ?>">
                         <?php
-                        $icon = new RMFormIconsPicker('', 'clean[services][2][icon]', array(
+                        $icon = new RMFormIconsPicker('', 'clean[services][2][icon]', [
                             'selected' => $tplSettings->services[2]['icon'],
-                            'glyphicons' => 0
-                        ));
+                            'glyphicons' => 0,
+                        ]);
                         echo $icon->render();
                         ?>
                         <textarea rows="4" style="margin-top: 5px;" class="form-control" name="clean[services][2][description]"><?php echo $tplSettings->services[2]['description']; ?></textarea>
@@ -363,10 +363,10 @@ include('defaults.php');
                         <label><?php _e('Service Four:', 'clean'); ?></label>
                         <input style="margin-bottom: 5px;" type="text" name="clean[services][3][title]" class="form-control" value="<?php echo $tplSettings->services[3]['title']; ?>">
                         <?php
-                        $icon = new RMFormIconsPicker('', 'clean[services][3][icon]', array(
+                        $icon = new RMFormIconsPicker('', 'clean[services][3][icon]', [
                             'selected' => $tplSettings->services[3]['icon'],
-                            'glyphicons' => 0
-                        ));
+                            'glyphicons' => 0,
+                        ]);
                         echo $icon->render();
                         ?>
                         <textarea rows="4" style="margin-top: 5px;" class="form-control" name="clean[services][3][description]"><?php echo $tplSettings->services[3]['description']; ?></textarea>

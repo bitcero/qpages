@@ -7,12 +7,12 @@
 </script>
 <form name="frmSearch" method="get" action="pages.php">
 <div class="cu-bulk-actions">
-    <input type="text" name="keyw" value="<?php echo $keyw ?>" placeholder="<?php _e('Search term...', 'qpages'); ?>" class="form-control" /> &#160;
+    <input type="text" name="keyw" value="<?php echo $keyw ?>" placeholder="<?php _e('Search term...', 'qpages'); ?>" class="form-control"> &#160;
 
     <select name="cat" onchange="submit();" class="form-control">
-        <option value="0"<?php if ($category==0): ?> selected="selected"<?php endif; ?>><?php _e('Select category', 'qpages'); ?></option>
+        <option value="0"<?php if (0 == $category): ?> selected="selected"<?php endif; ?>><?php _e('Select category', 'qpages'); ?></option>
         <?php foreach ($categories as $cat): ?>
-            <option value="<?php echo $cat['id']; ?>"<?php if ($cat['id']==$category): ?> selected="selected"<?php endif; ?>><?php echo str_repeat("&#8212;", $cat['jumps']); ?> <?php echo $cat['name']; ?></option>
+            <option value="<?php echo $cat['id']; ?>"<?php if ($cat['id'] == $category): ?> selected="selected"<?php endif; ?>><?php echo str_repeat('&#8212;', $cat['jumps']); ?> <?php echo $cat['name']; ?></option>
         <?php endforeach; ?>
     </select>
     <button type="submit" class="btn btn-warning"><?php _e('Filter', 'qpages'); ?></button>
@@ -38,7 +38,7 @@
         <table class="table">
             <thead>
             <tr>
-                <th width="20" class="text-center"><input<?php if (empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall" onclick='$("#frm-pages").toggleCheckboxes(":not(#checkall)");' /></th>
+                <th width="20" class="text-center"><input<?php if (empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall" onclick='$("#frm-pages").toggleCheckboxes(":not(#checkall)");'></th>
                 <th width="20" class="text-center">
                     <a href="<?php echo QPFunctions::linkSort('id_page'); ?>"><?php _e('ID', 'qpages'); ?></a>
                 </th>
@@ -60,7 +60,7 @@
             </thead>
             <tfoot>
             <tr>
-                <th width="20" class="text-center"><input<?php if (empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall" onclick='$("#frm-pages").toggleCheckboxes(":not(#checkall)");' /></th>
+                <th width="20" class="text-center"><input<?php if (empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall" onclick='$("#frm-pages").toggleCheckboxes(":not(#checkall)");'></th>
                 <th width="20" class="text-center"><?php _e('ID', 'qpages'); ?></th>
                 <th width="20">&nbsp;</th>
                 <th class="text-left"><?php _e('Title', 'qpages'); ?></th>
@@ -78,11 +78,11 @@
             <?php endif; ?>
             <?php foreach ($pages as $item): ?>
                 <tr valign="top">
-                    <td class="text-center"><input type="checkbox" name="ids[]" id="item-<?php echo $item['id']; ?>" value="<?php echo $item['id']; ?>" /></td>
+                    <td class="text-center"><input type="checkbox" name="ids[]" id="item-<?php echo $item['id']; ?>" value="<?php echo $item['id']; ?>"></td>
                     <td class="text-center"><strong><?php echo $item['id']; ?></strong></td>
                     <td class="text-center">
                         <a href="pages.php?type=<?php echo $item['type']; ?>" title="<?php echo $item['verbosetype']; ?>">
-                            <?php if ($item['type']=='redir'): ?>
+                            <?php if ('redir' == $item['type']): ?>
                                 <span class="fa fa-link"></span>
                             <?php else: ?>
                                 <span class="fa fa-file-text"></span>
@@ -125,7 +125,7 @@
 	</select>
 	<button type="button" onclick="before_submit('frm-pages');" class="btn btn-default"><?php _e('Apply', 'qpages'); ?></button>
 </div>
-<input type="hidden" name="page" value="<?php echo $page; ?>" />
-<input type="hidden" name="cat" value="<?php echo $category; ?>" />
+<input type="hidden" name="page" value="<?php echo $page; ?>">
+<input type="hidden" name="cat" value="<?php echo $category; ?>">
 <?php echo $xoopsSecurity->getTokenHTML(); ?>
 </form>

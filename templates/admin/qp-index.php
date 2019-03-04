@@ -17,9 +17,9 @@
                     <?php endif; ?>
                     <?php foreach ($pages as $page): ?>
                         <li>
-                            <span class="badge"><span class="fa <?php echo $page['type'] == 'redir' ? 'fa-link' : 'fa-file-text'; ?>"></span></span>
+                            <span class="badge"><span class="fa <?php echo 'redir' == $page['type'] ? 'fa-link' : 'fa-file-text'; ?>"></span></span>
                             <a href="<?php echo $page['link']; ?>"><strong><?php echo $page['title']; ?></strong></a>
-                            <?php if (!$page['public']): _e('[Draft]', 'qpages'); endif;?>
+                            <?php if (!$page['public']): _e('[Draft]', 'qpages'); endif; ?>
                             &nbsp;
                             (<a href="pages.php?action=edit&amp;id=<?php echo $page['id']; ?>"><?php _e('Edit', 'qpages'); ?></a>)
                             <span class="help-block"><small><?php echo $page['desc']; ?></small></span>

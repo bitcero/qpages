@@ -9,7 +9,7 @@
 // --------------------------------------------------------------
 
 $xoopsOption['nocommon'] = 1;
-include dirname(dirname(dirname(dirname(__FILE__)))) . '/mainfile.php';
+include dirname(dirname(dirname(__DIR__))) . '/mainfile.php';
 
 $page = isset($_GET[ 'page' ]) ? intval($_GET[ 'page' ]) : 0;
 $tpl = isset($_GET[ 'tpl' ]) ? $_GET[ 'tpl' ] : '';
@@ -19,11 +19,11 @@ if ($page <= 0) {
     die('Page?');
 }
 
-if ($tpl == '') {
+if ('' == $tpl) {
     die('Template?');
 }
 
-if ($css == '') {
+if ('' == $css) {
     die('Styles?');
 }
 
@@ -35,7 +35,7 @@ if (file_exists($file_settings)) {
     $tplSettings->path = XOOPS_ROOT_PATH . '/modules/qpages/templates/custom/' . $tpl;
 }
 
-$file_css = $tplSettings->path . '/' . trim($css, "/");
+$file_css = $tplSettings->path . '/' . trim($css, '/');
 
 // Color management
 include XOOPS_ROOT_PATH . '/modules/qpages/class/qpcolor.class.php';

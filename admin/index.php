@@ -26,9 +26,8 @@
  * @url          http://www.redmexico.com.mx
  * @url          http://www.eduardocortes.mx
  */
-
 define('RMCLOCATION', 'dashboard');
-require 'header.php';
+require __DIR__ . '/header.php';
 
 RMTemplate::getInstance()->add_body_class('dashboard');
 
@@ -36,13 +35,13 @@ xoops_cp_header();
 
 // Get data for statistics
 $db = XoopsDatabaseFactory::getDatabaseConnection();
-$sql = "SELECT * FROM ".$db->prefix("mod_qpages_pages")." WHERE public=1 ORDER BY RAND() LIMIT 0, 10";
+$sql = 'SELECT * FROM ' . $db->prefix('mod_qpages_pages') . ' WHERE public=1 ORDER BY RAND() LIMIT 0, 10';
 $result = $db->query($sql);
 $i = 0;
 $max = 0;
-$stats = array();
+$stats = [];
 $legend = __('%s (%u times)', 'qpages');
-$colors = array(
+$colors = [
     '#04A4CC',
     '#CCA304',
     '#930B0C',
@@ -52,21 +51,21 @@ $colors = array(
     '#2AFF9F',
     '#5BB827',
     '#FF8360',
-    '#FF409F'
-);
+    '#FF409F',
+];
 
-while ($row = $db->fetchArray($result)) {
+while (false !== ($row = $db->fetchArray($result))) {
     $page = new QPPage();
     $page->assignVars($row);
     if ($i > 9) {
         $i = 0;
     }
-    $stats[] = array(
-        'label' => "ID: ". $page->id(),
+    $stats[] = [
+        'label' => 'ID: ' . $page->id(),
         'legend' => $page->title,
         'value' => $page->hits,
-        'color' => $colors[$i]
-    );
+        'color' => $colors[$i],
+    ];
     $i++;
 }
 /*
@@ -84,27 +83,27 @@ if ($max>0){
 }*/
 
 // Recent pages
-$sql = "SELECT * FROM ".$db->prefix("mod_qpages_pages")." ORDER BY created DESC LIMIT 0, 10";
+$sql = 'SELECT * FROM ' . $db->prefix('mod_qpages_pages') . ' ORDER BY created DESC LIMIT 0, 10';
 $result = $db->query($sql);
-$pages = array();
-while ($row = $db->fetchArray($result)) {
+$pages = [];
+while (false !== ($row = $db->fetchArray($result))) {
     $page = new QPPage();
     $page->assignVars($row);
-    $pages[] = array(
-        'id'			=> $page->id(),
-        'title'			=> $page->title,
-        'link'			=> $page->permalink(),
-        'desc'			=> $page->extract,
-        'public'		=> $page->public,
-        'type'          => $page->type
-    );
+    $pages[] = [
+        'id' => $page->id(),
+        'title' => $page->title,
+        'link' => $page->permalink(),
+        'desc' => $page->extract,
+        'public' => $page->public,
+        'type' => $page->type,
+    ];
 }
 
 RMTemplate::get()->set_help('http://redmexico.com.mx/docs/quickpages');
 RMTemplate::get()->add_script('https://www.google.com/jsapi');
 
 // Left widgets and right widgets
-$dashboardPanels = array();
+$dashboardPanels = [];
 $dashboardPanels = RMEvents::get()->trigger('qpages.dashboard.panels', $dashboardPanels);
 
 RMBreadCrumb::get()->add_crumb(__('Dashboard', 'qpages'));

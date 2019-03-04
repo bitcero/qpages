@@ -15,4 +15,5 @@ var qpLang = {
 <?php
 
 $thelang = ob_get_clean();
+
 return $thelang;

@@ -19,7 +19,7 @@
                 <div class="panel-body">
                     <div class="form-group">
                         <label for="cat-name"><?php _e('Category name', 'qpages'); ?></label>
-                        <input type="text" size="30" name="name" id="cat-name" class="form-control" />
+                        <input type="text" size="30" name="name" id="cat-name" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="cat-desc"><?php _e('Category description', 'qpages'); ?></label>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-lg"><?php _e('Add Category', 'qpages'); ?></button>
-                        <input type="hidden" name="op" value="save" />
+                        <input type="hidden" name="op" value="save">
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                     <table class="table">
                         <thead>
                         <tr class="head" align="center">
-                            <th width="20" class="text-center"><input<?php if (empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall" onclick='$("#frm-categos").toggleCheckboxes(":not(#checkall)");' /></th>
+                            <th width="20" class="text-center"><input<?php if (empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall" onclick='$("#frm-categos").toggleCheckboxes(":not(#checkall)");'></th>
                             <th width="30" class="text-center"><?php _e('ID', 'qpages'); ?></th>
                             <th><?php _e('Name', 'qpages'); ?></th>
                             <th><?php _e('Description', 'qpages'); ?></th>
@@ -71,7 +71,7 @@
                         </thead>
                         <tfoot>
                         <tr class="head" align="center">
-                            <th width="20" class="text-center"><input<?php if (empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall2" onclick='$("#frm-categos").toggleCheckboxes(":not(#checkall2)");' /></th>
+                            <th width="20" class="text-center"><input<?php if (empty($categories)): ?> disabled="disabled"<?php endif; ?> type="checkbox" id="checkall2" onclick='$("#frm-categos").toggleCheckboxes(":not(#checkall2)");'></th>
                             <th width="30" class="text-center"><?php _e('ID', 'qpages'); ?></th>
                             <th><?php _e('Name', 'qpages'); ?></th>
                             <th><?php _e('Description', 'qpages'); ?></th>
@@ -85,8 +85,8 @@
                             </tr>
                         <?php endif; ?>
                         <?php foreach ($categories as $cat): ?>
-                            <tr class="<?php echo tpl_cycle("even,odd"); ?>" valign="top">
-                                <td class="text-center"><input type="checkbox" name="ids[]" id="item-<?php echo $cat['id_cat']; ?>" value="<?php echo $cat['id_cat']; ?>" /></td>
+                            <tr class="<?php echo tpl_cycle('even,odd'); ?>" valign="top">
+                                <td class="text-center"><input type="checkbox" name="ids[]" id="item-<?php echo $cat['id_cat']; ?>" value="<?php echo $cat['id_cat']; ?>"></td>
                                 <td class="text-center"><strong><?php echo $cat['id_cat']; ?></strong></td>
                                 <td>
                                     <strong><?php echo $cat['name']; ?></strong>

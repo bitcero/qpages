@@ -8,7 +8,7 @@
         <h3 class="panel-title"><span class="fa fa-globe"></span> <?php _e('Projects Template Options', 'projects'); ?></h3>
     </div>
 
-    <?php if (defined("QP_AJAX_LOADED")): ?>
+    <?php if (defined('QP_AJAX_LOADED')): ?>
         <div class="panel-body">
         <div class="well text-center well-lg">
             <?php _e('Please save page now and then refresh in order to view the options for this page.', 'projects'); ?>
@@ -48,10 +48,10 @@
                 <div class="form-group">
                     <label><?php _e('Background mode:', 'projects'); ?></label>
                     <label class="radio-inline">
-                        <input type="checkbox" name="projects[bgmode]" value="tiled"<?php echo $tplSettings->bgmode == 'tiled' ? ' checked' : ''; ?>> <?php _e('Tiled', 'projects'); ?>
+                        <input type="checkbox" name="projects[bgmode]" value="tiled"<?php echo 'tiled' == $tplSettings->bgmode ? ' checked' : ''; ?>> <?php _e('Tiled', 'projects'); ?>
                     </label>
                     <label class="radio-inline">
-                        <input type="checkbox" name="projects[bgmode]" value="cover"<?php echo $tplSettings->bgmode == 'cover' ? ' checked' : ''; ?>> <?php _e('Full', 'projects'); ?>
+                        <input type="checkbox" name="projects[bgmode]" value="cover"<?php echo 'cover' == $tplSettings->bgmode ? ' checked' : ''; ?>> <?php _e('Full', 'projects'); ?>
                     </label>
                 </div>
 

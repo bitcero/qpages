@@ -3,14 +3,14 @@
 </h1>
 
 <form name="frmPages" id="frm-page" method="post" data-translate="true">
-	<div class="no-normal yes-redir"<?php echo $page->getVar('type')!='redir' ? ' style="display: none;"' : ''; ?>>
+	<div class="no-normal yes-redir"<?php echo 'redir' != $page->getVar('type') ? ' style="display: none;"' : ''; ?>>
 		<div class="alert alert-block">
 			<?php _e('Redirection Pages are simply symbolic links to another pages or URLs, don\'t matter if linked pages are located in same website or in another location.', 'qpages'); ?>
 		</div>
 	</div>
 
     <div class="form-group">
-        <input class="form-control input-lg" type="text" name="title" id="qp-title" value="<?php echo $page->isNew() ? '' : $page->getVar('title'); ?>" placeholder="<?php _e('Page title', 'qpages'); ?>" />
+        <input class="form-control input-lg" type="text" name="title" id="qp-title" value="<?php echo $page->isNew() ? '' : $page->getVar('title'); ?>" placeholder="<?php _e('Page title', 'qpages'); ?>">
     </div>
 
 	<div id="qp-permalink" class="form-group">
@@ -75,17 +75,17 @@
         Editor Visual
     </div>
 
-    <div id="qp-page-options"<?php echo $page->template != '' ? '' : ' style="display: none;"'; ?>>
-    <?php if ($page->template != ''): ?>
+    <div id="qp-page-options"<?php echo '' != $page->template ? '' : ' style="display: none;"'; ?>>
+    <?php if ('' != $page->template): ?>
 
         <?php echo QPFunctions::template_form($page); ?>
 
     <?php endif; ?>
     </div>
 
-    <div class="<?php echo $page->getVar('type')!=='redir' ? 'hidden-field' : ''; ?> no-normal yes-redir form-group" id="qp-url-field">
+    <div class="<?php echo 'redir' !== $page->getVar('type') ? 'hidden-field' : ''; ?> no-normal yes-redir form-group" id="qp-url-field">
         <label><strong><?php _e('Redirection URL:', 'qpages'); ?></strong></label>
-        <input type="text" name="url" value="<?php echo $page->isNew() ? '' : $page->getVar('url'); ?>" class="form-control" />
+        <input type="text" name="url" value="<?php echo $page->isNew() ? '' : $page->getVar('url'); ?>" class="form-control">
     </div>
 
     <div class="cu-box box-blue-grey yes-normal no-redir">
@@ -100,7 +100,7 @@
 
             <div class="form-group">
                 <label for="custom_title"><?php _e('Custom title:', 'qpages'); ?></label>
-                <input type="text" class="form-control" name="custom_title" id="customtitle" value="<?php echo $page->isNew() ? '' : $page->getVar('custom_title'); ?>" />
+                <input type="text" class="form-control" name="custom_title" id="customtitle" value="<?php echo $page->isNew() ? '' : $page->getVar('custom_title'); ?>">
                 <span class="help-block"><small><?php _e('This title will replace the page title in "title" tag.', 'qpages'); ?></small></span>
             </div>
 
@@ -111,7 +111,7 @@
 
             <div class="form-group">
                 <label for="keywords"><?php _e('Keywords:', 'qpages'); ?></label>
-                <input type="text" class="form-control" name="keywords" id="keywords" value="<?php echo $page->isNew() ? '' : $page->getVar('keywords'); ?>" />
+                <input type="text" class="form-control" name="keywords" id="keywords" value="<?php echo $page->isNew() ? '' : $page->getVar('keywords'); ?>">
             </div>
 
         </div>
@@ -126,7 +126,7 @@
         </div>
         <div class="box-content collapsable">
 
-            <?php include 'metas.php'; ?>
+            <?php require __DIR__ . '/metas.php'; ?>
 
         </div>
     </div>

@@ -8,4 +8,4 @@
 // License: GPL 2.0
 // --------------------------------------------------------------
 
-include XOOPS_ROOT_PATH.'/footer.php';
+include XOOPS_ROOT_PATH . '/footer.php';

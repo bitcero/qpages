@@ -45,27 +45,27 @@
 </div>
 <div class="span8">
 	<ul class="nav nav-tabs" id="library-tabs">
-	    <li<?php echo $active=='buttons' ? ' class="active"' : ''; ?>><a href="#lib-buttons" class="a-button" data-toggle="tab"><i class="icon-check-empty"></i> <?php _e('Buttons', 'qpages'); ?></a></li>
-	    <li<?php echo $active=='icons' ? ' class="active"' : ''; ?>><a href="#lib-icons" class="a-icon" data-toggle="tab"><i class="icon-th"></i> <?php _e('Icons', 'qpages'); ?></a></li>
-	    <li<?php echo $active=='graphics' ? ' class="active"' : ''; ?>><a href="#lib-graphics" class="a-graphic" data-toggle="tab"><i class="icon-picture"></i> <?php _e('Graphics', 'qpages'); ?></a></li>
-	    <li<?php echo $active=='texts' ? ' class="active"' : ''; ?>><a href="#lib-texts" class="a-text" data-toggle="tab"><i class="icon-text-width"></i> <?php _e('Text Blocks', 'qpages'); ?></a></li>
+	    <li<?php echo 'buttons' == $active ? ' class="active"' : ''; ?>><a href="#lib-buttons" class="a-button" data-toggle="tab"><i class="icon-check-empty"></i> <?php _e('Buttons', 'qpages'); ?></a></li>
+	    <li<?php echo 'icons' == $active ? ' class="active"' : ''; ?>><a href="#lib-icons" class="a-icon" data-toggle="tab"><i class="icon-th"></i> <?php _e('Icons', 'qpages'); ?></a></li>
+	    <li<?php echo 'graphics' == $active ? ' class="active"' : ''; ?>><a href="#lib-graphics" class="a-graphic" data-toggle="tab"><i class="icon-picture"></i> <?php _e('Graphics', 'qpages'); ?></a></li>
+	    <li<?php echo 'texts' == $active ? ' class="active"' : ''; ?>><a href="#lib-texts" class="a-text" data-toggle="tab"><i class="icon-text-width"></i> <?php _e('Text Blocks', 'qpages'); ?></a></li>
 	</ul>
 
 	<div class="tab-content">
 
-	    <div class="tab-pane<?php echo $active=='buttons' ? ' active' : ''; ?>" id="lib-buttons">
+	    <div class="tab-pane<?php echo 'buttons' == $active ? ' active' : ''; ?>" id="lib-buttons">
 	        Buttons
 	    </div>
 
-	    <div class="tab-pane<?php echo $active=='icons' ? ' active' : ''; ?>" id="lib-icons">
+	    <div class="tab-pane<?php echo 'icons' == $active ? ' active' : ''; ?>" id="lib-icons">
 	        Icons
 	    </div>
 
-	    <div class="tab-pane<?php echo $active=='graphics' ? ' active' : ''; ?>" id="lib-graphics">
+	    <div class="tab-pane<?php echo 'graphics' == $active ? ' active' : ''; ?>" id="lib-graphics">
 	        Graphics
 	    </div>
 
-	    <div class="tab-pane<?php echo $active=='texts' ? ' active' : ''; ?>" id="lib-texts">
+	    <div class="tab-pane<?php echo 'texts' == $active ? ' active' : ''; ?>" id="lib-texts">
 	        Text Blocks
 	    </div>
 

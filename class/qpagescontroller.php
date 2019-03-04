@@ -8,17 +8,17 @@
 // License: GPL 2.0
 // --------------------------------------------------------------
 
-class QpagesController
+class qpagescontroller
 {
     public function get_main_link()
     {
         $mc = RMSettings::module_settings('qpages');
-        
+
         if ($mc->permalinks) {
-            return XOOPS_URL.$mc->basepath;
-        } else {
-            return XOOPS_URL.'/modules/qpages';
+            return XOOPS_URL . $mc->basepath;
         }
+
+        return XOOPS_URL . '/modules/qpages';
     }
 
     public static function getInstance()
@@ -26,7 +26,7 @@ class QpagesController
         static $instance;
 
         if (!isset($instance)) {
-            $instance = new QpagesController();
+            $instance = new self();
         }
 
         return $instance;

@@ -8,25 +8,25 @@
 // License: GPL 2.0
 // --------------------------------------------------------------
 
-$xoopsOption['template_main'] = 'qpages_index.html';
+$GLOBALS['xoopsOption']['template_main'] = 'qpages_index.html';
 $xoopsOption['module_subpage'] = 'index';
-require 'header.php';
+require __DIR__ . '/header.php';
 
 $tpl->assign('page_title', $xoopsModule->name());
 $tpl->assign('xoops_pagetitle', $xoopsModule->name() . ' &raquo; ' . __('Main', 'qpages'));
 
-$result = $db->query("SELECT * FROM ".$db->prefix("mod_qpages_categos")." WHERE parent='0' ORDER BY name ASC");
-$categos = array();
+$result = $db->query('SELECT * FROM ' . $db->prefix('mod_qpages_categos') . " WHERE parent='0' ORDER BY name ASC");
+$categos = [];
 
 QPFunctions::categoriesTree($categos);
 
-while ($k = $db->fetchArray($result)) {
+while (false !== ($k = $db->fetchArray($result))) {
     $catego = new QPCategory();
     $catego->assignVars($k);
     $lpages = $catego->loadPages();
-    $pages = array();
+    $pages = [];
     foreach ($lpages as $p) {
-        $ret = array();
+        $ret = [];
         $page = new QPPage();
         $page->assignVars($p);
         $ret['title'] = $p['title'];
@@ -38,19 +38,19 @@ while ($k = $db->fetchArray($result)) {
     $subcats = $catego->getSubcategos();
     $tpl->append(
         'categos',
-        array(
-        'id'=>$catego->id(),
-        'name'=>$catego->name,
-        'description'=>$catego->description,
-        'pages'=>$pages,
-        'pages_count'=>count($lpages),
-        'link'=>$link,
-        'subcats'=>count($subcats)>0 ? $subcats : '',
-        'subcats_count'=>count($subcats))
+        [
+        'id' => $catego->id(),
+        'name' => $catego->name,
+        'description' => $catego->description,
+        'pages' => $pages,
+        'pages_count' => count($lpages),
+        'link' => $link,
+        'subcats' => count($subcats) > 0 ? $subcats : '',
+        'subcats_count' => count($subcats), ]
     );
 }
 
 $tpl->assign('lang_subcats', __('Subcategories', 'qpages'));
 $tpl->assign('lang_pagesin', __('Pages in this category', 'qpages'));
 
-require 'footer.php';
+require __DIR__ . '/footer.php';

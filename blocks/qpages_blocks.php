@@ -12,29 +12,29 @@ function qpages_block_categories()
 {
     global $xoopsConfig, $mc;
 
-    include_once XOOPS_ROOT_PATH.'/modules/qpages/class/qpcategory.class.php';
-    include_once XOOPS_ROOT_PATH.'/modules/qpages/class/qpfunctions.class.php';
-    include_once XOOPS_ROOT_PATH.'/modules/qpages/include/general.func.php';
+    require_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpcategory.class.php';
+    require_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpfunctions.class.php';
+    require_once XOOPS_ROOT_PATH . '/modules/qpages/include/general.func.php';
 
-    $mc =& RMSettings::module_settings('qpages');
-    $db =& XoopsDatabaseFactory::getDatabaseConnection();
+    $mc = &RMSettings::module_settings('qpages');
+    $db =  XoopsDatabaseFactory::getDatabaseConnection();
 
     if (!defined('QP_URL')) {
-        define('QP_URL', XOOPS_URL.($mc->permalinks ? $mc->basepath : '/modules/qpages'));
+        define('QP_URL', XOOPS_URL . ($mc->permalinks ? $mc->basepath : '/modules/qpages'));
     }
 
-    $block = array();
-    $categos = array();
+    $block = [];
+    $categos = [];
     QPFunctions::categoriesTree($categos);
 
     foreach ($categos as $k) {
         $catego = new QPCategory();
         $catego->assignVars($k);
-        $rtn = array();
+        $rtn = [];
         $rtn['id'] = $catego->id();
         $rtn['nombre'] = $catego->name;
         $rtn['link'] = $catego->permalink();
-        $rtn['ident'] = $k['jumps']>0 ? $k['jumps'] + 8 : 0;
+        $rtn['ident'] = $k['jumps'] > 0 ? $k['jumps'] + 8 : 0;
         $block['categos'][] = $rtn;
     }
 
@@ -43,32 +43,33 @@ function qpages_block_categories()
 
 /**
  * Mostramos las página existentes
+ * @param mixed $options
  */
 function qpages_block_pages($options)
 {
     global $xoopsConfig;
 
-    include_once XOOPS_ROOT_PATH.'/modules/qpages/class/qppage.class.php';
+    require_once XOOPS_ROOT_PATH . '/modules/qpages/class/qppage.class.php';
 
     $db = XoopsDatabaseFactory::getDatabaseConnection();
     $mc = RMSettings::module_settings('qpages');
 
     if (!defined('QP_URL')) {
-        define('QP_URL', XOOPS_URL.($mc->permalinks ? $mc->basepath : '/modules/qpages'));
+        define('QP_URL', XOOPS_URL . ($mc->permalinks ? $mc->basepath : '/modules/qpages'));
     }
 
-    $sql = "SELECT * FROM ".$db->prefix("mod_qpages_pages");
-    if ($options['category']>0) {
+    $sql = 'SELECT * FROM ' . $db->prefix('mod_qpages_pages');
+    if ($options['category'] > 0) {
         $sql .= " WHERE category='$options[category]'";
     }
 
     $sql .= " ORDER BY created DESC LIMIT 0,$options[limit]";
-    $block = array();
+    $block = [];
     $result = $db->query($sql);
-    while ($row = $db->fetchArray($result)) {
+    while (false !== ($row = $db->fetchArray($result))) {
         $page = new QPPage();
         $page->assignVars($row);
-        $rtn = array();
+        $rtn = [];
         $rtn['id'] = $page->id();
         $rtn['titulo'] = $page->title;
         $rtn['link'] = $page->permalink();
@@ -80,8 +81,8 @@ function qpages_block_pages($options)
 
 function qpages_block_pages_edit($options)
 {
-    include_once XOOPS_ROOT_PATH.'/modules/qpages/class/qpfunctions.class.php';
-    $categos = array();
+    require_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpfunctions.class.php';
+    $categos = [];
     QPFunctions::categoriesTree($categos);
 
     ob_start(); ?>
@@ -93,7 +94,7 @@ function qpages_block_pages_edit($options)
         </div>
         <div class="col-sm-8 col-lg-9">
             <select name="options[category]" class="form-control">
-                <option value="0"<?php echo $options['category'] == 0 ? ' selected' : ''; ?>><?php _e('Select category...', 'dtransport'); ?></option>
+                <option value="0"<?php echo 0 == $options['category'] ? ' selected' : ''; ?>><?php _e('Select category...', 'dtransport'); ?></option>
                 <?php foreach ($categos as $k): ?>
                 <option value="<?php echo $k['id_cat']; ?>"<?php echo $k['id_cat'] == $options['category'] ? ' selected' : ''; ?>>
                     <?php echo str_repeat('&#8212;', $k['jumps']) . ' ' . $k['name']; ?>

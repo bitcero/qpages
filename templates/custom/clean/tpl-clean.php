@@ -18,15 +18,15 @@ include('defaults.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php echo $page->description != '' ? $page->description : $page->excerpt; ?>">
+    <meta name="description" content="<?php echo '' != $page->description ? $page->description : $page->excerpt; ?>">
     <meta name="author" content="">
-    <title><?php echo $page->custom_title != '' ? $page->custom_title : $page->title; ?></title>
+    <title><?php echo '' != $page->custom_title ? $page->custom_title : $page->title; ?></title>
     <link href="<?php echo RMCURL; ?>/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo QPFunctions::dynamic_style($page, 'clean', 'css/style.css'); ?>" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?php echo RMCURL; ?>/css/font-awesome.min.css" type="text/css">
     <link href='<?php echo $tplSettings->body_font; ?>' rel='stylesheet' type='text/css'>
     <link href='<?php echo $tplSettings->em_font; ?>' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="<?php echo XOOPS_URL; ?>/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?php echo XOOPS_URL; ?>/favicon.ico" type="image/x-icon">
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <div class="container">
@@ -40,11 +40,11 @@ include('defaults.php');
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li class="page-scroll social">
-                        <?php foreach ($tplSettings->social as $name => $link): if ($link == '') {
+                        <?php foreach ($tplSettings->social as $name => $link): if ('' == $link) {
     continue;
 } ?>
                         <a href="<?php echo $link; ?>">
-                            <?php if ($name == 'instagram' || $name == 'flickr'): ?>
+                            <?php if ('instagram' == $name || 'flickr' == $name): ?>
                                 <span class="fa fa-<?php echo $name; ?>"></span>
                             <?php else: ?>
                                 <span class="fa fa-<?php echo $name; ?>-square"></span>
@@ -70,7 +70,7 @@ include('defaults.php');
 
                 <hr class="divider">
 
-                <p class="call-info"><?php echo $tplSettings->email; ?><?php if ($tplSettings->phone != ''): ?>     |     <?php echo $tplSettings->phone; ?><?php endif; ?></p>
+                <p class="call-info"><?php echo $tplSettings->email; ?><?php if ('' != $tplSettings->phone): ?>     |     <?php echo $tplSettings->phone; ?><?php endif; ?></p>
             </div>
 
             <div class="col-md-offset-1 col-md-4 intro-caption main-form">
@@ -163,11 +163,11 @@ include('defaults.php');
                 <p> <?php echo $tplSettings->footercopy; ?> </p>
             </div>
             <div class="col-md-3">
-                <?php foreach ($tplSettings->social as $name => $link): if ($link == '') {
+                <?php foreach ($tplSettings->social as $name => $link): if ('' == $link) {
     continue;
 } ?>
                     <a href="<?php echo $link; ?>">
-                        <?php if ($name == 'instagram' || $name == 'flickr'): ?>
+                        <?php if ('instagram' == $name || 'flickr' == $name): ?>
                             <span class="fa fa-<?php echo $name; ?> social-icon"></span>
                         <?php else: ?>
                             <span class="fa fa-<?php echo $name; ?>-square social-icon"></span>

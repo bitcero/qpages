@@ -14,7 +14,7 @@ class QpagesRmcommonPreload
     {
         $providers[] = [
             'id' => 'qpages',
-            'directory' => XOOPS_ROOT_PATH . '/modules/qpages/icons'
+            'directory' => XOOPS_ROOT_PATH . '/modules/qpages/icons',
         ];
 
         return $providers;
@@ -24,12 +24,12 @@ class QpagesRmcommonPreload
     {
         global $xoopsModule;
 
-        if (!isset($xoopsModule) || $xoopsModule->getVar('dirname')!='qpages') {
+        if (!isset($xoopsModule) || 'qpages' != $xoopsModule->getVar('dirname')) {
             return $widgets;
         }
 
-        if (defined("RMCSUBLOCATION") && RMCSUBLOCATION=='new-page') {
-            include_once '../widgets/qp-widgets.php';
+        if (defined('RMCSUBLOCATION') && RMCSUBLOCATION == 'new-page') {
+            require_once dirname(__DIR__) . '/widgets/qp-widgets.php';
 
             $id = rmc_server_var($_REQUEST, 'id', 0);
             $page = new QPPage($id);
@@ -48,25 +48,24 @@ class QpagesRmcommonPreload
      */
     public static function eventRmcommonIndexStart()
     {
-
         /**
          * Local function to assign smarty values
          * @param $page
          */
         function assign_template($page)
         {
-            $GLOBALS['xoopsTpl']->assign('page', array(
-                'title'        => $page->title,
-                'text'        => $page->content,
-                'id'        => $page->id(),
-                'name'        => $page->nameid,
-                'mod_date'    => sprintf(__('Last update: %s', 'qpages'), formatTimestamp($page->modified, 'c')),
-                'reads'        => sprintf(__('Read %u times', 'qpages'), $page->hits),
-                'metas'        => $page->get_meta()
-            ));
+            $GLOBALS['xoopsTpl']->assign('page', [
+                'title' => $page->title,
+                'text' => $page->content,
+                'id' => $page->id(),
+                'name' => $page->nameid,
+                'mod_date' => sprintf(__('Last update: %s', 'qpages'), formatTimestamp($page->modified, 'c')),
+                'reads' => sprintf(__('Read %u times', 'qpages'), $page->hits),
+                'metas' => $page->get_meta(),
+            ]);
         }
 
-        include_once XOOPS_ROOT_PATH . '/modules/qpages/class/qppage.class.php';
+        require_once XOOPS_ROOT_PATH . '/modules/qpages/class/qppage.class.php';
         $page = new QPPage();
         $page->load_home();
 
@@ -79,11 +78,11 @@ class QpagesRmcommonPreload
         /**
          * Load required files
          */
-        include_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpfunctions.class.php';
-        include_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpcategory.class.php';
-        include_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpcolor.class.php';
+        require_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpfunctions.class.php';
+        require_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpcategory.class.php';
+        require_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpcolor.class.php';
 
-        if ($page->template == '') {
+        if ('' == $page->template) {
             RMTemplate::getInstance()->header();
             assign_template($page);
             echo $GLOBALS['xoopsTpl']->fetch('db:qpages_page.tpl');
@@ -115,11 +114,11 @@ class QpagesRmcommonPreload
             return;
         }
 
-        if (substr($file, -4) == '.php') {
-            $info = array();
+        if ('.php' == mb_substr($file, -4)) {
+            $info = [];
             preg_match("/\/\*(.*)\*\//s", $content, $info);
-        } elseif (substr($file, -5) == '.html') {
-            $info = array();
+        } elseif ('.html' == mb_substr($file, -5)) {
+            $info = [];
             preg_match("/^<{\*(.*)\*\}>/sm", $content, $info);
         }
 
@@ -132,7 +131,7 @@ class QpagesRmcommonPreload
 
         RMTemplate::get()->header();
 
-        if (substr($page->template, -4) == '.php') {
+        if ('.php' == mb_substr($page->template, -4)) {
             if (isset($data->Standalone) && $data->Standalone) {
                 include $file;
             } else {

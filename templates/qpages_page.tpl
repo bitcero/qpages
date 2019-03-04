@@ -20,7 +20,7 @@
 		</tr>
 		<{foreach item=page from=$related}>
 			<tr>
-				<td><a href="<{$page.link}>"><{$page.title}></a><br /><{$page.desc}></td>
+				<td><a href="<{$page.link}>"><{$page.title}></a><br><{$page.desc}></td>
 				<td class="text-center" nowrap="nowrap"><{$page.modified}></td>
 				<td class="text-center"><strong><{$page.hits}></strong></td>
 			</tr>

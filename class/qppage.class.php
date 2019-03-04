@@ -13,7 +13,7 @@
  */
 class QPPage extends RMObject
 {
-    private $metas = array();
+    private $metas = [];
     private $squeeze = '';
     private $sales = '';
     /**
@@ -23,42 +23,42 @@ class QPPage extends RMObject
     /**
      * @var array Template options
      */
-    private $options = array();
+    private $options = [];
 
-    public function __construct($id=null)
+    public function __construct($id = null)
     {
         $this->noTranslate = [
-            'nameid', 'groups', 'type', 'url', 'custom_url', '', 'template'
+            'nameid', 'groups', 'type', 'url', 'custom_url', '', 'template',
         ];
         $this->ownerType = 'module';
         $this->ownerName = 'qpages';
 
         $this->db = XoopsDatabaseFactory::getDatabaseConnection();
-        $this->_dbtable = $this->db->prefix("mod_qpages_pages");
+        $this->_dbtable = $this->db->prefix('mod_qpages_pages');
         $this->setNew();
         $this->initVarsFromTable();
         $this->setVarType('groups', XOBJ_DTYPE_ARRAY);
         $this->setVarType('image', XOBJ_DTYPE_SOURCE);
 
-        if ($id==null) {
+        if (null === $id) {
             return null;
         }
 
         if ($this->loadValues($id)) {
             $this->unsetNew();
         } else {
-            $this->primary = "nameid";
+            $this->primary = 'nameid';
             if ($this->loadValues($id)) {
                 $this->unsetNew();
             }
-            $this->primary = "id_page";
+            $this->primary = 'id_page';
         }
 
         if ($this->isNew()) {
             return null;
         }
 
-        if ($this->template == '') {
+        if ('' == $this->template) {
             return true;
         }
 
@@ -69,17 +69,17 @@ class QPPage extends RMObject
 
     private function make_tpl_name()
     {
-        if ($this->template == '') {
+        if ('' == $this->template) {
             return null;
         }
 
         $tpl_info = pathinfo($this->template);
-        $this->template_name = str_replace("tpl-", '', $tpl_info['filename']);
+        $this->template_name = str_replace('tpl-', '', $tpl_info['filename']);
     }
 
     public function template_name()
     {
-        if ($this->template_name == '') {
+        if ('' == $this->template_name) {
             $this->make_tpl_name();
         }
 
@@ -97,7 +97,7 @@ class QPPage extends RMObject
             $this->load_template_options();
         }
 
-        if ($name == '') {
+        if ('' == $name) {
             return $this->options;
         }
 
@@ -123,7 +123,6 @@ class QPPage extends RMObject
      */
     protected function load_template_options()
     {
-
         /*if ( $this->template_name == '' )
             return array();
 
@@ -154,7 +153,7 @@ class QPPage extends RMObject
         $this->primary = 'id_page';
 
         $tpl_info = pathinfo($this->template);
-        $this->template_name = str_replace("tpl-", '', $tpl_info['filename']);
+        $this->template_name = str_replace('tpl-', '', $tpl_info['filename']);
     }
 
     /**
@@ -162,12 +161,13 @@ class QPPage extends RMObject
      */
     public function addHit()
     {
-        if ($this->db->queryF("UPDATE ".$this->_dbtable." SET hits=hits+1 WHERE id_page='".$this->id()."'")) {
+        if ($this->db->queryF('UPDATE ' . $this->_dbtable . " SET hits=hits+1 WHERE id_page='" . $this->id() . "'")) {
             $this->setVar('hits', $this->getVar('hits') + 1);
+
             return true;
-        } else {
-            return false;
         }
+
+        return false;
     }
 
     /**
@@ -178,20 +178,22 @@ class QPPage extends RMObject
         global $cuSettings;
         $mc = RMSettings::module_settings('qpages');
         if ($mc->permalinks) {
-            if ($this->getVar('custom_url')!='') {
-                $rtn = XOOPS_URL.'/'.$this->getVar('custom_url').'/';
+            if ('' != $this->getVar('custom_url')) {
+                $rtn = XOOPS_URL . '/' . $this->getVar('custom_url') . '/';
             } else {
-                $rtn = XOOPS_URL.'/'.trim($mc->basepath, '/').'/'.$this->getVar('nameid').'/';
+                $rtn = XOOPS_URL . '/' . trim($mc->basepath, '/') . '/' . $this->getVar('nameid') . '/';
             }
         } else {
-            $rtn = XOOPS_URL.'/modules/qpages/page.php?page='.$this->getVar('nameid');
+            $rtn = XOOPS_URL . '/modules/qpages/page.php?page=' . $this->getVar('nameid');
         }
 
         return $rtn;
     }
+
     /**
      * Establecemos los grupos con acceso
      * @param array $grupos
+     * @param mixed $groups
      * @return bool
      */
     public function setGroups($groups)
@@ -204,31 +206,32 @@ class QPPage extends RMObject
     }
 
     /**
-    * Meta data
-    */
+     * Meta data
+     */
     private function load_meta()
     {
         if (!empty($this->metas)) {
             return;
         }
 
-        $result = $this->db->query("SELECT name,value FROM ".$this->db->prefix("mod_qpages_meta")." WHERE page='".$this->id()."'");
-        while ($row = $this->db->fetchArray($result)) {
+        $result = $this->db->query('SELECT name,value FROM ' . $this->db->prefix('mod_qpages_meta') . " WHERE page='" . $this->id() . "'");
+        while (false !== ($row = $this->db->fetchArray($result))) {
             $this->metas[$row['name']] = $row['value'];
         }
     }
 
     /**
-    * Get metas from post.
-    * If a meta name has not been provided then return all metas
-    * @param string Meta name
-    * @return string|array
-    */
-    public function get_meta($name='')
+     * Get metas from post.
+     * If a meta name has not been provided then return all metas
+     * @param string Meta name
+     * @param mixed $name
+     * @return string|array
+     */
+    public function get_meta($name = '')
     {
         $this->load_meta();
 
-        if (trim($name)=='') {
+        if ('' == trim($name)) {
             return $this->metas;
         }
 
@@ -240,14 +243,16 @@ class QPPage extends RMObject
     }
 
     /**
-    * Add or modify a field
-    * @param string Meta name
-    * @param mixed Meta value
-    * @return none
-    */
+     * Add or modify a field
+     * @param string Meta name
+     * @param mixed Meta value
+     * @param mixed $name
+     * @param mixed $value
+     * @return none
+     */
     public function add_meta($name, $value)
     {
-        if (trim($name)=='' || trim($value)=='') {
+        if ('' == trim($name) || '' == trim($value)) {
             return;
         }
 
@@ -262,7 +267,7 @@ class QPPage extends RMObject
         if (!empty($this->metas)) {
             $this->saveMetas();
         }
-        if ($this->getVar('template') != '') {
+        if ('' != $this->getVar('template')) {
             $this->save_options();
         }
 
@@ -287,7 +292,7 @@ class QPPage extends RMObject
             $this->saveMetas();
         }
 
-        if ($this->getVar('template') != '') {
+        if ('' != $this->getVar('template')) {
             $this->save_options();
         }
 
@@ -300,23 +305,22 @@ class QPPage extends RMObject
      */
     public function delete()
     {
-
         /**
          * Delete the custom URL if exists
          */
-        if ($this->custom_url != '') {
-            $ht = new RMHtaccess('page: '.$this->id());
+        if ('' != $this->custom_url) {
+            $ht = new RMHtaccess('page: ' . $this->id());
             $htResult = $ht->removeRule();
             $result = $ht->write();
             if (false === $result) {
-                $this->addError(__('The .htaccess file could not be updated. Please delete the next lines from file:', 'qpages') . '<br><pre>'.$result.'</pre>');
+                $this->addError(__('The .htaccess file could not be updated. Please delete the next lines from file:', 'qpages') . '<br><pre>' . $result . '</pre>');
             }
         }
 
         /**
          * Delete template options if exists
          */
-        if ($this->template != '') {
+        if ('' != $this->template) {
             $file = XOOPS_CACHE_PATH . '/qpages/' . $this->template_name() . '-' . $this->id() . '.json';
             if (file_exists($file)) {
                 unlink($file);
@@ -327,18 +331,18 @@ class QPPage extends RMObject
             return false;
         }
 
-        return $this->db->queryF("DELETE FROM ".$this->db->prefix("mod_qpages_meta")." WHERE page='".$this->id()."'");
+        return $this->db->queryF('DELETE FROM ' . $this->db->prefix('mod_qpages_meta') . " WHERE page='" . $this->id() . "'");
     }
 
     public function add_read()
     {
-        $sql = "UPDATE " . $this->_dbtable ." SET hits = hits+1 WHERE id_page = " . $this->id();
+        $sql = 'UPDATE ' . $this->_dbtable . ' SET hits = hits+1 WHERE id_page = ' . $this->id();
+
         return $this->db->queryF($sql);
     }
 
     private function save_options()
     {
-
         /*$this->db->queryF( "DELETE FROM ".$this->db->prefix("mod_qpages_templates")." WHERE page='".$this->id()."'");
         $sql = '';
 
@@ -387,25 +391,25 @@ class QPPage extends RMObject
     }
 
     /**
-    * Save existing meta
-    */
+     * Save existing meta
+     */
     private function saveMetas()
     {
-        $this->db->queryF("DELETE FROM ".$this->db->prefix("mod_qpages_meta")." WHERE page='".$this->id()."'");
+        $this->db->queryF('DELETE FROM ' . $this->db->prefix('mod_qpages_meta') . " WHERE page='" . $this->id() . "'");
         if (empty($this->metas)) {
             return true;
         }
-        $sql = "INSERT INTO ".$this->db->prefix("mod_qpages_meta")." (`name`,`value`,`page`) VALUES ";
+        $sql = 'INSERT INTO ' . $this->db->prefix('mod_qpages_meta') . ' (`name`,`value`,`page`) VALUES ';
         $values = '';
         foreach ($this->metas as $name => $value) {
-            $values .= ($values=='' ? '' : ',')."('".MyTextSanitizer::addSlashes($name)."','".MyTextSanitizer::addSlashes($value)."','".$this->id()."')";
+            $values .= ('' == $values ? '' : ',') . "('" . MyTextSanitizer::addSlashes($name) . "','" . MyTextSanitizer::addSlashes($value) . "','" . $this->id() . "')";
         }
 
-        if ($this->db->queryF($sql.$values)) {
+        if ($this->db->queryF($sql . $values)) {
             return true;
-        } else {
-            $this->addError($this->db->error());
-            return false;
         }
+        $this->addError($this->db->error());
+
+        return false;
     }
 }
