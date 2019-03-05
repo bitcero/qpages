@@ -10,7 +10,7 @@
 
 class QpagesRmcommonPreload
 {
-    public function eventRmcommonRegisterIconProvider($providers)
+    public static function eventRmcommonRegisterIconProvider($providers)
     {
         $providers[] = [
             'id' => 'qpages',
