@@ -11,7 +11,7 @@ Standalone  = yes
 */
 ?>
 <?php
-include('defaults.php');
+include __DIR__ . '/defaults.php';
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $cuSettings->lang; ?>">

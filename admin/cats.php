@@ -27,7 +27,7 @@
  * @url          http://www.eduardocortes.mx
  */
 define('RMCLOCATION', 'categories');
-require('header.php');
+require __DIR__ . '/header.php';
 
 require_once dirname(__DIR__) . '/include/general.func.php';
 

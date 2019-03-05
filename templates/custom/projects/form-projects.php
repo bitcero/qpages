@@ -1,5 +1,5 @@
 <?php
-    include('defaults.php');
+    include __DIR__ . '/defaults.php';
 ?>
 
 <div class="panel panel-cyan">

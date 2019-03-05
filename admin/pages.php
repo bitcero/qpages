@@ -222,7 +222,7 @@ function newForm($edit = 0, $redir = false)
 
     $rmTpl->add_style('forms.css', 'rmcommon');
 
-    $rmTpl->add_head_script(include(XOOPS_ROOT_PATH . '/modules/qpages/include/qp-lang.php'));
+    $rmTpl->add_head_script(include XOOPS_ROOT_PATH . '/modules/qpages/include/qp-lang.php');
 
     xoops_cp_header();
 
