@@ -8,7 +8,7 @@
 // License: GPL 2.0
 // --------------------------------------------------------------
 
-$GLOBALS['xoopsOption']['template_main'] = 'qpages_index.html';
+$GLOBALS['xoopsOption']['template_main'] = 'qpages_index.tpl';
 $xoopsOption['module_subpage'] = 'index';
 require __DIR__ . '/header.php';
 

@@ -16,7 +16,7 @@ if (!defined('XOOPS_MAINFILE_INCLUDED')) {
     }
 }
 
-$GLOBALS['xoopsOption']['template_main'] = 'qpages_categos.html';
+$GLOBALS['xoopsOption']['template_main'] = 'qpages_categos.tpl';
 $xoopsOption['module_subpage'] = 'catego';
 require __DIR__ . '/header.php';
 
