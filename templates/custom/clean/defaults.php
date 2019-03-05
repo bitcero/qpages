@@ -82,14 +82,14 @@ $defaults = [
         [
             'name' => 'John Doe',
             'title' => 'customer',
-            'picture' => $tplSettings->url . '/images/customer.png',
+            'picture' => $template->url . '/images/customer.png',
             'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam feugiat magna dapibus augue tincidunt, nec ultrices sapien vestibulum.',
             'link' => '#',
         ],
         [
             'name' => 'John Doe',
             'title' => 'customer',
-            'picture' => $tplSettings->url . '/images/customer.png',
+            'picture' => $template->url . '/images/customer.png',
             'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam feugiat magna dapibus augue tincidunt, nec ultrices sapien vestibulum.',
             'link' => '#',
         ],
