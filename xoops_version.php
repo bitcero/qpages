@@ -135,7 +135,7 @@ $modversion = [
             'description' => __('Display a block with categories list', 'qpages'),
             'show_func' => 'qpages_block_categories',
             'edit_func' => '',
-            'template' => 'qpages_bk_categories.html',
+            'template' => 'qpages_bk_categories.tpl',
         ],
         # Pages
         [
@@ -144,7 +144,7 @@ $modversion = [
             'description' => __('Display a block with pages list', 'qpages'),
             'show_func' => 'qpages_block_pages',
             'edit_func' => 'qpages_block_pages_edit',
-            'template' => 'qpages_bk_pages.html',
+            'template' => 'qpages_bk_pages.tpl',
             'options' => ['limit' => 5, 'category' => 0],
         ],
     ],
