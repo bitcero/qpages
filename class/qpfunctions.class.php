@@ -80,7 +80,7 @@ class QPFunctions
             if (!is_dir($path)) {
                 continue;
             }
-            $dirs = $lists->getDirListAsArray($path);
+            $dirs = $lists::getDirListAsArray($path);
 
             foreach ($dirs as $dir) {
                 if (!file_exists($path . '/' . $dir . '/tpl-' . $dir . '.php')) {
@@ -93,7 +93,7 @@ class QPFunctions
                 }
             }
 
-            $files = $lists->getFileListAsArray($path);
+            $files = $lists::getFileListAsArray($path);
             foreach ($files as $file) {
                 if ('tpl-' == mb_substr($file, 0, 4) && '.tpl' == mb_substr($file, -4)) {
                     $info = self::templateInfo($path, $file);
