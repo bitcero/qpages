@@ -126,7 +126,7 @@
         </div>
         <div class="box-content collapsable">
 
-            <?php require __DIR__ . '/metas.php'; ?>
+            <?php require dirname(dirname(__DIR__)) . '/admin/metas.php'; ?>
 
         </div>
     </div>
