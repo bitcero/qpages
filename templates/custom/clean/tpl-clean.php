@@ -180,7 +180,7 @@ include __DIR__ . '/defaults.php';
 </div>
 
 <script src="<?php echo RMCURL; ?>/js/bootstrap.min.js"></script>
-<script src="<?php echo $tplSettings->url; ?>/js/jquery.easing.min.js"></script>
+<script src="<?php echo $template->url; ?>/js/jquery.easing.min.js"></script>
 <script type="text/javascript">
     //jQuery to collapse the navbar on scroll
     $(window).scroll(function() {
