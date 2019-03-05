@@ -19,6 +19,7 @@ if (!defined('XOOPS_ROOT_PATH')) {
  * @param mixed $limit
  * @param mixed $offset
  * @param mixed $userid
+ * @return array
  */
 function qpages_search($qa, $andor, $limit, $offset, $userid)
 {

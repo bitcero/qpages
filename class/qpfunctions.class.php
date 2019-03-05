@@ -38,6 +38,7 @@ class QPFunctions
      * Get template information
      * @param mixed $path
      * @param mixed $file
+     * @return bool|object|null
      */
     public static function templateInfo($path, $file)
     {
@@ -145,10 +146,11 @@ class QPFunctions
 
     /**
      * Función para obtener las categorías en un array
-     * @param mixed $ret
-     * @param mixed $jumps
-     * @param mixed $parent
+     * @param mixed      $ret
+     * @param mixed      $jumps
+     * @param mixed      $parent
      * @param null|mixed $exclude
+     * @return bool
      */
     public static function categoriesTree(&$ret, $jumps = 0, $parent = 0, $exclude = null)
     {

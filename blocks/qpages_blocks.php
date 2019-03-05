@@ -44,6 +44,7 @@ function qpages_block_categories()
 /**
  * Mostramos las página existentes
  * @param mixed $options
+ * @return array
  */
 function qpages_block_pages($options)
 {

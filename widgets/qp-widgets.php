@@ -11,6 +11,7 @@
 /**
  * Widget that shows the basic page options
  * @param mixed $page
+ * @return mixed
  */
 function qp_widget_basic($page)
 {
@@ -28,6 +29,7 @@ function qp_widget_basic($page)
 /**
  * Widget that show the page templates
  * @param mixed $page
+ * @return mixed
  */
 function qp_widget_template($page)
 {
@@ -58,6 +60,7 @@ function qp_widget_template($page)
 /**
  * Visualization and permissions
  * @param mixed $page
+ * @return mixed
  */
 function qp_widget_visualization($page)
 {
@@ -80,6 +83,7 @@ function qp_widget_visualization($page)
 /**
  * Provides a widget to specify the default image for page
  * @param mixed $page
+ * @return array
  */
 function qp_widget_image($page)
 {
