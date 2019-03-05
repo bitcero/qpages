@@ -16,7 +16,7 @@ function qpages_block_categories()
     require_once XOOPS_ROOT_PATH . '/modules/qpages/class/qpfunctions.class.php';
     require_once XOOPS_ROOT_PATH . '/modules/qpages/include/general.func.php';
 
-    $mc = &RMSettings::module_settings('qpages');
+    $mc = RMSettings::module_settings('qpages');
     $db =  XoopsDatabaseFactory::getDatabaseConnection();
 
     if (!defined('QP_URL')) {
