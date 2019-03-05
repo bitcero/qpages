@@ -11,7 +11,7 @@
 $xoopsOption['nocommon'] = 1;
 include dirname(dirname(dirname(__DIR__))) . '/mainfile.php';
 
-$page = isset($_GET[ 'page' ]) ? intval($_GET[ 'page' ]) : 0;
+$page = isset($_GET[ 'page' ]) ? (int)$_GET['page'] : 0;
 $tpl = isset($_GET[ 'tpl' ]) ? $_GET[ 'tpl' ] : '';
 $css = isset($_GET[ 'css' ]) ? urldecode($_GET[ 'css' ]) : '';
 
