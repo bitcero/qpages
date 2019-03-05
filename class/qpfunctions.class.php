@@ -12,13 +12,10 @@ class QPFunctions
 {
     /**
      * Send json response for AJAX purposes
-     * @param string Message to send
-     * @param int This is an error or no (1 or 0)
-     * @param array extra data to send
-     * @param mixed $msg
-     * @param mixed $error
+     * @param string $msgMessage to send
+     * @param int $error This is an error or no (1 or 0)
      * @param mixed $token
-     * @param mixed $data
+     * @param array $data extra data to send
      */
     public static function jsonResponse($msg, $error = 0, $token = 0, $data = [])
     {
@@ -253,7 +250,7 @@ class QPFunctions
     /**
      * Loads a language for specified template
      * @param string $tpl Template relative path
-     * @param $prefix Prefix for language file
+     * @param string $prefix Prefix for language file
      */
     public static function load_tpl_locale($tpl, $prefix = '')
     {

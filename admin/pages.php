@@ -233,8 +233,7 @@ function newForm($edit = 0, $redir = false)
 
 /**
  * Allows to save a page
- * @param int 1 if is a edition or 0 if is a new page
- * @param mixed $edit
+ * @param int $edit 1 if is a edition or 0 if is a new page
  */
 function savePage($edit = 0)
 {

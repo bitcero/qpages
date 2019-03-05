@@ -119,7 +119,7 @@ class QPPage extends RMObject
 
     /**
      * Load options for the selected template from database
-     * @return array
+     * @return void
      */
     protected function load_template_options()
     {
@@ -192,8 +192,7 @@ class QPPage extends RMObject
 
     /**
      * Establecemos los grupos con acceso
-     * @param array $grupos
-     * @param mixed $groups
+     * @param array $groups
      * @return bool
      */
     public function setGroups($groups)
@@ -223,8 +222,7 @@ class QPPage extends RMObject
     /**
      * Get metas from post.
      * If a meta name has not been provided then return all metas
-     * @param string Meta name
-     * @param mixed $name
+     * @param string $nameMeta name
      * @return string|array
      */
     public function get_meta($name = '')
@@ -244,11 +242,9 @@ class QPPage extends RMObject
 
     /**
      * Add or modify a field
-     * @param string Meta name
-     * @param mixed Meta value
-     * @param mixed $name
-     * @param mixed $value
-     * @return none
+     * @param string $nameMeta name
+     * @param mixed $value Meta value
+     * @return void
      */
     public function add_meta($name, $value)
     {

@@ -311,11 +311,10 @@ class QPColor
 
     /**
      * Returns the cross browser CSS3 gradient
-     * @param int Optional: percentage amount to light/darken the gradient
-     * @param  string $prefix Optional: prefix for every lines
-     * @param  string $suffix Optional: suffix for every lines
      * @param mixed $hex
-     * @param mixed $amount
+     * @param int   $amount Optional: percentage amount to light/darken the gradient
+     * @param string $suffix Optional: suffix for every lines
+     * @param string $prefix Optional: prefix for every lines
      * @return string CSS3 gradient for chrome, safari, firefox, opera and IE10
      */
     public function getCssGradient($hex, $amount = self::DEFAULT_ADJUST, $suffix = '', $prefix = '')
