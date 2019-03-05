@@ -59,22 +59,22 @@ $defaults = [
     'services' => [
         [
             'title' => 'Templates for pages',
-            'icons' => 'fa fa-heart',
+            'icon' => 'fa fa-heart',
             'description' => 'Nulla tristique rhoncus ante, vitae rutrum orci interdum non. Vivamus eu nibh eget ligula malesuada rhoncus. Sed convallis lorem vel ligula sodales laoreet.',
         ],
         [
             'title' => 'Landing Pages',
-            'icons' => 'fa fa-anchor',
+            'icon' => 'fa fa-anchor',
             'description' => 'Nulla tristique rhoncus ante, vitae rutrum orci interdum non. Vivamus eu nibh eget ligula malesuada rhoncus. Sed convallis lorem vel ligula sodales laoreet.',
         ],
         [
             'title' => 'Custom URLs',
-            'icons' => 'fa fa-link',
+            'icon' => 'fa fa-link',
             'description' => 'Nulla tristique rhoncus ante, vitae rutrum orci interdum non. Vivamus eu nibh eget ligula malesuada rhoncus. Sed convallis lorem vel ligula sodales laoreet.',
         ],
         [
             'title' => 'Embed or Standalone Pages',
-            'icons' => 'fa fa-thumb-tack',
+            'icon' => 'fa fa-thumb-tack',
             'description' => 'Nulla tristique rhoncus ante, vitae rutrum orci interdum non. Vivamus eu nibh eget ligula malesuada rhoncus. Sed convallis lorem vel ligula sodales laoreet.',
         ],
     ],
@@ -109,6 +109,6 @@ $defaults = [
     ],
     'footerbg' => '303335',
     'footertext' => '797c7e',
-    'footercopy' => '&copy; Copyright 2014. All rights reserved by you.',
+    'footercopy' => '&copy; Copyright 2019. All rights reserved by you.',
 ];
 QPFunctions::load_defaults($tplSettings, $defaults);
