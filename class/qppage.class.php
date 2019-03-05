@@ -401,8 +401,9 @@ class QPPage extends RMObject
         }
         $sql = 'INSERT INTO ' . $this->db->prefix('mod_qpages_meta') . ' (`name`,`value`,`page`) VALUES ';
         $values = '';
+        $myts = MyTextSanitizer::getInstance();
         foreach ($this->metas as $name => $value) {
-            $values .= ('' == $values ? '' : ',') . "('" . MyTextSanitizer::addSlashes($name) . "','" . MyTextSanitizer::addSlashes($value) . "','" . $this->id() . "')";
+            $values .= ('' == $values ? '' : ',') . "('" . $myts->addSlashes($name) . "','" . $myts->addSlashes($value) . "','" . $this->id() . "')";
         }
 
         if ($this->db->queryF($sql . $values)) {

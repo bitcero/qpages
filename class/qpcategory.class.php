@@ -23,6 +23,7 @@ class QPCategory extends RMObject
         $this->_dbtable = $this->db->prefix('mod_qpages_categos');
         $this->setNew();
         $this->initVarsFromTable();
+        $myts = MyTextSanitizer::getInstance();
         if ('' == $id) {
             return;
         }
@@ -33,7 +34,7 @@ class QPCategory extends RMObject
             }
         } else {
             $this->primary = 'nameid';
-            if (!$this->loadValues(MyTextSanitizer::addSlashes($id))) {
+            if (!$this->loadValues($myts->addSlashes($id))) {
                 return;
             }
         }

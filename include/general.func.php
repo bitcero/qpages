@@ -27,7 +27,7 @@ function getHomePage($page)
 
     $row = $db->fetchArray($result);
 
-    $GLOBALS['xoopsOption']['template_main'] = 'qpages_homepage.html';
+    $GLOBALS['xoopsOption']['template_main'] = 'qpages_homepage.tpl';
     require_once XOOPS_ROOT_PATH . '/header.php';
     $tpl = &$xoopsTpl;
     $groups = explode(',', $row['grupos']);
@@ -50,11 +50,11 @@ function getHomePage($page)
             return;
         }
     }
-
+    $myts = MyTextSanitizer::getInstance();
     $tpl->assign('xoops_pagetitle', $row['titulo']);
     $tpl->assign('page', [
         'title' => $row['titulo'],
-        'text' => MyTextSanitizer::displayTarea($row['texto'], $row['dohtml'], $row['dosmiley'], $row['doxcode'], $row['doimage'], $row['dobr']),
+        'text' => $myts->displayTarea($row['texto'], $row['dohtml'], $row['dosmiley'], $row['doxcode'], $row['doimage'], $row['dobr']),
         'id' => $row['id_page'],
         'name' => $row['titulo_amigo'],
     ]);
