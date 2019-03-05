@@ -1,8 +1,8 @@
 <h1 class="cu-section-title"><span class="fa fa-file-text"></span> <?php _e('Pages', 'qpages'); ?></h1>
 <script type="text/javascript">
 <!--
-	var qp_select_message = '<?php _e('Select at least a page to apply this action!', 'qpages'); ?>';
-	var qp_message = '<?php _e('Do you really wish to delete selected pages?', 'qpages'); ?>';
+    var qp_select_message = '<?php _e('Select at least a page to apply this action!', 'qpages'); ?>';
+    var qp_message = '<?php _e('Do you really wish to delete selected pages?', 'qpages'); ?>';
 -->
 </script>
 <form name="frmSearch" method="get" action="pages.php">
@@ -21,16 +21,16 @@
 
 <form name="modPages" id="frm-pages" method="post" action="pages.php">
 <div class="cu-bulk-actions">
-	<?php $nav->display(false); ?>
-	<select name="action" id="bulk-top" class="form-control">
-		<option value="" selected="selected"><?php _e('Bulk actions...', 'qpages'); ?></option>
-		<option value="privatize"><?php _e('Set as draft', 'qpages'); ?></option>
-		<option value="publicate"><?php _e('Publish', 'qpages'); ?></option>
-		<option value="linked"><?php _e('Set as linked', 'qpages'); ?></option>
-		<option value="delete"><?php _e('Delete', 'qpages'); ?></option>
+    <?php $nav->display(false); ?>
+    <select name="action" id="bulk-top" class="form-control">
+        <option value="" selected="selected"><?php _e('Bulk actions...', 'qpages'); ?></option>
+        <option value="privatize"><?php _e('Set as draft', 'qpages'); ?></option>
+        <option value="publicate"><?php _e('Publish', 'qpages'); ?></option>
+        <option value="linked"><?php _e('Set as linked', 'qpages'); ?></option>
+        <option value="delete"><?php _e('Delete', 'qpages'); ?></option>
         <option value="savechanges"><?php _e('Set order', 'qpages'); ?></option>
-	</select>
-	<button type="button" onclick="before_submit('frm-pages');" class="btn btn-default"><?php _e('Apply', 'qpages'); ?></button>
+    </select>
+    <button type="button" onclick="before_submit('frm-pages');" class="btn btn-default"><?php _e('Apply', 'qpages'); ?></button>
 </div>
 
 <div class="panel panel-default">
@@ -82,7 +82,7 @@
                     <td class="text-center"><strong><?php echo $item['id']; ?></strong></td>
                     <td class="text-center">
                         <a href="pages.php?type=<?php echo $item['type']; ?>" title="<?php echo $item['verbosetype']; ?>">
-                            <?php if ('redir' == $item['type']): ?>
+                            <?php if ('redir' === $item['type']): ?>
                                 <span class="fa fa-link"></span>
                             <?php else: ?>
                                 <span class="fa fa-file-text"></span>
@@ -114,16 +114,16 @@
 </div>
 
 <div class="cu-bulk-actions">
-	<?php $nav->display(false); ?>
-	<select name="actionb" id="bulk-bottom" class="form-control">
-		<option value="" selected="selected"><?php _e('Bulk actions...', 'qpages'); ?></option>
+    <?php $nav->display(false); ?>
+    <select name="actionb" id="bulk-bottom" class="form-control">
+        <option value="" selected="selected"><?php _e('Bulk actions...', 'qpages'); ?></option>
         <option value="privatize"><?php _e('Set as draft', 'qpages'); ?></option>
         <option value="publicate"><?php _e('Publish', 'qpages'); ?></option>
         <option value="linked"><?php _e('Set as linked', 'qpages'); ?></option>
         <option value="delete"><?php _e('Delete', 'qpages'); ?></option>
         <option value="savechanges"><?php _e('Set order', 'qpages'); ?></option>
-	</select>
-	<button type="button" onclick="before_submit('frm-pages');" class="btn btn-default"><?php _e('Apply', 'qpages'); ?></button>
+    </select>
+    <button type="button" onclick="before_submit('frm-pages');" class="btn btn-default"><?php _e('Apply', 'qpages'); ?></button>
 </div>
 <input type="hidden" name="page" value="<?php echo $page; ?>">
 <input type="hidden" name="cat" value="<?php echo $category; ?>">

@@ -53,7 +53,7 @@ function headerDecode()
         return $header;
     }
 
-    if ('' == $request || 'index.php' == mb_substr($request, 0, 9) || '?' == mb_substr($request, 0, 1)) {
+    if ('' == $request || 'index.php' === mb_substr($request, 0, 9) || '?' === mb_substr($request, 0, 1)) {
         $header['show'] = 'index';
 
         return $header;
@@ -61,7 +61,7 @@ function headerDecode()
 
     $vars = explode('/', $request);
 
-    if ('category' == $vars[0]) {
+    if ('category' === $vars[0]) {
         $header['show'] = 'category';
 
         return $header;

@@ -12,7 +12,7 @@ class QPFunctions
 {
     /**
      * Send json response for AJAX purposes
-     * @param string $msgMessage to send
+     * @param string $msg Message to send 
      * @param int $error This is an error or no (1 or 0)
      * @param mixed $token
      * @param array $data extra data to send
@@ -45,10 +45,10 @@ class QPFunctions
 
         $content = file_get_contents($path . '/' . $file);
 
-        if ('.php' == mb_substr($file, -4)) {
+        if ('.php' === mb_substr($file, -4)) {
             $info = [];
             preg_match("/\/\*(.*)\*\//s", $content, $info);
-        } elseif ('.tpl' == mb_substr($file, -4)) {
+        } elseif ('.tpl' === mb_substr($file, -4)) {
             $info = [];
             preg_match("/^<{\*(.*)\*\}>/sm", $content, $info);
         }
@@ -93,7 +93,7 @@ class QPFunctions
 
             $files = $lists::getFileListAsArray($path);
             foreach ($files as $file) {
-                if ('tpl-' == mb_substr($file, 0, 4) && '.tpl' == mb_substr($file, -4)) {
+                if ('tpl-' === mb_substr($file, 0, 4) && '.tpl' === mb_substr($file, -4)) {
                     $info = self::templateInfo($path, $file);
                     if (false !== $info) {
                         $tpls[] = $info;
@@ -203,7 +203,7 @@ class QPFunctions
     public static function error_404()
     {
         header('HTTP/1.0 404 Not Found');
-        if ('cgi' == mb_substr(php_sapi_name(), 0, 3)) {
+        if ('cgi' === mb_substr(php_sapi_name(), 0, 3)) {
             header('Status: 404 Not Found', true);
         } else {
             header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
@@ -249,7 +249,7 @@ class QPFunctions
 
     /**
      * Loads a language for specified template
-     * @param string $tpl Template relative path
+     * @param string $tpl    Template relative path
      * @param string $prefix Prefix for language file
      */
     public static function load_tpl_locale($tpl, $prefix = '')
@@ -278,17 +278,17 @@ class QPFunctions
         $order = RMHttpRequest::request('order', 'string', 'id_page');
         $sort = RMHttpRequest::request('sort', 'string', 'asc');
 
-        $sort = 'desc' == mb_strtolower($sort) ? 'asc' : 'desc';
+        $sort = 'desc' === mb_strtolower($sort) ? 'asc' : 'desc';
 
         if ('' == $field) {
             return '#';
         }
 
-        if ('pages' != $section && 'categories' != $section) {
+        if ('pages' !== $section && 'categories' !== $section) {
             return '#';
         }
 
-        $section = 'categories' == $section ? 'cats.php' : 'pages.php';
+        $section = 'categories' === $section ? 'cats.php' : 'pages.php';
 
         $link = $section . '?order=' . $field . '&amp;sort=' . $sort . '&amp;keyw=' . $keyw . '&amp;public=' . $public . '&amp;type=' . $type . '&amp;cat=' . $category . '&amp;page=' . $page;
 

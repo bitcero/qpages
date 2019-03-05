@@ -44,7 +44,7 @@ include __DIR__ . '/defaults.php';
     continue;
 } ?>
                         <a href="<?php echo $link; ?>">
-                            <?php if ('instagram' == $name || 'flickr' == $name): ?>
+                            <?php if ('instagram' === $name || 'flickr' === $name): ?>
                                 <span class="fa fa-<?php echo $name; ?>"></span>
                             <?php else: ?>
                                 <span class="fa fa-<?php echo $name; ?>-square"></span>
@@ -167,7 +167,7 @@ include __DIR__ . '/defaults.php';
     continue;
 } ?>
                     <a href="<?php echo $link; ?>">
-                        <?php if ('instagram' == $name || 'flickr' == $name): ?>
+                        <?php if ('instagram' === $name || 'flickr' === $name): ?>
                             <span class="fa fa-<?php echo $name; ?> social-icon"></span>
                         <?php else: ?>
                             <span class="fa fa-<?php echo $name; ?>-square social-icon"></span>

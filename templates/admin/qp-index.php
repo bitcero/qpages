@@ -2,7 +2,7 @@
 
 <div class="row" data-boxes="load" data-news="load" data-module="qpages" data-target="#qp-news-content" data-container="dashboard" data-box="qpages-dashboard">
 
-	<div class="size-1" data-dashboard="item">
+    <div class="size-1" data-dashboard="item">
         <div class="cu-box box-green">
             <div class="box-header">
                 <span class="fa fa-caret-up box-handler"></span>
@@ -17,7 +17,7 @@
                     <?php endif; ?>
                     <?php foreach ($pages as $page): ?>
                         <li>
-                            <span class="badge"><span class="fa <?php echo 'redir' == $page['type'] ? 'fa-link' : 'fa-file-text'; ?>"></span></span>
+                            <span class="badge"><span class="fa <?php echo 'redir' === $page['type'] ? 'fa-link' : 'fa-file-text'; ?>"></span></span>
                             <a href="<?php echo $page['link']; ?>"><strong><?php echo $page['title']; ?></strong></a>
                             <?php if (!$page['public']): _e('[Draft]', 'qpages'); endif; ?>
                             &nbsp;

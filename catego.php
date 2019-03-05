@@ -31,7 +31,7 @@ $tbl = $db->prefix('mod_qpages_categos');
 $idp = 0; # ID de la categoria padre
 $rutas = [];
 foreach ($path as $k) {
-    if ('' == $k || '?' == mb_substr($k, 0, 1)) {
+    if ('' == $k || '?' === mb_substr($k, 0, 1)) {
         continue;
     }
     $sql = "SELECT id_cat FROM $tbl WHERE nameid='$k' AND parent='$idp'";

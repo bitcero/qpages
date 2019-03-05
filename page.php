@@ -73,7 +73,7 @@ if (!in_array(0, $page->groups, true)) {
 
 $page->addHit();
 
-if ('redir' == $page->type) {
+if ('redir' === $page->type) {
     header('location: ' . $page->url);
     die();
 }
@@ -104,7 +104,7 @@ if ('' != $page->template) {
 
     $xoopsTpl->assign('xoops_pagetitle', $page->title);
 
-    if ('.php' == mb_substr($page->template, -4)) {
+    if ('.php' === mb_substr($page->template, -4)) {
         if (isset($template->Standalone) && $template->Standalone) {
             include $file;
         } else {

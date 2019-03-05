@@ -3,29 +3,29 @@
 </h1>
 
 <form name="frmPages" id="frm-page" method="post" data-translate="true">
-	<div class="no-normal yes-redir"<?php echo 'redir' != $page->getVar('type') ? ' style="display: none;"' : ''; ?>>
-		<div class="alert alert-block">
-			<?php _e('Redirection Pages are simply symbolic links to another pages or URLs, don\'t matter if linked pages are located in same website or in another location.', 'qpages'); ?>
-		</div>
-	</div>
+    <div class="no-normal yes-redir"<?php echo 'redir' !== $page->getVar('type') ? ' style="display: none;"' : ''; ?>>
+        <div class="alert alert-block">
+            <?php _e('Redirection Pages are simply symbolic links to another pages or URLs, don\'t matter if linked pages are located in same website or in another location.', 'qpages'); ?>
+        </div>
+    </div>
 
     <div class="form-group">
         <input class="form-control input-lg" type="text" name="title" id="qp-title" value="<?php echo $page->isNew() ? '' : $page->getVar('title'); ?>" placeholder="<?php _e('Page title', 'qpages'); ?>">
     </div>
 
-	<div id="qp-permalink" class="form-group">
-		<label><?php _e('Permalink:', 'qpages'); ?></label>
-		<span>
-			<?php if ($page->isNew()): ?>
-			<?php _e('The permalink will appear after you save this page.', 'qpages'); ?>
-			<?php else: ?>
-			<a href="<?php echo $page->permalink(); ?>" target="permalink"><?php echo $page->permalink(); ?></a>
-			<?php endif; ?>
-		</span>
-	</div>
+    <div id="qp-permalink" class="form-group">
+        <label><?php _e('Permalink:', 'qpages'); ?></label>
+        <span>
+            <?php if ($page->isNew()): ?>
+            <?php _e('The permalink will appear after you save this page.', 'qpages'); ?>
+            <?php else: ?>
+            <a href="<?php echo $page->permalink(); ?>" target="permalink"><?php echo $page->permalink(); ?></a>
+            <?php endif; ?>
+        </span>
+    </div>
 
-	<?php if ($xoopsModuleConfig['permalinks']): ?>
-	<div class="yes-normal no-redir  " id="qp-custom-url">
+    <?php if ($xoopsModuleConfig['permalinks']): ?>
+    <div class="yes-normal no-redir  " id="qp-custom-url">
         <div class="form-group">
             <label><strong><?php echo __('Custom URL:', 'qpages'); ?></strong></label>
             <div class="input-group">
@@ -33,24 +33,24 @@
                 <input type="text" name="custom_url" class="form-control" value="<?php echo $page->getVar('custom_url'); ?>">
             </div>
         </div>
-		<?php if ($rewrite): ?>
-		<div class="alert alert-info">
-			<?php _e('You can specify a custom URL for this page, but remember that this URL must not exists in your site previously.', 'qpages'); ?>
-			<?php _e('If you specify a custom URL, then the permalink for this page will be ignored.', 'qpages'); ?>
-		</div>
-		<?php else: ?>
-		<div class="alert alert-warning">
-			<?php _e('QuickPages can not write the htaccess file. Please do it manually by inserting next line in your file:', 'qpages'); ?>
-			<pre><?php echo $rewriteRule; ?></pre>
-		</div>
-		<?php endif; ?>
-	</div>
-	<?php endif; ?>
+        <?php if ($rewrite): ?>
+        <div class="alert alert-info">
+            <?php _e('You can specify a custom URL for this page, but remember that this URL must not exists in your site previously.', 'qpages'); ?>
+            <?php _e('If you specify a custom URL, then the permalink for this page will be ignored.', 'qpages'); ?>
+        </div>
+        <?php else: ?>
+        <div class="alert alert-warning">
+            <?php _e('QuickPages can not write the htaccess file. Please do it manually by inserting next line in your file:', 'qpages'); ?>
+            <pre><?php echo $rewriteRule; ?></pre>
+        </div>
+        <?php endif; ?>
+    </div>
+    <?php endif; ?>
 
-	<div class="yes-normal yes-redir   form-group" id="qp-description">
-		<label><strong><?php _e('Page description:', 'qpages'); ?></strong></label>
-		<textarea placeholder="<?php _e('Short description for page', 'qpages'); ?>" name="excerpt" class="form-control" cols="45" rows="3"><?php echo $page->isNew() ? '' : $page->getVar('excerpt', 'e'); ?></textarea>
-	</div>
+    <div class="yes-normal yes-redir   form-group" id="qp-description">
+        <label><strong><?php _e('Page description:', 'qpages'); ?></strong></label>
+        <textarea placeholder="<?php _e('Short description for page', 'qpages'); ?>" name="excerpt" class="form-control" cols="45" rows="3"><?php echo $page->isNew() ? '' : $page->getVar('excerpt', 'e'); ?></textarea>
+    </div>
 
     <!--div id="qpages-editor-options" class="yes-normal no-redir">
         <ul>
@@ -131,12 +131,12 @@
         </div>
     </div>
 
-	<input type="hidden" name="action" id="qpages-action" value="<?php echo $edit ? 'saveedited' : 'save'; ?>">
-	<input type="hidden" name="category" value="<?php echo $edit ? $page->category : (isset($category) ? $category : 0); ?>">
-	<?php if (isset($pageNum)): ?>
+    <input type="hidden" name="action" id="qpages-action" value="<?php echo $edit ? 'saveedited' : 'save'; ?>">
+    <input type="hidden" name="category" value="<?php echo $edit ? $page->category : (isset($category) ? $category : 0); ?>">
+    <?php if (isset($pageNum)): ?>
     <input type="hidden" name="page" value="<?php echo $pageNum; ?>">
     <?php endif; ?>
-	<?php if ($edit): ?><input type="hidden" name="id" value="<?php echo $page->id(); ?>" id="page-id"><?php endif; ?>
-	<?php echo $xoopsSecurity->getTokenHTML(); ?>
+    <?php if ($edit): ?><input type="hidden" name="id" value="<?php echo $page->id(); ?>" id="page-id"><?php endif; ?>
+    <?php echo $xoopsSecurity->getTokenHTML(); ?>
 
 </form>

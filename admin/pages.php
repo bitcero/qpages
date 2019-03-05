@@ -69,7 +69,7 @@ function showPages()
     }
 
     if ('' != $type) {
-        $sql .= (false !== mb_strpos($sql, 'WHERE') ? ' AND ' : ' WHERE ') . "type='" . ('normal' == $type ? '' : $type) . "'";
+        $sql .= (false !== mb_strpos($sql, 'WHERE') ? ' AND ' : ' WHERE ') . "type='" . ('normal' === $type ? '' : $type) . "'";
     }
 
     if ('' != trim($keyw)) {
@@ -175,7 +175,7 @@ function newForm($edit = 0, $redir = false)
     define('RMCSUBLOCATION', 'new-page');
 
     foreach ($_REQUEST as $k => $v) {
-        if ('page' == $k) {
+        if ('page' === $k) {
             $pageNum = $v;
         } else {
             $$k = $v;
@@ -202,7 +202,7 @@ function newForm($edit = 0, $redir = false)
 
     $form = new RMForm('', '', '');
 
-    $editor = new RMFormEditor('', 'content', '100%', '350px', $edit ? $page->getVar('content', 'tiny' == $cuSettings->editor_type ? '' : 'e') : '');
+    $editor = new RMFormEditor('', 'content', '100%', '350px', $edit ? $page->getVar('content', 'tiny' === $cuSettings->editor_type ? '' : 'e') : '');
 
     $page_metas = $edit ? $page->get_meta() : [];
     $available_metas = qp_get_metas();
@@ -302,7 +302,7 @@ function savePage($edit = 0)
     }
 
     // Check if current page is a redirection page
-    if ('redir' == $page_type) {
+    if ('redir' === $page_type) {
         if ('' == $url) {
             QPFunctions::jsonResponse(__('You must provide a redirection URL for this page!', 'qpages'), 1, 1);
         }

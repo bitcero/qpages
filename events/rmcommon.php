@@ -24,11 +24,11 @@ class QpagesRmcommonPreload
     {
         global $xoopsModule;
 
-        if (!isset($xoopsModule) || 'qpages' != $xoopsModule->getVar('dirname')) {
+        if (!isset($xoopsModule) || 'qpages' !== $xoopsModule->getVar('dirname')) {
             return $widgets;
         }
 
-        if (defined('RMCSUBLOCATION') && RMCSUBLOCATION == 'new-page') {
+        if (defined('RMCSUBLOCATION') && RMCSUBLOCATION === 'new-page') {
             require_once dirname(__DIR__) . '/widgets/qp-widgets.php';
 
             $id = rmc_server_var($_REQUEST, 'id', 0);
@@ -114,10 +114,10 @@ class QpagesRmcommonPreload
             return;
         }
 
-        if ('.php' == mb_substr($file, -4)) {
+        if ('.php' === mb_substr($file, -4)) {
             $info = [];
             preg_match("/\/\*(.*)\*\//s", $content, $info);
-        } elseif ('.html' == mb_substr($file, -5)) {
+        } elseif ('.html' === mb_substr($file, -5)) {
             $info = [];
             preg_match("/^<{\*(.*)\*\}>/sm", $content, $info);
         }
@@ -131,7 +131,7 @@ class QpagesRmcommonPreload
 
         RMTemplate::get()->header();
 
-        if ('.php' == mb_substr($page->template, -4)) {
+        if ('.php' === mb_substr($page->template, -4)) {
             if (isset($data->Standalone) && $data->Standalone) {
                 include $file;
             } else {

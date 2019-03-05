@@ -1,5 +1,5 @@
 <form name="formview" id="frm-view" method="post" action="pages.php">
-	<div class="yes-redir yes-normal yes-squeeze yes-sales<?php echo 'redir' == $page->getVar('type') ? ' hidden-field' : ''; ?>">
+    <div class="yes-redir yes-normal yes-squeeze yes-sales<?php echo 'redir' === $page->getVar('type') ? ' hidden-field' : ''; ?>">
         <div class="form-group">
             <label><strong><?php _e('Page status:', 'qpages'); ?></strong></label>
             <select name="public" class="form-control">
@@ -25,5 +25,5 @@
             </select>
         </div>
 
-	</div>
+    </div>
 </form>
