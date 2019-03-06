@@ -102,7 +102,7 @@ h2.prj-bigsh{
 .prj-hr{
     display: block;
     height: 12px;
-    background: url(<?php echo $tplSettings->url; ?>/images/divider.png) repeat-x;
+    background: url(<?php echo $template->url; ?>/images/divider.png) repeat-x;
     margin: 40px 0;
 }
 
