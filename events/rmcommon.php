@@ -117,7 +117,7 @@ class QpagesRmcommonPreload
         if ('.php' === mb_substr($file, -4)) {
             $info = [];
             preg_match("/\/\*(.*)\*\//s", $content, $info);
-        } elseif ('.html' === mb_substr($file, -5)) {
+        } elseif ('.html' === mb_substr($file, -5) || '.tpl' === mb_substr($file, -4)) {
             $info = [];
             preg_match("/^<{\*(.*)\*\}>/sm", $content, $info);
         }
@@ -129,14 +129,14 @@ class QpagesRmcommonPreload
         $data = (object) parse_ini_string($info[1]);
         unset($content, $info);
 
-        RMTemplate::get()->header();
+        RMTemplate::getInstance()->header();
 
         if ('.php' === mb_substr($page->template, -4)) {
             if (isset($data->Standalone) && $data->Standalone) {
                 include $file;
             } else {
                 include $file;
-                RMTemplate::get()->footer();
+                RMTemplate::getInstance()->footer();
             }
         } else {
             assign_template($page);
@@ -144,7 +144,7 @@ class QpagesRmcommonPreload
                 echo $GLOBALS['xoopsTpl']->fetch($file);
             } else {
                 echo $GLOBALS['xoopsTpl']->fetch($file);
-                RMTemplate::get()->footer();
+                RMTemplate::getInstance()->footer();
             }
         }
         die();

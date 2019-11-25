@@ -133,9 +133,9 @@ function showPages()
         $categories[] = ['id' => $k['id_cat'], 'name' => $k['name'], 'jumps' => $k['jumps']];
     }
 
-    RMTemplate::get()->add_script('qpages.js', 'qpages');
-    RMTemplate::get()->add_script('jquery.checkboxes.js', 'rmcommon');
-    RMTemplate::get()->assign('xoops_pagetitle', __('Pages Management', 'qpages'));
+    RMTemplate::getInstance()->add_script('qpages.js', 'qpages');
+    RMTemplate::getInstance()->add_script('jquery.checkboxes.js', 'rmcommon');
+    RMTemplate::getInstance()->assign('xoops_pagetitle', __('Pages Management', 'qpages'));
 
     RMBreadCrumb::get()->add_crumb(__('Pages management', 'qpages'), "pages.php?type=$type&amp;public=$public&amp;category=$category&amp;keyw=$keyw");
 
@@ -158,7 +158,7 @@ function showPages()
 
     xoops_cp_header();
 
-    include RMTemplate::get()->get_template('admin/qp-pages.php', 'module', 'qpages');
+    include RMTemplate::getInstance()->get_template('admin/qp-pages.php', 'module', 'qpages');
 
     xoops_cp_footer();
 }

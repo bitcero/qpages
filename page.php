@@ -100,7 +100,7 @@ if ('' != $page->template) {
 
     unset($file_data);
 
-    RMTemplate::get()->header();
+    RMTemplate::getInstance()->header();
 
     $xoopsTpl->assign('xoops_pagetitle', $page->title);
 
@@ -109,7 +109,7 @@ if ('' != $page->template) {
             include $file;
         } else {
             include $file;
-            RMTemplate::get()->footer();
+            RMTemplate::getInstance()->footer();
         }
     } else {
         qp_assign_page($page);
@@ -128,7 +128,7 @@ if ('' != $page->template) {
             echo $GLOBALS['xoopsTpl']->fetch($file);
         } else {
             echo $GLOBALS['xoopsTpl']->fetch($file);
-            RMTemplate::get()->footer();
+            RMTemplate::getInstance()->footer();
         }
     }
     die();
@@ -184,7 +184,7 @@ $rmf = RMFunctions::get();
 $description = $page->getVar('description', 'e');
 $keywords = $page->getVar('keywords', 'e');
 $rmf->add_keywords_description('' != $description ? $description : '', '' != $keywords ? $keywords : '');
-RMTemplate::get()->add_meta('title', $page->getVar('custom_title'));
+RMTemplate::getInstance()->add_meta('title', $page->getVar('custom_title'));
 
 // Páginas relacionadas
 if ($mc['related']) {

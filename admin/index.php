@@ -99,8 +99,8 @@ while (false !== ($row = $db->fetchArray($result))) {
     ];
 }
 
-RMTemplate::get()->set_help('http://redmexico.com.mx/docs/quickpages');
-RMTemplate::get()->add_script('https://www.google.com/jsapi');
+RMTemplate::getInstance()->set_help('http://redmexico.com.mx/docs/quickpages');
+RMTemplate::getInstance()->add_script('https://www.google.com/jsapi');
 
 // Left widgets and right widgets
 $dashboardPanels = [];
@@ -108,6 +108,6 @@ $dashboardPanels = RMEvents::get()->trigger('qpages.dashboard.panels', $dashboar
 
 RMBreadCrumb::get()->add_crumb(__('Dashboard', 'qpages'));
 
-include RMTemplate::get()->path('admin/qp-index.php', 'module', 'qpages');
+include RMTemplate::getInstance()->path('admin/qp-index.php', 'module', 'qpages');
 
 xoops_cp_footer();

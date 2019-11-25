@@ -44,14 +44,14 @@ function qp_widget_template($page)
     ];
 
     /**
-     * Modules, plusing and themes can add their own paths for templates
+     * Modules, plugins and themes can add their own paths for templates
      */
     $paths = $rmEvents->run_event('qpages.get.templates.paths', $paths);
 
     $pages_templates = QPFunctions::getTemplates($paths);
 
     ob_start();
-    include RMTemplate::get()->get_template('widgets/qp-widget-template.php', 'module', 'qpages');
+    include RMTemplate::getInstance()->get_template('widgets/qp-widget-template.php', 'module', 'qpages');
     $widget['content'] = ob_get_clean();
 
     return $widget;

@@ -19,6 +19,6 @@ define('QP_PATH',XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->dirname());
 if (!defined("QP_URL"))
     define('QP_URL',XOOPS_URL.($cuSettings->permalinks ? $mc['basepath'] : '/modules/'.$xoopsModule->dirname()));
 
-RMTemplate::get()->add_style('main.css', 'qpages');
+RMTemplate::getInstance()->add_style('main.css', 'qpages');
 
 include_once 'include/general.func.php';

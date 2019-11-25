@@ -55,15 +55,15 @@ function showCategos()
     // Event
     $categories = RMEvents::get()->run_event('qpages.categories.list', $categories);
 
-    RMTemplate::get()->add_script('jquery.checkboxes.js', 'rmcommon');
-    RMTemplate::get()->add_script('qpages.js', 'qpages');
-    RMTemplate::get()->assign('xoops_pagetitle', __('Categories management', 'qpages'));
+    RMTemplate::getInstance()->add_script('jquery.checkboxes.js', 'rmcommon');
+    RMTemplate::getInstance()->add_script('qpages.js', 'qpages');
+    RMTemplate::getInstance()->assign('xoops_pagetitle', __('Categories management', 'qpages'));
 
     RMBreadCrumb::get()->add_crumb(__('Categories Management', 'qpages'));
 
     xoops_cp_header();
 
-    include RMTemplate::get()->get_template('admin/qp-categories.php', 'module', 'qpages');
+    include RMTemplate::getInstance()->get_template('admin/qp-categories.php', 'module', 'qpages');
 
     xoops_cp_footer();
 }
