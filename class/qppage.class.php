@@ -222,7 +222,7 @@ class QPPage extends RMObject
     /**
      * Get metas from post.
      * If a meta name has not been provided then return all metas
-     * @param string $nameMeta name
+     * @param string $name Meta name 
      * @return string|array
      */
     public function get_meta($name = '')
@@ -242,7 +242,7 @@ class QPPage extends RMObject
 
     /**
      * Add or modify a field
-     * @param string $nameMeta name
+     * @param string $name Meta name
      * @param mixed $value Meta value
      * @return void
      */
@@ -372,7 +372,9 @@ class QPPage extends RMObject
 
         $file = XOOPS_CACHE_PATH . '/qpages';
         if (!is_dir($file)) {
-            mkdir($file, 0777);
+            if (!mkdir($file, 0777) && !is_dir($file)) {
+                throw new \RuntimeException(sprintf('Directory "%s" was not created', $file));
+            }
         }
 
         $this->options['url'] = $url;
