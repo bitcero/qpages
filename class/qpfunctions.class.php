@@ -70,6 +70,7 @@ class QPFunctions
         $tpls[] = (object)[
             'Name' => __('No template', 'qpages'),
             'File' => '',
+            'Standalone' => '',
         ];
 
         $lists = new XoopsLists();
