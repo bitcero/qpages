@@ -26,73 +26,72 @@
  * @url          http://www.redmexico.com.mx
  * @url          http://www.eduardocortes.mx
  */
-
 load_mod_locale('qpages');
 
-$adminmenu = array();
+$adminmenu = [];
 
-$adminmenu[] = array(
-    'title'     => __('Dashboard','qpages'),
-    'link'      => "admin/index.php",
-    'icon'      => 'svg-rmcommon-dashboard text-midnight',
-    'location'  => 'dashboard'
-);
+$adminmenu[] = [
+    'title' => __('Dashboard', 'qpages'),
+    'link' => 'admin/index.php',
+    'icon' => 'svg-rmcommon-dashboard text-midnight',
+    'location' => 'dashboard',
+];
 
-$adminmenu[] = array(
-    'title'     => __('Categories','qpages'),
-    'link'      => "admin/cats.php",
-    'icon'      => 'svg-rmcommon-folder text-orange',
-    'location'  => 'categories'
-);
+$adminmenu[] = [
+    'title' => __('Categories', 'qpages'),
+    'link' => 'admin/cats.php',
+    'icon' => 'svg-rmcommon-folder text-orange',
+    'location' => 'categories',
+];
 
-$cat = RMHttpRequest::request( 'cat', 'integer', '' );
+$cat = RMHttpRequest::request('cat', 'integer', '');
 
-$options[] = array(
-    'title'     => __('All pages','qpages'),
-    'link'      => 'admin/pages.php?cat='.$cat,
-    'selected'  => 'pages-list',
-	'icon'      => 'svg-rmcommon-docs text-blue'
-);
+$options[] = [
+    'title' => __('All pages', 'qpages'),
+    'link' => 'admin/pages.php?cat=' . $cat,
+    'selected' => 'pages-list',
+    'icon' => 'svg-rmcommon-docs text-blue',
+];
 
-$options[] = array(
-    'title'     => __('Published','qpages'),
-    'link'      => 'admin/pages.php?public=1&cat='.$cat,
-    'selected'  => 'pages-public',
-	'icon'      => 'svg-rmcommon-send text-blue-grey'
-);
+$options[] = [
+    'title' => __('Published', 'qpages'),
+    'link' => 'admin/pages.php?public=1&cat=' . $cat,
+    'selected' => 'pages-public',
+    'icon' => 'svg-rmcommon-send text-blue-grey',
+];
 
-$options[] = array(
-    'title'     => __('Drafts','qpages'),
-    'link'      => 'admin/pages.php?public=0&cat='.$cat,
-    'selected'  => 'pages-draft',
-	'icon'      => 'svg-rmcommon-document text-danger'
-);
+$options[] = [
+    'title' => __('Drafts', 'qpages'),
+    'link' => 'admin/pages.php?public=0&cat=' . $cat,
+    'selected' => 'pages-draft',
+    'icon' => 'svg-rmcommon-document text-danger',
+];
 
-$options[] = array(
-	'title'     => __('Normal Pages','qpages'),
-	'link'      => 'admin/pages.php?type=normal&cat='.$cat,
-	'selected'  => 'pages-normal',
-	'icon'  => 'svg-rmcommon-doc text-green',
-);
+$options[] = [
+    'title' => __('Normal Pages', 'qpages'),
+    'link' => 'admin/pages.php?type=normal&cat=' . $cat,
+    'selected' => 'pages-normal',
+    'icon' => 'svg-rmcommon-doc text-green',
+];
 
-$options[] = array(
-	'title'     => __('Redirection Pages','qpages'),
-	'link'      => 'admin/pages.php?type=redir&cat='.$cat,
-	'selected'  => 'pages-redir',
-	'icon'  => 'svg-rmcommon-link text-primary',
-);
+$options[] = [
+    'title' => __('Redirection Pages', 'qpages'),
+    'link' => 'admin/pages.php?type=redir&cat=' . $cat,
+    'selected' => 'pages-redir',
+    'icon' => 'svg-rmcommon-link text-primary',
+];
 
-$options[] = array(
-    'title'     => __('Add page','qpages'),
-    'link'      => 'admin/pages.php?action=new&cat='.$cat,
-    'selected'  => 'pages-new',
-	'icon'      => 'svg-rmcommon-plus-circle text-success'
-);
+$options[] = [
+    'title' => __('Add page', 'qpages'),
+    'link' => 'admin/pages.php?action=new&cat=' . $cat,
+    'selected' => 'pages-new',
+    'icon' => 'svg-rmcommon-plus-circle text-success',
+];
 
-$adminmenu[] = array(
-    'title'     => __('Pages','qpages'),
-    'link'      => "admin/pages.php",
-    'icon'      => 'svg-rmcommon-docs text-blue-grey',
-    'location'  => 'pages',
-    'options'   => $options
-);
+$adminmenu[] = [
+    'title' => __('Pages', 'qpages'),
+    'link' => 'admin/pages.php',
+    'icon' => 'svg-rmcommon-docs text-blue-grey',
+    'location' => 'pages',
+    'options' => $options,
+];

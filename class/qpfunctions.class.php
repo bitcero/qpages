@@ -12,98 +12,98 @@ class QPFunctions
 {
     /**
      * Send json response for AJAX purposes
-     * @param string Message to send
-     * @param int This is an error or no (1 or 0)
-     * @param array extra data to send
+     * @param string $msg Message to send 
+     * @param int $error This is an error or no (1 or 0)
+     * @param mixed $token
+     * @param array $data extra data to send
      */
-    static function jsonResponse($msg, $error = 0, $token = 0, $data = array())
+    public static function jsonResponse($msg, $error = 0, $token = 0, $data = [])
     {
         global $xoopsSecurity;
 
-        $ret = array();
+        $ret = [];
         $ret['message'] = $msg;
         $ret['error'] = $error;
-        $ret['token'] = $token == 1 ? $xoopsSecurity->createToken() : '';
+        $ret['token'] = 1 == $token ? $xoopsSecurity->createToken() : '';
         $ret['data'] = $data;
 
         echo json_encode($ret);
         die();
-
     }
 
     /**
      * Get template information
+     * @param mixed $path
+     * @param mixed $file
+     * @return bool|object|null
      */
-    static function templateInfo($path, $file)
+    public static function templateInfo($path, $file)
     {
-
-        if (!is_file($path . '/' . $file)) return null;
+        if (!is_file($path . '/' . $file)) {
+            return null;
+        }
 
         $content = file_get_contents($path . '/' . $file);
 
-        if (substr($file, -4) == '.php') {
-
-            $info = array();
+        if ('.php' === mb_substr($file, -4)) {
+            $info = [];
             preg_match("/\/\*(.*)\*\//s", $content, $info);
-
-        } elseif (substr($file, -4) == '.tpl') {
-
-            $info = array();
+        } elseif ('.tpl' === mb_substr($file, -4)) {
+            $info = [];
             preg_match("/^<{\*(.*)\*\}>/sm", $content, $info);
-
         }
 
-        if (!isset($info[1]))
+        if (!isset($info[1])) {
             return false;
+        }
 
         $data = parse_ini_string($info[1]);
         unset($content, $info);
 
-        return (object)array_merge(array('File' => str_replace(XOOPS_ROOT_PATH, '', $path) . '/' . $file), $data);
-
+        return (object)array_merge(['File' => str_replace(XOOPS_ROOT_PATH, '', $path) . '/' . $file], $data);
     }
 
-    static function getTemplates($paths)
+    public static function getTemplates($paths)
     {
+        $tpls = [];
 
-        $tpls = array();
-
-        $tpls[] = (object)array(
+        $tpls[] = (object)[
             'Name' => __('No template', 'qpages'),
-            'File' => ''
-        );
+            'File' => '',
+            'Standalone' => '',
+        ];
 
         $lists = new XoopsLists();
 
         foreach ($paths as $path) {
-
-            if (!is_dir($path)) continue;
-            $dirs = $lists->getDirListAsArray($path);
+            if (!is_dir($path)) {
+                continue;
+            }
+            $dirs = $lists::getDirListAsArray($path);
 
             foreach ($dirs as $dir) {
-                if (!file_exists($path . '/' . $dir . '/tpl-' . $dir . '.php')) continue;
+                if (!file_exists($path . '/' . $dir . '/tpl-' . $dir . '.php')) {
+                    continue;
+                }
 
-                $info = QPFunctions::templateInfo($path . '/' . $dir, 'tpl-' . $dir . '.php');
-                if (false !== $info)
+                $info = self::templateInfo($path . '/' . $dir, 'tpl-' . $dir . '.php');
+                if (false !== $info) {
                     $tpls[] = $info;
-
-            }
-
-            $files = $lists->getFileListAsArray($path);
-            foreach ($files as $file) {
-                if (substr($file, 0, 4) == 'tpl-' && substr($file, -4) == '.tpl') {
-
-                    $info = QPFunctions::templateInfo($path, $file);
-                    if (false !== $info)
-                        $tpls[] = $info;
-
                 }
             }
 
+            $files = $lists::getFileListAsArray($path);
+            foreach ($files as $file) {
+                if ('tpl-' === mb_substr($file, 0, 4) && '.tpl' === mb_substr($file, -4)) {
+                    $info = self::templateInfo($path, $file);
+                    if (false !== $info) {
+                        $tpls[] = $info;
+                    }
+                }
+            }
         }
 
         return $tpls;
-
     }
 
     /**
@@ -115,8 +115,9 @@ class QPFunctions
     {
         global $common;
 
-        if (!is_a($page, 'QPPage'))
+        if (!is_a($page, 'QPPage')) {
             return false;
+        }
 
         $form = new RMForm('', '', '');
 
@@ -124,10 +125,11 @@ class QPFunctions
 
         $file_data = pathinfo($page->template);
         $path = XOOPS_ROOT_PATH . $file_data['dirname'];
-        $form_file = $path . '/form-' . str_replace("tpl-", '', $file_data['filename']) . '.php';
+        $form_file = $path . '/form-' . str_replace('tpl-', '', $file_data['filename']) . '.php';
 
-        if (!file_exists($form_file))
+        if (!file_exists($form_file)) {
             return false;
+        }
 
         $tplSettings = (object)$page->tpl_option();
         $tplSettings->url = XOOPS_URL . $file_data['dirname'];
@@ -138,38 +140,39 @@ class QPFunctions
         $form = ob_get_clean();
 
         return $form;
-
     }
 
     /**
      * Función para obtener las categorías en un array
+     * @param mixed      $ret
+     * @param mixed      $jumps
+     * @param mixed      $parent
+     * @param null|mixed $exclude
+     * @return bool
      */
-    static function categoriesTree(&$ret, $jumps = 0, $parent = 0, $exclude = null)
+    public static function categoriesTree(&$ret, $jumps = 0, $parent = 0, $exclude = null)
     {
-
         $db = XoopsDatabaseFactory::getDatabaseConnection();
 
-        $result = $db->query("SELECT * FROM " . $db->prefix("mod_qpages_categos") . " WHERE parent='$parent' ORDER BY `id_cat`");
+        $result = $db->query('SELECT * FROM ' . $db->prefix('mod_qpages_categos') . " WHERE parent='$parent' ORDER BY `id_cat`");
 
-        while ($row = $db->fetchArray($result)) {
-            if (is_array($exclude) && (in_array($row['parent'], $exclude) || in_array($row['id_cat'], $exclude))) {
+        while (false !== ($row = $db->fetchArray($result))) {
+            if (is_array($exclude) && (in_array($row['parent'], $exclude, true) || in_array($row['id_cat'], $exclude, true))) {
                 $exclude[] = $row['id_cat'];
             } else {
-                $rtn = array();
+                $rtn = [];
                 $rtn = $row;
                 $rtn['jumps'] = $jumps;
                 $ret[] = $rtn;
             }
-            QPFunctions::categoriesTree($ret, $jumps + 1, $row['id_cat'], $exclude);
+            self::categoriesTree($ret, $jumps + 1, $row['id_cat'], $exclude);
         }
 
         return true;
-
     }
 
-    static function verboseType($type)
+    public static function verboseType($type)
     {
-
         switch ($type) {
             case 'redir':
                 return __('Redirection Page', 'qpages');
@@ -184,10 +187,9 @@ class QPFunctions
                 return __('Normal Page', 'qpages');
                 break;
         }
-
     }
 
-    static function toolbar($category, $page = '')
+    public static function toolbar($category, $page = '')
     {
         global $rmTpl;
 
@@ -197,21 +199,19 @@ class QPFunctions
         $rmTpl->add_tool(__('Drafts', 'qpages'), 'pages.php?public=0&category=' . $category, 'svg-rmcommon-document text-danger', 'pages-draft');
         $rmTpl->add_tool(__('General', 'qpages'), 'pages.php?type=normal&category=' . $category, 'svg-rmcommon-docs text-teal', 'pages-normal');
         $rmTpl->add_tool(__('Redirection', 'qpages'), 'pages.php?type=redir&category=' . $category, 'svg-rmcommon-link text-midnight', 'pages-redir');
-
     }
 
-    static function error_404()
+    public static function error_404()
     {
-
-        header("HTTP/1.0 404 Not Found");
-        if (substr(php_sapi_name(), 0, 3) == 'cgi')
-            header('Status: 404 Not Found', TRUE);
-        else
+        header('HTTP/1.0 404 Not Found');
+        if ('cgi' === mb_substr(php_sapi_name(), 0, 3)) {
+            header('Status: 404 Not Found', true);
+        } else {
             header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+        }
 
-        echo "<h1>ERROR 404. Document not Found</h1>";
+        echo '<h1>ERROR 404. Document not Found</h1>';
         die();
-
     }
 
     /**
@@ -221,11 +221,9 @@ class QPFunctions
      * @param string $file Relative path from css to include
      * @return string
      */
-    static function dynamic_style(QPPage $page, $tpl, $file)
+    public static function dynamic_style(QPPage $page, $tpl, $file)
     {
-
         return XOOPS_URL . '/modules/qpages/css/styles.php?page=' . $page->id() . '&amp;tpl=' . $tpl . '&amp;css=' . urlencode($file);
-
     }
 
     /**
@@ -235,44 +233,44 @@ class QPFunctions
      * @param array $defaults Array with default settings
      * @return bool The value is assigned by reference to current settings
      */
-    static function load_defaults(&$settings, $defaults)
+    public static function load_defaults(&$settings, $defaults)
     {
-
-        if (!$settings || empty($defaults)) return false;
+        if (!$settings || empty($defaults)) {
+            return false;
+        }
 
         foreach ($defaults as $name => $value) {
-
-            if (!isset($settings->{$name}) || $settings->{$name} == '')
+            if (!isset($settings->{$name}) || '' == $settings->{$name}) {
                 $settings->{$name} = $value;
-
+            }
         }
 
         return true;
-
     }
 
     /**
      * Loads a language for specified template
-     * @param string $tpl Template relative path
-     * @param $prefix Prefix for language file
+     * @param string $tpl    Template relative path
+     * @param string $prefix Prefix for language file
      */
-    static function load_tpl_locale($tpl, $prefix = '')
+    public static function load_tpl_locale($tpl, $prefix = '')
     {
         $exm_locale = get_locale();
 
-        if ($tpl == '') return;
+        if ('' == $tpl) {
+            return;
+        }
 
         $tpl_info = pathinfo($tpl);
         $path = $tpl_info['dirname'];
 
         $path .= '/lang/' . $prefix . $exm_locale . '.mo';
 
-        load_locale_file(str_replace("tpl-", '', $tpl_info['filename']), XOOPS_ROOT_PATH . $path);
+        load_locale_file(str_replace('tpl-', '', $tpl_info['filename']), XOOPS_ROOT_PATH . $path);
     }
 
-    static function linkSort($field, $section = 'pages')
+    public static function linkSort($field, $section = 'pages')
     {
-
         $keyw = RMHttpRequest::request('keyw', 'string', '');
         $public = RMHttpRequest::request('public', 'string', '');
         $type = RMHttpRequest::request('type', 'string', '');
@@ -281,22 +279,20 @@ class QPFunctions
         $order = RMHttpRequest::request('order', 'string', 'id_page');
         $sort = RMHttpRequest::request('sort', 'string', 'asc');
 
-        $sort = 'desc' == strtolower($sort) ? 'asc' : 'desc';
+        $sort = 'desc' === mb_strtolower($sort) ? 'asc' : 'desc';
 
         if ('' == $field) {
-            return "#";
-        }
-
-        if ($section != 'pages' && $section != 'categories') {
             return '#';
         }
 
-        $section = 'categories' == $section ? 'cats.php' : 'pages.php';
+        if ('pages' !== $section && 'categories' !== $section) {
+            return '#';
+        }
+
+        $section = 'categories' === $section ? 'cats.php' : 'pages.php';
 
         $link = $section . '?order=' . $field . '&amp;sort=' . $sort . '&amp;keyw=' . $keyw . '&amp;public=' . $public . '&amp;type=' . $type . '&amp;cat=' . $category . '&amp;page=' . $page;
 
         return $link;
-
     }
-
 }

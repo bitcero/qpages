@@ -9,7 +9,7 @@
 	</tr>
 	<{foreach item=page from=$pages}>
 		<tr align="center" class="<{cycle values="even,odd}>">
-			<td align="left"><a href="<{$page.link}>"><{$page.title}></a><br /><{$page.desc}></td>
+			<td align="left"><a href="<{$page.link}>"><{$page.title}></a><br><{$page.desc}></td>
 			<td align="center" nowrap="nowrap"><{$page.modified}></td>
 			<td align="center"><strong><{$page.hits}></strong></td>
 		</tr>

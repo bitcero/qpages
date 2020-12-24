@@ -1,5 +1,5 @@
 <?php
-include ('defaults.php');
+include __DIR__ . '/defaults.php';
 ?>
 <div class="panel panel-light-blue">
 
@@ -22,7 +22,7 @@ include ('defaults.php');
         <!-- General options -->
         <div class="tab-pane active" id="clean-general">
             <?php
-            $font = new RMFormWebfonts('', 'clean[body_font]', $tplSettings->body_font );
+            $font = new RMFormWebfonts('', 'clean[body_font]', $tplSettings->body_font);
             ?>
             <div class="form-group">
                 <label><?php _e('Font for body:', 'clean'); ?></label>
@@ -33,7 +33,7 @@ include ('defaults.php');
                 <input type="text" name="clean[body_ff]" data-rel="clean[body_font]" class="form-control" value="<?php echo $tplSettings->body_ff; ?>">
             </div>
             <?php
-            $font = new RMFormWebfonts('', 'clean[em_font]', $tplSettings->em_font );
+            $font = new RMFormWebfonts('', 'clean[em_font]', $tplSettings->em_font);
             ?>
             <div class="form-group">
                 <label><?php _e('Font for emphasised text:', 'clean'); ?></label>
@@ -50,25 +50,25 @@ include ('defaults.php');
                 <div class="row">
                     <div class="col-sm-3">
                         <?php
-                        $color = new RMFormColorSelector( '', 'clean[color1]', $tplSettings->color1 );
+                        $color = new RMFormColorSelector('', 'clean[color1]', $tplSettings->color1);
                         echo $color->render();
                         ?>
                     </div>
                     <div class="col-sm-3">
                         <?php
-                        $color = new RMFormColorSelector( '', 'clean[color2]', $tplSettings->color2 );
+                        $color = new RMFormColorSelector('', 'clean[color2]', $tplSettings->color2);
                         echo $color->render();
                         ?>
                     </div>
                     <div class="col-sm-3">
                         <?php
-                        $color = new RMFormColorSelector( '', 'clean[color3]', $tplSettings->color3 );
+                        $color = new RMFormColorSelector('', 'clean[color3]', $tplSettings->color3);
                         echo $color->render();
                         ?>
                     </div>
                     <div class="col-sm-3">
                         <?php
-                        $color = new RMFormColorSelector( '', 'clean[color4]', $tplSettings->color4 );
+                        $color = new RMFormColorSelector('', 'clean[color4]', $tplSettings->color4);
                         echo $color->render();
                         ?>
                     </div>
@@ -81,21 +81,21 @@ include ('defaults.php');
                     <div class="col-sm-4">
                         <label><?php _e('Background color:', 'clean'); ?></label>
                         <?php
-                        $color = new RMFormColorSelector('', 'clean[bgcolor]', $tplSettings->bgcolor );
+                        $color = new RMFormColorSelector('', 'clean[bgcolor]', $tplSettings->bgcolor);
                         echo $color->render();
                         ?>
                     </div>
                     <div class="col-sm-4">
                         <label><?php _e('Sections background color:', 'clean'); ?></label>
                         <?php
-                        $color = new RMFormColorSelector('', 'clean[seccolor]', $tplSettings->seccolor );
+                        $color = new RMFormColorSelector('', 'clean[seccolor]', $tplSettings->seccolor);
                         echo $color->render();
                         ?>
                     </div>
                     <div class="col-sm-4">
                         <label><?php _e('Text color:', 'clean'); ?></label>
                         <?php
-                        $color = new RMFormColorSelector('', 'clean[textcolor]', $tplSettings->textcolor );
+                        $color = new RMFormColorSelector('', 'clean[textcolor]', $tplSettings->textcolor);
                         echo $color->render();
                         ?>
                     </div>
@@ -105,7 +105,7 @@ include ('defaults.php');
             <div class="form-group">
                 <label>Background image:</label>
                 <?php
-                $image = new RMFormImageUrl('', 'clean[bgimage]', $tplSettings->bgimage );
+                $image = new RMFormImageUrl('', 'clean[bgimage]', $tplSettings->bgimage);
                 echo $image->render();
                 ?>
             </div>
@@ -185,7 +185,7 @@ include ('defaults.php');
                     <div class="col-sm-3">
                         <label><?php _e('Background color:', 'clean'); ?></label>
                         <?php
-                        $color = new RMFormColorSelector( '', 'clean[header_color]', $tplSettings->header_color );
+                        $color = new RMFormColorSelector('', 'clean[header_color]', $tplSettings->header_color);
                         echo $color->render();
                         ?>
                     </div>
@@ -193,7 +193,7 @@ include ('defaults.php');
                     <div class="col-sm-3">
                         <label><?php _e('Paragraph text color:', 'clean'); ?></label>
                         <?php
-                        $color = new RMFormColorSelector( '', 'clean[header_text]', $tplSettings->header_text );
+                        $color = new RMFormColorSelector('', 'clean[header_text]', $tplSettings->header_text);
                         echo $color->render();
                         ?>
                     </div>
@@ -201,7 +201,7 @@ include ('defaults.php');
                     <div class="col-sm-3">
                         <label><?php _e('Text color one:', 'clean'); ?></label>
                         <?php
-                        $color = new RMFormColorSelector( '', 'clean[header_text1]', $tplSettings->header_text1 );
+                        $color = new RMFormColorSelector('', 'clean[header_text1]', $tplSettings->header_text1);
                         echo $color->render();
                         ?>
                     </div>
@@ -209,7 +209,7 @@ include ('defaults.php');
                     <div class="col-sm-3">
                         <label><?php _e('Text color two:', 'clean'); ?></label>
                         <?php
-                        $color = new RMFormColorSelector( '', 'clean[header_text2]', $tplSettings->header_text2 );
+                        $color = new RMFormColorSelector('', 'clean[header_text2]', $tplSettings->header_text2);
                         echo $color->render();
                         ?>
                     </div>
@@ -312,13 +312,13 @@ include ('defaults.php');
                 <div class="col-md-3">
                     <div class="form-group">
 
-                        <label><?php _e('Service One:','clean'); ?></label>
+                        <label><?php _e('Service One:', 'clean'); ?></label>
                         <input style="margin-bottom: 5px;" type="text" name="clean[services][0][title]" class="form-control" value="<?php echo $tplSettings->services[0]['title']; ?>">
                         <?php
-                        $icon = new RMFormIconsPicker('', 'clean[services][0][icon]', array(
+                        $icon = new RMFormIconsPicker('', 'clean[services][0][icon]', [
                             'selected' => $tplSettings->services[0]['icon'],
-                            'glyphicons' => 0
-                        ));
+                            'glyphicons' => 0,
+                        ]);
                         echo $icon->render();
                         ?>
                         <textarea rows="4" style="margin-top: 5px;" class="form-control" name="clean[services][0][description]"><?php echo $tplSettings->services[0]['description']; ?></textarea>
@@ -328,13 +328,13 @@ include ('defaults.php');
                 <div class="col-md-3">
                     <div class="form-group">
 
-                        <label><?php _e('Service Two:','clean'); ?></label>
+                        <label><?php _e('Service Two:', 'clean'); ?></label>
                         <input style="margin-bottom: 5px;" type="text" name="clean[services][1][title]" class="form-control" value="<?php echo $tplSettings->services[1]['title']; ?>">
                         <?php
-                        $icon = new RMFormIconsPicker('', 'clean[services][1][icon]', array(
+                        $icon = new RMFormIconsPicker('', 'clean[services][1][icon]', [
                             'selected' => $tplSettings->services[1]['icon'],
-                            'glyphicons' => 0
-                        ));
+                            'glyphicons' => 0,
+                        ]);
                         echo $icon->render();
                         ?>
                         <textarea rows="4" style="margin-top: 5px;" class="form-control" name="clean[services][1][description]"><?php echo $tplSettings->services[1]['description']; ?></textarea>
@@ -344,13 +344,13 @@ include ('defaults.php');
                 <div class="col-md-3">
                     <div class="form-group">
 
-                        <label><?php _e('Service Three:','clean'); ?></label>
+                        <label><?php _e('Service Three:', 'clean'); ?></label>
                         <input style="margin-bottom: 5px;" type="text" name="clean[services][2][title]" class="form-control" value="<?php echo $tplSettings->services[2]['title']; ?>">
                         <?php
-                        $icon = new RMFormIconsPicker('', 'clean[services][2][icon]', array(
+                        $icon = new RMFormIconsPicker('', 'clean[services][2][icon]', [
                             'selected' => $tplSettings->services[2]['icon'],
-                            'glyphicons' => 0
-                        ));
+                            'glyphicons' => 0,
+                        ]);
                         echo $icon->render();
                         ?>
                         <textarea rows="4" style="margin-top: 5px;" class="form-control" name="clean[services][2][description]"><?php echo $tplSettings->services[2]['description']; ?></textarea>
@@ -360,13 +360,13 @@ include ('defaults.php');
                 <div class="col-md-3">
                     <div class="form-group">
 
-                        <label><?php _e('Service Four:','clean'); ?></label>
+                        <label><?php _e('Service Four:', 'clean'); ?></label>
                         <input style="margin-bottom: 5px;" type="text" name="clean[services][3][title]" class="form-control" value="<?php echo $tplSettings->services[3]['title']; ?>">
                         <?php
-                        $icon = new RMFormIconsPicker('', 'clean[services][3][icon]', array(
+                        $icon = new RMFormIconsPicker('', 'clean[services][3][icon]', [
                             'selected' => $tplSettings->services[3]['icon'],
-                            'glyphicons' => 0
-                        ));
+                            'glyphicons' => 0,
+                        ]);
                         echo $icon->render();
                         ?>
                         <textarea rows="4" style="margin-top: 5px;" class="form-control" name="clean[services][3][description]"><?php echo $tplSettings->services[3]['description']; ?></textarea>
@@ -393,7 +393,7 @@ include ('defaults.php');
                     <div class="form-group">
                         <label>Customer picture:</label>
                         <?php
-                        $img = new RMFormImageUrl('', 'clean[testimonials][0][picture]', $tplSettings->testimonials[0]['picture'] );
+                        $img = new RMFormImageUrl('', 'clean[testimonials][0][picture]', $tplSettings->testimonials[0]['picture']);
                         echo $img->render();
                         ?>
                     </div>
@@ -423,7 +423,7 @@ include ('defaults.php');
                     <div class="form-group">
                         <label>Customer picture:</label>
                         <?php
-                        $img = new RMFormImageUrl('', 'clean[testimonials][1][picture]', $tplSettings->testimonials[1]['picture'] );
+                        $img = new RMFormImageUrl('', 'clean[testimonials][1][picture]', $tplSettings->testimonials[1]['picture']);
                         echo $img->render();
                         ?>
                     </div>
@@ -497,14 +497,14 @@ include ('defaults.php');
                     <div class="col-sm-6">
                         <label><?php _e('Background color:', 'clean'); ?></label>
                         <?php
-                        $color = new RMFormColorSelector( '', 'clean[footerbg]', $tplSettings->footerbg );
+                        $color = new RMFormColorSelector('', 'clean[footerbg]', $tplSettings->footerbg);
                         echo $color->render();
                         ?>
                     </div>
                     <div class="col-sm-6">
                         <label><?php _e('Texto color:', 'clean'); ?></label>
                         <?php
-                        $color = new RMFormColorSelector( '', 'clean[footertext]', $tplSettings->footertext );
+                        $color = new RMFormColorSelector('', 'clean[footertext]', $tplSettings->footertext);
                         echo $color->render();
                         ?>
                     </div>

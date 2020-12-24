@@ -12,7 +12,7 @@
 				</tr><tr valign="top">
 				<{assign var="i" value=1}>
 			<{/if}>
-			<td width="33%"><a href="<{$page.link}>"><strong><{$page.title}></strong></a><br />
+			<td width="33%"><a href="<{$page.link}>"><strong><{$page.title}></strong></a><br>
 			<{$page.description}></td>
 			<{assign var="i" value=$i+1}>
 		<{/foreach}>
@@ -20,7 +20,7 @@
 		</table>
 		<{/if}>
 		<{if $cat.subcats_count>0}>
-        <br />
+        <br>
 		<table class="table">
 			<tr><th colspan="3"><{$lang_subcats}></th></tr>
 			<tr class="even" valign="top">
